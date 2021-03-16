@@ -1,0 +1,82 @@
+.header {
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #4abf6a;
+    height: 190px;
+
+    .myContainer {
+      border-bottom: 1px solid white;
+
+      .my {
+        width: 70%;
+        margin: 0 auto;
+        height: 40px;
+        font-size: 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+
+        .home {
+          font-weight: 900;
+        }
+
+        .myInfo {
+          width: 170px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+    }
+
+    .logoAndSearch {
+      width: 70%;
+      margin: 0 auto;
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .xxx {
+        width: 180px;
+      }
+
+      .logo {
+        width: 200px;
+      }
+
+      .searchBox {
+        width: 180px;
+        height: 30px;
+        position: relative;
+
+        .search {
+          width: 100%;
+          border: 1px solid black;
+          border-radius: 8px;
+          padding: 10px 12px 10px 12px;
+        }
+
+        .searchImg {
+          position: absolute;
+          top: 10px;
+          right: 12px;
+          width: 16px;
+        }
+      }
+    }
+    .category {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 auto;
+      width: 70%;
+      height: 80px;
+      color: white;
+    }
+  }
+}

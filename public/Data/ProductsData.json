@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "price": "17000",
+    "productName": "라인프렌즈 BT21 BABY 2021 다이어리",
+    "img": "https://shop-phinf.pstatic.net/20201029_140/1603931484434qnCdl_JPEG/18140330_52370499.jpg?type=m510"
+  },
+  {
+    "id": 2,
+    "price": "21000",
+    "productName": "라인프렌즈 BT21 BABY 얼굴 방석",
+    "img": "https://shop-phinf.pstatic.net/20201125_77/16063128239131FwjP_JPEG/7238657733061657_16381677.jpg?type=m510"
+  },
+  {
+    "id": 3,
+    "price": "21200",
+    "productName": "라인프렌즈 BT21 BABY 문구 세트",
+    "img": "https://shop-phinf.pstatic.net/20201028_83/1603866084503ieGQN_JPEG/5001973196618299_1454818388.jpg?type=m510"
+  },
+  {
+    "id": 4,
+    "price": "59000",
+    "productName": "LAMY X BT21 스페셜 에디션 SET2",
+    "img": "https://shop-phinf.pstatic.net/20200922_122/1600750959595bBU4L_JPEG/12481677_50947338.jpg?type=m510"
+  },
+  {
+    "id": 5,
+    "price": "17000",
+    "productName": "라인프렌즈 브라운앤프렌즈 2021 스케쥴러",
+    "img": "https://shop-phinf.pstatic.net/20201029_243/1603931494406NIOgF_JPEG/18140287_52370501.jpg?type=m510"
+  },
+  {
+    "id": 6,
+    "price": "9000",
+    "productName": "라인프렌즈 브라운앤프렌즈 2021 탁상 캘린더",
+    "img": "https://shop-phinf.pstatic.net/20201029_160/1603931499940azgfa_JPEG/18140267_52370502.jpg?type=m510"
+  },
+  {
+    "id": 7,
+    "price": "59000",
+    "productName": "LAMY LINE FRIENDS 샐리 스페셜 에디션",
+    "img": "https://shop-phinf.pstatic.net/20200922_160/1600762254302tgtuW_JPEG/38123796973133881_1041011852.jpg?type=m510"
+  },
+  {
+    "id": 8,
+    "price": "59000",
+    "productName": "LAMY LINE FRIENDS 브라운 에디션",
+    "img": "https://shop-phinf.pstatic.net/20200922_31/1600762209672sQpks_JPEG/1898052386556643_1363862662.jpg?type=m510"
+  }
+]
