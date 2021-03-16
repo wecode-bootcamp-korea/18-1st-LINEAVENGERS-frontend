@@ -187,7 +187,7 @@
 
   .ShoppingProductList {
     display: flex;
-    height: 150px;
+    height: 130px;
     border-bottom: 1px solid lightgray;
 
     .ShoppingProductListName {
@@ -199,7 +199,7 @@
 
       .ShoppingProductListNameImg {
         width: 100px;
-        height: 120px;
+        height: 100px;
       }
 
       .ShoppingProductListNameItem {
@@ -209,6 +209,7 @@
       .ShoppingProductListNameItem,
       .ShoppingProductListNamePrice {
         padding-left: 10px;
+        font-weight: bold;
       }
     }
 
@@ -217,15 +218,25 @@
       padding-top: 20px;
       padding-left: 20px;
       border-right: 1px solid lightgray;
+
+      .ShoppingProductListOptionSize {
+        width: 240px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid lightgray;
+        font-size: 13px;
+      }
     }
 
     .ShoppingProductListPrice {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 15%;
-      padding-top: 20px;
+      padding-top: 20px, 0;
       border-right: 1px solid lightgray;
 
       .ShoppingProductListPriceIndividual {
-        text-align: center;
+        font-weight: bolder;
       }
     }
 

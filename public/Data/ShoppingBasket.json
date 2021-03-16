@@ -32,8 +32,8 @@
     "name": "Avenger",
     "price": 123000,
     "size": 1,
-    "totalPrice": 11000,
-    "deliveryPrice": 11000
+    "totalPrice": 33000,
+    "deliveryPrice": "무료"
   },
   {
     "id": 5,
@@ -42,6 +42,6 @@
     "price": 44000,
     "size": 2,
     "totalPrice": 11000,
-    "deliveryPrice": 11000
+    "deliveryPrice": "무료"
   }
 ]

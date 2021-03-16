@@ -15,7 +15,7 @@ class ShoppingProductList extends React.Component {
             />
             <div className="ShoppingProductListNameItems">
               <div className="ShoppingProductListNameItem">{name}</div>
-              <div className="ShoppingProductListNamePrice">{price}</div>
+              <div className="ShoppingProductListNamePrice">{price}원</div>
             </div>
           </div>
           <div className="ShoppingProductListOption">
@@ -25,7 +25,7 @@ class ShoppingProductList extends React.Component {
           </div>
           <div className="ShoppingProductListPrice">
             <div className="ShoppingProductListPriceIndividual">
-              {totalPrice}
+              {totalPrice}원
             </div>
           </div>
           <div className="ShoppingProductListDelivery">
