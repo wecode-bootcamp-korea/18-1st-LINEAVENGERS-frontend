@@ -1,0 +1,46 @@
+.mainContainer {
+  .bigSlide {
+    border: 2px solid #4abf6a;
+    background-color: #4abf6a;
+    z-index: 0;
+    height: 500px;
+
+    // .backgroundImg {
+    //   width: 100%;
+    // }
+
+    .copy {
+      width: 70%;
+      margin: 220px auto;
+      text-align: left;
+
+      .bigCopy {
+        font-size: 40px;
+        font-weight: 700;
+      }
+
+      .smallCopy {
+        margin-top: 30px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .hotCategory {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 80px;
+  }
+
+  .products {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 80px;
+  }
+
+  .title {
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+  }
+}
