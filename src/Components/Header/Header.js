@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 import "./Header.scss";
+import Category from "./Category/Category";
 
 export class Header extends Component {
   render() {
     return (
       <header className="header">
         <nav>
-          <div className="myContainer">
-            <div className="my">
-              <div className="home">
+          <div className="homeAndMyInfoContainer">
+            <div className="homeAndMyInfo">
+              <div className="goToHome">
                 <span>NAVER</span>
               </div>
               <div className="myInfo">
@@ -36,18 +37,7 @@ export class Header extends Component {
               </div>
             </div>
           </div>
-          <div className="category">
-            <span>캐릭터</span>
-            <span>NEW</span>
-            <span>THEME</span>
-            <span>BT21 BABY</span>
-            <span>SALE</span>
-            <span>토이</span>
-            <span>디자인문구</span>
-            <span>패션의류</span>
-            <span>패션잡화</span>
-            <span>리빙</span>
-          </div>
+          <Category />
         </nav>
       </header>
     );

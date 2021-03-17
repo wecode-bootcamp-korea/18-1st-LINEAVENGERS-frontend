@@ -7,10 +7,10 @@
     background-color: #4abf6a;
     height: 190px;
 
-    .myContainer {
+    .homeAndMyInfoContainer {
       border-bottom: 1px solid white;
 
-      .my {
+      .homeAndMyInfo {
         width: 70%;
         margin: 0 auto;
         height: 40px;
@@ -20,7 +20,7 @@
         align-items: center;
         color: white;
 
-        .home {
+        .goToHome {
           font-weight: 900;
         }
 
@@ -68,15 +68,6 @@
           width: 16px;
         }
       }
-    }
-    .category {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: 0 auto;
-      width: 70%;
-      height: 80px;
-      color: white;
     }
   }
 }

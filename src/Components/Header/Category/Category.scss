@@ -1,0 +1,30 @@
+.category {
+  margin: 0 auto;
+  width: 70%;
+  height: 80px;
+  color: white;
+
+  .categoryMenu {
+    width: 60px;
+    font-size: 16px;
+    border: 1px solid white;
+  }
+
+  .subMenuContainer {
+    display: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.17);
+    width: 200px;
+    text-align: center;
+    background-color: white;
+    z-index: 3;
+
+    .subMenu {
+      display: block;
+      text-decoration: none;
+    }
+  }
+
+  .categoryMenu:hover .subMenuContainer {
+    display: block;
+  }
+}
