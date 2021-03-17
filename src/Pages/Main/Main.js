@@ -29,11 +29,6 @@ export class Main extends Component {
         <Header />
         <main className="mainContainer">
           <div className="bigSlide">
-            {/* <img
-              className="backgroundImg"
-              alt="Line Freinds Img"
-              src="../Images/LineFriends.jpeg"
-            /> */}
             <div className="copy">
               <p className="bigCopy">
                 귀여운 조명이
