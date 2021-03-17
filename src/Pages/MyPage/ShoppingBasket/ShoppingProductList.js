@@ -6,31 +6,31 @@ class ShoppingProductList extends React.Component {
     const { img, name, size, price, totalPrice, deliveryPrice } = this.props;
     return (
       <>
-        <div className="ShoppingProductList">
-          <div className="ShoppingProductListName">
+        <div className="shoppingProductList">
+          <div className="shoppingProductListName">
             <img
-              className="ShoppingProductListNameImg"
+              className="shoppingProductListNameImg"
               alt="Line avengers"
               src={img}
             />
-            <div className="ShoppingProductListNameItems">
-              <div className="ShoppingProductListNameItem">{name}</div>
-              <div className="ShoppingProductListNamePrice">{price}원</div>
+            <div className="shoppingProductListNameItems">
+              <div className="shoppingProductListNameItem">{name}</div>
+              <div className="shoppingProductListNamePrice">{price}원</div>
             </div>
           </div>
-          <div className="ShoppingProductListOption">
-            <div className="ShoppingProductListOptionSize">
+          <div className="shoppingProductListOption">
+            <div className="shoppingProductListOptionSize">
               사이즈 : {size}개
             </div>
           </div>
-          <div className="ShoppingProductListPrice">
-            <div className="ShoppingProductListPriceIndividual">
+          <div className="shoppingProductListPrice">
+            <div className="shoppingProductListPriceIndividual">
               {totalPrice}원
             </div>
-            <button className="ShoppingProductListPriceOrder">주문하기</button>
+            <button className="shoppingProductListPriceOrder">주문하기</button>
           </div>
-          <div className="ShoppingProductListDelivery">
-            <div className="ShoppingProductListDeliveryMoney">
+          <div className="shoppingProductListDelivery">
+            <div className="shoppingProductListDeliveryMoney">
               {deliveryPrice}
             </div>
           </div>

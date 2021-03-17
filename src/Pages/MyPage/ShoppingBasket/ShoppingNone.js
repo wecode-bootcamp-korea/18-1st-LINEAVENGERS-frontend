@@ -6,17 +6,17 @@ class ShoppingNone extends React.Component {
   state = {};
   render() {
     return (
-      <section className="ShoppingBasketArticle">
-        <div className="ShoppingBasketArticleBasket">
+      <section className="shoppingBasketArticle">
+        <div className="shoppingBasketArticleBasket">
           <AiOutlineShopping size="40" color="white" />
         </div>
-        <div className="ShoppingBasketArticleNone">
+        <div className="shoppingBasketArticleNone">
           장바구니에 담긴 상품이 없습니다.
         </div>
-        <div className="ShoppingBasketArticlePut">
+        <div className="shoppingBasketArticlePut">
           원하는 상품을 장바구니에 담아보세요!
         </div>
-        <button className="ShoppingBasketArticleContinue">쇼핑 계속하기</button>
+        <button className="shoppingBasketArticleContinue">쇼핑 계속하기</button>
       </section>
     );
   }

@@ -1,9 +1,9 @@
-.MyPageNav {
+.myPageNav {
   height: 120px;
   background-color: rgb(76, 194, 76);
   color: white;
 
-  .MyPageNavTop {
+  .myPageNavTop {
     display: flex;
     justify-content: space-between;
     height: 30px;
@@ -13,102 +13,110 @@
     padding-bottom: 20px;
     border-bottom: 1px solid rgb(156, 152, 152);
 
-    .MyPageNavTopLeftLine {
-      margin-right: 20px;
+    .myPageNavTopRight {
+      display: flex;
+
+      .myPageNavTopRightMyPage {
+        margin-right: 10px;
+      }
+    }
+
+    .myPageNavTopLeftLine {
+      padding-right: 20px;
     }
   }
 
-  .MyPageNavBottom {
+  .myPageNavBottom {
     display: flex;
     justify-content: space-between;
     padding-top: 30px;
     padding-left: 150px;
     padding-right: 150px;
 
-    .MyPageNavBottomLeft {
+    .myPageNavBottomLeft {
       font-size: 30px;
     }
 
-    .MyPageNavBottomRight {
+    .myPageNavBottomRight {
       display: flex;
       font-size: 20px;
 
-      .MyPageNavBottomRightAccount,
-      .MyPageNavBottomRightPoint,
-      .MyPageNavBottomRightSend,
-      .MyPageNavBottomRightGift,
-      .MyPageNavBottomRightBenefit,
-      .MyPageNavBottomRightAsk {
+      .myPageNavBottomRightAccount,
+      .myPageNavBottomRightPoint,
+      .myPageNavBottomRightSend,
+      .myPageNavBottomRightGift,
+      .myPageNavBottomRightBenefit,
+      .myPageNavBottomRightAsk {
         margin-left: 40px;
       }
     }
   }
 }
 
-.ShoppingBasketMain {
+.shoppingBasketMain {
   width: 1150px;
   margin-left: 145px;
 
-  .ShoppingBasketNavTop {
+  .shoppingBasketNavTop {
     display: flex;
     justify-content: space-between;
     height: 100px;
     padding-top: 40px;
 
-    .ShoppingBasketNavTopLeft {
+    .shoppingBasketNavTopLeft {
       display: flex;
 
-      .ShoppingBasketNavTopLeftNormal {
+      .shoppingBasketNavTopLeftNormal {
         font-size: 24px;
       }
 
-      .ShoppingBasketNavTopLeftUsing {
+      .shoppingBasketNavTopLeftUsing {
         padding: 5px 0 0 10px;
         color: rgb(165, 162, 162);
         font-size: 20px;
       }
     }
 
-    .ShoppingBasketNavTopRight {
+    .shoppingBasketNavTopRight {
       display: flex;
 
-      .ShoppingBasketNavTopRightBasket {
+      .shoppingBasketNavTopRightBasket {
         font-weight: bold;
       }
 
-      .ShoppingBasketNavTopRight,
-      .ShoppingBasketNavTopRightSuccess {
+      .shoppingBasketNavTopRight,
+      .shoppingBasketNavTopRightSuccess {
         padding-left: 10px;
         color: rgb(165, 162, 162);
       }
     }
   }
-  .ShoppingBasketNavBottom {
+  .shoppingBasketNavBottom {
     padding: 10px;
     border: 1px solid lightgray;
     background-color: rgb(238, 235, 235);
 
-    .ShoppingBasketNavBottomFirst,
-    .ShoppingBasketNavBottomSecond,
-    .ShoppingBasketNavBottomThird {
+    .shoppingBasketNavBottomFirst,
+    .shoppingBasketNavBottomSecond,
+    .shoppingBasketNavBottomThird {
       padding: 10px;
       font-size: 14px;
       opacity: 0.7;
     }
 
-    .ShoppingBasketNavBottomFirst {
+    .shoppingBasketNavBottomFirst {
       color: rgb(7, 192, 7);
     }
   }
 
-  .ShoppingBasketArticle {
+  .shoppingBasketArticle {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 600px;
 
-    .ShoppingBasketArticleBasket {
+    .shoppingBasketArticleBasket {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -120,22 +128,22 @@
       background-color: lightgray;
     }
 
-    .ShoppingBasketArticleNone,
-    .ShoppingBasketArticlePut {
+    .shoppingBasketArticleNone,
+    .shoppingBasketArticlePut {
       margin-bottom: 25px;
     }
 
-    .ShoppingBasketArticleNone {
+    .shoppingBasketArticleNone {
       font-size: 18px;
       font-weight: bold;
     }
 
-    .ShoppingBasketArticlePut {
+    .shoppingBasketArticlePut {
       color: rgb(161, 159, 159);
       font-size: 15px;
     }
 
-    .ShoppingBasketArticleContinue {
+    .shoppingBasketArticleContinue {
       width: 200px;
       height: 50px;
       border: 1px solid lightgray;
@@ -145,12 +153,12 @@
     }
   }
 
-  .ShoppingProduct {
+  .shoppingProduct {
     margin-top: 50px;
     width: 100%;
   }
 
-  .ShoppingProductMenu {
+  .shoppingProductMenu {
     display: flex;
     justify-content: space-around;
     padding-top: 25px;
@@ -160,66 +168,71 @@
     font-size: 16px;
     font-weight: bold;
 
-    .ShoppingProductMenuInfo {
+    .shoppingProductMenuInfo {
       width: 40%;
       text-align: center;
     }
 
-    .ShoppingProductMenuOpt {
+    .shoppingProductMenuOpt {
       width: 20%;
     }
 
-    .ShoppingProductMenuPrice {
+    .shoppingProductMenuPrice {
       width: 10%;
     }
 
-    .ShoppingProductMenuDelivery {
+    .shoppingProductMenuDelivery {
       width: 10%;
     }
 
-    .ShoppingProductMenuInfo,
-    .ShoppingProductMenuOpt,
-    .ShoppingProductMenuPrice,
-    .ShoppingProductMenuDelivery {
+    .shoppingProductMenuInfo,
+    .shoppingProductMenuOpt,
+    .shoppingProductMenuPrice,
+    .shoppingProductMenuDelivery {
       text-align: center;
     }
   }
 
-  .ShoppingProductList {
+  .shoppingProductList {
     display: flex;
     height: 130px;
     border-bottom: 1px solid lightgray;
 
-    .ShoppingProductListName {
+    .shoppingProductListName {
       display: flex;
       width: 45%;
       padding-top: 20px;
       padding-left: 30px;
       border-right: 1px solid lightgray;
 
-      .ShoppingProductListNameImg {
+      .shoppingProductListNameImg {
         width: 100px;
         height: 100px;
       }
 
-      .ShoppingProductListNameItem {
+      .shoppingProductListNameItem {
         margin-bottom: 10px;
+        margin-right: 40px;
       }
 
-      .ShoppingProductListNameItem,
-      .ShoppingProductListNamePrice {
+      .shoppingProductListNamePrice {
+        font-size: 14px;
+      }
+
+      .shoppingProductListNameItem,
+      .shoppingProductListNamePrice {
         padding-left: 10px;
         font-weight: bold;
       }
     }
 
-    .ShoppingProductListOption {
+    .shoppingProductListOption {
       width: 25%;
       padding-top: 20px;
       padding-left: 20px;
       border-right: 1px solid lightgray;
 
-      .ShoppingProductListOptionSize {
+      .shoppingProductListOptionSize {
         width: 240px;
         padding-bottom: 10px;
         border-bottom: 1px solid lightgray;
@@ -227,7 +240,7 @@
       }
     }
 
-    .ShoppingProductListPrice {
+    .shoppingProductListPrice {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -236,46 +249,108 @@
       padding-top: 20px, 0;
       border-right: 1px solid lightgray;
 
-      .ShoppingProductListPriceIndividual {
+      .shoppingProductListPriceIndividual {
         font-weight: bolder;
+        font-size: 15px;
       }
 
-      .ShoppingProductListPriceOrder {
-        width: 80px;
+      .shoppingProductListPriceOrder {
+        width: 60px;
         height: 30px;
         margin-top: 10px;
         border: 0;
         border-radius: 5px;
         color: white;
         background-color: #00c63a;
+        font-size: 12px;
+        font-weight: bold;
       }
     }
 
-    .ShoppingProductListDelivery {
+    .shoppingProductListDelivery {
       display: flex;
       justify-content: center;
       align-items: center;
       width: 15%;
       padding-top: 20px 0;
 
-      .ShoppingProductListDeliveryMoney {
+      .shoppingProductListDeliveryMoney {
         text-align: center;
+        font-size: 15px;
       }
     }
   }
-  .ShoppingProductListTotal {
+  .shoppingProductListTotal {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
+    height: 120px;
+    margin: 50px 0;
+    border-top: 1px solid #9ca0aa;
+    border-bottom: 1px solid #9ca0aa;
 
-    .ShoppingProductListTotalLeft {
+    .shoppingProductListTotalLeft {
       display: flex;
+      justify-content: center;
+      align-items: center;
       width: 50%;
+      margin: 20px 0;
+      border-right: 1px solid lightgray;
+
+      .shoppingProductListTotalLeftL {
+        margin-right: 10px;
+      }
     }
 
-    .ShoppingProductListTotal {
+    .shoppingProductListTotalRight {
       width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .shoppingProductListTotalRightHead {
+        display: flex;
+        align-items: center;
+        height: 50px;
+
+        .shoppingProductListTotalPrice {
+          font-size: 19px;
+          margin-right: 10px;
+          padding-top: 2px;
+        }
+
+        .shoppingProductListTotalPriceInt {
+          font-size: 24px;
+          font-weight: bold;
+          color: #00c63a;
+        }
+      }
     }
+  }
+}
+
+.shoppingProductButton {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+
+  .shoppingProductButtonL {
+    margin-right: 10px;
+
+    .shoppingProductButtonLeft {
+      width: 200px;
+      height: 60px;
+      font-size: 17px;
+      background-color: white;
+      border: 1px solid lightgray;
+    }
+  }
+
+  .shoppingProductButtonRight {
+    width: 200px;
+    height: 60px;
+    border: none;
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+    background-color: #00c63a;
   }
 }

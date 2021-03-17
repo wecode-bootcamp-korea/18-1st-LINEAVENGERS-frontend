@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+// import MyPageNone from "./MyPageNone";
+import MyPageProduct from "./MyPageProduct";
 import "./MyPage.scss";
 import { FiSettings } from "react-icons/fi";
-import { RiAlarmWarningLine, RiErrorWarningLine } from "react-icons/ri";
+import { RiAlarmWarningLine } from "react-icons/ri";
 import {
   AiOutlineCreditCard,
   AiFillLock,
@@ -13,82 +15,121 @@ import { BsPerson } from "react-icons/bs";
 import card from "./card.png";
 
 export class MyPage extends Component {
+  constructor() {
+    super();
+    this.state = {
+      ProductList: [],
+    };
+  }
+
+  componentDidMount() {
+    fetch("/Data/MyPageProduct.json")
+      .then(res => res.json())
+      .then(res => this.setState({ ProductList: res }));
+  }
+
   render() {
     return (
-      <div className="MyPage">
-        <nav className="MyPageNav">
-          <div className="MyPageNavTop">
-            <div className="MyPageNavTopLeft">
-              <span class="MyPageNavTopLeftLine">Line</span>
+      <div className="myPage">
+        <nav className="myPageNav">
+          <div className="myPageNavTop">
+            <div className="myPageNavTopLeft">
+              <span class="myPageNavTopLeftLine">Line</span>
               <span>Avengers Shopping</span>
             </div>
-            <div className="MyPageNavTopRight">
-              <div className="MyPageNavTopRightBasket">
+            <div className="myPageNavTopRight">
+              <div className="myPageNavTopRightBasket">
                 <Link to="/ShoppingBasket">장바구니</Link>
               </div>
             </div>
           </div>
-          <div className="MyPageNavBottom">
-            <div className="MyPageNavBottomLeft">
+          <div className="myPageNavBottom">
+            <div className="myPageNavBottomLeft">
               <div>Line Pay</div>
             </div>
-            <div className="MyPageNavBottomRight">
-              <div className="MyPageNavBottomRightAccount">결제내역</div>
-              <div className="MyPageNavBottomRightPoint">포인트</div>
-              <div className="MyPageNavBottomRightSend">송금</div>
-              <div className="MyPageNavBottomRightGift">선물함</div>
-              <div className="MyPageNavBottomRightBenefit">혜택 * 쿠폰</div>
-              <div className="MyPageNavBottomRightAsk">문의 * 리뷰</div>
+            <div className="myPageNavBottomRight">
+              <div className="myPageNavBottomRightAccount">결제내역</div>
+              <div className="myPageNavBottomRightPoint">포인트</div>
+              <div className="myPageNavBottomRightSend">송금</div>
+              <div className="myPageNavBottomRightGift">선물함</div>
+              <div className="myPageNavBottomRightBenefit">혜택 * 쿠폰</div>
+              <div className="myPageNavBottomRightAsk">문의 * 리뷰</div>
             </div>
           </div>
         </nav>
-        <main className="MyPageMain">
-          <aside className="MyPageSide">
-            <section className="MyPageUser">
-              <div className="MyPageUserProfile">
+        <main className="myPageMain">
+          <aside className="myPageSide">
+            <section className="myPageUser">
+              <div className="myPageUserProfile">
                 <BsPerson size="60" color="lightgray" />
               </div>
-              <div className="MyPageUserName">nickname</div>
+              <div className="myPageUserName">nickname</div>
             </section>
-            <seciton className="MyPageSetting">
-              <div className="MyPageSettingNormal">
+            <seciton className="myPageSetting">
+              <div className="myPageSettingNormal">
                 <FiSettings />
                 &nbsp;&nbsp;&nbsp;기본설정
               </div>
-              <div className="MyPageSettingAlarm">
+              <div className="myPageSettingAlarm">
                 <RiAlarmWarningLine />
                 &nbsp;&nbsp;&nbsp;알림수신설정
               </div>
-              <div className="MyPageSettingCard">
+              <div className="myPageSettingCard">
                 <AiOutlineCreditCard />
                 &nbsp;&nbsp;&nbsp;카드/계좌관리
               </div>
-              <div className="MyPageSettingSecurity">
+              <div className="myPageSettingSecurity">
                 <AiFillLock />
                 &nbsp;&nbsp;&nbsp;보안/인증
               </div>
-              <div className="MyPageSettingSending">
+              <div className="myPageSettingSending">
                 <HiOutlineLocationMarker />
                 &nbsp;&nbsp;&nbsp;배송지 관리
               </div>
-              <div className="MyPageSettingAccount">
+              <div className="myPageSettingAccount">
                 <AiOutlineFieldTime />
                 &nbsp;&nbsp;&nbsp;정기/예약결제
               </div>
             </seciton>
-            <div className="CardCompany">제휴사</div>
-            <section className="MyPageCard">
-              <img class="MyPageCardImage" src={card} alt="Card" />
+            <div className="myPageCardCompany">제휴사</div>
+            <section className="myPageCard">
+              <img class="myPageCardImage" src={card} alt="Card" />
             </section>
           </aside>
-          <article className="MyPageArticle">
-            <div class="MyPageArticleWarning">
-              <RiErrorWarningLine size="100" opacity="0.1" />
+          {/* <article className="myPageProduct">
+            <div className="myPageProductList">
+              <div className="myPageProductListImg">이미지</div>
+              <div className="myPageProductListAll">
+                <div className="myPageProductListName">이름</div>
+                <div className="myPageProductListPrice">가격</div>
+                <div className="myPageProductListSure">구매확정</div>
+                <div className="myPageProductListDetail">
+                  <div className="myPageProductListDetailTop">
+                    구매가 완료되었습니다. 이용해주셔서 감사합니다.
+                  </div>
+                  <div className="myPageProductListDetailBottom">
+                    구매확정 이후 상품의 이용방법, 반품 등에 대한 문의는
+                    판매자에게 문의해주세요.
+                  </div>
+                </div>
+              </div>
+              <div className="myPageProductListReview">
+                <button className="myPageProductListReviewWrite">
+                  리뷰쓰기
+                </button>
+              </div>
             </div>
-            <div class="MyPageArticleNo">내역이 없습니다.</div>
-            <div class="MyPageArticleContent">
-              라인 어벤져스에서 결제한 모든 내역을 한번에 확인하실 수 있습니다.
-            </div>
+          </article> */}
+          <article className="myPageProduct">
+            {this.state.ProductList.map(product => {
+              return (
+                <MyPageProduct
+                  img={product.img}
+                  name={product.name}
+                  price={product.price}
+                />
+              );
+            })}
           </article>
         </main>
       </div>
