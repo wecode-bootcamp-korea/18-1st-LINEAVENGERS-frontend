@@ -10,7 +10,7 @@ export class Footer extends Component {
             <div className="CONTACT US">
               <p className="footerTitle">CONTACT US</p>
               <p>
-                1566-1765
+                1566-1234
                 <br />
                 상담가능시간 : 평일 10:00 - 19:00
                 <br />

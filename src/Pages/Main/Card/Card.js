@@ -3,11 +3,12 @@ import "./Card.scss";
 
 export class Card extends Component {
   render() {
+    const { img, price, productName } = this.props;
     return (
       <div className="cardContainer">
-        <img className="productImg" src={this.props.img} alt="Product Img" />
-        <p className="price">{this.props.price}원</p>
-        <p>{this.props.productName}</p>
+        <img className="productImg" src={img} alt="Product Img" />
+        <p className="price">{price}원</p>
+        <p>{productName}</p>
       </div>
     );
   }

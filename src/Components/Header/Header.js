@@ -6,9 +6,9 @@ export class Header extends Component {
     return (
       <header className="header">
         <nav>
-          <div className="myContainer">
-            <div className="my">
-              <div className="home">
+          <div className="homeAndMyInfoContainer">
+            <div className="homeAndMyInfo">
+              <div className="goToHome">
                 <span>NAVER</span>
               </div>
               <div className="myInfo">
@@ -20,7 +20,7 @@ export class Header extends Component {
           </div>
           <div className="logoAndSearchContainer">
             <div className="logoAndSearch">
-              <div className="xxx"></div>
+              <div className="forAlign"></div>
               <img
                 className="logo"
                 alt="Line Avengers Logo"

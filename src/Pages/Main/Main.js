@@ -13,9 +13,7 @@ export class Main extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/Data/ProductsData.json", {
-      method: "GET",
-    })
+    fetch("/Data/ProductsData.json")
       .then(res => res.json())
       .then(data => {
         this.setState({ products: data });
@@ -23,12 +21,12 @@ export class Main extends Component {
   }
 
   render() {
-    console.log(this.state.products);
     return (
       <div className="main">
         <Header />
         <main className="mainContainer">
           <div className="bigSlide">
+            {/* <img alt="slide imgs" src="../Images/Line02.jpeg" /> */}
             <div className="copy">
               <p className="bigCopy">
                 귀여운 조명이
