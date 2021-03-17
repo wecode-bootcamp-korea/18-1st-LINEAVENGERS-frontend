@@ -21,7 +21,7 @@ export class Header extends Component {
           </div>
           <div className="logoAndSearchContainer">
             <div className="logoAndSearch">
-              <div className="xxx"></div>
+              <div className="forAlign"></div>
               <img
                 className="logo"
                 alt="Line Avengers Logo"
