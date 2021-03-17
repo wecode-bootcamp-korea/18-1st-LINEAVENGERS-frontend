@@ -24,7 +24,7 @@
     }
   }
 
-  .categoryMenu:hover .subMenuContainer {
+  .categoryMenu:hover ~ .subMenuContainer {
     display: block;
   }
 }
