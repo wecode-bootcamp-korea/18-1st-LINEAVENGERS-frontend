@@ -10,18 +10,18 @@ class CategoryList extends Component {
           <span>캐릭터</span>
         </div>
         <div className="subMenuContainer">
-          <a className="subMenu" href="#none">
+          <Link to="#none" className="subMenu">
             브라운 프렌즈
-          </a>
-          <a className="subMenu" href="#none">
+          </Link>
+          <Link to="#none" className="subMenu">
             BT21
-          </a>
-          <a className="subMenu" href="#none">
+          </Link>
+          <Link to="#none" className="subMenu">
             브롤스타즈
-          </a>
-          <a className="subMenu" href="#none">
+          </Link>
+          <Link to="#none" className="subMenu">
             WDZY
-          </a>
+          </Link>
         </div>
       </div>
     );
