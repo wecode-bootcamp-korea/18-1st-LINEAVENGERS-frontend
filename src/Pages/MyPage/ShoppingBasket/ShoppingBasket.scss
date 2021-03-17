@@ -229,6 +229,7 @@
 
     .ShoppingProductListPrice {
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       width: 15%;
@@ -238,15 +239,43 @@
       .ShoppingProductListPriceIndividual {
         font-weight: bolder;
       }
+
+      .ShoppingProductListPriceOrder {
+        width: 80px;
+        height: 30px;
+        margin-top: 10px;
+        border: 0;
+        border-radius: 5px;
+        color: white;
+        background-color: #00c63a;
+      }
     }
 
     .ShoppingProductListDelivery {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 15%;
-      padding-top: 20px;
+      padding-top: 20px 0;
 
       .ShoppingProductListDeliveryMoney {
         text-align: center;
       }
+    }
+  }
+  .ShoppingProductListTotal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+
+    .ShoppingProductListTotalLeft {
+      display: flex;
+      width: 50%;
+    }
+
+    .ShoppingProductListTotal {
+      width: 50%;
     }
   }
 }

@@ -27,6 +27,7 @@ class ShoppingProductList extends React.Component {
             <div className="ShoppingProductListPriceIndividual">
               {totalPrice}원
             </div>
+            <button className="ShoppingProductListPriceOrder">주문하기</button>
           </div>
           <div className="ShoppingProductListDelivery">
             <div className="ShoppingProductListDeliveryMoney">
