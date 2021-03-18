@@ -23,12 +23,16 @@ export class Main extends Component {
   }
 
   render() {
-    console.log(this.state.products);
     return (
       <div className="main">
         <Header />
         <main className="mainContainer">
           <div className="bigSlide">
+            {/* <img
+              className="bigSlideImg"
+              alt="big slide img"
+              src="../Images/Back06.png"
+            /> */}
             <div className="copy">
               <p className="bigCopy">
                 귀여운 조명이
@@ -39,7 +43,7 @@ export class Main extends Component {
             </div>
           </div>
           <article className="hotCategory">
-            <p className="title">카테고리 바로가기</p>
+            <p className="title">새로 나왔어요</p>
             <CardList products={this.state.products} />
           </article>
           <article className="products">

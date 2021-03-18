@@ -1,0 +1,186 @@
+[
+  {
+    "id": 1,
+    "menu": "캐릭터",
+    "subMenuList": [
+      {
+        "subId": 1,
+        "subMenu": "브라운 프렌즈"
+      },
+      {
+        "subId": 2,
+        "subMenu": "BT21"
+      },
+      {
+        "subId": 3,
+        "subMenu": "브롤스타즈"
+      },
+      {
+        "subId": 4,
+        "subMenu": "WDZY"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "menu": "NEW",
+    "subMenuList": [
+      {
+        "subId": 1,
+        "subMenu": "브라운 & 샐리"
+      },
+      {
+        "subId": 2,
+        "subMenu": "BT21 Special"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "menu": "선물추천",
+    "subMenuList": [
+      {
+        "subId": 1,
+        "subMenu": "캔들"
+      },
+      {
+        "subId": 2,
+        "subMenu": "디퓨저"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "menu": "THEME",
+    "subMenuList": [
+      {
+        "subId": 1,
+        "subMenu": "브라운 프렌즈"
+      },
+      {
+        "subId": 2,
+        "subMenu": "샐리 프렌즈"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "menu": "BT21 BABY",
+    "subMenuList": [
+      {
+        "subId": 1,
+        "subMenu": "문구"
+      },
+      {
+        "subId": 2,
+        "subMenu": "리빙"
+      },
+      {
+        "subId": 3,
+        "subMenu": "디지털"
+      },
+      {
+        "subId": 4,
+        "subMenu": "패션잡화"
+      },
+      {
+        "subId": 5,
+        "subMenu": "인형&쿠션"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "menu": "SALE",
+    "subMenuList": []
+  },
+  {
+    "id": 7,
+    "menu": "토이",
+    "subMenuList": [
+      {
+        "subId": 1,
+        "subMenu": "대형인형"
+      },
+      {
+        "subId": 2,
+        "subMenu": "미니인형"
+      },
+      {
+        "subId": 3,
+        "subMenu": "쿠션"
+      },
+      {
+        "subId": 4,
+        "subMenu": "피규어"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "menu": "리빙",
+    "subMenuList": [
+      {
+        "subId": 1,
+        "subMenu": "패브릭 / 홈데코"
+      },
+      {
+        "subId": 2,
+        "subMenu": "식기 / 텀블러"
+      },
+      {
+        "subId": 3,
+        "subMenu": "주방 / 욕실"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "menu": "디지털",
+    "subMenuList": [
+      {
+        "subId": 1,
+        "subMenu": "폰케이스"
+      },
+      {
+        "subId": 2,
+        "subMenu": "주변기기"
+      },
+      {
+        "subId": 3,
+        "subMenu": "스마트기기"
+      },
+      {
+        "subId": 4,
+        "subMenu": "디지털케이스"
+      }
+    ]
+  },
+
+  {
+    "id": 10,
+    "menu": "디자인문구",
+    "subMenuList": [
+      {
+        "subId": 1,
+        "subMenu": "다이어리 / 플래너"
+      },
+      {
+        "subId": 2,
+        "subMenu": "노트 / 메모지"
+      },
+      {
+        "subId": 3,
+        "subMenu": "필기류 / 케이스"
+      },
+      {
+        "subId": 4,
+        "subMenu": "데코레이션"
+      },
+      {
+        "subId": 5,
+        "subMenu": "스티커 시리즈"
+      }
+    ]
+  }
+]

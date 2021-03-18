@@ -1,31 +1,34 @@
 import React, { Component } from "react";
 // import { Link } from "react-router-dom";
+import CategoryList from "./CategoryList/CategoryList";
 import "./Category.scss";
 
-class CategoryList extends Component {
+class Category extends Component {
+  constructor() {
+    super();
+    this.state = {
+      categoryList: [],
+    };
+  }
+
+  componentDidMount() {
+    fetch("http://localhost:3000/Data/CategoryData.json", {
+      method: "GET",
+    })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({ categoryList: data });
+      });
+  }
+
   render() {
+    console.log(this.state.categoryList);
     return (
       <div className="category">
-        <div className="categoryMenu">
-          <span>캐릭터</span>
-        </div>
-        <div className="subMenuContainer">
-          <Link to="#none" className="subMenu">
-            브라운 프렌즈
-          </Link>
-          <Link to="#none" className="subMenu">
-            BT21
-          </Link>
-          <Link to="#none" className="subMenu">
-            브롤스타즈
-          </Link>
-          <Link to="#none" className="subMenu">
-            WDZY
-          </Link>
-        </div>
+        <CategoryList itsCategoryList={this.state.categoryList} />
       </div>
     );
   }
 }
 
-export default CategoryList;
+export default Category;
