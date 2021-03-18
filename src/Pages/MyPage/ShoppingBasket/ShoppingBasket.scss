@@ -205,6 +205,11 @@
       padding-left: 30px;
       border-right: 1px solid lightgray;
 
+      .shoppingProductListBox {
+        padding-top: 40px;
+        margin-right: 20px;
+      }
+
       .shoppingProductListNameImg {
         width: 100px;
         height: 100px;
@@ -217,6 +222,13 @@
 
       .shoppingProductListNamePrice {
         font-size: 14px;
+      }
+
+      .shoppingProductListNameItemCheck {
+        position: absolute;
+        right: 775px;
+        color: rgb(167, 164, 164);
+        cursor: pointer;
       }
 
       .shoppingProductListNameItem,
@@ -296,10 +308,50 @@
       border-right: 1px solid lightgray;
 
       .shoppingProductListTotalLeftL {
-        margin-right: 10px;
+        display: flex;
+        padding-right: 20px;
+        font-size: 13px;
+
+        .shoppingProductListTotalLeftLL {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .shoppingProductListTotalLeftLTotal {
+          padding-top: 2px;
+          margin-bottom: 10px;
+        }
+
+        .shoppingProductListTotalLeftLPrice {
+          padding-left: 2px;
+          font-size: 23px;
+        }
+
+        .shoppingProductListTotalLeftLPlus {
+          padding: 15px 0 15px 17px;
+        }
+      }
+
+      .shoppingProductListTotalLeftR {
+        display: flex;
+        flex-direction: column;
+
+        .shoppingProductListTotalLeftRDelivery {
+          text-align: center;
+          font-size: 13px;
+        }
+
+        .shoppingProductListTotalLeftRPrice {
+          padding-top: 2px;
+          font-size: 23px;
+        }
+      }
+
+      .shoppingProductListTotalLeftRDelivery {
+        margin-bottom: 8px;
       }
     }
-
     .shoppingProductListTotalRight {
       width: 50%;
       display: flex;

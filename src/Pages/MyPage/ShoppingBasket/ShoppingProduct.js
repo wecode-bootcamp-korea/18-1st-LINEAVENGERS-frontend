@@ -1,18 +1,37 @@
 import React from "react";
 import ShoppingProductList from "./ShoppingProductList";
+import { AiOutlinePlus } from "react-icons/ai";
 
 class ShoppingProduct extends React.Component {
   constructor() {
     super();
     this.state = {
       ProductList: [],
+      TotalPrice: 0,
+      DeliveryPrice: 0,
     };
   }
 
   componentDidMount() {
     fetch("/Data/ShoppingBasket.json")
       .then(res => res.json())
-      .then(res => this.setState({ ProductList: res }));
+      .then(res => {
+        let totalSum = 0;
+        let delivery = 0;
+        res.forEach(data => (totalSum += data.totalPrice));
+        const result = res.map(el => {
+          if (el.deliveryPrice === "무료") {
+            el.deliveryPrice = 0;
+          }
+          return el.deliveryPrice;
+        });
+        delivery = result.reduce((acc, cur) => acc + cur);
+        this.setState({
+          ProductList: res,
+          TotalPrice: totalSum,
+          DeliveryPrice: delivery,
+        });
+      });
   }
 
   render() {
@@ -39,18 +58,33 @@ class ShoppingProduct extends React.Component {
         <div className="shoppingProductListTotal">
           <div className="shoppingProductListTotalLeft">
             <div className="shoppingProductListTotalLeftL">
-              <div>총 상품금액</div>
-              <div>30000원</div>
+              <div className="shoppingProductListTotalLeftLL">
+                <div className="shoppingProductListTotalLeftLTotal">
+                  총 상품금액
+                </div>
+                <div className="shoppingProductListTotalLeftLPrice">
+                  {this.state.TotalPrice}원
+                </div>
+              </div>
+              <div className="shoppingProductListTotalLeftLPlus">
+                <AiOutlinePlus size="20" color="gray" />
+              </div>
             </div>
             <div className="shoppingProductListTotalLeftR">
-              <div>배송비</div>
-              <div>3000원</div>
+              <div className="shoppingProductListTotalLeftRDelivery">
+                배송비
+              </div>
+              <div className="shoppingProductListTotalLeftRPrice">
+                {this.state.DeliveryPrice}원
+              </div>
             </div>
           </div>
           <div className="shoppingProductListTotalRight">
             <div className="shoppingProductListTotalRightHead">
               <div className="shoppingProductListTotalPrice">총 주문금액</div>
-              <div className="shoppingProductListTotalPriceInt">33000원</div>
+              <div className="shoppingProductListTotalPriceInt">
+                {this.state.TotalPrice + this.state.DeliveryPrice}원
+              </div>
             </div>
           </div>
         </div>
