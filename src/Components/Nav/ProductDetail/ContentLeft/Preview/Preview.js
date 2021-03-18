@@ -1,0 +1,46 @@
+import React, { Component } from "react";
+import { v4 as uuid } from "uuid";
+import "./Preview.scss";
+
+class Preview extends Component {
+  render() {
+    const { reviews, imgUrls, slideIndex, handlePreview } = this.props;
+    let avgGrade = 0;
+    reviews.forEach(review => {
+      avgGrade += review.grade;
+    });
+    avgGrade = avgGrade / reviews.length;
+    return (
+      <div className="preview">
+        <ul className="slide-preview">
+          {imgUrls.map((url, index) => {
+            return (
+              <li
+                key={uuid()}
+                className={`preview-list ${
+                  index === slideIndex ? "active" : ""
+                }`}
+                onClick={e => {
+                  handlePreview(e, index);
+                }}
+              >
+                <img src={url} alt="상품 미리보기" />
+              </li>
+            );
+          })}
+        </ul>
+        <div className="review">
+          <span>
+            리뷰수<strong>{reviews.length}</strong>
+          </span>
+          <span className="review-grade">
+            사용자 총 평점<strong>{avgGrade.toFixed(1)}</strong>
+            <strong>5</strong>
+          </span>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default Preview;

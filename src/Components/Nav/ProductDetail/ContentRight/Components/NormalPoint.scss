@@ -1,0 +1,21 @@
+.normal-point {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding-left: 20px;
+  margin-top: 3px;
+  font-size: 12px;
+  color: #999;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 0;
+    width: 6px;
+    height: 6px;
+    border-left: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+  }
+}

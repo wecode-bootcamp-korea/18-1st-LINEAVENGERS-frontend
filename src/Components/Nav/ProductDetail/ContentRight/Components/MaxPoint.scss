@@ -1,0 +1,22 @@
+.max-point {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 700;
+  .max-price {
+    .max-value {
+      em {
+        font-weight: 400;
+      }
+    }
+    button {
+      padding: 2px 5px;
+      margin-left: 5px;
+      border: none;
+      background: transparent;
+      border: 1px solid #d7d7d7;
+      font-size: 11px;
+    }
+  }
+}

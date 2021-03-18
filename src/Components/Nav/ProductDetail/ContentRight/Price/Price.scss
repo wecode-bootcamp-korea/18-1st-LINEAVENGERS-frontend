@@ -1,0 +1,42 @@
+.show-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 13px;
+
+  .price-title {
+    font-weight: 700;
+
+    button {
+      border: 1px solid #d7d7d7;
+      background: #fff;
+      font-size: 11px;
+      padding: 2px 5px;
+      margin-left: 5px;
+    }
+  }
+
+  .price-count {
+    display: flex;
+    align-items: center;
+    color: #999999;
+
+    strong {
+      display: flex;
+      align-items: center;
+      color: #6b90dc;
+      font-size: 18px;
+      font-weight: 700;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 1px;
+        height: 15px;
+        margin: 0 10px;
+        background: #d3d6dc;
+      }
+    }
+  }
+}

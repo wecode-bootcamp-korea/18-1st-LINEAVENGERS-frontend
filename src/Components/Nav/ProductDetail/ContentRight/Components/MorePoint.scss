@@ -1,0 +1,155 @@
+.more-point {
+  padding: 14px 16px;
+  margin-top: 14px;
+  border: 1px solid #dee0e2;
+  background: #f7f8fa;
+  font-size: 13px;
+
+  > div {
+    margin-top: 7px;
+  }
+
+  .more-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+
+    .total-title {
+      em {
+        color: #bd383f;
+        font-style: italic;
+      }
+    }
+  }
+
+  .more-membership {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+
+    .membership-left {
+      display: flex;
+      align-items: center;
+
+      > span {
+        position: relative;
+        padding: 1px 4px;
+
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 50%;
+        }
+
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          left: 0;
+          top: 50%;
+          width: 100%;
+          height: 50%;
+        }
+        em {
+          position: relative;
+          color: #fff;
+          z-index: 1;
+        }
+      }
+      .left-NLogo {
+        &::before {
+          background: #44e568;
+        }
+
+        &::after {
+          background: #3db866;
+        }
+      }
+
+      .left-Plus {
+        &::before {
+          background: #1fbbf2;
+        }
+
+        &::after {
+          background: #1e9bf5;
+        }
+      }
+
+      .left-membership {
+        &::before {
+          background: #4f90ee;
+        }
+
+        &::after {
+          height: 50%;
+          background: #505fdc;
+        }
+      }
+
+      .left-info {
+        position: relative;
+        color: #acadad;
+        text-decoration: underline;
+        &::before {
+          display: none;
+        }
+        &::after {
+          content: ">";
+          left: auto;
+          right: -5px;
+          width: auto;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+
+  .more-point-pay {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+
+    .point-pay-left {
+      display: flex;
+
+      > span {
+        display: inline-flex;
+        align-items: center;
+        padding: 1px 4px;
+        em {
+          color: #fff;
+        }
+      }
+      .left-NLogo {
+        background: #38c243;
+      }
+
+      .left-Percent {
+        border: 1px solid #38c243;
+        em {
+          color: #38c243;
+        }
+      }
+
+      .left-info {
+        position: relative;
+        color: #acadad;
+        text-decoration: underline;
+        &::after {
+          content: ">";
+          position: absolute;
+          top: 50%;
+          right: -5px;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+}
