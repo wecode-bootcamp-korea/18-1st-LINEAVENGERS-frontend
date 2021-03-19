@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Header.scss";
+import Category from "./Category/Category";
 
 export class Header extends Component {
   render() {
@@ -24,30 +25,19 @@ export class Header extends Component {
               <img
                 className="logo"
                 alt="Line Avengers Logo"
-                src="../Images/Logo/white.png"
+                src="../Images/Logo/black.png"
               />
               <div className="searchBox">
                 <input className="search" type="text" placeholder="검색" />
                 <img
                   className="searchImg"
-                  alt="searxh"
+                  alt="search"
                   src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png"
                 />
               </div>
             </div>
           </div>
-          <div className="category">
-            <span>캐릭터</span>
-            <span>NEW</span>
-            <span>THEME</span>
-            <span>BT21 BABY</span>
-            <span>SALE</span>
-            <span>토이</span>
-            <span>디자인문구</span>
-            <span>패션의류</span>
-            <span>패션잡화</span>
-            <span>리빙</span>
-          </div>
+          <Category />
         </nav>
       </header>
     );

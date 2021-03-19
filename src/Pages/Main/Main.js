@@ -13,31 +13,50 @@ export class Main extends Component {
   }
 
   componentDidMount() {
-    fetch("/Data/ProductsData.json")
+    fetch("http://localhost:3000/Data/ProductsData.json", {
+      method: "GET",
+    })
       .then(res => res.json())
       .then(data => {
         this.setState({ products: data });
       });
   }
 
+  handelSlide = () => {};
+
   render() {
     return (
       <div className="main">
-        <Header />
         <main className="mainContainer">
-          <div className="bigSlide">
-            {/* <img alt="slide imgs" src="../Images/Line02.jpeg" /> */}
-            <div className="copy">
-              <p className="bigCopy">
-                귀여운 조명이
-                <br />
-                나를 감싸네
-              </p>
-              <p className="smallCopy">BT21 BABY 포터블 무드 램프</p>
+          <div className="banner">
+            <Header />
+            <div className="arrowContainer">
+              <div className="leftArrow" onClick={this.handleSlide}>
+                <img
+                  className="arrows"
+                  alt="previous product"
+                  src="../Images/Icons/left_arrow.png"
+                />
+              </div>
+              <div className="rightArrow">
+                <img
+                  className="arrows"
+                  alt="next product"
+                  src="../Images/Icons/right_arrow.png"
+                />
+              </div>
+              <div className="copyContainer">
+                <p className="bigCopy">
+                  귀여운 조명이
+                  <br />
+                  나를 감싸네
+                </p>
+                <p className="smallCopy">BT21 BABY 포터블 무드 램프</p>
+              </div>
             </div>
           </div>
           <article className="hotCategory">
-            <p className="title">카테고리 바로가기</p>
+            <p className="title">새로 나왔어요</p>
             <CardList products={this.state.products} />
           </article>
           <article className="products">
