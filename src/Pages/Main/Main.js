@@ -22,24 +22,37 @@ export class Main extends Component {
       });
   }
 
+  handelSlide = () => {};
+
   render() {
     return (
       <div className="main">
-        <Header />
         <main className="mainContainer">
-          <div className="bigSlide">
-            {/* <img
-              className="bigSlideImg"
-              alt="big slide img"
-              src="../Images/Back06.png"
-            /> */}
-            <div className="copy">
-              <p className="bigCopy">
-                귀여운 조명이
-                <br />
-                나를 감싸네
-              </p>
-              <p className="smallCopy">BT21 BABY 포터블 무드 램프</p>
+          <div className="banner">
+            <Header />
+            <div className="arrowContainer">
+              <div className="leftArrow" onClick={this.handleSlide}>
+                <img
+                  className="arrows"
+                  alt="previous product"
+                  src="../Images/Icons/left_arrow.png"
+                />
+              </div>
+              <div className="rightArrow">
+                <img
+                  className="arrows"
+                  alt="next product"
+                  src="../Images/Icons/right_arrow.png"
+                />
+              </div>
+              <div className="copyContainer">
+                <p className="bigCopy">
+                  귀여운 조명이
+                  <br />
+                  나를 감싸네
+                </p>
+                <p className="smallCopy">BT21 BABY 포터블 무드 램프</p>
+              </div>
             </div>
           </div>
           <article className="hotCategory">

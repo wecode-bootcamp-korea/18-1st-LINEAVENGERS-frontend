@@ -25,7 +25,7 @@ export class Header extends Component {
               <img
                 className="logo"
                 alt="Line Avengers Logo"
-                src="../Images/Logo/white.png"
+                src="../Images/Logo/black.png"
               />
               <div className="searchBox">
                 <input className="search" type="text" placeholder="검색" />

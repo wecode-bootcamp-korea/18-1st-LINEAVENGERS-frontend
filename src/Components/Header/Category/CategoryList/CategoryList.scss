@@ -1,32 +1,32 @@
 .categoryList {
-  // border: 1px solid red;
-  font-size: 14px;
-
   display: flex;
   justify-content: space-between;
   align-content: center;
+  font-size: 14px;
 
   .categoryMenu {
-    width: 80px;
-    // border: 1px solid black;
+    position: relative;
     font-size: 15px;
 
     .subMenuList {
       display: none;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.17);
-      width: 120px;
+      position: absolute;
+      left: -60px;
+      width: 160px;
       margin: 10px auto;
-      padding: 5px;
-      font-size: 11px;
-      text-align: center;
+      padding: 10px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.17);
       background-color: white;
       border-radius: 5%;
+      z-index: 100;
+      font-size: 16px;
+      text-align: center;
 
       .subMenu {
         display: block;
         margin: 10px;
         text-decoration: none;
-        color: #4abf6a;
+        color: black;
       }
     }
   }

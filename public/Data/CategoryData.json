@@ -24,30 +24,12 @@
   {
     "id": 2,
     "menu": "NEW",
-    "subMenuList": [
-      {
-        "subId": 1,
-        "subMenu": "브라운 & 샐리"
-      },
-      {
-        "subId": 2,
-        "subMenu": "BT21 Special"
-      }
-    ]
+    "subMenuList": []
   },
   {
     "id": 3,
     "menu": "선물추천",
-    "subMenuList": [
-      {
-        "subId": 1,
-        "subMenu": "캔들"
-      },
-      {
-        "subId": 2,
-        "subMenu": "디퓨저"
-      }
-    ]
+    "subMenuList": []
   },
   {
     "id": 4,
