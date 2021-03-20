@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./ShoppingBasket.scss";
 
-class myPageNav extends React.Component {
+class ShoppingBasketNavTop extends React.Component {
   state = {};
   render() {
     return (
@@ -37,4 +37,4 @@ class myPageNav extends React.Component {
   }
 }
 
-export default myPageNav;
+export default ShoppingBasketNavTop;

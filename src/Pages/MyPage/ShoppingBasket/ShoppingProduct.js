@@ -43,11 +43,11 @@ class ShoppingProduct extends React.Component {
   //     .then(res => console.log(res));
   // }
 
-  // removeProduct = e => {
-  //   this.setState({
-  //     ProductList: this.state.ProductList.filter(el => el.id != e.target.value),
-  //   });
-  // };
+  removeProduct = e => {
+    this.setState({
+      ProductList: this.state.ProductList.filter(el => el.id != e.target.value),
+    });
+  };
 
   render() {
     const deliveryStat = this.state.DeliveryPrice >= 3000 ? 3000 : 0;

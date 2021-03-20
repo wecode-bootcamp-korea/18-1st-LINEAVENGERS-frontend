@@ -17,10 +17,16 @@
       border-bottom: 1px solid rgb(156, 152, 152);
 
       .myPageNavTopLeftLine {
-        margin-right: 20px;
+        margin-right: 10px;
+      }
+
+      .myPageNavTopRightMy,
+      .myPageNavTopRightHeart {
+        margin-right: 10px;
       }
 
       .myPageNavTopRightBasket {
+        margin-left: 10px;
         color: white;
       }
     }
@@ -208,6 +214,43 @@
         height: 30px;
         background-color: white;
         border: 1px solid lightgray;
+      }
+    }
+  }
+
+  .myPageHeartNav {
+    display: flex;
+    justify-content: space-between;
+
+    .myPageHeartNavLeft {
+      display: flex;
+
+      .myPageHeartNavLeftL {
+        padding-right: 10px;
+        font-size: 20px;
+      }
+
+      .myPageHeartNavLeftR {
+        padding-top: 5px;
+        font-size: 15px;
+        color: gray;
+      }
+    }
+
+    .myPageHeartNavRight {
+      display: flex;
+      padding-top: 5px;
+      color: gray;
+      font-size: 15px;
+
+      .myPageHeartNavRightL {
+        padding-right: 10px;
+      }
+
+      .myPageHeartNavRightR {
+        padding-left: 10px;
+        color: rgb(99, 97, 97);
+        font-weight: bold;
       }
     }
   }

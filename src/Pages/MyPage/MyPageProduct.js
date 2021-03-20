@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import Popup from "./Popup";
 import "./MyPage.scss";
 
 class MyPageProduct extends React.Component {
@@ -22,7 +24,9 @@ class MyPageProduct extends React.Component {
           </div>
         </div>
         <div className="myPageProductListReview">
-          <button className="myPageProductListReviewWrite">리뷰쓰기</button>
+          <button className="myPageProductListReviewWrite">
+            <Link to="/Popup">리뷰쓰기</Link>
+          </button>
         </div>
       </div>
     );
