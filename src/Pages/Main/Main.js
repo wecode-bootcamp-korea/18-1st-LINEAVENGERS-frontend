@@ -1,18 +1,29 @@
 import React, { Component } from "react";
+// import ReactDOM from "react-dom";
 import Header from "../../Components/Header/Header";
 import Footer from "../../Components/Footer/Footer";
-import CardList from "./CardList/CardList";
+import ProductList from "./ProductList/ProductList";
 import "./Main.scss";
+import SlickBanner from "./SlickBanner/SlickBanner";
 
 export class Main extends Component {
   constructor() {
     super();
     this.state = {
+      banner: [],
       products: [],
     };
   }
 
   componentDidMount() {
+    fetch("http://localhost:3000/Data/MainBannerData.json", {
+      method: "GET",
+    })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({ banner: data });
+      });
+
     fetch("http://localhost:3000/Data/ProductsData.json", {
       method: "GET",
     })
@@ -22,16 +33,22 @@ export class Main extends Component {
       });
   }
 
-  handelSlide = () => {};
-
   render() {
+    console.log("banner >>>", this.state.banner);
+
     return (
       <div className="main">
         <main className="mainContainer">
-          <div className="banner">
+          <div
+            className="banner"
+            style={{
+              /*JSX에서 인라인 속성으로 style (background-img 주기.*/
+              backgroundImage: `url("https://shop-phinf.pstatic.net/20210201_24/1612164845849t0Vnf_JPEG/main_bn_pc_G.jpg")`,
+            }}
+          >
             <Header />
             <div className="arrowContainer">
-              <div className="leftArrow" onClick={this.handleSlide}>
+              <div className="leftArrow">
                 <img
                   className="arrows"
                   alt="previous product"
@@ -57,12 +74,13 @@ export class Main extends Component {
           </div>
           <article className="hotCategory">
             <p className="title">새로 나왔어요</p>
-            <CardList products={this.state.products} />
+            <ProductList products={this.state.products} />
           </article>
           <article className="products">
             <p className="title">마음껏 둘러보세요</p>
-            <CardList products={this.state.products} />
+            <ProductList products={this.state.products} />
           </article>
+          <SlickBanner itsBanner={this.state.banner} />
         </main>
         <Footer />
       </div>

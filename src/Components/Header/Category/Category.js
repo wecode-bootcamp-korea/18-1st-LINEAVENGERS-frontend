@@ -21,7 +21,6 @@ class Category extends Component {
   }
 
   render() {
-    console.log(this.state.categoryList);
     return (
       <div className="category">
         <CategoryList itsCategoryList={this.state.categoryList} />

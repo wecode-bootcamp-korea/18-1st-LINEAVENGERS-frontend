@@ -1,14 +1,14 @@
 import React, { Component } from "react";
-import Card from "../Card/Card";
-import "./CardList.scss";
+import Product from "./Product/Product";
+import "./ProductList.scss";
 
-export class CardList extends Component {
+export class ProductList extends Component {
   render() {
     return (
-      <div className="cardList">
+      <div className="productList">
         {this.props.products.map(product => {
           return (
-            <Card
+            <Product
               key={product.id}
               id={product.id}
               price={product.price}
@@ -22,4 +22,4 @@ export class CardList extends Component {
   }
 }
 
-export default CardList;
+export default ProductList;

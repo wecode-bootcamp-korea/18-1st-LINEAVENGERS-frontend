@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import "./Card.scss";
+import "./Product.scss";
 
-export class Card extends Component {
+export class Product extends Component {
   render() {
     return (
-      <div className="cardContainer">
+      <div className="productContainer">
         <img className="productImg" src={this.props.img} alt="Product Img" />
         <p className="price">{this.props.price}원</p>
         <p>{this.props.productName}</p>
@@ -13,4 +13,4 @@ export class Card extends Component {
   }
 }
 
-export default Card;
+export default Product;
