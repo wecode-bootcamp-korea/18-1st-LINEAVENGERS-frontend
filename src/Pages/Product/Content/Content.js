@@ -1,91 +1,119 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
-import "./Content.scss";
 import TopCategory from "./TopCategory/TopCategory";
+import "./Content.scss";
 
 class Content extends Component {
   state = {
-    checkSort: 0,
+    checkSort: 1,
     checkSetting: 1,
     checkView: false,
   };
+
   handleTypeCheck = (e, Typeid) => {
     this.setState({
       checkSort: Typeid,
     });
   };
+
   handleSettingCheck = (e, Settingid) => {
     this.setState({
       checkSetting: Settingid,
     });
   };
+
   handleViewCheck = () => {
     const { checkView } = this.state;
-    console.log(checkView);
     this.setState({
       checkView: !checkView,
     });
   };
 
   render() {
+    const {
+      handleSort,
+      handleDeliver,
+      handleGrid,
+      handlePageSize,
+      handleCategory,
+      categoryData,
+      pageSize,
+    } = this.props;
     const { checkSort, checkSetting, checkView } = this.state;
+    const { current, menuList, categoryList } = categoryData;
+
     return (
-      <section className="content-wrap">
-        <div className="content-top">
-          <strong className="top-title">캐릭터</strong>
-          <TopCategory />
+      <section className="contentWrap">
+        <div className="contentTop">
+          <strong className="topTitle">{current.title}</strong>
+          <TopCategory
+            current={current}
+            menuList={menuList}
+            categoryList={categoryList}
+            handleCategory={handleCategory}
+          />
         </div>
-        <div className="content-sort">
-          <ul className="sort-type">
+        <div className="contentSort">
+          <ul className="sortType">
             {sortTypes.map((type, index) => (
               <li
                 key={index}
-                className={`type-list ${
-                  checkSort === type.id ? "checked" : ""
-                }`}
+                className={`typeList ${checkSort === type.id ? "checked" : ""}`}
                 onClick={e => {
                   this.handleTypeCheck(e, type.id);
+                  handleSort(e, type.id);
                 }}
               >
-                <FontAwesomeIcon className="type-check" icon={faCheck} />
+                <FontAwesomeIcon className="typeCheck" icon={faCheck} />
                 {type.title}
               </li>
             ))}
           </ul>
-          <div className="option-type">
-            <div className="option-free-deliver">
+          <div className="optionType">
+            <div className="optionFreeDeliver">
               <input id="check" type="checkbox" />
-              <label className="deliver-btn-wrap" for="check">
-                <span className="deliver-btn-title">무료배송</span>
-                <i className="deliver-btn"></i>
+              <label
+                className="deliverBtnWrap"
+                for="check"
+                onClick={handleDeliver}
+              >
+                <span className="deliverBtnTitle">무료배송</span>
+                <i className="deliverBtn"></i>
               </label>
             </div>
             <div
-              className={`option-view-count ${checkView && "active"}`}
+              className={`optionViewCount ${checkView && "active"}`}
               onClick={this.handleViewCheck}
             >
-              <button className="view-btn">
-                40개씩 보기
-                <span className="content-triangle"></span>
-                <ul className="view-choice">
+              <button className="viewBtn">
+                {pageSize}개씩 보기
+                <span className="contentTriangle"></span>
+                <ul className="viewChoice">
                   {viewTypes.map((view, index) => (
-                    <li key={index} className="choice-list">
+                    <li
+                      key={index}
+                      className="choiceList"
+                      onClick={e => {
+                        handlePageSize(e, index);
+                      }}
+                    >
                       {view.title}
                     </li>
                   ))}
                 </ul>
               </button>
             </div>
-            <ul className="option-view-setting">
+            <ul className="optionViewSetting">
               {settingTypes.map((setting, index) => (
                 <li
                   key={index}
-                  className={`setting-type ${
+                  className={`settingType ${
                     checkSetting === setting.id ? "active" : ""
                   }`}
                   onClick={e => {
                     this.handleSettingCheck(e, setting.id);
+                    handleGrid(e, setting.id);
                   }}
                 ></li>
               ))}
@@ -106,9 +134,11 @@ const sortTypes = [
   { id: 3, title: "리뷰많은순" },
   { id: 4, title: "평점높은순" },
 ];
+
 const viewTypes = [
   { id: 0, title: "20개씩 보기" },
   { id: 1, title: "40개씩 보기" },
   { id: 2, title: "60개씩 보기" },
 ];
+
 const settingTypes = [{ id: 0 }, { id: 1 }, { id: 2 }, { id: 3 }];

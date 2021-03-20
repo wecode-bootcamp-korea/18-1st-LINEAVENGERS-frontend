@@ -1,13 +1,13 @@
-.product{
-  .content-triangle::before{
-    content: '';
+.product {
+  .contentTriangle::before {
+    content: "";
     border: solid #000;
     border-width: 5px 5px 0 5px;
     border-right-color: transparent;
     border-left-color: transparent;
   }
 
-  .product-container{
+  .productContainer {
     max-width: 1280px;
     margin: 0 auto;
   }

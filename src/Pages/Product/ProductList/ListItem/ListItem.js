@@ -6,34 +6,79 @@ import "./ListItem.scss";
 
 class ListItem extends Component {
   render() {
-    console.log(this.props);
-    const { grade, imgUrl, like, name, price, review, type } = this.props.data;
+    const {
+      data: {
+        productId,
+        rating,
+        thumbnailUrl,
+        favorite,
+        productName,
+        price,
+        review,
+        type,
+      },
+      handleFavorite,
+    } = this.props;
+
     return (
-      <li className="list-item">
-        <div className="item-img best">
-          <img src={imgUrl} alt="상품 이미지" />
-          <div className="item-choice">
-            <FontAwesomeIcon className="choice-like" icon={faHeart} />
-            <FontAwesomeIcon className="chocie-detail" icon={faPlus} />
+      <li className="listItem">
+        <div
+          className={`itemImg ${
+            type === "NORMAL"
+              ? ""
+              : type === "BEST"
+              ? "best"
+              : type === "NEW"
+              ? "new"
+              : "top"
+          }`}
+        >
+          <img src={thumbnailUrl} alt="상품 이미지" />
+          <div className="itemChoice">
+            <FontAwesomeIcon
+              className={`choiceLike ${favorite && "checked"}`}
+              icon={faHeart}
+              onClick={e => {
+                handleFavorite(e, productId);
+              }}
+            />
+            <FontAwesomeIcon className="chocieDetail" icon={faPlus} />
           </div>
         </div>
-        <div className="item-title">
-          <p class="title-name">{name}</p>
-          <button class="title-heart">
-            <FontAwesomeIcon icon={faHeart} />
-          </button>
+        <div class="titlePriceWrap">
+          <div className="itemTitle">
+            <p class="titleName">{productName}</p>
+            <button class={`titleHeart ${favorite && "checked"}`}>
+              <FontAwesomeIcon
+                icon={faHeart}
+                onClick={e => {
+                  handleFavorite(e, productId);
+                }}
+              />
+            </button>
+          </div>
+          <div className="itemPrice">
+            <span className="finalPrice">
+              {price.sale
+                ? `${Number(
+                    price.normal - (price.normal * price.sale) / 100
+                  ).toLocaleString()}원`
+                : `${Number(price.normal).toLocaleString()}원`}
+            </span>
+            <span className="beforePrice">
+              {price.sale !== 0 && `${Number(price.normal).toLocaleString()}원`}
+            </span>
+            <span className="salePercent">
+              {price.sale !== 0 && `${price.sale}%`}
+            </span>
+          </div>
         </div>
-        <div className="item-price">
-          <span className="final-price">3,600원</span>
-          <span className="before-price">4,000원</span>
-          <span className="sale-percent">{price.sale && `${price.sale}%`}</span>
-        </div>
-        <div className="item-data">
-          <span className="data-review">
-            리뷰 <em>1</em>
+        <div className="itemData">
+          <span className="dataReview">
+            리뷰 <em>{review}</em>
           </span>
-          <span className="data-grade">
-            평점 <em>5.0</em>/<em>5</em>
+          <span className="dataGrade">
+            평점 <em>{Number(rating).toFixed(1)}</em>/<em>5</em>
           </span>
         </div>
       </li>

@@ -1,0 +1,19 @@
+{
+  "current":{
+    "type":"main",
+    "title":"캐릭터",
+    "length":80
+  },
+  "mainList":[
+    {"id":0,"menu":"캐릭터"},
+    {"id":1,"menu":"NEW"},
+    {"id":2,"menu":"선물추천"},
+    {"id":3,"menu":"THEME"}
+  ],
+  "subList":[
+    {"id":0,"menu":"브라운프렌즈"},
+    {"id":0,"menu":"BT21"},
+    {"id":0,"menu":"브롤스타즈"},
+    {"id":0,"menu":"WDZY"}
+  ]
+}
