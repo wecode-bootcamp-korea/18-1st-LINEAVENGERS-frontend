@@ -19,7 +19,7 @@ class ShoppingProduct extends React.Component {
       .then(res => {
         let totalSum = 0;
         let delivery = 0;
-        res.forEach(data => (totalSum += data.totalPrice));
+        res.forEach(data => (totalSum += data.price * data.size));
         const result = res.map(el => {
           if (el.deliveryPrice === "무료") {
             el.deliveryPrice = 0;
@@ -35,13 +35,22 @@ class ShoppingProduct extends React.Component {
       });
   }
 
-  removeProduct = e => {
-    this.setState({
-      ProductList: this.state.ProductList.filter(el => el.id != e.target.value),
-    });
-  };
+  // componentDidUpdate() {
+  //   fetch("/Data/ShoppingBasket.json", {
+  //     method: "delete",
+  //   })
+  //     .then(response => response.json())
+  //     .then(res => console.log(res));
+  // }
+
+  // removeProduct = e => {
+  //   this.setState({
+  //     ProductList: this.state.ProductList.filter(el => el.id != e.target.value),
+  //   });
+  // };
 
   render() {
+    const deliveryStat = this.state.DeliveryPrice >= 3000 ? 3000 : 0;
     return this.state.ProductList.length === 0 ? (
       <ShoppingNone />
     ) : (
@@ -86,7 +95,7 @@ class ShoppingProduct extends React.Component {
                 배송비
               </div>
               <div className="shoppingProductListTotalLeftRPrice">
-                {this.state.DeliveryPrice}원
+                {deliveryStat}원
               </div>
             </div>
           </div>
@@ -94,7 +103,7 @@ class ShoppingProduct extends React.Component {
             <div className="shoppingProductListTotalRightHead">
               <div className="shoppingProductListTotalPrice">총 주문금액</div>
               <div className="shoppingProductListTotalPriceInt">
-                {this.state.TotalPrice + this.state.DeliveryPrice}원
+                {this.state.TotalPrice + deliveryStat}원
               </div>
             </div>
           </div>
