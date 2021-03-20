@@ -3,7 +3,6 @@ import "./ShoppingBasket.scss";
 import { AiOutlineShopping } from "react-icons/ai";
 
 class ShoppingNone extends React.Component {
-  state = {};
   render() {
     return (
       <section className="shoppingBasketArticle">

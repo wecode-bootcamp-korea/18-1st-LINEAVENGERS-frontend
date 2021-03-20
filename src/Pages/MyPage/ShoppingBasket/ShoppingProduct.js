@@ -1,5 +1,6 @@
 import React from "react";
 import ShoppingProductList from "./ShoppingProductList";
+import ShoppingNone from "./ShoppingNone";
 import { AiOutlinePlus } from "react-icons/ai";
 
 class ShoppingProduct extends React.Component {
@@ -34,8 +35,16 @@ class ShoppingProduct extends React.Component {
       });
   }
 
+  removeProduct = e => {
+    this.setState({
+      ProductList: this.state.ProductList.filter(el => el.id != e.target.value),
+    });
+  };
+
   render() {
-    return (
+    return this.state.ProductList.length === 0 ? (
+      <ShoppingNone />
+    ) : (
       <main className="shoppingProduct">
         <div className="shoppingProductMenu">
           <div className="shoppingProductMenuInfo">상품정보</div>
@@ -46,12 +55,14 @@ class ShoppingProduct extends React.Component {
         {this.state.ProductList.map(product => {
           return (
             <ShoppingProductList
+              id={product.id}
               img={product.img}
               name={product.name}
               price={product.price}
               size={product.size}
               totalPrice={product.totalPrice}
               deliveryPrice={product.deliveryPrice}
+              handleClick={this.removeProduct}
             />
           );
         })}

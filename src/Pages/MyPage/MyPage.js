@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-// import MyPageNone from "./MyPageNone";
+import MyPageNone from "./MyPageNone";
 import MyPageProduct from "./MyPageProduct";
 import "./MyPage.scss";
 import { FiSettings } from "react-icons/fi";
@@ -29,6 +29,7 @@ export class MyPage extends Component {
   }
 
   render() {
+    console.log(this.state.ProductList);
     return (
       <div className="myPage">
         <nav className="myPageNav">
@@ -96,41 +97,21 @@ export class MyPage extends Component {
               <img class="myPageCardImage" src={card} alt="Card" />
             </section>
           </aside>
-          {/* <article className="myPageProduct">
-            <div className="myPageProductList">
-              <div className="myPageProductListImg">이미지</div>
-              <div className="myPageProductListAll">
-                <div className="myPageProductListName">이름</div>
-                <div className="myPageProductListPrice">가격</div>
-                <div className="myPageProductListSure">구매확정</div>
-                <div className="myPageProductListDetail">
-                  <div className="myPageProductListDetailTop">
-                    구매가 완료되었습니다. 이용해주셔서 감사합니다.
-                  </div>
-                  <div className="myPageProductListDetailBottom">
-                    구매확정 이후 상품의 이용방법, 반품 등에 대한 문의는
-                    판매자에게 문의해주세요.
-                  </div>
-                </div>
-              </div>
-              <div className="myPageProductListReview">
-                <button className="myPageProductListReviewWrite">
-                  리뷰쓰기
-                </button>
-              </div>
-            </div>
-          </article> */}
-          <article className="myPageProduct">
-            {this.state.ProductList.map(product => {
-              return (
-                <MyPageProduct
-                  img={product.img}
-                  name={product.name}
-                  price={product.price}
-                />
-              );
-            })}
-          </article>
+          {this.state.ProductList.length === 0 ? (
+            <MyPageNone />
+          ) : (
+            <article className="myPageProduct">
+              {this.state.ProductList.map(product => {
+                return (
+                  <MyPageProduct
+                    img={product.img}
+                    name={product.name}
+                    price={product.price}
+                  />
+                );
+              })}
+            </article>
+          )}
         </main>
       </div>
     );
