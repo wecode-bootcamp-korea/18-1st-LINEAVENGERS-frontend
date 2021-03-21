@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./Sigup.scss";
+import "./Signup.scss";
 import { AiOutlineLock } from "react-icons/ai";
 import { IoBagCheckOutline } from "react-icons/io5";
 
