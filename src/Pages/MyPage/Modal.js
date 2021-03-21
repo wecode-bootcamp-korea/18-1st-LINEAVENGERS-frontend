@@ -6,13 +6,13 @@ class Popup extends React.Component {
   constructor() {
     super();
     this.state = {
-      Product: {},
+      Product: [],
       Clicked: [false, false, false, false, false],
     };
   }
 
   componentDidMount() {
-    fetch("/Data/MyPageProduct1.json")
+    fetch("/Data/MyPageProduct.json")
       .then(res => res.json())
       .then(res => this.setState({ Product: res }));
   }
@@ -43,21 +43,19 @@ class Popup extends React.Component {
       return "리뷰 부탁드립니다!";
     }
   };
-  printHell() {
-    return "안녕하세요!";
-  }
+
   render() {
     return (
       <div className="modal">
         <div className="modalReview">리뷰 쓰기</div>
-        <div className="modalHead">
-          <img
-            className="modalImage"
-            src={this.state.Product.img}
-            alt="라인프렌즈"
-          />
-          <div className="modalName">{this.state.Product.name}</div>
-        </div>
+        {this.state.Product.map(product => {
+          return (
+            <div className="modalHead">
+              <img className="modalImage" src={product.img} alt="라인프렌즈" />
+              <div className="modalName">{product.name}</div>
+            </div>
+          );
+        })}
         <div className="modalContent">
           <div className="modalSatisfy">상품은 만족하셨나요?</div>
           <div className="modalStar">
