@@ -17,6 +17,16 @@
     }
   }
   .userBox {
+    .userAvail {
+      color: #ff4540;
+      font-size: 13px;
+      transform: translate(0, 9px);
+    }
+    .pwAvail {
+      color: #ff4540;
+      font-size: 13px;
+      transform: translate(0, 9px);
+    }
     display: grid;
     justify-content: center;
     .IdBox {
@@ -53,10 +63,26 @@
         background-color: #03c75a;
       }
     }
-    .checkBox {
-      margin-top: 20px;
+
+    .labelBox {
+      display: flex;
+      margin-top: 10px;
+
       span {
-        margin-left: 175px;
+        font-size: 17px;
+        color: #333333;
+        transform: translate(8px, 8px);
+      }
+      label {
+        font-size: 25px;
+        color: #9fa5a7;
+      }
+      #checkIcon {
+        display: none;
+      }
+
+      #checkIcon:checked + label {
+        color: #02c75a;
       }
     }
   }
