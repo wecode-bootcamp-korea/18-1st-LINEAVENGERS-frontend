@@ -59,6 +59,16 @@
         color: red;
       }
     }
+
+    .modalStarContent {
+      display: flex;
+      justify-content: center;
+      padding-top: 5px;
+
+      .modalStarGood {
+        color: red;
+      }
+    }
   }
 
   .modalText {

@@ -8,7 +8,6 @@ class Popup extends React.Component {
     this.state = {
       Product: {},
       Clicked: [false, false, false, false, false],
-      SetClicked: [false, false, false, false, false],
     };
   }
 
@@ -18,7 +17,7 @@ class Popup extends React.Component {
       .then(res => this.setState({ Product: res }));
   }
 
-  handleStarClick = (e, index) => {
+  handleStarClick = index => {
     let clickStates = [...this.state.Clicked];
     for (let i = 0; i < 5; i++) {
       if (i <= index) clickStates[i] = true;
@@ -27,6 +26,26 @@ class Popup extends React.Component {
     this.setState({ Clicked: clickStates });
   };
 
+  handleClickView = () => {
+    const sw = this.state.Clicked;
+
+    if (sw[4] === true) {
+      return "5점 (최고예요)";
+    } else if (sw[3] === true) {
+      return "4점 (좋아요)";
+    } else if (sw[2] === true) {
+      return "3점 (괜찮아요)";
+    } else if (sw[1] === true) {
+      return "2점 (그저 그래요)";
+    } else if (sw[0] === true) {
+      return "1점 (별로예요)";
+    } else {
+      return "리뷰 부탁드립니다!";
+    }
+  };
+  printHell() {
+    return "안녕하세요!";
+  }
   render() {
     return (
       <div className="modal">
@@ -45,29 +64,32 @@ class Popup extends React.Component {
             <div>
               <FaStar
                 size="50"
-                onClick={e => this.handleStarClick(e, 0)}
+                onClick={e => this.handleStarClick(0)}
                 className={this.state.Clicked[0] ? "red" : null}
               />
               <FaStar
                 size="50"
-                onClick={e => this.handleStarClick(e, 1)}
+                onClick={e => this.handleStarClick(1)}
                 className={this.state.Clicked[1] ? "red" : null}
               />
               <FaStar
                 size="50"
-                onClick={e => this.handleStarClick(e, 2)}
+                onClick={e => this.handleStarClick(2)}
                 className={this.state.Clicked[2] ? "red" : null}
               />
               <FaStar
                 size="50"
-                onClick={e => this.handleStarClick(e, 3)}
+                onClick={e => this.handleStarClick(3)}
                 className={this.state.Clicked[3] ? "red" : null}
               />
               <FaStar
                 size="50"
-                onClick={e => this.handleStarClick(e, 4)}
+                onClick={e => this.handleStarClick(4)}
                 className={this.state.Clicked[4] ? "red" : null}
               />
+            </div>
+            <div className="modalStarContent">
+              <div className="modalStarGood">{this.handleClickView()}</div>
             </div>
           </div>
         </div>
