@@ -1,11 +1,14 @@
 import React from "react";
 import "./Modal.scss";
+import { FaStar } from "react-icons/fa";
 
 class Popup extends React.Component {
   constructor() {
     super();
     this.state = {
       Product: {},
+      Clicked: [false, false, false, false, false],
+      SetClicked: [false, false, false, false, false],
     };
   }
 
@@ -15,36 +18,74 @@ class Popup extends React.Component {
       .then(res => this.setState({ Product: res }));
   }
 
+  handleStarClick = (e, index) => {
+    let clickStates = [...this.state.Clicked];
+    for (let i = 0; i < 5; i++) {
+      if (i <= index) clickStates[i] = true;
+      else clickStates[i] = false;
+    }
+    this.setState({ Clicked: clickStates });
+  };
+
   render() {
-    console.log(this.state.Product);
     return (
-      <div className="Modal">
-        <div className="ModalReview">리뷰 쓰기</div>
-        <div className="ModalHead">
+      <div className="modal">
+        <div className="modalReview">리뷰 쓰기</div>
+        <div className="modalHead">
           <img
-            className="ModalImage"
+            className="modalImage"
             src={this.state.Product.img}
             alt="라인프렌즈"
           />
-          <div className="ModalName">{this.state.Product.name}</div>
+          <div className="modalName">{this.state.Product.name}</div>
         </div>
-        <div className="ModalContent">
-          <div className="ModalSatisfy">상품은 만족하셨나요?</div>
-          <div className="ModalStar">별 다섯개</div>
+        <div className="modalContent">
+          <div className="modalSatisfy">상품은 만족하셨나요?</div>
+          <div className="modalStar">
+            <div>
+              <FaStar
+                size="50"
+                onClick={e => this.handleStarClick(e, 0)}
+                className={this.state.Clicked[0] ? "red" : null}
+              />
+              <FaStar
+                size="50"
+                onClick={e => this.handleStarClick(e, 1)}
+                className={this.state.Clicked[1] ? "red" : null}
+              />
+              <FaStar
+                size="50"
+                onClick={e => this.handleStarClick(e, 2)}
+                className={this.state.Clicked[2] ? "red" : null}
+              />
+              <FaStar
+                size="50"
+                onClick={e => this.handleStarClick(e, 3)}
+                className={this.state.Clicked[3] ? "red" : null}
+              />
+              <FaStar
+                size="50"
+                onClick={e => this.handleStarClick(e, 4)}
+                className={this.state.Clicked[4] ? "red" : null}
+              />
+            </div>
+          </div>
         </div>
-        <div className="ModalText">
+        <div className="modalText">
           <input
-            className="ModalTextContent"
+            className="modalTextContent"
             type="textarea"
             placeholder="최소 10자 이상 입력해주세요"
           ></input>
         </div>
-        <div className="ModalBtn">
-          <div className="ModalBtnLeft">
-            <button>취소</button>
+        <div className="modalBtn">
+          <div className="modalBtnLeft">
+            <button className="modalBtnLeftCancle" onClick={window.close}>
+              취소
+            </button>
           </div>
-          <div className="ModalBtnLeft">
-            <button>등록</button>
+          <div className="modalBtnRight">
+            <button className="modalBtnLeftRegister">등록</button>
           </div>
         </div>
       </div>

@@ -30,7 +30,7 @@ class MyPageProduct extends React.Component {
         <div className="myPageProductListReview">
           <button
             className="myPageProductListReviewWrite"
-            onClick={this.popupModal()}
+            onClick={this.popupModal}
           >
             리뷰쓰기
           </button>
