@@ -6,6 +6,7 @@ import Main from "./Pages/Main/Main";
 import Product from "./Pages/Product/Product";
 import ShoppingBasket from "./Pages/MyPage/ShoppingBasket/ShoppingBasket";
 import MyPageHeart from "./Pages/MyPage/MyPageHeart";
+import Modal from "./Pages/MyPage/Modal";
 
 class Routes extends React.Component {
   render() {
@@ -18,6 +19,7 @@ class Routes extends React.Component {
           <Route exact path="/product" component={Product} />
           <Route exact path="/shoppingbasket" component={ShoppingBasket} />
           <Route exact path="/mypageheart" component={MyPageHeart} />
+          <Route exact path="/modal" component={Modal} />
         </Switch>
       </Router>
     );

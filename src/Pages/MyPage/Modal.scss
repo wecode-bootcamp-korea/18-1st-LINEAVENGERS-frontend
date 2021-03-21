@@ -1,0 +1,53 @@
+.Modal {
+  width: 500px;
+
+  .ModalReview {
+    text-align: center;
+    padding: 18px 0;
+    color: white;
+    background-color: #02c73c;
+    font-weight: bold;
+  }
+
+  .ModalHead {
+    display: flex;
+    padding: 20px;
+    border-bottom: 1px solid lightgray;
+
+    .ModalImage {
+      width: 70px;
+      height: 70px;
+    }
+
+    .ModalName {
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+    }
+  }
+
+  .ModalContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+
+    .ModalSatisfy {
+      font-size: 20px;
+    }
+  }
+
+  .ModalText {
+    display: flex;
+    justify-content: center;
+    .ModalTextContent {
+      width: 450px;
+      height: 200px;
+    }
+  }
+
+  .modalBtn {
+    display: flex;
+  }
+}

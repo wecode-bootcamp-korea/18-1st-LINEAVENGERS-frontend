@@ -1,9 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import Popup from "./Popup";
 import "./MyPage.scss";
 
 class MyPageProduct extends React.Component {
+  popupModal = () => {
+    let url = "/Modal";
+    let name = "리뷰 쓰기";
+    let option = "width=500,height=600";
+    window.open(url, name, option);
+  };
   render() {
     const { img, name, price } = this.props;
     return (
@@ -24,8 +28,11 @@ class MyPageProduct extends React.Component {
           </div>
         </div>
         <div className="myPageProductListReview">
-          <button className="myPageProductListReviewWrite">
-            <Link to="/Popup">리뷰쓰기</Link>
+          <button
+            className="myPageProductListReviewWrite"
+            onClick={this.popupModal()}
+          >
+            리뷰쓰기
           </button>
         </div>
       </div>
