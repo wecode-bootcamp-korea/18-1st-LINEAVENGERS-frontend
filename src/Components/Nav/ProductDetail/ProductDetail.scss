@@ -1,4 +1,4 @@
-.product-detail {
+.productDetail {
   position: fixed;
   top: 0;
   left: 0;
@@ -7,7 +7,7 @@
   background: rgba(0, 0, 0, 0.5);
   overflow: scroll;
 
-  .detail-container {
+  .detailContainer {
     position: absolute;
     top: 70%;
     left: 50%;
@@ -16,7 +16,7 @@
     background: #fff;
     transform: translate(-50%, -50%);
 
-    .detail-top {
+    .detailTop {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -24,12 +24,12 @@
       margin-bottom: 9px;
       border-bottom: 1px solid #313131;
 
-      .top-title {
+      .topTitle {
         font-size: 14px;
         font-weight: 700;
       }
 
-      .close-btn {
+      .closeBtn {
         position: relative;
         width: 16px;
         height: 16px;
@@ -40,6 +40,7 @@
           display: block;
           position: absolute;
           top: 50%;
+          right: 0;
           width: 22px;
           height: 1px;
           background: #777;
@@ -51,6 +52,7 @@
           display: block;
           position: absolute;
           top: 50%;
+          right: 0;
           width: 22px;
           height: 1px;
           background: #777;
@@ -59,7 +61,7 @@
       }
     }
 
-    .detail-content {
+    .detailContent {
       display: flex;
       border: 1px solid #ededed;
     }

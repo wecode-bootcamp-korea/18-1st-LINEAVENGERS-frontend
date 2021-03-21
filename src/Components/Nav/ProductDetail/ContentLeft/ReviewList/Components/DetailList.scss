@@ -1,17 +1,17 @@
-.detail-list {
+.detailList {
   display: flex;
   min-width: 100%;
   margin-top: 10px;
   margin-right: 60px;
 
-  .list-left {
+  .listLeft {
     width: 70%;
 
-    .detail-stars {
+    .detailStars {
       font-size: 15px;
       color: #dbdbdb;
 
-      .start-icon.checked {
+      .startIcon.checked {
         color: #fe5354;
       }
 
@@ -22,7 +22,7 @@
       }
     }
 
-    .detail-info {
+    .detailInfo {
       margin-top: 2px;
       font-size: 12px;
       color: #a9a9a9;
@@ -53,14 +53,14 @@
       }
     }
 
-    .detail-memo {
+    .detailMemo {
       margin-top: 8px;
       font-size: 12px;
       color: #5f5f5f;
     }
   }
 
-  .list-right {
+  .listRight {
     width: 30%;
     text-align: right;
 

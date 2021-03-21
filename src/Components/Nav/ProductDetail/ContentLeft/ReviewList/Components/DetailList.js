@@ -16,27 +16,27 @@ class DetailList extends Component {
     } = this.props.data;
     const stars = new Array(5).fill(0);
     return (
-      <li className="detail-list">
-        <div className="list-left">
-          <p className="detail-stars">
+      <li className="detailList">
+        <div className="listLeft">
+          <p className="detailStars">
             {stars.map((star, index) => (
               <FontAwesomeIcon
                 icon={faStar}
-                className={`start-icon ${index > grade - 1 ? "" : "checked"}`}
+                className={`startIcon ${index > grade - 1 ? "" : "checked"}`}
               />
             ))}
             <span>{grade}</span>
           </p>
-          <p className="detail-info">
+          <p className="detailInfo">
             <strong>{user}</strong>
             <strong>{date}</strong>
             <span>
               {type}: {option}
             </span>
           </p>
-          <p className="detail-memo">{comment}</p>
+          <p className="detailMemo">{comment}</p>
         </div>
-        <div className="list-right">
+        <div className="listRight">
           <img src={imgUrl} alt="상품 이미지" />
         </div>
       </li>

@@ -7,12 +7,14 @@ class Select extends Component {
   state = {
     listOpen: false,
   };
+
   showOptions = () => {
     const { listOpen } = this.state;
     this.setState({
       listOpen: !listOpen,
     });
   };
+
   render() {
     const {
       options,
@@ -26,17 +28,17 @@ class Select extends Component {
 
     return (
       <>
-        <div className={`select-option ${listOpen ? "active" : ""}`}>
-          <span className="option-title">{type}</span>
-          <span className="option-arrow" onClick={this.showOptions}></span>
-          <ul className="option-wrap">
+        <div className={`selectOption ${listOpen ? "active" : ""}`}>
+          <span className="optionTitle">{type}</span>
+          <span className="optionArrow" onClick={this.showOptions}></span>
+          <ul className="optionWrap">
             {options.map(option => {
               const id = uuid();
               return (
                 <li
                   key={id}
                   id={id}
-                  className="option-list"
+                  className="optionList"
                   name={option}
                   onClick={e => {
                     addSelect(e, id, option);

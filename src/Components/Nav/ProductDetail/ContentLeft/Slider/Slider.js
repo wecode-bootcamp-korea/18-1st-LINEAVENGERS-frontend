@@ -12,20 +12,20 @@ class Slider extends Component {
     const { imgUrls, slideIndex, handleSlide } = this.props;
     return (
       <div className="slider">
-        <ul className="slide-box">
+        <ul className="slideBox">
           {imgUrls.map((url, index) => (
             <li
               key={uuid()}
-              className={`slide-list ${index === slideIndex ? "active" : ""}`}
+              className={`slideList ${index === slideIndex && "active"}`}
             >
               <img src={url} alt="상품 이미지" />
             </li>
           ))}
         </ul>
-        <button className="slide-btn prev" onClick={handleSlide}>
+        <button className="slideBtn prev" onClick={handleSlide}>
           <FontAwesomeIcon icon={faChevronLeft} />
         </button>
-        <button className="slide-btn next" onClick={handleSlide}>
+        <button className="slideBtn next" onClick={handleSlide}>
           <FontAwesomeIcon icon={faChevronRight} />
         </button>
       </div>

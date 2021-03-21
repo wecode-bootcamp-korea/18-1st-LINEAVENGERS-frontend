@@ -1,8 +1,8 @@
-.review-list {
+.reviewList {
   position: relative;
   padding: 40px 60px;
 
-  .review-title {
+  .reviewTitle {
     span {
       font-size: 12px;
       strong {
@@ -13,9 +13,9 @@
     }
   }
 
-  .review-wrap {
+  .reviewWrap {
     overflow: hidden;
-    .detail-box {
+    .detailBox {
       display: flex;
       flex-wrap: wrap;
       flex-direction: column;
@@ -25,7 +25,7 @@
     }
   }
 
-  .slide-btn {
+  .slideBtn {
     position: absolute;
     top: 50%;
     border: none;

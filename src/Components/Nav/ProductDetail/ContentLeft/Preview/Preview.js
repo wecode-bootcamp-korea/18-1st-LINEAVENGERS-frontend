@@ -12,15 +12,13 @@ class Preview extends Component {
     avgGrade = avgGrade / reviews.length;
     return (
       <div className="preview">
-        <ul className="slide-preview">
+        <ul className="slidePreview">
           {imgUrls.map((url, index) => {
             return (
               <li
                 key={uuid()}
-                className={`preview-list ${
-                  index === slideIndex ? "active" : ""
-                }`}
-                onClick={e => {
+                className={`previewList ${index === slideIndex && "active"}`}
+                onMouseOver={e => {
                   handlePreview(e, index);
                 }}
               >
@@ -33,7 +31,7 @@ class Preview extends Component {
           <span>
             리뷰수<strong>{reviews.length}</strong>
           </span>
-          <span className="review-grade">
+          <span className="reviewGrade">
             사용자 총 평점<strong>{avgGrade.toFixed(1)}</strong>
             <strong>5</strong>
           </span>

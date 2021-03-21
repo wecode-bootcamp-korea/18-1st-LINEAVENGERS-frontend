@@ -1,4 +1,4 @@
-.more-point {
+.morePoint {
   padding: 14px 16px;
   margin-top: 14px;
   border: 1px solid #dee0e2;
@@ -9,12 +9,12 @@
     margin-top: 7px;
   }
 
-  .more-total {
+  .moreTotal {
     display: flex;
     justify-content: space-between;
     font-weight: 700;
 
-    .total-title {
+    .totalTitle {
       em {
         color: #bd383f;
         font-style: italic;
@@ -22,13 +22,13 @@
     }
   }
 
-  .more-membership {
+  .moreMembership {
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 11px;
 
-    .membership-left {
+    .membershipLeft {
       display: flex;
       align-items: center;
 
@@ -61,7 +61,7 @@
           z-index: 1;
         }
       }
-      .left-NLogo {
+      .leftNLogo {
         &::before {
           background: #44e568;
         }
@@ -71,7 +71,7 @@
         }
       }
 
-      .left-Plus {
+      .leftPlus {
         &::before {
           background: #1fbbf2;
         }
@@ -81,7 +81,7 @@
         }
       }
 
-      .left-membership {
+      .leftMembership {
         &::before {
           background: #4f90ee;
         }
@@ -92,7 +92,7 @@
         }
       }
 
-      .left-info {
+      .leftInfo {
         position: relative;
         color: #acadad;
         text-decoration: underline;
@@ -110,13 +110,13 @@
     }
   }
 
-  .more-point-pay {
+  .morePointPay {
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 11px;
 
-    .point-pay-left {
+    .pointPayLeft {
       display: flex;
 
       > span {
@@ -127,18 +127,18 @@
           color: #fff;
         }
       }
-      .left-NLogo {
+      .leftNLogo {
         background: #38c243;
       }
 
-      .left-Percent {
+      .leftPercent {
         border: 1px solid #38c243;
         em {
           color: #38c243;
         }
       }
 
-      .left-info {
+      .leftInfo {
         position: relative;
         color: #acadad;
         text-decoration: underline;

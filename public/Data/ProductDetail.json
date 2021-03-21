@@ -1,0 +1,53 @@
+{
+  "name": "라인프렌즈 브라운 머그컵",
+  "price": 10000,
+  "type": "사이즈",
+  "options": ["M", "L"],
+  "imgUrls": [
+    "https://cdn.econovill.com/news/snsPhoto/202011/503769_404206_563.jpg",
+    "https://lh3.googleusercontent.com/-Unq3pw7LcLo/W7ojqR651WI/AAAAAAAFGEI/3udj45857t8QT0BOMBVLBbz7nziSu15OQCHMYCw/s0/f1c9bead12c1b880237b2118704f0b687edc0804.png",
+    "https://i.pinimg.com/originals/7e/a8/39/7ea839dfdfb3c0b565b03f3bb9f5a697.jpg"
+  ],
+  "reviews": [
+    {
+      "user": "test",
+      "grade": 3,
+      "date": "21.03.16",
+      "type": "사이즈",
+      "option": "단품",
+      "comment": "테스트 입니다.!",
+      "imgUrl":
+        "https://cdn.econovill.com/news/snsPhoto/202011/503769_404206_563.jpg"
+    },
+    {
+      "user": "test",
+      "grade": 5,
+      "date": "21.03.16",
+      "type": "사이즈",
+      "option": "단품",
+      "comment": "테스트 입니다.!",
+      "imgUrl":
+        "https://cdn.econovill.com/news/snsPhoto/202011/503769_404206_563.jpg"
+    },
+    {
+      "user": "test",
+      "grade": 5,
+      "date": "21.03.16",
+      "type": "사이즈",
+      "option": "단품",
+      "comment": "테스트 입니다.!",
+      "imgUrl":
+        "https://cdn.econovill.com/news/snsPhoto/202011/503769_404206_563.jpg"
+    },
+    {
+      "user": "test",
+      "grade": 5,
+      "date": "21.03.16",
+      "type": "사이즈",
+      "option": "단품",
+      "comment": "테스트 입니다.!",
+      "imgUrl":
+        "https://cdn.econovill.com/news/snsPhoto/202011/503769_404206_563.jpg"
+    }
+  ]
+}

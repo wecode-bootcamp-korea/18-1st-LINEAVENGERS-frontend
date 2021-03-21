@@ -6,12 +6,12 @@
   border-bottom: 1px solid #ededed;
   overflow: hidden;
 
-  .slide-box {
+  .slideBox {
     display: flex;
     position: relative;
     height: 100%;
 
-    .slide-list {
+    .slideList {
       position: absolute;
       left: 0;
       top: 0;
@@ -34,7 +34,7 @@
     }
   }
 
-  .slide-btn {
+  .slideBtn {
     position: absolute;
     top: 50%;
     border: none;

@@ -4,11 +4,11 @@ import "./NormalPoint.scss";
 class NormalPoint extends Component {
   render() {
     const { price } = this.props;
-    const convertPrice = ((price * 10) / 1000).toLocaleString();
+    const convertPrice = Math.floor((price * 10) / 1000).toLocaleString();
     return (
-      <div className="normal-point">
-        <span className="normal-title">기본적립</span>
-        <em className="normal-number">{convertPrice}원</em>
+      <div className="normalPoint">
+        <span className="normalTitle">기본적립</span>
+        <em className="normalNumber">{convertPrice}원</em>
       </div>
     );
   }

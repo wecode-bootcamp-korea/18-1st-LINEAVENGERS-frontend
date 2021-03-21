@@ -5,25 +5,25 @@ import "./ProductDetail.scss";
 
 class ProductDetail extends Component {
   render() {
-    const { data } = this.props;
+    const { imgUrls, reviews, name, options, price, type } = this.props.data;
     const leftData = {
-      imgUrls: data.imgUrls,
-      reviews: data.reviews,
+      imgUrls: imgUrls,
+      reviews: reviews,
     };
     const rightData = {
-      name: data.name,
-      options: data.options,
-      price: data.price,
-      type: data.type,
+      name: name,
+      options: options,
+      price: price,
+      type: type,
     };
     return (
-      <div className="product-detail">
-        <div className="detail-container">
-          <div className="detail-top">
-            <h1 className="top-title">상세보기</h1>
-            <span className="close-btn"></span>
+      <div className="productDetail">
+        <div className="detailContainer">
+          <div className="detailTop">
+            <h1 className="topTitle">상세보기</h1>
+            <span className="closeBtn"></span>
           </div>
-          <div className="detail-content">
+          <div className="detailContent">
             <ContentLeft leftData={leftData} />
             <ContentRight rightData={rightData} />
           </div>

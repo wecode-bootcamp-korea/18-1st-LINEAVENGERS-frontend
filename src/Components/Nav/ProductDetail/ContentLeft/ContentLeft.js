@@ -40,7 +40,7 @@ class ContentLeft extends Component {
     const { imgUrls, reviews } = this.props.leftData;
 
     return (
-      <div className="content-left">
+      <div className="contentLeft">
         <Slider
           imgUrls={imgUrls}
           slideIndex={slideIndex}

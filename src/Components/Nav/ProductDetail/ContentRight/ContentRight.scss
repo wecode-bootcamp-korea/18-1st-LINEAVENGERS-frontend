@@ -1,36 +1,37 @@
-.content-right {
+.contentRight {
   flex: 1;
   padding: 30px;
   border-left: 1px solid #ededed;
 
-  .right-title {
+  .rightTitle {
     font-size: 20px;
     font-weight: 700;
   }
 
-  .right-price {
+  .rightPrice {
     font-size: 20px;
     font-weight: 700;
     color: #6b90dc;
     text-align: right;
   }
 
-  .right-recommend {
+  .rightRecommend {
     border: 1px solid #979ba5;
     padding-bottom: 16px;
     margin-top: 15px;
-    .recommend-title {
+
+    .recommendTitle {
       padding: 13px 16px;
       font-weight: 700;
       border-bottom: 1px solid #ededed;
     }
 
-    .recommend-point {
+    .recommendPoint {
       padding: 18px 16px 0;
     }
   }
 
-  .membership-ad {
+  .membershipAd {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -51,15 +52,13 @@
       font-weight: normal;
     }
 
-    .ad-left {
+    .adLeft {
       display: flex;
       align-items: center;
     }
 
-    .ad-NLogo {
-      display: inline-flex;
-      align-items: center;
-      padding: 3px 5px;
+    .adNLogo {
+      padding: 4px 5px 2px;
       border-radius: 3px;
       background: #fff;
       color: #44e568;
@@ -67,7 +66,7 @@
       margin-right: 5px;
     }
 
-    .ad-info {
+    .adInfo {
       margin-top: 3px;
 
       em {
@@ -76,7 +75,7 @@
     }
   }
 
-  .deliver-box {
+  .deliverBox {
     margin-top: 16px;
     padding-bottom: 13px;
     border-bottom: 1px solid #ededed;
@@ -87,7 +86,7 @@
       display: flex;
       align-items: center;
       margin-bottom: 5px;
-      .deliver-price {
+      .deliverPrice {
         font-weight: 700;
 
         em {
@@ -107,7 +106,7 @@
       }
     }
 
-    .deliver-info {
+    .deliverInfo {
       color: #999999;
     }
   }

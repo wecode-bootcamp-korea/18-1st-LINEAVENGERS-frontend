@@ -41,15 +41,15 @@ class ReviewList extends Component {
     const { reviews } = this.props;
     const { leftValue } = this.state;
     return (
-      <div className="review-list">
-        <div className="review-title">
+      <div className="reviewList">
+        <div className="reviewTitle">
           <span>
             포토/동영상<strong>({reviews.length})</strong>
           </span>
         </div>
-        <div className="review-wrap">
+        <div className="reviewWrap">
           <ul
-            className="detail-box"
+            className="detailBox"
             style={{ left: leftValue }}
             ref={this.Slide}
           >
@@ -58,10 +58,10 @@ class ReviewList extends Component {
             ))}
           </ul>
         </div>
-        <button className="slide-btn prev" onClick={this.handleSlide}>
+        <button className="slideBtn prev" onClick={this.handleSlide}>
           <FontAwesomeIcon icon={faChevronLeft} />
         </button>
-        <button className="slide-btn next" onClick={this.handleSlide}>
+        <button className="slideBtn next" onClick={this.handleSlide}>
           <FontAwesomeIcon icon={faChevronRight} />
         </button>
       </div>
