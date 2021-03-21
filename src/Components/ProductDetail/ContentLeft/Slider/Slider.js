@@ -9,11 +9,11 @@ import "./Slider.scss";
 
 class Slider extends Component {
   render() {
-    const { imgUrls, slideIndex, handleSlide } = this.props;
+    const { imageUrls, slideIndex, handleSlide } = this.props;
     return (
       <div className="slider">
         <ul className="slideBox">
-          {imgUrls.map((url, index) => (
+          {imageUrls.map((url, index) => (
             <li
               key={uuid()}
               className={`slideList ${index === slideIndex && "active"}`}

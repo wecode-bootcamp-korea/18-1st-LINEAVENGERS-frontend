@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ProductDetail from "../../Components/Nav/ProductDetail/ProductDetail";
+import ProductDetail from "../../Components/ProductDetail/ProductDetail";
 
 class Product extends Component {
   state = {
@@ -7,9 +7,9 @@ class Product extends Component {
   };
 
   componentDidMount() {
-    fetch("http://localhost:3000/data/ProductDetail.json", { method: "GET" })
+    fetch("http://74f4977711e5.ngrok.io/product/detail/1", { method: "GET" })
       .then(res => res.json())
-      .then(res => this.setState({ data: res }));
+      .then(res => this.setState({ data: res.productDetail }));
   }
 
   render() {

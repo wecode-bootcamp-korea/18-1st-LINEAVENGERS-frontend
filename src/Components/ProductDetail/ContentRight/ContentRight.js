@@ -27,8 +27,11 @@ class ContentRight extends Component {
   };
 
   addSelect = (e, id, option) => {
-    const { price } = this.props.rightData;
+    const {
+      price: { normal, sale },
+    } = this.props.rightData;
     const { selectList } = this.state;
+    const finalPrice = sale !== 0 ? normal - (normal * sale) / 100 : normal;
     let duplicate = false;
 
     for (let i = 0; i < selectList.length; i++) {
@@ -38,10 +41,11 @@ class ContentRight extends Component {
         return;
       }
     }
+
     const selectData = {
       id: id,
       option: option,
-      price: price,
+      price: finalPrice,
       countValue: 1,
     };
 
@@ -58,19 +62,37 @@ class ContentRight extends Component {
   };
 
   render() {
-    const { name, options, price, type } = this.props.rightData;
+    const {
+      name,
+      options,
+      price: { normal, sale },
+      type,
+    } = this.props.rightData;
     const { selectList } = this.state;
+    const finalPrice = sale !== 0 ? normal - (normal * sale) / 100 : normal;
 
     return (
       <div className="contentRight">
         <h3 className="rightTitle">{name}</h3>
-        <p className="rightPrice">{Number(price).toLocaleString()}원</p>
+        <p className="rightPrice">
+          <span className="salePercent">{sale !== 0 && `${sale}%`}</span>
+          <div>
+            <span className="normalPrice">
+              {sale !== 0 && `${Number(normal).toLocaleString()}원`}
+            </span>
+            <span className="finalPrice">
+              {sale !== 0
+                ? `${Number(finalPrice).toLocaleString()}원`
+                : `${Number(finalPrice).toLocaleString()}원`}
+            </span>
+          </div>
+        </p>
         <div className="rightRecommend">
           <p className="recommendTitle">라인프렌즈 고객을 위한 혜택</p>
           <div className="recommendPoint">
-            <MaxPoint price={price} />
-            <NormalPoint price={price} />
-            <MorePoint price={price} />
+            <MaxPoint price={finalPrice} />
+            <NormalPoint price={finalPrice} />
+            <MorePoint price={finalPrice} />
           </div>
         </div>
         <div className="membershipAd">
@@ -97,10 +119,10 @@ class ContentRight extends Component {
         <Select
           options={options}
           type={type}
+          selectList={selectList}
           handleCount={this.handleCount}
           addSelect={this.addSelect}
           deleteSelect={this.deleteSelect}
-          selectList={selectList}
         />
         <Price selectList={selectList} />
         <Choice />

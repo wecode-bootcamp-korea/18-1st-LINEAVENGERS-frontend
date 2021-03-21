@@ -4,16 +4,18 @@ import "./Preview.scss";
 
 class Preview extends Component {
   render() {
-    const { reviews, imgUrls, slideIndex, handlePreview } = this.props;
+    const { reviews, imageUrls, slideIndex, handlePreview } = this.props;
     let avgGrade = 0;
+
     reviews.forEach(review => {
       avgGrade += review.grade;
     });
+
     avgGrade = avgGrade / reviews.length;
     return (
       <div className="preview">
         <ul className="slidePreview">
-          {imgUrls.map((url, index) => {
+          {imageUrls.map((url, index) => {
             return (
               <li
                 key={uuid()}

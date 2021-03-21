@@ -4,15 +4,33 @@
   border-left: 1px solid #ededed;
 
   .rightTitle {
+    margin-bottom: 10px;
     font-size: 20px;
     font-weight: 700;
   }
 
   .rightPrice {
+    display: flex;
+    justify-content: space-between;
     font-size: 20px;
     font-weight: 700;
-    color: #6b90dc;
     text-align: right;
+
+    .salePercent {
+      font-size: 24px;
+      font-weight: 400;
+      color: #6b90dc;
+    }
+
+    .normalPrice {
+      color: #a6a6a6;
+      text-decoration: line-through;
+    }
+
+    .finalPrice {
+      font-size: 24px;
+      margin-left: 10px;
+    }
   }
 
   .rightRecommend {

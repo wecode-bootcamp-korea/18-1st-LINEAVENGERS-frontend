@@ -5,9 +5,9 @@ import "./ProductDetail.scss";
 
 class ProductDetail extends Component {
   render() {
-    const { imgUrls, reviews, name, options, price, type } = this.props.data;
+    const { imageUrls, name, options, price, reviews, type } = this.props.data;
     const leftData = {
-      imgUrls: imgUrls,
+      imageUrls: imageUrls,
       reviews: reviews,
     };
     const rightData = {

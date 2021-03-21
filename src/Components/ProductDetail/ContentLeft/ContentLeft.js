@@ -12,7 +12,7 @@ class ContentLeft extends Component {
   handleSlide = e => {
     const { className } = e.target;
     const {
-      leftData: { imgUrls },
+      leftData: { imageUrls },
     } = this.props;
 
     const { slideIndex } = this.state;
@@ -21,9 +21,9 @@ class ContentLeft extends Component {
       slideIndex:
         btnType === "prev"
           ? slideIndex === 0
-            ? imgUrls.length - 1
+            ? imageUrls.length - 1
             : slideIndex - 1
-          : slideIndex === imgUrls.length - 1
+          : slideIndex === imageUrls.length - 1
           ? 0
           : slideIndex + 1,
     });
@@ -37,18 +37,18 @@ class ContentLeft extends Component {
 
   render() {
     const { slideIndex } = this.state;
-    const { imgUrls, reviews } = this.props.leftData;
+    const { imageUrls, reviews } = this.props.leftData;
 
     return (
       <div className="contentLeft">
         <Slider
-          imgUrls={imgUrls}
+          imageUrls={imageUrls}
           slideIndex={slideIndex}
           handleSlide={this.handleSlide}
         />
         <Preview
           reviews={reviews}
-          imgUrls={imgUrls}
+          imageUrls={imageUrls}
           slideIndex={slideIndex}
           handlePreview={this.handlePreview}
         />

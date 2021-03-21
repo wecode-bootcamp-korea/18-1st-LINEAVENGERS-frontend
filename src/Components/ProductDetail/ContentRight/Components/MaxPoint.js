@@ -48,7 +48,7 @@ class MaxPoint extends Component {
               </p>
               <p className="maxDetailInfo">
                 <span>포토/동영상 리뷰 작성시</span>
-                <span>
+                <span style={{ marginRight: "3px" }}>
                   {Number(
                     subPrice - Math.floor(subPrice / 3 / 10) * 10
                   ).toLocaleString()}
