@@ -78,7 +78,7 @@ class Login extends Component {
         });
     }
   };
-
+  //
   render() {
     const { idCheck, pwCheck, valueCheck, pwVaild } = this.state;
     return (
