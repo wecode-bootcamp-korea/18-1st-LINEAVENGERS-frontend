@@ -5,14 +5,8 @@ import "./ProductList.scss";
 
 class ProductList extends Component {
   render() {
-    const {
-      data,
-      gridType,
-      page,
-      pageOffset,
-      handlePage,
-      handleFavorite,
-    } = this.props;
+    const { data, gridType, page, pageOffset, handlePage } = this.props;
+    console.log(data);
     const pageList = new Array(page).fill(0);
 
     return (
@@ -37,17 +31,13 @@ class ProductList extends Component {
             }`}
           >
             {data.map(data => (
-              <ListItem
-                key={uuid()}
-                data={data}
-                handleFavorite={handleFavorite}
-              />
+              <ListItem key={data.productId} data={data} />
             ))}
           </ul>
           <ul className="page-box">
             {pageList.map((page, index) => (
               <li
-                key={uuid()}
+                key={index}
                 className={`page-list ${index === pageOffset ? "active" : ""}`}
                 onClick={e => {
                   handlePage(e, index);

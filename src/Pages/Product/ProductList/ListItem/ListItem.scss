@@ -87,9 +87,14 @@
         margin: 0 5px;
         background: #fff;
         border-radius: 50%;
+      }
 
-        &.checked {
-          color: #f54c4a;
+      &.checked {
+        svg {
+          &:first-of-type {
+            background: #f54c4a;
+            color: #fff;
+          }
         }
       }
     }

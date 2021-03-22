@@ -46,7 +46,7 @@ class Content extends Component {
     return (
       <section className="contentWrap">
         <div className="contentTop">
-          <strong className="topTitle">{current.title}</strong>
+          <strong className="topTitle">{current[0].title}</strong>
           <TopCategory
             current={current}
             menuList={menuList}

@@ -17,7 +17,9 @@ export class Product extends Component {
   };
 
   initialProductData = async () => {
-    fetch("http://172.30.1.14:8000/product", { method: "GET" })
+    fetch("http://0f4dd1bb4831.ngrok.io/product/test1?menu=1&category=1", {
+      method: "GET",
+    })
       .then(res => res.json())
       .then(res => {
         const { pageSize } = this.state;
@@ -37,7 +39,9 @@ export class Product extends Component {
   };
 
   initialCategoryData = () => {
-    fetch("http://172.30.1.14:8000/product/category", { method: "GET" })
+    fetch("http://0f4dd1bb4831.ngrok.io/product/category?menu=1&category=1", {
+      method: "GET",
+    })
       .then(res => res.json())
       .then(res => {
         this.setState({
@@ -133,20 +137,6 @@ export class Product extends Component {
     );
   };
 
-  handleFavorite = (e, id) => {
-    const { productData } = this.state;
-    this.setState({
-      productData: productData.map(data => {
-        if (data.productId === id) {
-          return {
-            ...data,
-            favorite: !data.favorite,
-          };
-        } else return data;
-      }),
-    });
-  };
-
   // 카테고리 변경 시 fetch 추가될 부분
   handleCategory = (e, id) => {};
 
@@ -194,7 +184,6 @@ export class Product extends Component {
               page={page}
               pageOffset={pageOffset}
               handlePage={this.handlePage}
-              handleFavorite={this.handleFavorite}
             />
           </div>
         )}

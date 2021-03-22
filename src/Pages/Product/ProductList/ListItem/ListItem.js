@@ -5,20 +5,31 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import "./ListItem.scss";
 
 class ListItem extends Component {
+  state = {
+    favoriteCheck: this.props.data.favorite ? true : false,
+  };
+
+  handleFavorite = (e, id) => {
+    const { favoriteCheck } = this.state;
+    this.setState({
+      favoriteCheck: !favoriteCheck,
+    });
+    console.log(id);
+  };
+
   render() {
     const {
       data: {
         productId,
         rating,
         thumbnailUrl,
-        favorite,
         productName,
         price,
         review,
         type,
       },
-      handleFavorite,
     } = this.props;
+    const { favoriteCheck } = this.state;
 
     return (
       <li className="listItem">
@@ -34,12 +45,12 @@ class ListItem extends Component {
           }`}
         >
           <img src={thumbnailUrl} alt="상품 이미지" />
-          <div className="itemChoice">
+          <div className={`itemChoice ${favoriteCheck && "checked"}`}>
             <FontAwesomeIcon
-              className={`choiceLike ${favorite && "checked"}`}
+              className={`choiceLike`}
               icon={faHeart}
               onClick={e => {
-                handleFavorite(e, productId);
+                this.handleFavorite(e, productId);
               }}
             />
             <FontAwesomeIcon className="chocieDetail" icon={faPlus} />
@@ -48,11 +59,11 @@ class ListItem extends Component {
         <div class="titlePriceWrap">
           <div className="itemTitle">
             <p class="titleName">{productName}</p>
-            <button class={`titleHeart ${favorite && "checked"}`}>
+            <button class={`titleHeart ${favoriteCheck && "checked"}`}>
               <FontAwesomeIcon
                 icon={faHeart}
                 onClick={e => {
-                  handleFavorite(e, productId);
+                  this.handleFavorite(e, productId);
                 }}
               />
             </button>
