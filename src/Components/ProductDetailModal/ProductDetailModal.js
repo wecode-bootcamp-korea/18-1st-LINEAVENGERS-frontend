@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import ContentLeft from "./ContentLeft/ContentLeft";
 import ContentRight from "./ContentRight/ContentRight";
-import ContentBottom from "./ContentBottom/ContentBottom";
 import "./ProductDetailModal.scss";
 
-class ProductDetail extends Component {
+class ProductDetailModal extends Component {
   render() {
     const { imageUrls, name, options, price, reviews, type } = this.props.data;
     const leftData = {
@@ -27,11 +26,10 @@ class ProductDetail extends Component {
           <div className="detailContent">
             <ContentLeft leftData={leftData} />
             <ContentRight rightData={rightData} />
-            <ContentBottom />
           </div>
         </div>
       </div>
     );
   }
 }
-export default ProductDetail;
+export default ProductDetailModal;

@@ -14,6 +14,7 @@ class Product extends Component {
 
   render() {
     const { data } = this.state;
+    console.log(data);
     return (
       <div>
         {Object.keys(data).length !== 0 && <ProductDetailModal data={data} />}
