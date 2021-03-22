@@ -1,167 +1,167 @@
 [
   {
-    "id": 1,
-    "menu": "캐릭터",
-    "subMenuList": [
+    "menuId": 1,
+    "menuName": "캐릭터",
+    "categoryList": [
       {
-        "subId": 1,
-        "subMenu": "브라운 프렌즈"
+        "categoryId": 1,
+        "categoryName": "브라운 프렌즈"
       },
       {
         "subId": 2,
-        "subMenu": "BT21"
+        "categoryName": "BT21"
       },
       {
         "subId": 3,
-        "subMenu": "브롤스타즈"
+        "categoryName": "브롤스타즈"
       },
       {
         "subId": 4,
-        "subMenu": "WDZY"
+        "categoryName": "WDZY"
       }
     ]
   },
   {
-    "id": 2,
-    "menu": "NEW",
-    "subMenuList": []
+    "menuId": 2,
+    "menuName": "NEW",
+    "categoryList": []
   },
   {
-    "id": 3,
-    "menu": "선물추천",
-    "subMenuList": []
+    "menuId": 3,
+    "menuName": "선물추천",
+    "categoryList": []
   },
   {
-    "id": 4,
-    "menu": "THEME",
-    "subMenuList": [
+    "menuId": 4,
+    "menuName": "THEME",
+    "categoryList": [
       {
-        "subId": 1,
-        "subMenu": "브라운 프렌즈"
+        "categoryId": 1,
+        "categoryName": "브라운 프렌즈"
       },
       {
-        "subId": 2,
-        "subMenu": "샐리 프렌즈"
+        "categoryId": 2,
+        "categoryName": "샐리 프렌즈"
       }
     ]
   },
   {
-    "id": 5,
-    "menu": "BT21 BABY",
-    "subMenuList": [
+    "menuId": 5,
+    "menuName": "BT21 BABY",
+    "categoryList": [
       {
-        "subId": 1,
-        "subMenu": "문구"
+        "categoryId": 1,
+        "categoryName": "문구"
       },
       {
-        "subId": 2,
-        "subMenu": "리빙"
+        "categoryId": 2,
+        "categoryName": "리빙"
       },
       {
-        "subId": 3,
-        "subMenu": "디지털"
+        "categoryId": 3,
+        "categoryName": "디지털"
       },
       {
-        "subId": 4,
-        "subMenu": "패션잡화"
+        "categoryId": 4,
+        "categoryName": "패션잡화"
       },
       {
-        "subId": 5,
-        "subMenu": "인형&쿠션"
+        "categoryId": 5,
+        "categoryName": "인형&쿠션"
       }
     ]
   },
   {
-    "id": 6,
-    "menu": "SALE",
-    "subMenuList": []
+    "menuId": 6,
+    "menuName": "SALE",
+    "categoryList": []
   },
   {
-    "id": 7,
-    "menu": "토이",
-    "subMenuList": [
+    "menuId": 7,
+    "menuName": "토이",
+    "categoryList": [
       {
-        "subId": 1,
-        "subMenu": "대형인형"
+        "categoryId": 1,
+        "categoryName": "대형인형"
       },
       {
-        "subId": 2,
-        "subMenu": "미니인형"
+        "categoryId": 2,
+        "categoryName": "미니인형"
       },
       {
-        "subId": 3,
-        "subMenu": "쿠션"
+        "categoryId": 3,
+        "categoryName": "쿠션"
       },
       {
-        "subId": 4,
-        "subMenu": "피규어"
+        "categoryId": 4,
+        "categoryName": "피규어"
       }
     ]
   },
   {
-    "id": 8,
-    "menu": "리빙",
-    "subMenuList": [
+    "menuId": 8,
+    "menuName": "리빙",
+    "categoryList": [
       {
-        "subId": 1,
-        "subMenu": "패브릭 / 홈데코"
+        "categoryId": 1,
+        "categoryName": "패브릭 / 홈데코"
       },
       {
-        "subId": 2,
-        "subMenu": "식기 / 텀블러"
+        "categoryId": 2,
+        "categoryName": "식기 / 텀블러"
       },
       {
-        "subId": 3,
-        "subMenu": "주방 / 욕실"
+        "categoryId": 3,
+        "categoryName": "주방 / 욕실"
       }
     ]
   },
   {
-    "id": 9,
-    "menu": "디지털",
-    "subMenuList": [
+    "menuId": 9,
+    "menuName": "디지털",
+    "categoryList": [
       {
-        "subId": 1,
-        "subMenu": "폰케이스"
+        "categoryId": 1,
+        "categoryName": "폰케이스"
       },
       {
-        "subId": 2,
-        "subMenu": "주변기기"
+        "categoryId": 2,
+        "categoryName": "주변기기"
       },
       {
-        "subId": 3,
-        "subMenu": "스마트기기"
+        "categoryId": 3,
+        "categoryName": "스마트기기"
       },
       {
-        "subId": 4,
-        "subMenu": "디지털케이스"
+        "categoryId": 4,
+        "categoryName": "디지털케이스"
       }
     ]
   },
 
   {
-    "id": 10,
-    "menu": "디자인문구",
-    "subMenuList": [
+    "menuId": 10,
+    "menuName": "디자인문구",
+    "categoryList": [
       {
-        "subId": 1,
-        "subMenu": "다이어리 / 플래너"
+        "categoryId": 1,
+        "categoryName": "다이어리 / 플래너"
       },
       {
-        "subId": 2,
-        "subMenu": "노트 / 메모지"
+        "categoryId": 2,
+        "categoryName": "노트 / 메모지"
       },
       {
-        "subId": 3,
-        "subMenu": "필기류 / 케이스"
+        "categoryId": 3,
+        "categoryName": "필기류 / 케이스"
       },
       {
-        "subId": 4,
-        "subMenu": "데코레이션"
+        "categoryId": 4,
+        "categoryName": "데코레이션"
       },
       {
-        "subId": 5,
-        "subMenu": "스티커 시리즈"
+        "categoryId": 5,
+        "categoryName": "스티커 시리즈"
       }
     ]
   }

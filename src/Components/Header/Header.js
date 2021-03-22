@@ -32,7 +32,7 @@ export class Header extends Component {
                 <img
                   className="searchImg"
                   alt="search"
-                  src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png"
+                  src="../Images/Icons/search.png"
                 />
               </div>
             </div>

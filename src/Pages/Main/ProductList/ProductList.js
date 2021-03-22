@@ -9,11 +9,11 @@ export class ProductList extends Component {
         {this.props.products.map(product => {
           return (
             <Product
-              key={product.id}
-              id={product.id}
+              key={product.productId}
+              id={product.productId}
               price={product.price}
               productName={product.productName}
-              img={product.img}
+              img={product.thumbnailUrl}
             />
           );
         })}

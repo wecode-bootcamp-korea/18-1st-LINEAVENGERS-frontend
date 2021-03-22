@@ -5,19 +5,20 @@ import "./CategoryList.scss";
 export class CategoryList extends Component {
   render() {
     const { itsCategoryList } = this.props;
+    console.log(itsCategoryList);
 
     return (
       <div className="categoryList">
         {itsCategoryList.map(menuObj => {
           return (
             <div className="categoryMenu">
-              <span className="categoryText">{menuObj.menu}</span>
+              <span className="categoryText">{menuObj.menuName}</span>
 
-              {menuObj.subMenuList.length > 0 && (
+              {menuObj.categoryList.length > 0 && (
                 <div className="subMenuList">
-                  {menuObj.subMenuList.map(subMenuObj => (
+                  {menuObj.categoryList.map(subMenuObj => (
                     <Link to="#none" className="subMenu">
-                      {subMenuObj.subMenu}
+                      {subMenuObj.categoryName}
                     </Link>
                   ))}
                 </div>

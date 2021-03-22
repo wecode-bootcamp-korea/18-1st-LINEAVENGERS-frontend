@@ -1,13 +1,32 @@
 .slickBanner {
-  .slickBannerBanckgroundImg {
-    width: 100%;
-    height: 800px;
-    background-position: center;
-    z-index: -1;
-  }
+  z-index: -20;
 
-  .slickBannerImg img {
-    width: 100%;
-    margin: 0 auto;
+  .slickBannerImgAndCopy {
+    position: relative;
+
+    .slickBannerBanckgroundImg {
+      width: 100%;
+      height: 800px;
+      background-position: center;
+    }
+
+    .copyContainer {
+      position: absolute;
+      top: 35%;
+      left: 15%;
+      right: 15%;
+      text-align: left;
+
+      .bigCopy {
+        font-size: 60px;
+        font-weight: 700;
+        margin: 15px 0;
+      }
+
+      .smallCopy {
+        margin-top: 30px;
+        font-size: 22px;
+      }
+    }
   }
 }

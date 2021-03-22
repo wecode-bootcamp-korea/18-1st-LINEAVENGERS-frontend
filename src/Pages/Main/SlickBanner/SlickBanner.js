@@ -1,64 +1,65 @@
 import React, { Component } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css"; // slide의 css는 이걸 쓰면 돼
-import "slick-carousel/slick/slick-theme.css"; // 이것도 쓰렴
+import styled from "styled-components"; // for 커스텀
+import Slider from "react-slick"; // 세팅된 컴포넌트
+import "slick-carousel/slick/slick.css"; //Slick의 CSS
+import "slick-carousel/slick/slick-theme.css"; //Slick의 CSS
 import "./SlickBanner.scss";
 
 export class SlickBanner extends Component {
   render() {
     const settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      arrow: true,
+      dots: true, // 하단 도트 버튼 보이기
+      infinite: true, // 무한 반복
+      speed: 1000, // 넘어갈 때 속도
+      slidesToShow: 1, // 한 번에 보여질 슬라이드 수
+      slidesToScroll: 1, //도트 또는 화살표 한 번 클릭시 넘어가는 슬라이드 수
+      arrow: true, // 양쪽 화살표 보이기
+      autoplay: true, // 슬라이드 자동 변경
+      autoplaySpeed: 3000, // 넘어가는 시간 간격
     };
 
-    // const { slideList } = this.props;
-    console.log("itsBanner >>>", this.props.itsBanner);
+    const StyledSlider = styled(Slider)`
+      .slick-dots {
+        bottom: 40px;
+      }
+
+      /*화살표 크기*/
+      .slick-prev:before,
+      .slick-next:before {
+        font-size: 50px;
+      }
+
+      .slick-prev {
+        left: 10%; /*위치*/
+        z-index: 999;
+      }
+
+      .slick-next {
+        right: 10%; /*위치*/
+      }
+    `;
+
+    const { itsBanner } = this.props;
 
     return (
       <div className="slickBanner">
-        <Slider {...settings}>
-          {this.props.itsBanner.map(el => {
+        <StyledSlider {...settings}>
+          {itsBanner.map(el => {
             return (
-              <div className="slickBannerImg">
+              <div className="slickBannerImgAndCopy">
                 <div
                   className="slickBannerBanckgroundImg"
                   style={{ backgroundImage: `url(` + el.imgUrl + `)` }}
                 ></div>
-                {/* <img alt="" src={el.imgUrl} /> */}
+                <div className="copyContainer">
+                  <p className="bigCopy">{el.bigCopy}</p>
+                  <p className="bigCopy">{el.bigCopy2}</p>
+                  <p className="smallCopy">{el.smallCopy}</p>
+                </div>
               </div>
             );
           })}
-
-          {/* <div>
-            <img
-              alt=""
-              src="https://shop-phinf.pstatic.net/20210317_13/1615942271595pOsTT_JPEG/main_pc_bn_golf_acc2.jpg"
-            />
-          </div>
-          <div>
-            <img
-              alt=""
-              src="https://shop-phinf.pstatic.net/20210317_231/1615977673371QXVB2_JPEG/PROMOTION_PC_28129.jpg"
-            />
-          </div>
-          <div>
-            <img
-              alt=""
-              src="https://shop-phinf.pstatic.net/20210317_182/1615977460065NVmGR_JPEG/PROMOTION_PC.jpg"
-            />
-          </div>
-          <div>
-            <div
-              style={{
-                backgroundImage: `url("https://shop-phinf.pstatic.net/20210201_24/1612164845849t0Vnf_JPEG/main_bn_pc_G.jpg")`
-              }}
-            ></div>
-          </div> */}
-        </Slider>
+        </StyledSlider>
       </div>
     );
   }
