@@ -128,7 +128,7 @@ class Signup extends Component {
     }
   };
 
-  //폰 번호 유효성 검사
+  //폰 번호 유효성 검사ss
   handlePhone = () => {
     const { phoneNum } = this.state;
     const IS_PHONE_NUM = /^\d{3}-\d{3,4}-\d{4}$/;
