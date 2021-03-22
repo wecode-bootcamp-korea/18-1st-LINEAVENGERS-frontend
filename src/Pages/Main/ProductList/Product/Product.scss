@@ -4,9 +4,61 @@
   margin-bottom: 30px;
   font-size: 18px;
 
-  .productImg {
+  .productImgContainer {
     width: 250px;
-    border-radius: 5%;
+    position: relative;
+    &:hover {
+      .iconsContainer {
+        opacity: 1;
+      }
+    }
+    .productImg {
+      width: 250px;
+      border-radius: 5%;
+    }
+
+    .iconsContainer {
+      position: absolute;
+      bottom: 30px;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      transition: opacity 0.3s ease-out;
+
+      .heartAndShoppingBag {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .redHeart {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: red;
+          color: white;
+          opacity: 50%;
+          width: 50px;
+          height: 50px;
+          border: none;
+          margin: 0 3px;
+          border-radius: 50%;
+        }
+
+        .whiteHeart,
+        .whiteShoppingBag {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: white;
+          opacity: 50%;
+          width: 50px;
+          height: 50px;
+          border: none;
+          margin: 0 3px;
+          border-radius: 50%;
+        }
+      }
+    }
   }
 
   .price {

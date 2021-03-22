@@ -4,48 +4,55 @@
     "price": "17000",
     "productName": "라인프렌즈 BT21 BABY 2021 다이어리",
     "thumbnailUrl": "https://shop-phinf.pstatic.net/20201029_140/1603931484434qnCdl_JPEG/18140330_52370499.jpg?type=m510",
-    "like": true
+    "favorite": true
   },
   {
     "productId": 2,
     "price": "21000",
     "productName": "라인프렌즈 BT21 BABY 얼굴 방석",
-    "thumbnailUrl": "https://shop-phinf.pstatic.net/20201125_77/16063128239131FwjP_JPEG/7238657733061657_16381677.jpg?type=m510"
+    "thumbnailUrl": "https://shop-phinf.pstatic.net/20201125_77/16063128239131FwjP_JPEG/7238657733061657_16381677.jpg?type=m510",
+    "favorite": false
   },
   {
     "productId": 3,
     "price": "21200",
     "productName": "라인프렌즈 BT21 BABY 문구 세트",
-    "thumbnailUrl": "https://shop-phinf.pstatic.net/20201028_83/1603866084503ieGQN_JPEG/5001973196618299_1454818388.jpg?type=m510"
+    "thumbnailUrl": "https://shop-phinf.pstatic.net/20201028_83/1603866084503ieGQN_JPEG/5001973196618299_1454818388.jpg?type=m510",
+    "favorite": false
   },
   {
     "productId": 4,
     "price": "59000",
     "productName": "LAMY X BT21 스페셜 에디션 SET2",
-    "thumbnailUrl": "https://shop-phinf.pstatic.net/20200922_122/1600750959595bBU4L_JPEG/12481677_50947338.jpg?type=m510"
+    "thumbnailUrl": "https://shop-phinf.pstatic.net/20200922_122/1600750959595bBU4L_JPEG/12481677_50947338.jpg?type=m510",
+    "favorite": true
   },
   {
     "productId": 5,
     "price": "17000",
     "productName": "라인프렌즈 브라운앤프렌즈 2021 스케쥴러",
-    "thumbnailUrl": "https://shop-phinf.pstatic.net/20210316_153/1615872857501BRnMA_JPEG/19114337_58441546.jpg?type=m510"
+    "thumbnailUrl": "https://shop-phinf.pstatic.net/20210316_153/1615872857501BRnMA_JPEG/19114337_58441546.jpg?type=m510",
+    "favorite": false
   },
   {
     "productId": 6,
     "price": "9000",
     "productName": "라인프렌즈 브라운앤프렌즈 2021 탁상 캘린더",
-    "thumbnailUrl": "https://shop-phinf.pstatic.net/20201029_160/1603931499940azgfa_JPEG/18140267_52370502.jpg?type=m510"
+    "thumbnailUrl": "https://shop-phinf.pstatic.net/20201029_160/1603931499940azgfa_JPEG/18140267_52370502.jpg?type=m510",
+    "favorite": false
   },
   {
     "productId": 7,
     "price": "59000",
     "productName": "LAMY LINE FRIENDS 샐리 스페셜 에디션",
-    "thumbnailUrl": "https://shop-phinf.pstatic.net/20200922_160/1600762254302tgtuW_JPEG/38123796973133881_1041011852.jpg?type=m510"
+    "thumbnailUrl": "https://shop-phinf.pstatic.net/20200922_160/1600762254302tgtuW_JPEG/38123796973133881_1041011852.jpg?type=m510",
+    "favorite": true
   },
   {
     "productId": 8,
     "price": "59000",
     "productName": "LAMY LINE FRIENDS 브라운 에디션",
-    "thumbnailUrl": "https://shop-phinf.pstatic.net/20200922_31/1600762209672sQpks_JPEG/1898052386556643_1363862662.jpg?type=m510"
+    "thumbnailUrl": "https://shop-phinf.pstatic.net/20200922_31/1600762209672sQpks_JPEG/1898052386556643_1363862662.jpg?type=m510",
+    "favorite": true
   }
 ]

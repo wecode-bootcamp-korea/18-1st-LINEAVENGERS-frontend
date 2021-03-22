@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTh } from "@fortawesome/free-solid-svg-icons";
 import "./Header.scss";
 import Category from "./Category/Category";
 
@@ -10,12 +13,18 @@ export class Header extends Component {
           <div className="homeAndMyInfoContainer">
             <div className="homeAndMyInfo">
               <div className="goToHome">
-                <span>NAVER</span>
+                <Link to="/main">
+                  <span className="homeText">HOME</span>
+                </Link>
               </div>
               <div className="myInfo">
-                <span>찜한 스토어</span>
+                <Link to="/login">
+                  <button className="logInBtn">로그인</button>
+                </Link>
+                {/* <span>찜한 스토어</span>
                 <span>마이페이지</span>
-                <span>장바구니</span>
+                <span>장바구니</span> */}
+                <FontAwesomeIcon className="menuIcon" icon={faTh} size="1x" />
               </div>
             </div>
           </div>

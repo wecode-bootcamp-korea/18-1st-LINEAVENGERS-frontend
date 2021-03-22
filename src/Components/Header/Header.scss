@@ -2,6 +2,7 @@
   position: absolute;
   top: 0;
   width: 100%;
+  text-decoration: none; //왜???안될까????
   nav {
     height: 190px;
 
@@ -13,20 +14,37 @@
         justify-content: space-between;
         align-items: center;
         width: 70%;
-        height: 40px;
+        height: 60px;
         margin: 0 auto;
-        font-size: 12px;
+        font-size: 16px;
         color: black;
 
         .goToHome {
           font-weight: 900;
+          .homeText {
+            text-decoration: none; ///왜???WHY????안될까????
+          }
         }
 
         .myInfo {
           display: flex;
-          justify-content: space-between;
+          justify-content: flex-end;
           align-items: center;
-          width: 170px;
+          width: 240px;
+          .logInBtn {
+            background-color: transparent;
+            border-radius: 5%;
+            border: 1px solid black;
+            padding: 5px 10px;
+          }
+          .menuIcon {
+            margin-left: 15px;
+            font-size: 25px;
+            opacity: 60%;
+          }
+          span {
+            margin-left: 10px;
+          }
         }
       }
     }
@@ -57,6 +75,7 @@
           padding: 10px 12px 10px 12px;
           border: 1px solid black;
           border-radius: 8px;
+          // background-color: transparent;
         }
 
         .searchImg {

@@ -35,8 +35,6 @@ export class Main extends Component {
   }
 
   render() {
-    console.log("banner >>>", this.state.banner);
-
     return (
       <div className="main">
         <main className="mainContainer">

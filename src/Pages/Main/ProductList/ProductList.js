@@ -14,6 +14,7 @@ export class ProductList extends Component {
               price={product.price}
               productName={product.productName}
               img={product.thumbnailUrl}
+              favorite={product.favorite}
             />
           );
         })}
