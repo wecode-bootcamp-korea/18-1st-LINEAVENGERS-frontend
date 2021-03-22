@@ -35,7 +35,7 @@ class ContentRight extends Component {
     let duplicate = false;
 
     for (let i = 0; i < selectList.length; i++) {
-      if (selectList[i].option === option) {
+      if (selectList[i].option === option.name) {
         alert("동일한 품목이 있습니다!");
         duplicate = false;
         return;

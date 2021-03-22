@@ -31,7 +31,7 @@ class DetailList extends Component {
             <strong>{user}</strong>
             <strong>{date}</strong>
             <span>
-              {type}: {option}
+              {type}: {option.name}
             </span>
           </p>
           <p className="detailMemo">{comment}</p>

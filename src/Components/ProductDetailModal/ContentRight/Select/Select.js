@@ -33,19 +33,18 @@ class Select extends Component {
           <span className="optionArrow" onClick={this.showOptions}></span>
           <ul className="optionWrap">
             {options.map(option => {
-              const id = uuid();
               return (
                 <li
-                  key={id}
-                  id={id}
+                  key={option.sizeId}
+                  id={option.sizeId}
                   className="optionList"
-                  name={option}
+                  name={option.name}
                   onClick={e => {
-                    addSelect(e, id, option);
+                    addSelect(e, option.sizeId, option.name);
                     this.showOptions();
                   }}
                 >
-                  {option}
+                  {option.name}
                 </li>
               );
             })}

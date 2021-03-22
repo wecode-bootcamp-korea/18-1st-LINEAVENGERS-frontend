@@ -7,7 +7,7 @@ class Product extends Component {
   };
 
   componentDidMount() {
-    fetch("http://0f4dd1bb4831.ngrok.io/product/detail/1", { method: "GET" })
+    fetch("http://0f4dd1bb4831.ngrok.io/product/modal/1", { method: "GET" })
       .then(res => res.json())
       .then(res => this.setState({ data: res.productDetail }));
   }
