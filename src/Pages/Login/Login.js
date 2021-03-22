@@ -23,9 +23,6 @@ class Login extends Component {
 
   render() {
     const { login_id, password, idCheck } = this.state;
-    // console.log({ login_id });
-    // console.log({ password });
-    console.log(this.state.idCheck);
     return (
       <form className="login" onSubmit={this.onSubmit}>
         <div className="loginContainer">
