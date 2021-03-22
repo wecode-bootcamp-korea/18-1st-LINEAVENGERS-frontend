@@ -5,7 +5,6 @@ import "./CategoryList.scss";
 export class CategoryList extends Component {
   render() {
     const { itsCategoryList } = this.props;
-    console.log(itsCategoryList);
 
     return (
       <div className="categoryList">
