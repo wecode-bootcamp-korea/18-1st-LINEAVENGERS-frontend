@@ -7,14 +7,13 @@ class Product extends Component {
   };
 
   componentDidMount() {
-    fetch("http://0f4dd1bb4831.ngrok.io/product/modal/1", { method: "GET" })
+    fetch("http://9a81c7519d89.ngrok.io/product/modal/1", { method: "GET" })
       .then(res => res.json())
       .then(res => this.setState({ data: res.productDetail }));
   }
 
   render() {
     const { data } = this.state;
-    console.log(data);
     return (
       <div>
         {Object.keys(data).length !== 0 && <ProductDetailModal data={data} />}

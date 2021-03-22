@@ -33,9 +33,8 @@ class ContentRight extends Component {
     const { selectList } = this.state;
     const finalPrice = sale !== 0 ? normal - (normal * sale) / 100 : normal;
     let duplicate = false;
-
     for (let i = 0; i < selectList.length; i++) {
-      if (selectList[i].option === option.name) {
+      if (selectList[i].id === id) {
         alert("동일한 품목이 있습니다!");
         duplicate = false;
         return;
@@ -70,7 +69,6 @@ class ContentRight extends Component {
     } = this.props.rightData;
     const { selectList } = this.state;
     const finalPrice = sale !== 0 ? normal - (normal * sale) / 100 : normal;
-
     return (
       <div className="contentRight">
         <h3 className="rightTitle">{name}</h3>
