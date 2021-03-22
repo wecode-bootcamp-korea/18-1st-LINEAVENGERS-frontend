@@ -39,11 +39,9 @@ class Signup extends Component {
     })
       .then(res => res.json())
       .then(result => {
-        console.log(result);
         if (result.message === "SUCCESS") {
           alert("회원가입 성공");
           this.props.history.push("/Login");
-          return;
         }
       });
   };
@@ -58,15 +56,9 @@ class Signup extends Component {
     const { email } = this.state;
     const IS_EMAIL_ENG = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
 
-    if (email === "") {
+    if (email !== "" && IS_EMAIL_ENG.test(email)) {
       this.setState({ emailCheck: false }); //공백일 경우
       return;
-    } else {
-      this.setState({ emailCheck: true });
-    }
-    if (IS_EMAIL_ENG.test(email)) {
-      //정규식 이메일
-      this.setState({ emailCheck: false });
     } else {
       this.setState({ emailCheck: true });
     }
@@ -75,18 +67,12 @@ class Signup extends Component {
   //아이디 유효성 검사
   handleId = e => {
     const { loginId } = this.state;
-
     const IS_ID_NUM_ENG = /^[a-z]+[a-z0-9]{5,19}$/g;
-    if (loginId === "") {
+    if (loginId !== "" && IS_ID_NUM_ENG.test(loginId)) {
       this.setState({ idCheck: false, multiCheckId: "" });
       return;
     }
-    if (IS_ID_NUM_ENG.test(loginId)) {
-      this.setState({ idCheck: false });
-    } else {
-      this.setState({ idCheck: true, multiCheckId: "" });
-      return;
-    }
+
     fetch(USERID_API, {
       method: "POST",
       body: JSON.stringify({
@@ -111,11 +97,7 @@ class Signup extends Component {
   //비밀번호
   handlePw = () => {
     const { loginPw } = this.state;
-    if (loginPw === "") {
-      this.setState({ pwcheck: false });
-      return;
-    }
-    if (loginPw.length >= 8) {
+    if (loginPw !== "" && loginPw.length >= 8) {
       this.setState({ pwcheck: false });
       return;
     } else {
@@ -126,7 +108,6 @@ class Signup extends Component {
   //비밀번호 재확인
   handleFocus = () => {
     const { rePassword, loginPw } = this.state;
-
     if (rePassword === loginPw) {
       this.setState({ focusCheck: false });
     } else {
@@ -138,12 +119,10 @@ class Signup extends Component {
   handleName = () => {
     const { name } = this.state;
     const IS_KOR_ENG_NAME = /^[가-힣a-zA-Z]+$/;
-    if (name === "") {
+
+    if (name !== "" && IS_KOR_ENG_NAME.test(name)) {
       this.setState({ nameCheck: false });
       return;
-    }
-    if (IS_KOR_ENG_NAME.test(name)) {
-      this.setState({ nameCheck: false });
     } else {
       this.setState({ nameCheck: true });
     }
@@ -153,18 +132,14 @@ class Signup extends Component {
   handlePhone = () => {
     const { phoneNum } = this.state;
     const IS_PHONE_NUM = /^\d{3}-\d{3,4}-\d{4}$/;
-    if (phoneNum === "") {
+    if (phoneNum !== "" && IS_PHONE_NUM.test(phoneNum)) {
       this.setState({ phoneCheck: false });
       return;
-    }
-    if (IS_PHONE_NUM.test(phoneNum)) {
-      this.setState({ phoneCheck: false });
     } else {
       this.setState({ phoneCheck: true });
     }
   };
 
-  handle;
   render() {
     const {
       emailCheck,
@@ -175,7 +150,6 @@ class Signup extends Component {
       phoneCheck,
       multiCheckId,
     } = this.state;
-    console.log(multiCheckId);
     return (
       <div className="signup">
         <div className="container">
