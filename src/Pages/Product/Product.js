@@ -17,15 +17,17 @@ export class Product extends Component {
   };
 
   initialProductData = async () => {
-    fetch("http://0f4dd1bb4831.ngrok.io/product/test1?menu=1&category=1", {
+    fetch("http://9a81c7519d89.ngrok.io/product?menu=1&category=1", {
       method: "GET",
     })
       .then(res => res.json())
       .then(res => {
+        console.log(res);
         const { pageSize } = this.state;
         this.setState(
           {
             productData: res.productList,
+            categoryData: res.categoryData,
             page: Math.ceil(res.productList.length / pageSize),
           },
           () => {
@@ -37,19 +39,6 @@ export class Product extends Component {
         );
       });
   };
-
-  initialCategoryData = () => {
-    fetch("http://0f4dd1bb4831.ngrok.io/product/category?menu=1&category=1", {
-      method: "GET",
-    })
-      .then(res => res.json())
-      .then(res => {
-        this.setState({
-          categoryData: res,
-        });
-      });
-  };
-
   initialSort = () => {
     const { productData } = this.state;
 
@@ -142,7 +131,6 @@ export class Product extends Component {
 
   componentDidMount() {
     this.initialProductData();
-    this.initialCategoryData();
   }
 
   render() {
