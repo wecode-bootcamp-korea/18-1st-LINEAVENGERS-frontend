@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import ContentLeft from "./ContentLeft/ContentLeft";
 import ContentRight from "./ContentRight/ContentRight";
-import "./ProductDetail.scss";
+import ContentBottom from "./ContentBottom/ContentBottom";
+import "./ProductDetailModal.scss";
 
 class ProductDetail extends Component {
   render() {
@@ -20,12 +21,13 @@ class ProductDetail extends Component {
       <div className="productDetail">
         <div className="detailContainer">
           <div className="detailTop">
-            <h1 className="topTitle">상세보기</h1>
+            <h1 className="topTitle">간략보기</h1>
             <span className="closeBtn"></span>
           </div>
           <div className="detailContent">
             <ContentLeft leftData={leftData} />
             <ContentRight rightData={rightData} />
+            <ContentBottom />
           </div>
         </div>
       </div>
