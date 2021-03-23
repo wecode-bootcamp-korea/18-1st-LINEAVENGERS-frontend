@@ -1,0 +1,88 @@
+.QAContainer {
+  h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  > p {
+    font-size: 11px;
+    color: #8f8f8f;
+  }
+  .QABtnWrap {
+    margin-top: 15px;
+
+    button {
+      width: 130px;
+      height: 36px;
+      background: #333;
+      color: #fff;
+      font-size: 12px;
+      border: none;
+      cursor: pointer;
+    }
+  }
+  .QAListContainer {
+    margin-top: 20px;
+    font-size: 12px;
+    border-top: 2px solid #000000;
+    border-bottom: 1px solid #dadada;
+    .QATitle {
+      display: flex;
+      border-bottom: 1px solid #dadada;
+      li {
+        text-align: center;
+        padding: 20px;
+        font-weight: 700;
+        &:nth-child(1) {
+          width: 15%;
+        }
+        &:nth-child(2) {
+          width: 65%;
+        }
+        &:nth-child(3) {
+          width: 10%;
+        }
+        &:nth-child(4) {
+          width: 10%;
+        }
+      }
+    }
+    .QAList {
+      display: flex;
+      li {
+        padding: 20px;
+        text-align: center;
+        &:nth-child(1) {
+          width: 15%;
+        }
+        &:nth-child(2) {
+          width: 65%;
+        }
+        &:nth-child(3) {
+          width: 10%;
+        }
+        &:nth-child(4) {
+          width: 10%;
+        }
+      }
+    }
+  }
+  .QAPage {
+    margin-top: 50px;
+    .PageBox {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      li {
+        margin: 0 5px;
+        width: 30px;
+        height: 30px;
+        background: #333;
+        color: #fff;
+        font-weight: 700;
+        text-align: center;
+        line-height: 30px;
+      }
+    }
+  }
+}

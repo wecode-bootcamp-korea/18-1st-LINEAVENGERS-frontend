@@ -1,0 +1,36 @@
+.detailContainer {
+  .detailTab {
+    display: flex;
+    text-align: center;
+    border-bottom: 3px solid #3e3d4e;
+
+    .tabList {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: calc(100% / 4);
+      padding: 15px 0;
+      background: #f3f5f7;
+      color: #3e3d4e;
+      font-size: 13px;
+      font-weight: 700;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 1px;
+        height: 25px;
+        background: #dbdddf;
+        transform: translateY(-50%);
+      }
+      &:last-child {
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+}

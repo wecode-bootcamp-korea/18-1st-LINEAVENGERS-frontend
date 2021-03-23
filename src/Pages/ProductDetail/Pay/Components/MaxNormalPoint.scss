@@ -1,0 +1,42 @@
+.maxNormalWrap {
+  padding: 13px 16px;
+
+  .maxPointInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    em {
+      font-weight: 700;
+    }
+  }
+
+  .normalPointInfo {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3px;
+    padding-left: 15px;
+    font-size: 12px;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 2px;
+      top: 0;
+      width: 6px;
+      height: 6px;
+      border-left: 1px solid #e5e5e5;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .normalValue {
+      color: #999;
+      em {
+        font-weight: 700;
+      }
+    }
+  }
+}
