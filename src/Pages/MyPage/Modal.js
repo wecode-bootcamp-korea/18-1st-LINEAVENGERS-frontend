@@ -6,16 +6,18 @@ class Popup extends React.Component {
   constructor() {
     super();
     this.state = {
-      Product: [],
+      // Product: [],
       Clicked: [false, false, false, false, false],
+      myCount: "",
+      Comment: "",
     };
   }
 
-  componentDidMount() {
-    fetch("/Data/MyPageProduct.json")
-      .then(res => res.json())
-      .then(res => this.setState({ Product: res }));
-  }
+  // componentDidMount() {
+  //   fetch("/Data/ShoppingBasket.json")
+  //     .then(res => res.json())
+  //     .then(res => this.setState({ Product: res }));
+  // }
 
   handleStarClick = index => {
     let clickStates = [...this.state.Clicked];
@@ -44,45 +46,65 @@ class Popup extends React.Component {
     }
   };
 
+  commentValue = e => {
+    this.setState({ Comment: e.target.value });
+  };
+
+  commentReview = () => {
+    let mycount = this.state.Clicked.filter(Boolean).length;
+    if (mycount >= 1) {
+      this.setState({ myCount: mycount });
+    }
+  };
+
+  registerReview = () => {
+    fetch("http://10.58.1.71:8000/mypage/review", {
+      method: "post",
+      body: JSON.stringify({
+        product: window.myId,
+        rating: this.state.myCount,
+        content: this.state.Comment,
+      }),
+    });
+  };
+
   render() {
+    console.log(window.myId);
     return (
       <div className="modal">
         <div className="modalReview">리뷰 쓰기</div>
-        {this.state.Product.map(product => {
-          return (
-            <div className="modalHead">
-              <img className="modalImage" src={product.img} alt="라인프렌즈" />
-              <div className="modalName">{product.name}</div>
-            </div>
-          );
-        })}
+
+        <div className="modalHead">
+          <img className="modalImage" src={window.myImgUrl} alt="라인프렌즈" />
+          <div className="modalName">{window.myName}</div>
+        </div>
         <div className="modalContent">
           <div className="modalSatisfy">상품은 만족하셨나요?</div>
           <div className="modalStar">
-            <div>
+            <div onClick={this.commentReview}>
               <FaStar
                 size="50"
-                onClick={e => this.handleStarClick(0)}
+                onClick={() => this.handleStarClick(0)}
                 className={this.state.Clicked[0] ? "red" : null}
               />
               <FaStar
                 size="50"
-                onClick={e => this.handleStarClick(1)}
+                onClick={() => this.handleStarClick(1)}
                 className={this.state.Clicked[1] ? "red" : null}
               />
               <FaStar
                 size="50"
-                onClick={e => this.handleStarClick(2)}
+                onClick={() => this.handleStarClick(2)}
                 className={this.state.Clicked[2] ? "red" : null}
               />
               <FaStar
                 size="50"
-                onClick={e => this.handleStarClick(3)}
+                onClick={() => this.handleStarClick(3)}
                 className={this.state.Clicked[3] ? "red" : null}
               />
               <FaStar
                 size="50"
-                onClick={e => this.handleStarClick(4)}
+                onClick={() => this.handleStarClick(4)}
                 className={this.state.Clicked[4] ? "red" : null}
               />
             </div>
@@ -96,6 +118,7 @@ class Popup extends React.Component {
             className="modalTextContent"
             type="textarea"
             placeholder="최소 10자 이상 입력해주세요"
+            onChange={this.commentValue}
           ></input>
         </div>
         <div className="modalBtn">
@@ -105,7 +128,13 @@ class Popup extends React.Component {
             </button>
           </div>
           <div className="modalBtnRight">
-            <button className="modalBtnLeftRegister">등록</button>
+            <button
+              className="modalBtnLeftRegister"
+              onClick={this.registerReview}
+              // onClick={this.commentReview}
+            >
+              등록
+            </button>
           </div>
         </div>
       </div>

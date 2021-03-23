@@ -19,7 +19,7 @@ class Routes extends React.Component {
           <Route exact path="/product" component={Product} />
           <Route exact path="/shoppingbasket" component={ShoppingBasket} />
           <Route exact path="/mypageheart" component={MyPageHeart} />
-          <Route exact path="/modal" component={Modal} />
+          <Route exact path="/modal/:id" component={Modal} />
         </Switch>
       </Router>
     );

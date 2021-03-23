@@ -14,7 +14,12 @@ class ShoppingBasketNavTop extends React.Component {
           </div>
           <div className="myPageNavTopRight">
             <div className="myPageNavTopRightMyPage">
-              <Link to="./MyPage">My Page</Link>
+              <Link
+                to="./MyPage"
+                style={{ textDecoration: "none", color: "white" }}
+              >
+                My Page
+              </Link>
             </div>
             <div>Line Pay</div>
           </div>

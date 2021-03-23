@@ -20,7 +20,6 @@ export class MyPage extends Component {
   }
 
   render() {
-    console.log(this.state.ProductList);
     return (
       <div className="myPage">
         <MyPageNav />
@@ -33,6 +32,7 @@ export class MyPage extends Component {
               {this.state.ProductList.map(product => {
                 return (
                   <MyPageProduct
+                    id={product.id}
                     img={product.img}
                     name={product.name}
                     price={product.price}

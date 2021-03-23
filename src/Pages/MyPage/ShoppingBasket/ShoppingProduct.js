@@ -1,7 +1,7 @@
 import React from "react";
 import ShoppingProductList from "./ShoppingProductList";
 import ShoppingNone from "./ShoppingNone";
-import { AiOutlinePlus } from "react-icons/ai";
+import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 
 class ShoppingProduct extends React.Component {
   constructor() {
@@ -10,6 +10,10 @@ class ShoppingProduct extends React.Component {
       ProductList: [],
       TotalPrice: 0,
       DeliveryPrice: 0,
+      DiscountPrice: 0,
+      userId: "",
+      quantity: "",
+      sizeId: "",
     };
   }
 
@@ -19,7 +23,15 @@ class ShoppingProduct extends React.Component {
       .then(res => {
         let totalSum = 0;
         let delivery = 0;
-        res.forEach(data => (totalSum += data.price * data.size));
+        let discount = 0;
+        let userId = "";
+        res.forEach(
+          data =>
+            (totalSum +=
+              (data.discount === 0
+                ? data.price
+                : data.price - (data.discount / 100) * data.price) * data.size)
+        );
         const result = res.map(el => {
           if (el.deliveryPrice === "무료") {
             el.deliveryPrice = 0;
@@ -27,30 +39,43 @@ class ShoppingProduct extends React.Component {
           return el.deliveryPrice;
         });
         delivery = result.reduce((acc, cur) => acc + cur);
+        res.forEach(data => (discount += (data.discount / 100) * data.price));
         this.setState({
           ProductList: res,
           TotalPrice: totalSum,
           DeliveryPrice: delivery,
+          DiscountPrice: discount,
+          userId: userId,
         });
       });
   }
 
-  // componentDidUpdate() {
-  //   fetch("/Data/ShoppingBasket.json", {
-  //     method: "delete",
-  //   })
-  //     .then(response => response.json())
-  //     .then(res => console.log(res));
-  // }
+  goToMyPage = async () => {
+    await fetch("api주소", {
+      method: "post",
+      body: JSON.stringify({
+        userId: this.state.ProductList.id,
+        quantity: this.state.ProductList,
+      }),
+    });
+  };
 
   removeProduct = e => {
     this.setState({
       ProductList: this.state.ProductList.filter(el => el.id != e.target.value),
     });
+
+    fetch("api주소", {
+      method: "POST",
+      body: JSON.stringify({
+        userId: this.state.ProductList.id,
+      }),
+    });
   };
 
   render() {
-    const deliveryStat = this.state.DeliveryPrice >= 3000 ? 3000 : 0;
+    console.log(this.state.ProductList);
+    const deliveryStat = this.state.DeliveryPrice >= 3000 ? 0 : 3000;
     return this.state.ProductList.length === 0 ? (
       <ShoppingNone />
     ) : (
@@ -68,6 +93,7 @@ class ShoppingProduct extends React.Component {
               img={product.img}
               name={product.name}
               price={product.price}
+              discount={product.discount}
               size={product.size}
               totalPrice={product.totalPrice}
               deliveryPrice={product.deliveryPrice}
@@ -98,12 +124,26 @@ class ShoppingProduct extends React.Component {
                 {deliveryStat}원
               </div>
             </div>
+            <div className="shoppingProductListTotalLeftMinus">
+              <AiOutlineMinus size="20" color="gray" />
+            </div>
+            <div className="shoppingProductListTotalLeftDis">
+              <div className="shoppingProductListTotalLeftDiscount">
+                할인 예상금액
+              </div>
+              <div className="shoppingProductListTotalLeftDiscountPrice">
+                {this.state.DiscountPrice}원
+              </div>
+            </div>
           </div>
           <div className="shoppingProductListTotalRight">
             <div className="shoppingProductListTotalRightHead">
               <div className="shoppingProductListTotalPrice">총 주문금액</div>
               <div className="shoppingProductListTotalPriceInt">
-                {this.state.TotalPrice + deliveryStat}원
+                {this.state.TotalPrice +
+                  deliveryStat -
+                  this.state.DiscountPrice}
+                원
               </div>
             </div>
           </div>
@@ -113,7 +153,12 @@ class ShoppingProduct extends React.Component {
             <button className="shoppingProductButtonLeft">쇼핑 계속하기</button>
           </div>
           <div className="shoppingProductButtonR">
-            <button className="shoppingProductButtonRight">주문하기</button>
+            <button
+              className="shoppingProductButtonRight"
+              onClick={this.goToMyPage}
+            >
+              주문하기
+            </button>
           </div>
         </div>
       </main>

@@ -12,13 +12,28 @@ class MyPageNav extends React.Component {
           </div>
           <div className="myPageNavTopRight">
             <div class="myPageNavTopRightMy">
-              <Link to="/MyPage">마이 페이지</Link>
+              <Link
+                to="/MyPage"
+                style={{ textDecoration: "none", color: "white" }}
+              >
+                마이 페이지
+              </Link>
             </div>
             <div class="myPageNavTopRightHeart">
-              <Link to="/MyPageHeart">찜 상품</Link>
+              <Link
+                to="/MyPageHeart"
+                style={{ textDecoration: "none", color: "white" }}
+              >
+                찜 상품
+              </Link>
             </div>
             <div className="myPageNavTopRightBasket">
-              <Link to="/ShoppingBasket">장바구니</Link>
+              <Link
+                to="/ShoppingBasket"
+                style={{ textDecoration: "none", color: "white" }}
+              >
+                장바구니
+              </Link>
             </div>
           </div>
         </div>
