@@ -24,30 +24,51 @@
 
           .homeText {
             text-decoration: none;
+            color: black;
           }
         }
       }
 
       .myInfo {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        width: 280px;
+        .NoToken,
+        .iHaveToken {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          width: 350px;
 
-        .logInBtn {
-          background-color: transparent;
-          border-radius: 5%;
-          border: 1px solid black;
-          padding: 5px 10px;
-        }
-        .menuIcon {
-          margin-left: 15px;
-          font-size: 25px;
-          opacity: 60%;
-        }
-        .myInfoText {
-          margin-left: 10px;
-          text-decoration: none;
+          .noTokenText {
+            margin-left: 15px;
+            text-decoration: none;
+            color: black;
+          }
+          .currentUser {
+            position: relative;
+            .logOutBox {
+              position: absolute;
+              top: 50px;
+              width: 100px;
+              height: 100px;
+              display: none;
+            }
+
+            .currentUser:hover .logOutBox {
+              display: block;
+            }
+          }
+
+          .logInBtn {
+            background-color: transparent;
+            border-radius: 5%;
+            border: 1px solid black;
+            padding: 5px 10px;
+          }
+
+          .menuIcon {
+            margin-left: 15px;
+            font-size: 25px;
+            opacity: 60%;
+          }
         }
       }
     }

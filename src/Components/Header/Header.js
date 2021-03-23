@@ -6,22 +6,64 @@ import "./Header.scss";
 import Category from "./Category/Category";
 
 export class Header extends Component {
+  componentDidMount() {
+    localStorage.setItem("token", "aaaa");
+  }
+
+  componentDidUpdate() {
+    // localStorage.setItem("me", "pika");
+  }
+
   render() {
+    console.log("localStorage >>", localStorage);
+    console.log("localStorage.setItem >>>", localStorage.setItem);
+
     return (
       <header className="header">
         <nav>
           <div className="homeAndMyInfoContainer">
             <div className="homeAndMyInfo">
               <div className="goToHome">
-                <Link to="/main">
-                  <span className="homeText">HOME</span>
+                <Link className="homeText" to="/main">
+                  <span>HOME</span>
                 </Link>
               </div>
               <div className="myInfo">
-                <Link to="/login">
-                  <button className="logInBtn">로그인</button>
-                </Link>
-                <FontAwesomeIcon className="menuIcon" icon={faTh} size="1x" />
+                {localStorage.token ? (
+                  <div className="NoToken">
+                    <Link className="noTokenText" to="/favoriteStore">
+                      <span>찜한 스토어</span>
+                    </Link>
+                    <Link className="noTokenText" to="/myPage">
+                      <span>마이페이지</span>
+                    </Link>
+                    <Link className="noTokenText" to="/shoppingBasket">
+                      <span>장바구니</span>
+                    </Link>
+                    <div className="noTokenText currentUser">
+                      <span>PIKA</span>
+                      <div className="logOutBox">
+                        <button>로그아웃</button>
+                      </div>
+                    </div>
+                    <FontAwesomeIcon
+                      className="menuIcon"
+                      icon={faTh}
+                      size="1x"
+                    />
+                  </div>
+                ) : (
+                  <div className="iHaveToken">
+                    <Link to="/login">
+                      <button className="logInBtn">로그인</button>
+                    </Link>
+                    <FontAwesomeIcon
+                      className="menuIcon"
+                      icon={faTh}
+                      size="1x"
+                    />
+                  </div>
+                )}
               </div>
             </div>
           </div>
