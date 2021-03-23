@@ -2,7 +2,7 @@
   position: absolute;
   top: 0;
   width: 100%;
-  text-decoration: none; //왜???안될까????
+
   nav {
     height: 190px;
 
@@ -20,54 +20,80 @@
         color: black;
 
         .goToHome {
-          font-weight: 900;
-
           .homeText {
-            text-decoration: none;
             color: black;
+            font-weight: 900;
+            text-decoration: none;
           }
         }
-      }
 
-      .myInfo {
-        .NoToken,
-        .iHaveToken {
-          display: flex;
-          justify-content: flex-end;
-          align-items: center;
-          width: 350px;
-
-          .noTokenText {
-            margin-left: 15px;
-            text-decoration: none;
-            color: black;
-          }
-          .currentUser {
-            position: relative;
-            .logOutBox {
-              position: absolute;
-              top: 50px;
-              width: 100px;
-              height: 100px;
-              display: none;
+        .myInfo {
+          .iHaveToken,
+          .noToken {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: 350px;
+            .logInBtn {
+              background-color: transparent;
+              border-radius: 5%;
+              border: 1px solid black;
+              padding: 5px 10px;
             }
 
-            .currentUser:hover .logOutBox {
-              display: block;
+            .iHaveTokenText {
+              margin-left: 15px;
+              text-decoration: none;
+              color: black;
             }
-          }
 
-          .logInBtn {
-            background-color: transparent;
-            border-radius: 5%;
-            border: 1px solid black;
-            padding: 5px 10px;
-          }
+            .currentUser {
+              position: relative;
+              height: 50px;
+              display: flex;
+              align-items: center;
 
-          .menuIcon {
-            margin-left: 15px;
-            font-size: 25px;
-            opacity: 60%;
+              &:hover {
+                .logOutBox {
+                  display: block;
+                }
+              }
+              .logOutBox {
+                position: absolute;
+                top: 40px;
+                left: -114px;
+                width: 260px;
+                height: 150px;
+                border: 1px solid black;
+                background-color: white;
+                border-radius: 5px;
+                display: none;
+                z-index: 999;
+                font-size: 20px;
+                font-weight: 900;
+
+                color: #4abf6a;
+                padding: 20px 20px;
+
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.17);
+                text-align: center;
+                line-height: 30px;
+                .logOutBtn {
+                  background-color: #4abf6a;
+                  border: none;
+                  width: 120px;
+                  height: 45px;
+                  font-size: 20px;
+                  color: white;
+                }
+              }
+            }
+
+            .MyInfoIcon {
+              margin-left: 15px;
+              font-size: 25px;
+              opacity: 60%;
+            }
           }
         }
       }

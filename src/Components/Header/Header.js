@@ -7,7 +7,7 @@ import Category from "./Category/Category";
 
 export class Header extends Component {
   componentDidMount() {
-    localStorage.setItem("token", "aaaa");
+    // localStorage.setItem("token", "aaaa");
   }
 
   componentDidUpdate() {
@@ -30,35 +30,37 @@ export class Header extends Component {
               </div>
               <div className="myInfo">
                 {localStorage.token ? (
-                  <div className="NoToken">
-                    <Link className="noTokenText" to="/favoriteStore">
+                  <div className="iHaveToken">
+                    <Link className="iHaveTokenText" to="/favoriteStore">
                       <span>찜한 스토어</span>
                     </Link>
-                    <Link className="noTokenText" to="/myPage">
+                    <Link className="iHaveTokenText" to="/myPage">
                       <span>마이페이지</span>
                     </Link>
-                    <Link className="noTokenText" to="/shoppingBasket">
+                    <Link className="iHaveTokenText" to="/shoppingBasket">
                       <span>장바구니</span>
                     </Link>
-                    <div className="noTokenText currentUser">
+                    <div className="iHaveTokenText currentUser">
                       <span>PIKA</span>
                       <div className="logOutBox">
-                        <button>로그아웃</button>
+                        <p>PIKA님</p>
+                        <p>pikatropika@gmail.com</p>
+                        <button className="logOutBtn">로그아웃</button>
                       </div>
                     </div>
                     <FontAwesomeIcon
-                      className="menuIcon"
+                      className="MyInfoIcon"
                       icon={faTh}
                       size="1x"
                     />
                   </div>
                 ) : (
-                  <div className="iHaveToken">
+                  <div className="noToken">
                     <Link to="/login">
                       <button className="logInBtn">로그인</button>
                     </Link>
                     <FontAwesomeIcon
-                      className="menuIcon"
+                      className="MyInfoIcon"
                       icon={faTh}
                       size="1x"
                     />
