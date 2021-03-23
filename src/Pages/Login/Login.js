@@ -54,7 +54,7 @@ class Login extends Component {
       !valueCheck &&
       !pwCheck
     ) {
-      fetch(SIGNIN_API, {
+      fetch("http://10.58.1.71:8000", {
         method: "POST",
         body: JSON.stringify({
           login_id: this.state.loginId,
