@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./Signup.scss";
 import { RiLock2Fill } from "react-icons/ri";
 import { IoBagCheckSharp } from "react-icons/io5";
-import { SIGNUP_API } from "../../../src/config.js";
+import { SIGNUP_API } from "../../config.js";
 import { USERID_API } from "../../config.js";
 class Signup extends Component {
   constructor() {
@@ -27,7 +27,7 @@ class Signup extends Component {
   }
 
   btnVailid = () => {
-    fetch(SIGNUP_API, {
+    fetch("http://10.58.1.71:8000/account/signup", {
       method: "POST",
       body: JSON.stringify({
         login_id: this.state.loginId,
@@ -39,6 +39,7 @@ class Signup extends Component {
     })
       .then(res => res.json())
       .then(result => {
+        console.log(result);
         if (result.message === "SUCCESS") {
           alert("회원가입 성공");
           this.props.history.push("/Login");
@@ -68,19 +69,25 @@ class Signup extends Component {
   handleId = e => {
     const { loginId } = this.state;
     const IS_ID_NUM_ENG = /^[a-z]+[a-z0-9]{5,19}$/g;
-    if (loginId !== "" && IS_ID_NUM_ENG.test(loginId)) {
+    if (loginId === "") {
       this.setState({ idCheck: false, multiCheckId: "" });
       return;
     }
+    if (IS_ID_NUM_ENG.test(loginId)) {
+      this.setState({ idCheck: false });
+    } else {
+      this.setState({ idCheck: true, multiCheckId: "" });
+      return;
+    }
 
-    fetch(USERID_API, {
+    fetch("http://10.58.1.71:8000/account/loginexist", {
       method: "POST",
       body: JSON.stringify({
         login_id: loginId,
       }),
     })
       .then(res => {
-        console.log(res);
+        console.log("aaaaaaa", res);
         return res.json();
       })
       .then(result => {

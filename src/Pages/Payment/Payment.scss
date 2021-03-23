@@ -1,0 +1,370 @@
+.payment {
+  background-color: #f3f4f5;
+  height: 100%;
+  .header {
+    background-color: #02c73c;
+    color: white;
+    width: 100%;
+    height: 105px;
+    border: 1px solid white;
+    text-align: center;
+  }
+
+  .container {
+    width: 1100px;
+    margin: 0 auto;
+
+    .order_header {
+      position: relative;
+      margin-top: 30px;
+      padding-right: 20px;
+      padding: 20px 0;
+
+      height: 60px;
+      .order_payment {
+        .blind {
+          font-size: 20px;
+          font-weight: bold;
+        }
+      }
+      .rightProcess {
+        position: absolute;
+        right: -20px;
+        top: 15px;
+        .process {
+          display: flex;
+          margin: 10px 20px 0px 0px;
+          .pro {
+            color: #7d7d7d;
+          }
+          .pro2 {
+            font-weight: bold;
+          }
+          .rowIcon {
+            color: #797a7a;
+          }
+        }
+      }
+    }
+  }
+  .order_content {
+    border: 1px solid #e2e2e2;
+    width: 1100px;
+    margin: 0 auto;
+    height: 1400px;
+
+    .product {
+      background-color: white;
+      border-bottom: 1px dashed #7d7d7d7d;
+      height: 230px;
+      .productHeader {
+        position: relative;
+        height: 60px;
+        border-bottom: 1px solid gray;
+        background-color: #f8f8f8;
+        .InfoMenu {
+          p {
+            list-style: none;
+            margin-left: 250px;
+          }
+          .shopMenu {
+            ul {
+              width: 100%;
+              text-align: center;
+              display: flex;
+
+              .info {
+                width: 500px;
+                padding-top: 20px;
+              }
+              .seller {
+                width: 12%;
+                padding-top: 20px;
+              }
+              .shipping {
+                width: 10%;
+                padding-top: 20px;
+              }
+              .quantity {
+                width: 10%;
+                padding-top: 20px;
+              }
+              .sale {
+                width: 12%;
+                padding-top: 20px;
+              }
+              .goods {
+                width: 15%;
+                padding-top: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .fiScissors {
+      position: absolute;
+      transform: translate(13px, -8px);
+      color: #8d8d8d;
+    }
+    .LineInfo {
+      .namesInfo {
+        position: absolute;
+        transform: translate(180px, 60px);
+        .nameInfo {
+          font-size: 12px;
+          color: #909090;
+        }
+        .centerInfo {
+          font-size: 14px;
+          font-weight: bold;
+        }
+        .userInfoName {
+          display: flex;
+          position: absolute;
+          transform: translate(300px, -30px);
+
+          .infoBox {
+            width: 600px;
+            display: flex;
+            justify-content: space-around;
+          }
+          .userSell {
+            transform: translateX(-17px);
+          }
+          .userSale {
+            transform: translateX(45px);
+          }
+          .userQuan {
+            position: absolute;
+            transform: translateX(-18px);
+          }
+          .userFree {
+            transform: translateX(-35px);
+          }
+          .usergoods {
+            transform: translateX(20px);
+          }
+        }
+      }
+    }
+    .ShoppingBox {
+      background-color: white;
+      display: flex;
+      width: 800px;
+      border-right: 1px solid #e2e2e2;
+      height: 480px;
+      .ShoppingInner {
+        width: 780px;
+        height: 50px;
+        transform: translate(50px, 30px);
+        display: flex;
+        .destiNation {
+          width: 600px;
+          display: flex;
+          flex-direction: column;
+          transform: translate(-75px, 35px);
+          .meomoBox {
+            margin-top: 20px;
+          }
+          .extra_info {
+            transform: translate(0px, 35px);
+
+            position: relative;
+            padding: 7px 0 0 21px;
+            font-size: 11px;
+            line-height: 17px;
+            color: #2db400;
+            .warningIcon {
+              font-size: 15px;
+              position: absolute;
+              transform: translate(-20px);
+            }
+          }
+
+          .shoppRecipient {
+            padding-top: 25px;
+          }
+          .shoppPlacename {
+            padding-top: 25px;
+          }
+          .shoppContact {
+            padding-top: 25px;
+          }
+          .shoppContacts {
+            padding-top: 25px;
+          }
+          .shoppAddres {
+            padding-top: 25px;
+            button {
+              margin-left: 20px;
+              background-color: #ffffff;
+              border: 1px solid #d0d0d0;
+            }
+          }
+
+          .newSelect {
+            position: absolute;
+            transform: translate(130px, 0);
+          }
+          .shoppSelect {
+            position: absolute;
+          }
+          .shoppBtnbox {
+            margin-left: 230px;
+            button {
+              background-color: #ffffff;
+              border: 1px solid #d0d0d0;
+            }
+          }
+        }
+
+        .rightUserInfo {
+          width: 300px;
+          position: absolute;
+          right: -20px;
+          transform: translateX(300px);
+
+          .myName {
+            font-size: 12px;
+            span {
+              display: inline-block;
+              margin-top: 20px;
+            }
+          }
+
+          .myEmail {
+            position: absolute;
+            transform: translate(0px, 5px);
+            font-size: 12px;
+            button {
+              margin-left: 70px;
+              background-color: #ffffff;
+              border: 1px solid #d0d0d0;
+            }
+          }
+          .myNumber {
+            position: absolute;
+            font-size: 12px;
+            transform: translate(0px, 30px);
+            button {
+              margin-left: 101px;
+              background-color: #f3f4f5;
+              border: 1px solid #d0d0d0;
+            }
+          }
+        }
+      }
+    }
+
+    .pointBox {
+      display: flex;
+      .pointInner {
+        height: 380px;
+        background-color: white;
+        border: 1px solid #fbfbfb;
+        width: 800px;
+
+        margin-top: -50px;
+
+        .userPoint {
+          position: absolute;
+          transform: translateY(30px);
+        }
+        .npointBox {
+          padding-left: 70px;
+        }
+        .nPoint {
+          line-height: 3;
+        }
+        .xPoint {
+          line-height: 3;
+        }
+        .nPaypoint {
+          line-height: 5;
+        }
+        .centerMent {
+          width: 300px;
+          padding-left: 70px;
+          margin-top: 100px;
+
+          .nPoint {
+            button {
+              transform: translate(375px, 0px);
+              background-color: white;
+              border: 1px solid #d0d0d0;
+              color: #777777;
+            }
+          }
+
+          .borderLine {
+            border-bottom: 1px solid #d0d0d0;
+            width: 280px;
+            margin-left: 100px;
+            transform: translate(15px, -12px);
+          }
+          .userTrans {
+            transform: translate(327px, 0);
+            background-color: #fff;
+            border: 1px solid #d0d0d0;
+            color: #b2b2b2;
+          }
+        }
+        .userPayment {
+          padding-left: 40px;
+          position: absolute;
+          transform: translateY(50px);
+        }
+        .rightDetail {
+          position: absolute;
+          transform: translateX(780px);
+          line-height: 2;
+          width: 200px;
+          height: 200px;
+
+          .rightLine {
+            border: 1px solid #d0d0d0;
+          }
+          .payPay {
+            width: 100px;
+            position: absolute;
+            transform: translate(130px, -130px);
+          }
+          .payDetail {
+            font-weight: bold;
+            font-size: 25px;
+            line-height: 3;
+          }
+        }
+      }
+      .pointRightBox {
+      }
+    }
+
+    .pointAccumulateBox {
+      width: 1100px;
+      height: 137px;
+      padding-left: 50px;
+      border-top: 1px dashed #7d7d7d7d;
+      border-right: 1px solid #e2e2e2;
+      border-top-left-radius: 25px 15px;
+      border-top-right-radius: 25px 15px;
+      border-left: 1px solid #e2e2e2;
+      border-bottom: 1px solid #e2e2e2;
+      .pointAccumulate {
+        border: 1px solid #07ba5b;
+        background-color: #1ec800;
+        color: white;
+        width: 220px;
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        margin-left: 350px;
+        margin-top: 30px;
+        font-size: 25px;
+        line-height: 3;
+        outline-style: none;
+      }
+    }
+  }
+}
