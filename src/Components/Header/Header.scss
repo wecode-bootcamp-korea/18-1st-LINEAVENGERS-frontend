@@ -21,69 +21,71 @@
 
         .goToHome {
           font-weight: 900;
+
           .homeText {
-            text-decoration: none; ///왜???WHY????안될까????
+            text-decoration: none;
           }
         }
+      }
 
-        .myInfo {
-          display: flex;
-          justify-content: flex-end;
-          align-items: center;
-          width: 240px;
-          .logInBtn {
-            background-color: transparent;
-            border-radius: 5%;
-            border: 1px solid black;
-            padding: 5px 10px;
-          }
-          .menuIcon {
-            margin-left: 15px;
-            font-size: 25px;
-            opacity: 60%;
-          }
-          span {
-            margin-left: 10px;
-          }
+      .myInfo {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 280px;
+        .logInBtn {
+          background-color: transparent;
+          border-radius: 5%;
+          border: 1px solid black;
+          padding: 5px 10px;
+        }
+        .menuIcon {
+          margin-left: 15px;
+          font-size: 25px;
+          opacity: 60%;
+        }
+        .myInfoText {
+          margin-left: 10px;
+          text-decoration: none;
         }
       }
     }
+  }
 
-    .logoAndSearch {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 70%;
-      margin: 0 auto;
-      padding-top: 20px;
+  .logoAndSearch {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 20px;
 
-      .forAlign {
-        width: 180px;
+    .forAlign {
+      width: 180px;
+    }
+
+    .logo {
+      width: 200px;
+    }
+
+    .searchBox {
+      position: relative;
+      width: 180px;
+      height: 30px;
+
+      .search {
+        width: 100%;
+        padding: 10px 12px 10px 12px;
+        border: 1px solid black;
+        border-radius: 8px;
+        // background-color: transparent;
       }
 
-      .logo {
-        width: 200px;
-      }
-
-      .searchBox {
-        position: relative;
-        width: 180px;
-        height: 30px;
-
-        .search {
-          width: 100%;
-          padding: 10px 12px 10px 12px;
-          border: 1px solid black;
-          border-radius: 8px;
-          // background-color: transparent;
-        }
-
-        .searchImg {
-          position: absolute;
-          top: 10px;
-          right: 12px;
-          width: 16px;
-        }
+      .searchImg {
+        position: absolute;
+        top: 10px;
+        right: 12px;
+        width: 16px;
       }
     }
   }

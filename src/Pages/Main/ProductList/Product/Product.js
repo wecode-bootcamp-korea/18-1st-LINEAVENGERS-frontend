@@ -13,8 +13,6 @@ export class Product extends Component {
   }
 
   handleLike = e => {
-    console.log("handleLike(찜 클릭) this.state >>>", this.state);
-
     fetch("http://10.58.1.71:8000/mypage/favoritecreate", {
       method: "POST",
       body: JSON.stringify({
@@ -25,8 +23,6 @@ export class Product extends Component {
     })
       .then(res => res.json())
       .then(data => {
-        console.log("받은 data >>>", data);
-        console.log("this.props.favorite >>>", this.props.favorite);
         this.setState({
           favorite: this.props.favorite,
         });
@@ -38,17 +34,17 @@ export class Product extends Component {
   };
 
   render() {
-    console.log("render의 this.state.favorite >>>", this.state.favorite);
-    console.log("render의 this.props.favorite >>>", this.props.favorite);
+    const { favorite } = this.state;
+    const { img, price, productName } = this.props;
     return (
       <div className="productContainer">
         <div className="productImgContainer">
-          <img className="productImg" src={this.props.img} alt="Product Img" />
+          <img className="productImg" src={img} alt="Product Img" />
           <div className="iconsContainer">
             <div className="heartAndShoppingBag">
               <button
                 onClick={this.handleLike}
-                className={this.props.favorite ? "redHeart" : "whiteHeart"}
+                className={favorite ? "redHeart" : "whiteHeart"}
               >
                 <FontAwesomeIcon icon={faHeart} size="2x" />
               </button>
@@ -59,8 +55,8 @@ export class Product extends Component {
           </div>
         </div>
 
-        <p className="price">{this.props.price}원</p>
-        <p>{this.props.productName}</p>
+        <p className="price">{price}원</p>
+        <p>{productName}</p>
       </div>
     );
   }

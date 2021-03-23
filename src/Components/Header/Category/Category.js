@@ -11,7 +11,7 @@ class Category extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/Data/CategoryData.json", {
+    fetch("/Data/CategoryData.json", {
       method: "GET",
     })
       .then(res => res.json())

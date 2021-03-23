@@ -17,7 +17,7 @@ export class Main extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/Data/MainBannerData.json", {
+    fetch("Data/MainBannerData.json", {
       method: "GET",
     })
       .then(res => res.json())
@@ -25,7 +25,7 @@ export class Main extends Component {
         this.setState({ banner: data });
       });
 
-    fetch("http://localhost:3000/Data/ProductsData.json", {
+    fetch("Data/ProductsData.json", {
       method: "GET",
     })
       .then(res => res.json())
@@ -35,20 +35,21 @@ export class Main extends Component {
   }
 
   render() {
+    const { banner, products } = this.state;
     return (
       <div className="main">
         <main className="mainContainer">
-          <SlickBanner itsBanner={this.state.banner} />
+          <SlickBanner itsBanner={banner} />
           <Header />
 
           <article className="hotCategory">
             <p className="title">새로 나왔어요</p>
-            <ProductList products={this.state.products} />
+            <ProductList products={products} />
           </article>
           <Coupon />
           <article className="products">
             <p className="title">마음껏 둘러보세요</p>
-            <ProductList products={this.state.products} />
+            <ProductList products={products} />
           </article>
         </main>
         <Footer />

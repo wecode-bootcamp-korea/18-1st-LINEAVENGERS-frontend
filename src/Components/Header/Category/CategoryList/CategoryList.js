@@ -16,7 +16,7 @@ export class CategoryList extends Component {
               {menuObj.categoryList.length > 0 && (
                 <div className="subMenuList">
                   {menuObj.categoryList.map(subMenuObj => (
-                    <Link to="#none" className="subMenu">
+                    <Link to="/productDetail" className="subMenu">
                       {subMenuObj.categoryName}
                     </Link>
                   ))}
