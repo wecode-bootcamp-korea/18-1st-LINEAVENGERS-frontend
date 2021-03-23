@@ -4,6 +4,7 @@ import Header from "../../Components/Header/Header";
 import Footer from "../../Components/Footer/Footer";
 import SlickBanner from "./SlickBanner/SlickBanner";
 import Coupon from "./Coupon/Coupon";
+import Recommend from "./Recommend/Recommend";
 import ProductList from "./ProductList/ProductList";
 import "./Main.scss";
 
@@ -47,6 +48,7 @@ export class Main extends Component {
             <ProductList products={products} />
           </article>
           <Coupon />
+          <Recommend />
           <article className="products">
             <p className="title">마음껏 둘러보세요</p>
             <ProductList products={products} />
