@@ -5,7 +5,7 @@ import MyPageNone from "./MyPageNone";
 import MyPageProduct from "./MyPageProduct";
 import "./MyPage.scss";
 
-export class MyPage extends Component {
+class MyPage extends Component {
   constructor() {
     super();
     this.state = {

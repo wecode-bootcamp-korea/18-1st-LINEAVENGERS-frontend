@@ -1,0 +1,60 @@
+.coupon {
+  height: 400px;
+  background-color: #2f2f2f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .couponImgContainer {
+    width: 370px;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .couponImg {
+      width: 300px;
+      height: 150px;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .linrFriends {
+        color: #5d81af;
+        margin-bottom: 10px;
+      }
+
+      .couponPrice {
+        font-size: 50px;
+        font-weight: 900;
+      }
+    }
+  }
+
+  .couponTextContainer {
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .couponBigText {
+      font-size: 30px;
+      text-align: left;
+      color: white;
+    }
+    .couponSmallText {
+      font-size: 14px;
+      text-align: left;
+      color: #d3d3d3;
+    }
+    button {
+      width: 300px;
+      height: 60px;
+      border: 1px solid #d3d3d3;
+      background: #2f2f2f;
+      color: white;
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "menuList": [
+    {
+      "menuId": 1,
+      "menuName": "\uce90\ub9ad\ud130",
+      "categoryList": [
+        {
+          "categoryId": 1,
+          "categoryName": "\uc704\ucf54\ub4dc\uc564\uc5b4\ubca4\uc838\uc2a4"
+        },
+        { "categoryId": 2, "categoryName": "WECODE18" },
+        {
+          "categoryId": 3,
+          "categoryName": "\uc5b4\ubca4\uc838\uc2a4\uc2a4\ud0c0\uc988"
+        },
+        { "categoryId": 4, "categoryName": "TEAM LA" }
+      ]
+    },
+    { "menuId": 2, "menuName": "NEW", "categoryList": [] },
+    { "menuId": 3, "menuName": "\uc120\ubb3c\ucd94\ucc9c", "categoryList": [] },
+    {
+      "menuId": 4,
+      "menuName": "THEME",
+      "categoryList": [
+        { "categoryId": 5, "categoryName": "LINE AVENGERS" },
+        {
+          "categoryId": 6,
+          "categoryName": "\uc704\ucf54\ub4dc \ud504\ub80c\uc988"
+        }
+      ]
+    },
+    {
+      "menuId": 5,
+      "menuName": "BT21 BABY",
+      "categoryList": [
+        { "categoryId": 7, "categoryName": "\ubb38\uad6c" },
+        { "categoryId": 8, "categoryName": "\ub9ac\ube59" },
+        { "categoryId": 9, "categoryName": "\ub514\uc9c0\ud138" },
+        { "categoryId": 10, "categoryName": "\ud328\uc158\uc7a1\ud654" },
+        { "categoryId": 11, "categoryName": "\uc778\ud615&\ucfe0\uc158" }
+      ]
+    },
+    { "menuId": 6, "menuName": "SALE", "categoryList": [] },
+    {
+      "menuId": 7,
+      "menuName": "\ud1a0\uc774",
+      "categoryList": [
+        {
+          "categoryId": 12,
+          "categoryName": "\uc911\ud615\uc778\ud615 \uc774\uc0c1"
+        },
+        { "categoryId": 13, "categoryName": "\ubbf8\ub2c8\uc778\ud615" },
+        { "categoryId": 14, "categoryName": "\ucfe0\uc158" },
+        { "categoryId": 15, "categoryName": "\ud53c\uaddc\uc5b4" }
+      ]
+    },
+    {
+      "menuId": 8,
+      "menuName": "\ub514\uc790\uc778\ubb38\uad6c",
+      "categoryList": [
+        {
+          "categoryId": 16,
+          "categoryName": "\ub2e4\uc774\uc5b4\ub9ac,\ud50c\ub798\ub108"
+        },
+        { "categoryId": 17, "categoryName": "\ub178\ud2b8/\uba54\ubaa8\uc9c0" },
+        {
+          "categoryId": 18,
+          "categoryName": "\ud544\uae30\ub958,\ucf00\uc774\uc2a4"
+        },
+        { "categoryId": 19, "categoryName": "\ub370\ucf54\ub808\uc774\uc158" },
+        {
+          "categoryId": 20,
+          "categoryName": "\uc2a4\ud2f0\ucee4\uc2dc\ub9ac\uc988"
+        }
+      ]
+    },
+    {
+      "menuId": 9,
+      "menuName": "\ub514\uc9c0\ud138",
+      "categoryList": [
+        { "categoryId": 21, "categoryName": "\ud3f0\ucf00\uc774\uc2a4" },
+        { "categoryId": 22, "categoryName": "\uc8fc\ubcc0\uae30\uae30" },
+        { "categoryId": 23, "categoryName": "\uc2a4\ub9c8\ud2b8\uae30\uae30" },
+        {
+          "categoryId": 24,
+          "categoryName": "\ub514\uc9c0\ud138\ucf00\uc774\uc2a4"
+        }
+      ]
+    },
+    {
+      "menuId": 10,
+      "menuName": "\ud328\uc158\uc758\ub958",
+      "categoryList": [
+        { "categoryId": 25, "categoryName": "\ubc18\ud314\uc758\ub958" },
+        { "categoryId": 26, "categoryName": "\uae34\ud314\uc758\ub958" },
+        { "categoryId": 27, "categoryName": "\ub77c\uc6b4\uc9c0\uc6e8\uc5b4" },
+        { "categoryId": 28, "categoryName": "\uc591\ub9d0,\uc2ac\ub9ac\ud37c" }
+      ]
+    },
+    {
+      "menuId": 11,
+      "menuName": "\ud328\uc158\uc7a1\ud654",
+      "categoryList": [
+        { "categoryId": 29, "categoryName": "\uac00\ubc29" },
+        { "categoryId": 30, "categoryName": "\ud0a4\ud640\ub354" },
+        { "categoryId": 31, "categoryName": "\ubdf0\ud2f0" },
+        { "categoryId": 32, "categoryName": "\ubaa8\uc790,\ub9c8\uc2a4\ud06c" },
+        { "categoryId": 33, "categoryName": "\uc9c0\uac11,\ud30c\uc6b0\uce58" }
+      ]
+    },
+    {
+      "menuId": 12,
+      "menuName": "\ub9ac\ube59",
+      "categoryList": [
+        {
+          "categoryId": 34,
+          "categoryName": "\ud328\ube0c\ub9ad,\ud648\ub370\ucf54"
+        },
+        { "categoryId": 35, "categoryName": "\uc2dd\uae30,\ud140\ube14\ub7ec" },
+        { "categoryId": 36, "categoryName": "\uc8fc\ubc29,\uc695\uc2e4" },
+        { "categoryId": 37, "categoryName": "\ucea0\ud551\uc6a9\ud488" },
+        { "categoryId": 38, "categoryName": "\uac00\uacf5\uc2dd\ud488" },
+        { "categoryId": 39, "categoryName": "\uace8\ud504\uc6a9\ud488" }
+      ]
+    }
+  ]
+}

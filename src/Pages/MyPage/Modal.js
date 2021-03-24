@@ -6,18 +6,11 @@ class Popup extends React.Component {
   constructor() {
     super();
     this.state = {
-      // Product: [],
       clicked: [false, false, false, false, false],
       myCount: "",
       comment: "",
     };
   }
-
-  // componentDidMount() {
-  //   fetch("/Data/ShoppingBasket.json")
-  //     .then(res => res.json())
-  //     .then(res => this.setState({ Product: res }));
-  // }
 
   handleStarClick = index => {
     let clickStates = [...this.state.clicked];
@@ -31,15 +24,15 @@ class Popup extends React.Component {
   handleClickCountStar = () => {
     const sw = this.state.clicked;
 
-    if (sw[4] === true) {
+    if (sw[4]) {
       return "5점 (최고예요)";
-    } else if (sw[3] === true) {
+    } else if (sw[3]) {
       return "4점 (좋아요)";
-    } else if (sw[2] === true) {
+    } else if (sw[2]) {
       return "3점 (괜찮아요)";
-    } else if (sw[1] === true) {
+    } else if (sw[1]) {
       return "2점 (그저 그래요)";
-    } else if (sw[0] === true) {
+    } else if (sw[0]) {
       return "1점 (별로예요)";
     } else {
       return "리뷰 부탁드립니다!";
@@ -67,10 +60,6 @@ class Popup extends React.Component {
       }),
     });
   };
-
-  // viewStar = () => {
-  //   const star = [<FaStar size="50"/>];
-  // };
 
   render() {
     console.log(this.state.product);
