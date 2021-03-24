@@ -1,4 +1,12 @@
+$theme-color: #4abf6a;
+
 * {
   box-sizing: border-box;
   font-family: "Nanum Gothic", sans-serif;
+
+  %flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
