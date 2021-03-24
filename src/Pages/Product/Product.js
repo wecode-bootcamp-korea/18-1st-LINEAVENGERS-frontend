@@ -6,37 +6,27 @@ import "./Product.scss";
 
 export class Product extends Component {
   state = {
-    productData: [],
-    categoryData: [],
     freeClick: false,
-    gridType: 1,
     page: 0,
     pageOffset: 0,
+    gridType: 1,
     pageSize: 20,
     pageData: [],
+    productData: [],
+    categoryData: [],
   };
 
-  initialProductData = async () => {
-    fetch("http://9a81c7519d89.ngrok.io/product?menu=1&category=1", {
-      method: "GET",
-    })
+  initialProductData = () => {
+    fetch("http://7667db542507.ngrok.io/product?menu=1&category=1")
       .then(res => res.json())
       .then(res => {
-        console.log(res);
-        const { pageSize } = this.state;
-        this.setState(
-          {
-            productData: res.productList,
-            categoryData: res.categoryData,
-            page: Math.ceil(res.productList.length / pageSize),
-          },
-          () => {
-            const { productData, pageOffset, pageSize } = this.state;
-            this.setState({
-              pageData: productData.slice(pageOffset, pageSize),
-            });
-          }
-        );
+        const { pageOffset, pageSize } = this.state;
+        this.setState({
+          productData: res.productList,
+          categoryData: res.categoryData,
+          page: Math.ceil(res.productList.length / pageSize),
+          pageData: res.productList.slice(pageOffset, pageSize),
+        });
       });
   };
   initialSort = () => {
@@ -68,23 +58,25 @@ export class Product extends Component {
 
   handleSort = (e, id) => {
     const { productData } = this.state;
+    const sortDataType = [
+      {
+        type: productData
+          .filter(data => data.type === "TOP")
+          .concat(productData.filter(data => data.type === "BEST"))
+          .concat(productData.filter(data => data.type === "NEW"))
+          .concat(productData.filter(data => data.type === "NORMAL")),
+      },
+      { type: this.initialSort() },
+      {
+        type: productData.sort(
+          (a, b) => new Date(a.createDate) - new Date(b.createDate)
+        ),
+      },
+      { type: productData.sort((a, b) => b.review - a.review) },
+      { type: productData.sort((a, b) => b.grade - a.grade) },
+    ];
     this.setState({
-      productData:
-        id === 0
-          ? productData
-              .filter(data => data.type === "TOP")
-              .concat(productData.filter(data => data.type === "BEST"))
-              .concat(productData.filter(data => data.type === "NEW"))
-              .concat(productData.filter(data => data.type === "NORMAL"))
-          : id === 1
-          ? this.initialSort()
-          : id === 2
-          ? productData.sort(
-              (a, b) => new Date(a.createDate) - new Date(b.createDate)
-            )
-          : id === 3
-          ? productData.sort((a, b) => b.review - a.review)
-          : productData.sort((a, b) => b.grade - a.grade),
+      productData: sortDataType[id].type,
     });
   };
 
@@ -108,22 +100,14 @@ export class Product extends Component {
   };
 
   handlePageSize = (e, index) => {
-    this.setState(
-      {
-        pageOffset: 0,
-        pageSize: index === 0 ? 20 : index === 1 ? 40 : 60,
-      },
-      () => {
-        const { pageSize, productData, pageOffset } = this.state;
-        this.setState({
-          page: Math.ceil(productData.length / pageSize),
-          pageData: productData.slice(
-            pageOffset * pageSize,
-            pageOffset * pageSize + pageSize
-          ),
-        });
-      }
-    );
+    const { productData } = this.state;
+    const pageSize = [{ size: 20 }, { size: 40 }, { size: 60 }];
+    this.setState({
+      pageOffset: 0,
+      pageSize: pageSize[index].size,
+      page: Math.ceil(productData.length / pageSize[index].size),
+      pageData: productData(0, pageSize[index].size),
+    });
   };
 
   // 카테고리 변경 시 fetch 추가될 부분

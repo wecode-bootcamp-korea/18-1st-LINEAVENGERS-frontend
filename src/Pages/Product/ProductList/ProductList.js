@@ -1,14 +1,17 @@
 import React, { Component } from "react";
 import ListItem from "./ListItem/ListItem";
-import { v4 as uuid } from "uuid";
 import "./ProductList.scss";
 
 class ProductList extends Component {
   render() {
     const { data, gridType, page, pageOffset, handlePage } = this.props;
-    console.log(data);
     const pageList = new Array(page).fill(0);
-
+    const gridTypeList = [
+      { type: "typeOne" },
+      { type: "typeTwo" },
+      { type: "typeThree" },
+      { type: "typeFour" },
+    ];
     return (
       <section className="product-list">
         {data.length === 0 && (
@@ -17,19 +20,7 @@ class ProductList extends Component {
           </div>
         )}
         <div className="list-wrap">
-          <ul
-            className={`list-box ${
-              gridType === 0
-                ? "typeOne"
-                : gridType === 1
-                ? "typeTwo"
-                : gridType === 2
-                ? "typeThree"
-                : gridType === 3
-                ? "typeFour"
-                : ""
-            }`}
-          >
+          <ul className={`list-box ${gridTypeList[gridType].type}`}>
             {data.map(data => (
               <ListItem key={data.productId} data={data} />
             ))}

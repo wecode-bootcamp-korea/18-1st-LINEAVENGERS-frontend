@@ -15,7 +15,8 @@ class CategorySelect extends Component {
       handleTab,
       handleCategory,
     } = this.props;
-
+    const isActive =
+      (tabIndex === 1 && firstTab) || (tabIndex !== 1 && secondTab);
     return (
       <>
         <span className="categorySelected">{title}</span>
@@ -26,17 +27,7 @@ class CategorySelect extends Component {
             handleTab(e, tabIndex);
           }}
         ></span>
-        <ul
-          className={`categoryChoice ${
-            tabIndex === 1
-              ? firstTab
-                ? "active"
-                : ""
-              : secondTab
-              ? "active"
-              : ""
-          }`}
-        >
+        <ul className={`categoryChoice ${isActive ? "active" : ""}`}>
           {dataList.map(list => (
             <li
               key={uuid()}

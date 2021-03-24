@@ -14,7 +14,6 @@ class ListItem extends Component {
     this.setState({
       favoriteCheck: !favoriteCheck,
     });
-    console.log(id);
   };
 
   render() {
@@ -30,20 +29,10 @@ class ListItem extends Component {
       },
     } = this.props;
     const { favoriteCheck } = this.state;
-
+    const itemTag = [{ NORMAL: "", BEST: "best", NEW: "new", TOP: "top" }];
     return (
       <li className="listItem">
-        <div
-          className={`itemImg ${
-            type === "NORMAL"
-              ? ""
-              : type === "BEST"
-              ? "best"
-              : type === "NEW"
-              ? "new"
-              : "top"
-          }`}
-        >
+        <div className={`itemImg ${itemTag[type]}`}>
           <img src={thumbnailUrl} alt="상품 이미지" />
           <div className={`itemChoice ${favoriteCheck && "checked"}`}>
             <FontAwesomeIcon

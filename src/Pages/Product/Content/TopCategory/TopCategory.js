@@ -26,6 +26,9 @@ class CategoryList extends Component {
     return (
       <ul className="topCategory">
         {categoryLiEl.map((e, index) => {
+          const selectType =
+            (index === 1 && type === "menu") ||
+            (index !== 1 && type === "category");
           return index === 0 ? (
             <li className="categoryList">
               <Link to="/main">홈</Link>
@@ -33,15 +36,7 @@ class CategoryList extends Component {
           ) : (
             <li className="categoryList">
               <CategorySelect
-                select={
-                  index === 1
-                    ? type === "menu"
-                      ? true
-                      : false
-                    : type === "category"
-                    ? true
-                    : false
-                }
+                select={selectType}
                 title={index === 1 ? (type === "main" ? title : "전체") : title}
                 firstTab={firstTab}
                 secondTab={secondTab}
