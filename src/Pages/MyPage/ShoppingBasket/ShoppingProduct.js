@@ -50,8 +50,8 @@ class ShoppingProduct extends React.Component {
       });
   }
 
-  goToMyPage = async () => {
-    await fetch("api주소", {
+  goToMyPage = () => {
+    fetch("api주소", {
       method: "post",
       body: JSON.stringify({
         userId: this.state.productList.id,

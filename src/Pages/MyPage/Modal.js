@@ -9,6 +9,7 @@ class Popup extends React.Component {
       clicked: [false, false, false, false, false],
       myCount: "",
       comment: "",
+      array: [0, 1, 2, 3, 4],
     };
   }
 
@@ -21,7 +22,7 @@ class Popup extends React.Component {
     this.setState({ clicked: clickStates });
   };
 
-  handleClickCountStar = () => {
+  handleEvaluateGrade = () => {
     const sw = this.state.clicked;
 
     if (sw[4]) {
@@ -62,11 +63,9 @@ class Popup extends React.Component {
   };
 
   render() {
-    console.log(this.state.product);
     return (
       <div className="modal">
         <div className="modalReview">리뷰 쓰기</div>
-
         <div className="modalHead">
           <img className="modalImage" src={window.myImgUrl} alt="라인프렌즈" />
           <div className="modalName">{window.myName}</div>
@@ -75,34 +74,18 @@ class Popup extends React.Component {
           <div className="modalSatisfy">상품은 만족하셨나요?</div>
           <div className="modalStar">
             <div onClick={this.commentReview}>
-              <FaStar
-                size="50"
-                onClick={() => this.handleStarClick(0)}
-                className={this.state.clicked[0] ? "red" : null}
-              />
-              <FaStar
-                size="50"
-                onClick={() => this.handleStarClick(1)}
-                className={this.state.clicked[1] ? "red" : null}
-              />
-              <FaStar
-                size="50"
-                onClick={() => this.handleStarClick(2)}
-                className={this.state.clicked[2] ? "red" : null}
-              />
-              <FaStar
-                size="50"
-                onClick={() => this.handleStarClick(3)}
-                className={this.state.clicked[3] ? "red" : null}
-              />
-              <FaStar
-                size="50"
-                onClick={() => this.handleStarClick(4)}
-                className={this.state.clicked[4] ? "red" : null}
-              />
+              {this.state.array.map(x => {
+                return (
+                  <FaStar
+                    size="50"
+                    onClick={() => this.handleStarClick(x)}
+                    className={this.state.clicked[x] ? "red" : null}
+                  />
+                );
+              })}
             </div>
             <div className="modalStarContent">
-              <div className="modalStarGood">{this.handleClickCountStar()}</div>
+              <div className="modalStarGood">{this.handleEvaluateGrade()}</div>
             </div>
           </div>
         </div>
@@ -112,7 +95,7 @@ class Popup extends React.Component {
             type="textarea"
             placeholder="최소 10자 이상 입력해주세요"
             onChange={this.commentValue}
-          ></input>
+          />
         </div>
         <div className="modalBtn">
           <div className="modalBtnLeft">

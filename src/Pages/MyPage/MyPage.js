@@ -14,17 +14,13 @@ class MyPage extends Component {
   }
 
   componentDidMount() {
-    fetch("/Data/MyPageProduct.json", {
-      headers: {
-        Authorization:
-          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.uRvhx0YRxMc6bT8xlDbEw3lNaEpuPH0B1OShVoJGahw",
-      },
-    })
+    fetch("/Data/MyPageProduct.json")
       .then(res => res.json())
       .then(res => this.setState({ productList: res }));
   }
 
   render() {
+    console.log(this.state.productList);
     return (
       <div className="myPage">
         <MyPageNav />
