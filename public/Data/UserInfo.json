@@ -1,0 +1,34 @@
+{
+  "userList": [
+    {
+      "userId": 1,
+      "userName": "박국현",
+      "userEmail": "aaa@naver.com"
+    },
+    {
+      "userId": 2,
+      "userName": "김규동",
+      "userEmail": "bbb@naver.com"
+    },
+    {
+      "userId": 3,
+      "userName": "김상연",
+      "userEmail": "ccc@naver.com"
+    },
+    {
+      "userId": 4,
+      "userName": "배담호",
+      "userEmail": "ddd@naver.com"
+    },
+    {
+      "userId": 5,
+      "userName": "정승옥",
+      "userEmail": "eee@naver.com"
+    },
+    {
+      "userId": 6,
+      "userName": "박경현",
+      "userEmail": "fff@naver.com"
+    }
+  ]
+}

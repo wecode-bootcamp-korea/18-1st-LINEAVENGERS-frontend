@@ -6,12 +6,31 @@ import { faTh } from "@fortawesome/free-solid-svg-icons";
 import "./MyInfo.scss";
 
 export class Myinfo extends Component {
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     userList: [],
+  //   };
+  // }
+
+  // componentDidMount() {
+  //   fetch("Data/UserInfo.json", {
+  //     method: "GET",
+  //   })
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       this.setState({ userList: data.userList });
+  //     });
+  // }
+
   handlelogOut = () => {
     localStorage.removeItem("token");
     this.props.history.push("/main");
   };
 
   render() {
+    // const { userList } = this.state;
+    // console.log("this.state.userList >>>", this.state.userList);
     return (
       <div className="myInfo">
         {localStorage.token ? (
@@ -28,8 +47,10 @@ export class Myinfo extends Component {
             <div className="iHaveTokenText currentUser">
               <span>PIKA</span>
               <div className="logOutBox">
-                <p className="logOutBoxCurrentUser">박경현님</p>
-                <p className="logOutBoxEmail">pikatropika@gmail.com</p>
+                <p className="logOutBoxCurrentUser">
+                  {localStorage.userName}님
+                </p>
+                <p className="logOutBoxEmail">{localStorage.userEmail}</p>
                 <button className="logOutBtn" onClick={this.handlelogOut}>
                   로그아웃
                 </button>
