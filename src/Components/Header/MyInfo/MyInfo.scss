@@ -1,0 +1,75 @@
+.myInfo {
+  .iHaveToken,
+  .noToken {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 350px;
+
+    .logInBtn {
+      padding: 5px 10px;
+      border: 1px solid black;
+      border-radius: 5%;
+      background-color: transparent;
+    }
+
+    .iHaveTokenText {
+      margin-left: 15px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .currentUser {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 50px;
+
+      &:hover {
+        .logOutBox {
+          display: block;
+        }
+      }
+      .logOutBox {
+        display: none;
+        position: absolute;
+        top: 40px;
+        left: -114px;
+        width: 260px;
+        height: 160px;
+        padding: 20px 20px;
+        background-color: white;
+        color: #4abf6a;
+        border: 1px solid black;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.17);
+        font-weight: 900;
+        text-align: center;
+        line-height: 30px;
+        z-index: 999;
+        .logOutBoxCurrentUser {
+          font-size: 20px;
+        }
+        .logOutBoxEmail {
+          font-size: 16px;
+        }
+
+        .logOutBtn {
+          width: 120px;
+          height: 45px;
+          margin: 10px auto;
+          border: none;
+          background-color: #4abf6a;
+          color: white;
+          font-size: 20px;
+        }
+      }
+    }
+
+    .MyInfoIcon {
+      margin-left: 15px;
+      font-size: 25px;
+      opacity: 60%;
+    }
+  }
+}

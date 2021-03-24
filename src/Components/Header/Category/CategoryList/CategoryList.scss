@@ -1,0 +1,37 @@
+.categoryList {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+
+  .categoryMenu {
+    position: relative;
+    font-size: 16px;
+    height: 50px;
+
+    .subMenuList {
+      display: none;
+      position: absolute;
+      left: -60px;
+      width: 170px;
+      margin: 10px auto;
+      padding: 10px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.17);
+      background-color: white;
+      border-radius: 5%;
+      z-index: 100;
+      font-size: 16px;
+      text-align: center;
+
+      .subMenu {
+        display: block;
+        margin: 15px;
+        text-decoration: none;
+        color: black;
+      }
+    }
+  }
+
+  .categoryMenu:hover .subMenuList {
+    display: block;
+  }
+}
