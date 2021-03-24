@@ -28,7 +28,7 @@ class Popup extends React.Component {
     this.setState({ clicked: clickStates });
   };
 
-  handleClickView = () => {
+  handleClickCountStar = () => {
     const sw = this.state.clicked;
 
     if (sw[4] === true) {
@@ -68,8 +68,12 @@ class Popup extends React.Component {
     });
   };
 
+  // viewStar = () => {
+  //   const star = [<FaStar size="50"/>];
+  // };
+
   render() {
-    console.log(window.myId);
+    console.log(this.state.product);
     return (
       <div className="modal">
         <div className="modalReview">리뷰 쓰기</div>
@@ -109,7 +113,7 @@ class Popup extends React.Component {
               />
             </div>
             <div className="modalStarContent">
-              <div className="modalStarGood">{this.handleClickView()}</div>
+              <div className="modalStarGood">{this.handleClickCountStar()}</div>
             </div>
           </div>
         </div>

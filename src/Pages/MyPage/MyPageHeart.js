@@ -14,17 +14,23 @@ class MyPageHeart extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://10.58.1.71:8000/mypage/favorite")
+    fetch("http://10.58.1.71:8000/mypage/favorite", {
+      headers: {
+        Authorization:
+          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.uRvhx0YRxMc6bT8xlDbEw3lNaEpuPH0B1OShVoJGahw",
+      },
+    })
       .then(res => res.json())
       .then(res => this.setState({ productList: res }));
   }
 
   render() {
+    console.log(this.state.productList);
     return (
       <div className="myPage">
         <MyPageNav />
         <main className="myPageMain">
-          <MyPageAside />
+          <MyPageAside username={this.state.productList.user_name} />
           {this.state.productList.length === 0 ? (
             <MyPageNone />
           ) : (

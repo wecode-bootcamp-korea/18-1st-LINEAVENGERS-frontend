@@ -10,14 +10,15 @@
       display: flex;
       justify-content: space-between;
       height: 30px;
-      padding-top: 10px;
-      padding-left: 150px;
-      padding-right: 150px;
-      padding-bottom: 20px;
+      padding: 10px 150x 20px 150px;
       border-bottom: 1px solid rgb(156, 152, 152);
 
       .myPageNavTopLeftLine {
         margin-right: 15px;
+      }
+
+      .myPageNavTopRight {
+        display: flex;
       }
 
       .myPageNavTopRightMy,
@@ -46,12 +47,7 @@
         display: flex;
         font-size: 20px;
 
-        .myPageNavBottomRightAccount,
-        .myPageNavBottomRightPoint,
-        .myPageNavBottomRightSend,
-        .myPageNavBottomRightGift,
-        .myPageNavBottomRightBenefit,
-        .myPageNavBottomRightAsk {
+        .myPageNavBottomRightTotal {
           margin-left: 40px;
         }
       }
@@ -103,12 +99,7 @@
         background-color: rgb(228, 224, 224);
       }
 
-      .myPageSettingNormal,
-      .myPageSettingAlarm,
-      .myPageSettingCard,
-      .myPageSettingSecurity,
-      .myPageSettingSending,
-      .myPageSettingAccount {
+      .myPageSettingTotal {
         padding: 10px;
         font-size: 15px;
       }

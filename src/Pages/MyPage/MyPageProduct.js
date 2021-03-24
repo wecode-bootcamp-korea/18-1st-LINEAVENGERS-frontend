@@ -3,7 +3,7 @@ import "./MyPage.scss";
 
 class MyPageProduct extends React.Component {
   popupModal = () => {
-    const url = "/Modal/1";
+    const url = "/Modal";
     const name = "리뷰 쓰기";
     const option = "width=500,height=600";
 
@@ -11,14 +11,6 @@ class MyPageProduct extends React.Component {
     newWindow.window.myId = this.props.id;
     newWindow.window.myImgUrl = this.props.img;
     newWindow.window.myName = this.props.name;
-
-    // fetch("http://10.58.1.71:8000/mypage/reviewclick", {
-    //   // fetch("/Data/ShoppingProduct.json"), {
-    //   method: "POST",
-    //   body: JSON.stringify({
-    //     product: this.state.id,
-    //   }),
-    // });
   };
 
   render() {

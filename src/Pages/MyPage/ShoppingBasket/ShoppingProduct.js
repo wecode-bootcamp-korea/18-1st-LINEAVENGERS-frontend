@@ -7,10 +7,10 @@ class ShoppingProduct extends React.Component {
   constructor() {
     super();
     this.state = {
-      ProductList: [],
-      TotalPrice: 0,
-      DeliveryPrice: 0,
-      DiscountPrice: 0,
+      productList: [],
+      totalPrice: 0,
+      deliveryPrice: 0,
+      discountPrice: 0,
       userId: "",
       quantity: "",
       sizeId: "",
@@ -41,10 +41,10 @@ class ShoppingProduct extends React.Component {
         delivery = result.reduce((acc, cur) => acc + cur);
         res.forEach(data => (discount += (data.discount / 100) * data.price));
         this.setState({
-          ProductList: res,
-          TotalPrice: totalSum,
-          DeliveryPrice: delivery,
-          DiscountPrice: discount,
+          productList: res,
+          totalPrice: totalSum,
+          deliveryPrice: delivery,
+          discountPrice: discount,
           userId: userId,
         });
       });
@@ -54,39 +54,38 @@ class ShoppingProduct extends React.Component {
     await fetch("api주소", {
       method: "post",
       body: JSON.stringify({
-        userId: this.state.ProductList.id,
-        quantity: this.state.ProductList,
+        userId: this.state.productList.id,
+        quantity: this.state.productList,
       }),
     });
   };
 
   removeProduct = e => {
     this.setState({
-      ProductList: this.state.ProductList.filter(el => el.id != e.target.value),
+      productList: this.state.productList.filter(el => el.id != e.target.value),
     });
 
     fetch("api주소", {
       method: "POST",
       body: JSON.stringify({
-        userId: this.state.ProductList.id,
+        userId: this.state.productList.id,
       }),
     });
   };
 
   render() {
-    console.log(this.state.ProductList);
-    const deliveryStat = this.state.DeliveryPrice >= 3000 ? 0 : 3000;
-    return this.state.ProductList.length === 0 ? (
+    const deliveryStat = this.state.deliveryPrice >= 3000 ? 0 : 3000;
+    return this.state.productList.length === 0 ? (
       <ShoppingNone />
     ) : (
       <main className="shoppingProduct">
-        <div className="shoppingProductMenu">
-          <div className="shoppingProductMenuInfo">상품정보</div>
-          <div className="shoppingProductMenuOpt">옵션</div>
-          <div className="shoppingProductMenuPrice">상품금액</div>
-          <div className="shoppingProductMenuDelivery">배송비</div>
+        <div className="menu">
+          <div className="information">상품정보</div>
+          <div className="option">옵션</div>
+          <div className="price">상품금액</div>
+          <div className="delivery">배송비</div>
         </div>
-        {this.state.ProductList.map(product => {
+        {this.state.productList.map(product => {
           return (
             <ShoppingProductList
               id={product.id}
@@ -102,61 +101,48 @@ class ShoppingProduct extends React.Component {
           );
         })}
         <div className="shoppingProductListTotal">
-          <div className="shoppingProductListTotalLeft">
-            <div className="shoppingProductListTotalLeftL">
-              <div className="shoppingProductListTotalLeftLL">
-                <div className="shoppingProductListTotalLeftLTotal">
-                  총 상품금액
-                </div>
-                <div className="shoppingProductListTotalLeftLPrice">
-                  {this.state.TotalPrice}원
-                </div>
+          <div className="totalLeft">
+            <div className="totalLeftL">
+              <div className="totalLeftPrice">
+                <div className="totalAmountPrice">총 상품금액</div>
+                <div className="totalPrice">{this.state.totalPrice}원</div>
               </div>
-              <div className="shoppingProductListTotalLeftLPlus">
+              <div className="totalLeftPlus">
                 <AiOutlinePlus size="20" color="gray" />
               </div>
             </div>
-            <div className="shoppingProductListTotalLeftR">
-              <div className="shoppingProductListTotalLeftRDelivery">
-                배송비
-              </div>
-              <div className="shoppingProductListTotalLeftRPrice">
-                {deliveryStat}원
-              </div>
+            <div className="totalLeftR">
+              <div className="totalLeftRDelivery">배송비</div>
+              <div className="totalLeftRPrice">{deliveryStat}원</div>
             </div>
-            <div className="shoppingProductListTotalLeftMinus">
+            <div className="totalLeftMinus">
               <AiOutlineMinus size="20" color="gray" />
             </div>
-            <div className="shoppingProductListTotalLeftDis">
-              <div className="shoppingProductListTotalLeftDiscount">
-                할인 예상금액
-              </div>
-              <div className="shoppingProductListTotalLeftDiscountPrice">
-                {this.state.DiscountPrice}원
+            <div>
+              <div className="totalLeftDiscount">할인 예상금액</div>
+              <div className="totalLeftDiscountPrice">
+                {this.state.discountPrice}원
               </div>
             </div>
           </div>
-          <div className="shoppingProductListTotalRight">
-            <div className="shoppingProductListTotalRightHead">
-              <div className="shoppingProductListTotalPrice">총 주문금액</div>
-              <div className="shoppingProductListTotalPriceInt">
-                {this.state.TotalPrice +
+          <div className="totalRight">
+            <div className="totalRightR">
+              <div className="totalPrice">총 주문금액</div>
+              <div className="totalPriceInt">
+                {this.state.totalPrice +
                   deliveryStat -
-                  this.state.DiscountPrice}
+                  this.state.discountPrice}
                 원
               </div>
             </div>
           </div>
         </div>
         <div className="shoppingProductButton">
-          <div className="shoppingProductButtonL">
-            <button className="shoppingProductButtonLeft">쇼핑 계속하기</button>
+          <div className="buttonL">
+            <button className="left">쇼핑 계속하기</button>
           </div>
-          <div className="shoppingProductButtonR">
-            <button
-              className="shoppingProductButtonRight"
-              onClick={this.goToMyPage}
-            >
+          <div>
+            <button className="buttonR" onClick={this.goToMyPage}>
               주문하기
             </button>
           </div>

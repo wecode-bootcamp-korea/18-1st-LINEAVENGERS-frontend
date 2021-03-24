@@ -11,6 +11,44 @@ import { BsPerson } from "react-icons/bs";
 import card from "./card.png";
 
 class MyPageAside extends React.Component {
+  myPageAside = () => {
+    const name = [
+      {
+        icon: <FiSettings />,
+        tabName: "기본설정",
+      },
+      {
+        icon: <RiAlarmWarningLine />,
+        tabName: "알림수신설정",
+      },
+      {
+        icon: <AiOutlineCreditCard />,
+        tabName: "보안/인증",
+      },
+      {
+        icon: <AiFillLock />,
+        tabName: "보안/인증",
+      },
+      {
+        icon: <AiOutlineFieldTime />,
+        tabName: "배송지 관리",
+      },
+      {
+        icon: <HiOutlineLocationMarker />,
+        tabName: "정기/예약결제",
+      },
+    ];
+
+    const nameList = name.map(name => (
+      <li className="myPageSettingTotal">
+        {name.icon}&nbsp;&nbsp;
+        {name.tabName}
+      </li>
+    ));
+
+    return <ul className="myPageSetting">{nameList}</ul>;
+  };
+
   render() {
     return (
       <aside className="myPageSide">
@@ -18,34 +56,9 @@ class MyPageAside extends React.Component {
           <div className="myPageUserProfile">
             <BsPerson size="60" color="lightgray" />
           </div>
-          <div className="myPageUserName">nickname</div>
+          <div className="myPageUserName">{this.props.user_name}</div>
         </section>
-        <seciton className="myPageSetting">
-          <div className="myPageSettingNormal">
-            <FiSettings />
-            &nbsp;&nbsp;&nbsp;기본설정
-          </div>
-          <div className="myPageSettingAlarm">
-            <RiAlarmWarningLine />
-            &nbsp;&nbsp;&nbsp;알림수신설정
-          </div>
-          <div className="myPageSettingCard">
-            <AiOutlineCreditCard />
-            &nbsp;&nbsp;&nbsp;카드/계좌관리
-          </div>
-          <div className="myPageSettingSecurity">
-            <AiFillLock />
-            &nbsp;&nbsp;&nbsp;보안/인증
-          </div>
-          <div className="myPageSettingSending">
-            <HiOutlineLocationMarker />
-            &nbsp;&nbsp;&nbsp;배송지 관리
-          </div>
-          <div className="myPageSettingAccount">
-            <AiOutlineFieldTime />
-            &nbsp;&nbsp;&nbsp;정기/예약결제
-          </div>
-        </seciton>
+        {this.myPageAside()}
         <div className="myPageCardCompany">제휴사</div>
         <section className="myPageCard">
           <img class="myPageCardImage" src={card} alt="Card" />

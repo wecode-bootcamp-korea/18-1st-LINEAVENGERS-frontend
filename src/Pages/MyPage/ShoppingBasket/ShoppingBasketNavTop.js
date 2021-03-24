@@ -3,16 +3,32 @@ import { Link } from "react-router-dom";
 import "./ShoppingBasket.scss";
 
 class ShoppingBasketNavTop extends React.Component {
+  navBar = () => {
+    const names = [
+      "결제내역",
+      "포인트",
+      "송금",
+      "선물함",
+      "혜택 * 쿠폰",
+      "문의 * 리뷰",
+    ];
+    const nameList = names.map(name => (
+      <li className="myPageNavBottomRightList">{name}</li>
+    ));
+
+    return <ul className="myPageNavBottomRight">{nameList}</ul>;
+  };
+
   render() {
     return (
       <nav className="myPageNav">
         <div className="myPageNavTop">
-          <div className="myPageNavTopLeft">
-            <span class="myPageNavTopLeftLine">Line</span>
+          <div>
+            <span class="leftLine">Line</span>
             <span>Avengers Shopping</span>
           </div>
-          <div className="myPageNavTopRight">
-            <div className="myPageNavTopRightMyPage">
+          <div className="topRight">
+            <div className="topRightMyPage">
               <Link
                 to="./MyPage"
                 style={{ textDecoration: "none", color: "white" }}
@@ -27,14 +43,7 @@ class ShoppingBasketNavTop extends React.Component {
           <div className="myPageNavBottomLeft">
             <div>장바구니</div>
           </div>
-          <div className="myPageNavBottomRight">
-            <div className="myPageNavBottomRightAccount">결제내역</div>
-            <div className="myPageNavBottomRightPoint">포인트</div>
-            <div className="myPageNavBottomRightSend">송금</div>
-            <div className="myPageNavBottomRightGift">선물함</div>
-            <div className="myPageNavBottomRightBenefit">혜택 * 쿠폰</div>
-            <div className="myPageNavBottomRightAsk">문의 * 리뷰</div>
-          </div>
+          {this.navBar()}
         </div>
       </nav>
     );

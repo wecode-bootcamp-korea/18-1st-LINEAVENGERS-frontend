@@ -2,6 +2,23 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 class MyPageNav extends React.Component {
+  myPageNav = () => {
+    const name = [
+      "결제내역",
+      "포인트",
+      "송금",
+      "선물함",
+      "혜택 * 쿠폰",
+      "문의 * 리뷰",
+    ];
+
+    const nameList = name.map(name => (
+      <li className="myPageNavBottomRightTotal">{name}</li>
+    ));
+
+    return <ul className="myPageNavBottomRight">{nameList}</ul>;
+  };
+
   render() {
     return (
       <nav className="myPageNav">
@@ -41,14 +58,7 @@ class MyPageNav extends React.Component {
           <div className="myPageNavBottomLeft">
             <div>Line Pay</div>
           </div>
-          <div className="myPageNavBottomRight">
-            <div className="myPageNavBottomRightAccount">결제내역</div>
-            <div className="myPageNavBottomRightPoint">포인트</div>
-            <div className="myPageNavBottomRightSend">송금</div>
-            <div className="myPageNavBottomRightGift">선물함</div>
-            <div className="myPageNavBottomRightBenefit">혜택 * 쿠폰</div>
-            <div className="myPageNavBottomRightAsk">문의 * 리뷰</div>
-          </div>
+          {this.myPageNav()}
         </div>
       </nav>
     );
