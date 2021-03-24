@@ -1,6 +1,7 @@
 .payMent {
   background-color: #f3f4f5;
-  height: 100%;
+  width: 100%;
+  height: 1500px;
   .header {
     background-color: #02c73c;
     color: white;
@@ -16,7 +17,6 @@
 
     .orderHeader {
       position: relative;
-      margin-top: 30px;
       padding-right: 20px;
       padding: 20px 0;
 
@@ -85,42 +85,6 @@
                 margin-left: 150px;
                 margin-top: 20px;
               }
-              // .info {
-              //   color: #000000;
-              //   font-size: 14px;
-              //   width: 500px;
-              //   padding-top: 20px;
-              // }
-              // .seller {
-              //   color: #000000;
-              //   font-size: 14px;
-              //   width: 12%;
-              //   padding-top: 20px;
-              // }
-              // .shipping {
-              //   color: #000000;
-              //   font-size: 14px;
-              //   width: 10%;
-              //   padding-top: 20px;
-              // }
-              // .quantity {
-              //   color: #000000;
-              //   font-size: 14px;
-              //   width: 10%;
-              //   padding-top: 20px;
-              // }
-              // .sale {
-              //   color: #000000;
-              //   font-size: 14px;
-              //   width: 12%;
-              //   padding-top: 20px;
-              // }
-              // .goods {
-              //   color: #000000;
-              //   font-size: 14px;
-              //   width: 15%;
-              //   padding-top: 20px;
-              // }
             }
           }
         }
@@ -365,7 +329,7 @@
       .pointInner {
         height: 380px;
         background-color: #f8f8f8;
-        border: 1px solid #d0d0d0;
+        border: 1px solid #e2e2e2;
         width: 800px;
         .isPay {
           font-size: 15px;
@@ -480,8 +444,6 @@
             line-height: 3;
           }
         }
-      }
-      .pointRightBox {
       }
     }
 

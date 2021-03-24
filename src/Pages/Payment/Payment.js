@@ -66,7 +66,7 @@ export class Payment extends Component {
     };
     return (
       <div className="payMent">
-        <header className="header">header</header>
+        {/* <header className="header">header</header> */}
         <section className="container">
           <div className="orderHeader">
             <h3 className="orderPayment">
@@ -296,7 +296,6 @@ export class Payment extends Component {
             </div>
           </section>
         </div>
-        <footer className="footer">footer</footer>
       </div>
     );
   }

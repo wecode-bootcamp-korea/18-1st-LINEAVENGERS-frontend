@@ -133,7 +133,7 @@ class Signup extends Component {
     }
   };
 
-  //폰 번호 유효성 검사ss
+  //폰 번호 유효성 검사
   handlePhone = () => {
     const { phoneNum } = this.state;
     const IS_PHONE_NUM = /^\d{3}-\d{3,4}-\d{4}$/;
@@ -144,7 +144,6 @@ class Signup extends Component {
       this.setState({ phoneCheck: true });
     }
   };
-
   render() {
     const {
       emailCheck,
@@ -160,7 +159,7 @@ class Signup extends Component {
         <div className="container">
           <div className="navarLogo">
             <h1>
-              <a href="https://www.naver.com/">NAVAR</a>
+              <img src="../images/Logo/green.png"></img>
             </h1>
           </div>
           <form class="join_form">
