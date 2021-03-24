@@ -34,6 +34,9 @@ export class Product extends Component {
   };
 
   render() {
+    console.log("this.state.favorite >>>", this.state.favorite);
+    console.log("this.props.favorite >>>", this.props.favorite);
+
     const { favorite } = this.state;
     const { img, price, productName } = this.props;
     return (
