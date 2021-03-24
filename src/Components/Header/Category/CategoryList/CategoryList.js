@@ -11,12 +11,20 @@ export class CategoryList extends Component {
         {itsCategoryList.map(menuObj => {
           return (
             <div className="categoryMenu">
-              <span className="categoryText">{menuObj.menuName}</span>
+              <Link
+                className="categoryMenuLink"
+                to={`/product?menu=${menuObj.menuId}`}
+              >
+                <span className="categoryText">{menuObj.menuName}</span>
+              </Link>
 
               {menuObj.categoryList.length > 0 && (
                 <div className="subMenuList">
                   {menuObj.categoryList.map(subMenuObj => (
-                    <Link to="/productDetail" className="subMenu">
+                    <Link
+                      to={`/product?menu=${menuObj.menuId}&category=${subMenuObj.categoryId}`}
+                      className="subMenuLink"
+                    >
                       {subMenuObj.categoryName}
                     </Link>
                   ))}

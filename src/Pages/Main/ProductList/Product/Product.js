@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import "./Product.scss";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
+import "./Product.scss";
 
 export class Product extends Component {
   constructor() {
@@ -42,7 +43,9 @@ export class Product extends Component {
     return (
       <div className="productContainer">
         <div className="productImgContainer">
-          <img className="productImg" src={img} alt="Product Img" />
+          <Link to="/product?">
+            <img className="productImg" src={img} alt="Product Img" />
+          </Link>
           <div className="iconsContainer">
             <div className="heartAndShoppingBag">
               <button
