@@ -6,13 +6,21 @@ import "./DetailContainer.scss";
 
 class DetailContainer extends Component {
   render() {
+    const { tabClick, tabIndex } = this.props;
     return (
-      <section className="detailContainer">
+      <section className="detailContainer" ref={this.props.DetailContainer}>
         <ul className="detailTab">
-          <li className="tabList">상세정보</li>
-          <li className="tabList">리뷰</li>
-          <li className="tabList">QA 0</li>
-          <li className="tabList">반품/교환정보</li>
+          {tabList.map((list, index) => (
+            <li
+              key={list.id}
+              className={`tabList ${tabIndex === index && "active"}`}
+              onClick={e => {
+                tabClick(e, list.id);
+              }}
+            >
+              {list.title}
+            </li>
+          ))}
         </ul>
         <DeliverBanner />
         <BenefitBanner />
@@ -22,4 +30,10 @@ class DetailContainer extends Component {
   }
 }
 
+const tabList = [
+  { id: 0, title: "상세정보" },
+  { id: 1, title: "리뷰" },
+  { id: 2, title: "Q&A" },
+  { id: 3, title: "반품/교환정보" },
+];
 export default DetailContainer;

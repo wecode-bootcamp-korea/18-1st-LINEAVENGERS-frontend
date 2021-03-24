@@ -35,6 +35,90 @@
       justify-content: space-between;
       margin-top: 7px;
 
+      .NIcon,
+      .PlusIcon,
+      .MembershipIcon {
+        position: relative;
+        display: inline-block;
+        height: 12px;
+        font-weight: 700;
+        font-size: 9px;
+        color: #fff;
+        vertical-align: bottom;
+        &::before,
+        &::after {
+          content: "";
+          display: inline-block;
+          position: absolute;
+          left: 0;
+          width: 100%;
+          height: 7px;
+          z-index: 1;
+        }
+        &::before {
+          top: 0;
+        }
+        &::after {
+          bottom: 0;
+        }
+        em {
+          position: absolute;
+          display: block;
+          margin: 0;
+          top: 1.5px;
+          left: 50%;
+          font-size: 7px;
+          transform: translateX(-50%);
+          text-decoration: none;
+          z-index: 2;
+        }
+      }
+      .NIcon {
+        width: 12px;
+        &::before {
+          background: #46ee5b;
+        }
+        &::after {
+          background: #38c859;
+        }
+      }
+
+      .PlusIcon {
+        width: 12px;
+        &::before {
+          background: #1ebcf5;
+        }
+        &::after {
+          background: #1e9bf5;
+        }
+      }
+      .MembershipIcon {
+        width: 35px;
+        em {
+          font-size: 9px;
+          width: 27px;
+        }
+        &::before {
+          background: #4d91f0;
+        }
+        &::after {
+          background: #505fdd;
+        }
+      }
+
+      .PercentIcon {
+        display: inline-block;
+        height: 12px;
+        vertical-align: middle;
+        border: 1px solid #38c859;
+        padding: 0 2px;
+        em {
+          font-size: 9px;
+          margin: 0;
+          color: #38c859;
+          text-decoration: none;
+        }
+      }
       > div {
         color: #adadad;
         em {

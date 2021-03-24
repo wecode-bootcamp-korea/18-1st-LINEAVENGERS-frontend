@@ -24,6 +24,11 @@
       font-size: 30px;
       color: #ededed;
       transform: translateY(-50%);
+      cursor: pointer;
+
+      svg {
+        pointer-events: none;
+      }
 
       &.prev {
         left: 20px;
@@ -45,6 +50,11 @@
       width: 40px;
       height: 40px;
       margin: 0 5px;
+      cursor: pointer;
+
+      &.active {
+        border: 2px solid #000;
+      }
 
       img {
         width: 100%;

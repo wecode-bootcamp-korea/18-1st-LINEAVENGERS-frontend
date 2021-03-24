@@ -1,6 +1,6 @@
 {
   "name": "라인프렌즈 브라운 머그컵",
-  "price": 10000,
+  "price": {"normal":10000, "sale":30},
   "type": "사이즈",
   "options": ["M", "L"],
   "imgUrls": [
@@ -10,44 +10,134 @@
   ],
   "reviews": [
     {
-      "user": "test",
+      "user": "test1",
       "grade": 3,
-      "date": "21.03.16",
+      "date": "2021.03.16",
       "type": "사이즈",
       "option": "단품",
       "comment": "테스트 입니다.!",
       "imgUrl":
-        "https://cdn.econovill.com/news/snsPhoto/202011/503769_404206_563.jpg"
+        "https://cdn.econovill.com/news/snsPhoto/202011/503769_404206_563.jpg",
+        "thumbs":21
     },
     {
-      "user": "test",
+      "user": "test2",
       "grade": 5,
-      "date": "21.03.16",
+      "date": "2021.03.16",
       "type": "사이즈",
       "option": "단품",
       "comment": "테스트 입니다.!",
       "imgUrl":
-        "https://cdn.econovill.com/news/snsPhoto/202011/503769_404206_563.jpg"
+        "https://cdn.econovill.com/news/snsPhoto/202011/503769_404206_563.jpg",
+        "thumbs":17
     },
     {
-      "user": "test",
-      "grade": 5,
-      "date": "21.03.16",
+      "user": "test3",
+      "grade": 1,
+      "date": "2021.03.11",
       "type": "사이즈",
       "option": "단품",
       "comment": "테스트 입니다.!",
       "imgUrl":
-        "https://cdn.econovill.com/news/snsPhoto/202011/503769_404206_563.jpg"
+        "https://cdn.econovill.com/news/snsPhoto/202011/503769_404206_563.jpg",
+        "thumbs":88
     },
     {
-      "user": "test",
-      "grade": 5,
-      "date": "21.03.16",
+      "user": "test4",
+      "grade": 2,
+      "date": "2021.03.26",
       "type": "사이즈",
       "option": "단품",
       "comment": "테스트 입니다.!",
       "imgUrl":
-        "https://cdn.econovill.com/news/snsPhoto/202011/503769_404206_563.jpg"
+        "https://cdn.econovill.com/news/snsPhoto/202011/503769_404206_563.jpg",
+        "thumbs":10
+    }, {
+      "user": "test5",
+      "grade": 4,
+      "date": "2021.02.16",
+      "type": "사이즈",
+      "option": "단품",
+      "comment": "테스트 입니다.!",
+      "imgUrl":
+        "https://cdn.econovill.com/news/snsPhoto/202011/503769_404206_563.jpg",
+        "thumbs":48
+    }
+    , {
+      "user": "test6",
+      "grade": 4,
+      "date": "2021.01.16",
+      "type": "사이즈",
+      "option": "단품",
+      "comment": "테스트 입니다.!",
+      "imgUrl":
+        "https://cdn.econovill.com/news/snsPhoto/202011/503769_404206_563.jpg",
+        "thumbs":110
+    },
+    {
+      "user": "test1",
+      "grade": 3,
+      "date": "2021.03.16",
+      "type": "사이즈",
+      "option": "단품",
+      "comment": "테스트 입니다.!",
+      "imgUrl":
+        "https://cdn.econovill.com/news/snsPhoto/202011/503769_404206_563.jpg",
+        "thumbs":21
+    },
+    {
+      "user": "test2",
+      "grade": 5,
+      "date": "2021.03.16",
+      "type": "사이즈",
+      "option": "단품",
+      "comment": "테스트 입니다.!",
+      "imgUrl":
+        "https://cdn.econovill.com/news/snsPhoto/202011/503769_404206_563.jpg",
+        "thumbs":17
+    },
+    {
+      "user": "test3",
+      "grade": 1,
+      "date": "2021.03.11",
+      "type": "사이즈",
+      "option": "단품",
+      "comment": "테스트 입니다.!",
+      "imgUrl":
+        "https://cdn.econovill.com/news/snsPhoto/202011/503769_404206_563.jpg",
+        "thumbs":88
+    },
+    {
+      "user": "test4",
+      "grade": 2,
+      "date": "2021.03.26",
+      "type": "사이즈",
+      "option": "단품",
+      "comment": "테스트 입니다.!",
+      "imgUrl":
+        "https://cdn.econovill.com/news/snsPhoto/202011/503769_404206_563.jpg",
+        "thumbs":10
+    }, {
+      "user": "test5",
+      "grade": 4,
+      "date": "2021.02.16",
+      "type": "사이즈",
+      "option": "단품",
+      "comment": "테스트 입니다.!",
+      "imgUrl":
+        "https://cdn.econovill.com/news/snsPhoto/202011/503769_404206_563.jpg",
+        "thumbs":48
+    }
+    , {
+      "user": "test6",
+      "grade": 4,
+      "date": "2021.01.16",
+      "type": "사이즈",
+      "option": "단품",
+      "comment": "테스트 입니다.!",
+      "imgUrl":
+        "https://cdn.econovill.com/news/snsPhoto/202011/503769_404206_563.jpg",
+        "thumbs":110
     }
   ]
 }

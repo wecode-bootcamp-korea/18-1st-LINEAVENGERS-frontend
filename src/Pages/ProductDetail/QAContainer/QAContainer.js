@@ -4,7 +4,7 @@ import "./QAContainer.scss";
 class QAContainer extends Component {
   render() {
     return (
-      <section className="QAContainer">
+      <section className="QAContainer" ref={this.props.QAContainer}>
         <h1>Q&A</h1>
         <p>구매하시려는 상품에 대해 궁금한 점이 있으신 경우 문의해주세요.</p>
         <div className="QABtnWrap">

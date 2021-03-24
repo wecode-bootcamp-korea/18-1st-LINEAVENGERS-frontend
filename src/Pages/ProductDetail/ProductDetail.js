@@ -6,87 +6,177 @@ import DetailContainer from "./DetailContainer/DetailContainer";
 import ReviewContainer from "./ReviewContainer/ReviewContainer";
 import QAContainer from "./QAContainer/QAContainer";
 import "./ProductDetail.scss";
+import TopMenu from "./TopMenu/TopMenu";
+import RefundContainer from "./RefundContainer/RefundContainer";
 
 class ProductDetail extends Component {
+  constructor(props) {
+    super(props);
+    this.DetailContainer = React.createRef();
+    this.ReviewContainer = React.createRef();
+    this.QAContainer = React.createRef();
+    this.RefundContainer = React.createRef();
+  }
+
+  state = {
+    tabIndex: 0,
+    selectList: [],
+    productData: {},
+  };
+
+  tabClick = (e, tabIndex) => {
+    const detail = this.DetailContainer.current.offsetTop;
+    const review = this.ReviewContainer.current.offsetTop - 150;
+    const qa = this.QAContainer.current.offsetTop - 150;
+    const refund = this.RefundContainer.current.offsetTop;
+
+    if (tabIndex === 0) window.scrollTo({ top: detail, behavior: "smooth" });
+    else if (tabIndex === 1)
+      window.scrollTo({ top: review, behavior: "smooth" });
+    else if (tabIndex === 2) window.scrollTo({ top: qa, behavior: "smooth" });
+    else window.scrollTo({ top: refund, behavior: "smooth" });
+
+    this.setState({
+      tabIndex: tabIndex,
+    });
+  };
+
+  addSelect = (e, option, price) => {
+    const { selectList } = this.state;
+    const newSelect = { option, price, countValue: 1 };
+    let depulicateCheck = false;
+
+    selectList.forEach(list => {
+      if (list.option === newSelect.option) {
+        depulicateCheck = true;
+        return;
+      }
+    });
+    if (depulicateCheck) {
+      alert("이미 선택한 옵션입니다.");
+      return;
+    } else {
+      this.setState({
+        selectList: [...selectList, newSelect],
+      });
+    }
+  };
+
+  deleteSelect = (e, option) => {
+    const { selectList } = this.state;
+    this.setState({
+      selectList: selectList.filter(list => list.option !== option),
+    });
+  };
+
+  clickCount = (e, option, countValue) => {
+    const { className } = e.target;
+    const btnType = className;
+    const { selectList } = this.state;
+
+    if (countValue === 1 && btnType === "minus") {
+      alert("1개 이상 구매할 수 있습니다.");
+      return;
+    } else if (countValue >= 10000 && btnType === "plus") {
+      alert("최대 10,000개 이하로 구매하실 수 있습니다.");
+      return;
+    }
+
+    this.setState({
+      selectList: selectList.map(list => {
+        if (list.option === option) {
+          if (btnType === "minus") {
+            return { ...list, countValue: list.countValue - 1 };
+          } else return { ...list, countValue: list.countValue + 1 };
+        } else return list;
+      }),
+    });
+  };
+
+  countChange = (e, option) => {
+    const { value } = e.target;
+    const { selectList } = this.state;
+    let finalValue = 0;
+
+    if (Number(value) >= 10000) {
+      alert("10,000 개 이하로 구매하실 수 있습니다.");
+      finalValue = 10000;
+    } else if (Number(value) === 0 && value === "") {
+      alert("1개 이상 구매할 수 있습니다");
+      finalValue = 1;
+    } else if (isNaN(Number(value))) {
+      alert("숫자만 입력이 가능합니다.");
+      finalValue = 1;
+    } else finalValue = Number(value);
+
+    this.setState({
+      selectList: selectList.map(list => {
+        if (list.option === option) return { ...list, countValue: finalValue };
+        else return list;
+      }),
+    });
+  };
+
+  componentDidMount() {
+    fetch("http://localhost:3000/data/ProductDetail.json", { method: "GET" })
+      .then(res => res.json())
+      .then(res =>
+        this.setState({
+          productData: res,
+        })
+      );
+  }
   render() {
+    const { productData, selectList, tabIndex } = this.state;
+    const { imgUrls, name, options, price, reviews, type } = productData;
+    const TopMenuData = { imgUrls, name, options, price, reviews, type };
+    const PreviewData = { imgUrls, reviews };
+    const PayData = { name, options, price, type };
+    const ReviewData = { reviews };
+
     return (
       <div className="productDetailWrap">
-        <section className="contentTop">
-          <div className="previewPay">
-            <Preview />
-            <Pay />
-          </div>
-          <Review />
-        </section>
-        <DetailContainer />
-        <ReviewContainer />
-        <QAContainer />
-        <section className="refundContainer">
-          <h1>반품/교환정보</h1>
-          <table>
-            <tr>
-              <th colSpan="4">
-                <strong>라인 어벤져스 반품/교환 안내</strong>
-                <br />
-                반품 시 먼저 판매자와 연락하셔서 반품사유, 택배사, 배송비,
-                반품지 주소 등을 협의하신 후 반품상품을 발송해 주시기 바랍니다.
-              </th>
-            </tr>
-            <tr>
-              <td width="160">판매 지정택배사</td>
-              <td colSpan="3">CJ대한통운</td>
-            </tr>
-            <tr>
-              <td>반품배송비</td>
-              <td>편도 3,000원 (최초 배송비 무료인 경우 6,000원 부과)</td>
-              <td style={{ background: "#fafafa" }}>교환배송비</td>
-              <td width="300">6,000원</td>
-            </tr>
-            <tr>
-              <td>보내실 곳</td>
-              <td colSpan="3">서울특별시 강남구 삼성동 테헤란로 427</td>
-            </tr>
-            <tr>
-              <td>반품/교환 사유에 따른 요청 가능 기간</td>
-              <td colSpan="3">구매자 단순 변심은 상품 수령 후 7일 이내</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td colSpan="3">
-                표시/광고와 상이, 상품하자의 경우 상품 수령 후 3개월 이내 혹은
-                표시/광고와 다른 사실을 안 날로부터 30일 이내
-              </td>
-            </tr>
-            <tr>
-              <td>반품/교환 불가능 사유</td>
-              <td colSpan="3">
-                <ul>
-                  <li>1. 반품요청기간이 지난 경우</li>
-                  <li>
-                    2. 구매자의 책임 있는 사유로 상품 등이 멸실 또는 훼손된 경우
-                  </li>
-                  <li>
-                    3. 구매자의 책임있는 사유로 포장이 훼손되어 상품 가치가
-                    현저히 상실된 경우
-                  </li>
-                  <li>
-                    4. 구매자의 사용 또는 일부 소비에 의하여 상품의 가치가
-                    현저히 감소한 경우
-                  </li>
-                  <li>
-                    5. 시간의 경과에 의하여 재판매가 곤란할 정도로 상품 등의
-                    가치가 현저히 감소한 경우
-                  </li>
-                  <li>
-                    6. 고객의 요청사항에 맞춰 제작에 들어가는 맞춤제작상품의
-                    경우
-                  </li>
-                  <li>7. 복제가 가능한 상품 등의 포장을 훼손한 경우</li>
-                </ul>
-              </td>
-            </tr>
-          </table>
-        </section>
+        {Object.keys(productData).length === 0 ? (
+          <div>Loading</div>
+        ) : (
+          <>
+            <TopMenu
+              tabIndex={tabIndex}
+              TopMenuData={TopMenuData}
+              selectList={selectList}
+              tabClick={this.tabClick}
+              clickCount={this.clickCount}
+              countChange={this.countChange}
+              addSelect={this.addSelect}
+              deleteSelect={this.deleteSelect}
+            />
+            <section className="contentTop">
+              <div className="previewPay">
+                <Preview PreviewData={PreviewData} />
+                <Pay
+                  PayData={PayData}
+                  selectList={selectList}
+                  clickCount={this.clickCount}
+                  countChange={this.countChange}
+                  addSelect={this.addSelect}
+                  deleteSelect={this.deleteSelect}
+                />
+              </div>
+              <Review ReviewData={ReviewData} />
+            </section>
+            <DetailContainer
+              DetailContainer={this.DetailContainer}
+              tabClick={this.tabClick}
+              tabIndex={tabIndex}
+            />
+            <ReviewContainer
+              ReviewData={ReviewData}
+              ReviewContainer={this.ReviewContainer}
+            />
+            <QAContainer QAContainer={this.QAContainer} />
+            <RefundContainer RefundContainer={this.RefundContainer} />
+          </>
+        )}
       </div>
     );
   }

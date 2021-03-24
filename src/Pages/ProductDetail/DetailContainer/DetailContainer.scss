@@ -15,7 +15,15 @@
       color: #3e3d4e;
       font-size: 13px;
       font-weight: 700;
+      cursor: pointer;
 
+      &.active {
+        background: #3e3d4e;
+        color: #f3f5f7;
+        &::after {
+          background: #3e3d4e;
+        }
+      }
       &::after {
         content: "";
         position: absolute;

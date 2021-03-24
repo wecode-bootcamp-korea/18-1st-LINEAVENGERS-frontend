@@ -1,18 +1,76 @@
 .selectWrap {
+  position: relative;
   font-size: 13px;
+
   .selectBox {
     display: flex;
     align-items: center;
     height: 36px;
     padding-left: 15px;
-    border: 1px solid #777777;
+    border: 1px solid #d4d6d9;
     color: #333;
+    cursor: pointer;
+
+    &:hover {
+      border: 1px solid #777;
+    }
+
+    &::after,
+    &::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      right: 15px;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+    }
+    &::before {
+      border-top: 6px solid #fff;
+      top: 14px;
+      z-index: 1;
+    }
+    &::after {
+      top: 15px;
+      border-top: 6px solid #333;
+    }
   }
+
+  .selectOption {
+    position: absolute;
+    width: 100%;
+    top: 36px;
+    left: 0px;
+    background: #fff;
+    opacity: 0;
+    visibility: hidden;
+    cursor: pointer;
+
+    .optionList {
+      display: flex;
+      align-items: center;
+      height: 36px;
+      padding-left: 15px;
+      border: 1px solid #d4d6d9;
+      border-top: none;
+    }
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .selectCount {
+    margin-top: 15px;
+    border-top: 1px solid #c7c7c7;
+  }
+
   .showTotal {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 19px;
+
     span {
       &:nth-child(1) {
         font-weight: 700;

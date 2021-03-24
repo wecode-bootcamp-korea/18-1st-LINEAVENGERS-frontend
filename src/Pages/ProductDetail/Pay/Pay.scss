@@ -127,13 +127,29 @@
       align-items: center;
       background: #565656;
       border: 1px solid #d2d6de;
+      cursor: pointer;
 
       &:nth-child(1) {
         background: #3fc910;
+        span {
+          height: 20px;
+          padding: 0 5px;
+          margin: 0 5px 3px 0;
+          background: #fff;
+          color: #3fc910;
+          font-weight: 700;
+          font-size: 14px;
+          line-height: 22px;
+        }
       }
       &:nth-child(2) {
         color: #333333;
         background: #fff;
+        svg {
+          margin-right: 5px;
+          font-size: 20px;
+          color: #3fc910;
+        }
       }
     }
   }

@@ -1,6 +1,7 @@
-import { faInfo, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { Component } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
+import { faComment } from "@fortawesome/free-regular-svg-icons";
 import MaxNormalPoint from "./Components/MaxNormalPoint";
 import MorePointInfo from "./Components/MorePointInfo";
 import SelectOption from "./Components/SelectOption";
@@ -8,19 +9,36 @@ import "./Pay.scss";
 
 class Pay extends Component {
   render() {
+    const {
+      PayData: { name, options, price, type },
+      selectList,
+      clickCount,
+      countChange,
+      addSelect,
+      deleteSelect,
+    } = this.props;
+
+    const finalPrice =
+      price.sale !== 0
+        ? price.normal - (price.normal * price.sale) / 100
+        : price.normal;
+
     return (
       <div className="pay">
-        <h1 className="productTitle">라인프렌즈 미니브라운 마우스 패드</h1>
+        <h1 className="productTitle">{name}</h1>
         <p className="priceInfo">
-          <span className="salePercent">30%</span>
+          <span className="salePercent">{price.sale !== 0 && price.sale}%</span>
           <span className="priceResult">
-            <em>29,900원</em>20,930원
+            <em>
+              {Number(price.sale !== 0 && price.normal).toLocaleString()}원
+            </em>
+            {Number(finalPrice).toLocaleString()}원
           </span>
         </p>
         <div className="pointInfoBox">
           <p className="pointInfoTitle">라인 어벤져스 고객을 위한 혜택</p>
-          <MaxNormalPoint />
-          <MorePointInfo />
+          <MaxNormalPoint finalPrice={finalPrice} />
+          <MorePointInfo finalPrice={finalPrice} />
         </div>
         <div className="adBanner">포인트 최대 5% 적립</div>
         <p className="cardInfo">
@@ -35,10 +53,24 @@ class Pay extends Component {
           </li>
           <li>30,000원 이상 구매 시 무료</li>
         </ul>
-        <SelectOption />
+        <SelectOption
+          type={type}
+          price={finalPrice}
+          options={options}
+          selectList={selectList}
+          countChange={countChange}
+          clickCount={clickCount}
+          addSelect={addSelect}
+          deleteSelect={deleteSelect}
+        />
         <ul className="choiceBox">
-          <li>구매하기</li>
-          <li>톡톡문의</li>
+          <li>
+            <span>N</span>구매하기
+          </li>
+          <li>
+            <FontAwesomeIcon icon={faComment} />
+            톡톡문의
+          </li>
           <li>장바구니</li>
           <li>찜하기</li>
         </ul>
