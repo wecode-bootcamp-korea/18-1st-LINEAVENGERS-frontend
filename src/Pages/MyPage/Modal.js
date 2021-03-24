@@ -7,9 +7,9 @@ class Popup extends React.Component {
     super();
     this.state = {
       // Product: [],
-      Clicked: [false, false, false, false, false],
+      clicked: [false, false, false, false, false],
       myCount: "",
-      Comment: "",
+      comment: "",
     };
   }
 
@@ -20,16 +20,16 @@ class Popup extends React.Component {
   // }
 
   handleStarClick = index => {
-    let clickStates = [...this.state.Clicked];
+    let clickStates = [...this.state.clicked];
     for (let i = 0; i < 5; i++) {
       if (i <= index) clickStates[i] = true;
       else clickStates[i] = false;
     }
-    this.setState({ Clicked: clickStates });
+    this.setState({ clicked: clickStates });
   };
 
   handleClickView = () => {
-    const sw = this.state.Clicked;
+    const sw = this.state.clicked;
 
     if (sw[4] === true) {
       return "5점 (최고예요)";
@@ -47,11 +47,11 @@ class Popup extends React.Component {
   };
 
   commentValue = e => {
-    this.setState({ Comment: e.target.value });
+    this.setState({ comment: e.target.value });
   };
 
   commentReview = () => {
-    let mycount = this.state.Clicked.filter(Boolean).length;
+    let mycount = this.state.clicked.filter(Boolean).length;
     if (mycount >= 1) {
       this.setState({ myCount: mycount });
     }
@@ -63,7 +63,7 @@ class Popup extends React.Component {
       body: JSON.stringify({
         product: window.myId,
         rating: this.state.myCount,
-        content: this.state.Comment,
+        content: this.state.comment,
       }),
     });
   };
@@ -85,27 +85,27 @@ class Popup extends React.Component {
               <FaStar
                 size="50"
                 onClick={() => this.handleStarClick(0)}
-                className={this.state.Clicked[0] ? "red" : null}
+                className={this.state.clicked[0] ? "red" : null}
               />
               <FaStar
                 size="50"
                 onClick={() => this.handleStarClick(1)}
-                className={this.state.Clicked[1] ? "red" : null}
+                className={this.state.clicked[1] ? "red" : null}
               />
               <FaStar
                 size="50"
                 onClick={() => this.handleStarClick(2)}
-                className={this.state.Clicked[2] ? "red" : null}
+                className={this.state.clicked[2] ? "red" : null}
               />
               <FaStar
                 size="50"
                 onClick={() => this.handleStarClick(3)}
-                className={this.state.Clicked[3] ? "red" : null}
+                className={this.state.clicked[3] ? "red" : null}
               />
               <FaStar
                 size="50"
                 onClick={() => this.handleStarClick(4)}
-                className={this.state.Clicked[4] ? "red" : null}
+                className={this.state.clicked[4] ? "red" : null}
               />
             </div>
             <div className="modalStarContent">
@@ -131,7 +131,6 @@ class Popup extends React.Component {
             <button
               className="modalBtnLeftRegister"
               onClick={this.registerReview}
-              // onClick={this.commentReview}
             >
               등록
             </button>

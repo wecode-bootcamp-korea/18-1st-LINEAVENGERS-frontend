@@ -9,14 +9,14 @@ class MyPageHeart extends React.Component {
   constructor() {
     super();
     this.state = {
-      ProductList: [],
+      productList: [],
     };
   }
 
   componentDidMount() {
-    fetch("/Data/MyPageProduct.json")
+    fetch("http://10.58.1.71:8000/mypage/favorite")
       .then(res => res.json())
-      .then(res => this.setState({ ProductList: res }));
+      .then(res => this.setState({ productList: res }));
   }
 
   render() {
@@ -25,7 +25,7 @@ class MyPageHeart extends React.Component {
         <MyPageNav />
         <main className="myPageMain">
           <MyPageAside />
-          {this.state.ProductList.length === 0 ? (
+          {this.state.productList.length === 0 ? (
             <MyPageNone />
           ) : (
             <article className="myPageProduct">
@@ -42,10 +42,12 @@ class MyPageHeart extends React.Component {
                   <div className="myPageHeartNavRightR">&gt; 찜한 상품</div>
                 </div>
               </div>
-              {this.state.ProductList.map(product => {
-                return (
+              {this.state.productList.map(product => {
+                return this.state.productList.length === 0 ? (
+                  <MyPageNone />
+                ) : (
                   <MyPageHeartProduct
-                    img={product.img}
+                    image={product.image}
                     name={product.name}
                     price={product.price}
                   />

@@ -2,7 +2,6 @@ import React from "react";
 import "./ShoppingBasket.scss";
 
 class ShoppingBasketNav extends React.Component {
-  state = {};
   render() {
     return (
       <section className="shoppingBasketNav">

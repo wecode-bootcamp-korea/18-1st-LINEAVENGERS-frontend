@@ -3,7 +3,6 @@ import "./MyPage.scss";
 import { RiErrorWarningLine } from "react-icons/ri";
 
 class MyPageNone extends React.Component {
-  state = {};
   render() {
     return (
       <article className="myPageArticle">

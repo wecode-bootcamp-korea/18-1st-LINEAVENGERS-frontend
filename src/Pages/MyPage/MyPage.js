@@ -9,14 +9,14 @@ export class MyPage extends Component {
   constructor() {
     super();
     this.state = {
-      ProductList: [],
+      productList: [],
     };
   }
 
   componentDidMount() {
     fetch("/Data/MyPageProduct.json")
       .then(res => res.json())
-      .then(res => this.setState({ ProductList: res }));
+      .then(res => this.setState({ productList: res }));
   }
 
   render() {
@@ -25,11 +25,11 @@ export class MyPage extends Component {
         <MyPageNav />
         <main className="myPageMain">
           <MyPageAside />
-          {this.state.ProductList.length === 0 ? (
+          {this.state.productList.length === 0 ? (
             <MyPageNone />
           ) : (
             <article className="myPageProduct">
-              {this.state.ProductList.map(product => {
+              {this.state.productList.map(product => {
                 return (
                   <MyPageProduct
                     id={product.id}

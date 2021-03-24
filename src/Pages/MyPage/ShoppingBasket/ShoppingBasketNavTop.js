@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "./ShoppingBasket.scss";
 
 class ShoppingBasketNavTop extends React.Component {
-  state = {};
   render() {
     return (
       <nav className="myPageNav">
