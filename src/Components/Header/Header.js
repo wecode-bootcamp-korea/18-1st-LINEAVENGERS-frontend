@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Myinfo from "./MyInfo/MyInfo";
+import MyInfo from "./MyInfo/MyInfo";
 import Category from "./Category/Category";
 import "./Header.scss";
 
@@ -16,7 +16,7 @@ export class Header extends Component {
                   <span>HOME</span>
                 </Link>
               </div>
-              <Myinfo />
+              <MyInfo />
             </div>
           </div>
           <div className="logoAndSearchContainer">
