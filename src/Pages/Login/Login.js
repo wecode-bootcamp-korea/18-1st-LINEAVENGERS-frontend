@@ -61,11 +61,9 @@ class Login extends Component {
         }),
       })
         .then(res => {
-          console.log(res);
           return res.json();
         })
         .then(result => {
-          console.log(result);
           if (result.message === "SUCCESS") {
             alert("로그인 성공");
             return;
@@ -83,9 +81,9 @@ class Login extends Component {
     return (
       <div className="login">
         <div className="loginContainer">
-          <div className="navar_logo">
+          <div className="navarLogo">
             <h1>
-              <a href="https://www.naver.com/">NAVAR</a>
+              <img src="../Images/Logo/green.png"></img>
             </h1>
           </div>
           <div className="userBox">
