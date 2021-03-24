@@ -56,7 +56,7 @@ class MyPageAside extends React.Component {
           <div className="myPageUserProfile">
             <BsPerson size="60" color="lightgray" />
           </div>
-          <div className="myPageUserName">{this.props.user_name}</div>
+          <div className="myPageUserName">nickname</div>
         </section>
         {this.myPageAside()}
         <div className="myPageCardCompany">제휴사</div>

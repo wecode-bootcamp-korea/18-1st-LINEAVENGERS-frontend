@@ -30,7 +30,7 @@ class MyPageHeart extends React.Component {
       <div className="myPage">
         <MyPageNav />
         <main className="myPageMain">
-          <MyPageAside username={this.state.productList.user_name} />
+          <MyPageAside />
           {this.state.productList.length === 0 ? (
             <MyPageNone />
           ) : (
