@@ -13,6 +13,10 @@ export class Product extends Component {
   }
 
   handleLike = e => {
+    this.setState({
+      favorite: !this.state.favorite,
+    });
+
     fetch("http://10.58.1.71:8000/mypage/favoritecreate", {
       method: "POST",
       body: JSON.stringify({
@@ -27,10 +31,6 @@ export class Product extends Component {
           favorite: this.props.favorite,
         });
       });
-
-    this.setState({
-      favorite: !this.state.favorite,
-    });
   };
 
   render() {

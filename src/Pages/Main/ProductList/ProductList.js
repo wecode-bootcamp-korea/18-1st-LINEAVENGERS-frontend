@@ -6,15 +6,15 @@ export class ProductList extends Component {
   render() {
     return (
       <div className="productList">
-        {this.props.products.map(product => {
+        {this.props.products.map(productObj => {
           return (
             <Product
-              key={product.productId}
-              id={product.productId}
-              price={product.price}
-              productName={product.productName}
-              img={product.thumbnailUrl}
-              favorite={product.favorite}
+              key={productObj.productId}
+              id={productObj.productId}
+              price={productObj.price}
+              productName={productObj.productName}
+              img={productObj.thumbnailUrl}
+              favorite={productObj.favorite}
             />
           );
         })}
