@@ -18,17 +18,26 @@ class CategoryList extends Component {
   };
 
   render() {
-    const { current, menuList, categoryList, handleCategory } = this.props;
+    const {
+      current,
+      count,
+      nowCategory,
+      categoryData,
+      handleCategory,
+      contentTitle,
+    } = this.props;
     const { firstTab, secondTab } = this.state;
-    const { type, title, count } = current[0];
     const categoryLiEl = new Array(3).fill(0);
+    const menuList = categoryData.map(e => {
+      return { id: e.menuId, name: e.menuName };
+    });
 
     return (
       <ul className="topCategory">
         {categoryLiEl.map((e, index) => {
           const selectType =
-            (index === 1 && type === "menu") ||
-            (index !== 1 && type === "category");
+            (index === 1 && current.title === "메인") ||
+            (index !== 1 && current.title === "서브");
           return index === 0 ? (
             <li className="categoryList">
               <Link to="/main">홈</Link>
@@ -37,14 +46,23 @@ class CategoryList extends Component {
             <li className="categoryList">
               <CategorySelect
                 select={selectType}
-                title={index === 1 ? (type === "main" ? title : "전체") : title}
+                title={
+                  index === 1
+                    ? current.title === "메인"
+                      ? contentTitle
+                      : "전체"
+                    : current.title === "서브"
+                    ? contentTitle
+                    : "전체"
+                }
                 firstTab={firstTab}
                 secondTab={secondTab}
                 tabIndex={index}
                 count={count}
-                dataList={index === 1 ? menuList : categoryList}
                 handleTab={this.handleTab}
                 handleCategory={handleCategory}
+                menuId={nowCategory.menuId}
+                dataList={index === 1 ? menuList : nowCategory.categoryList}
               />
             </li>
           );

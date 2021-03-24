@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Content from "./Content/Content";
 import ProductList from "./ProductList/ProductList";
 import PageLoad from "../../Components/PageLoad/PageLoad";
+import { withRouter } from "react-router-dom";
 import "./Product.scss";
 
 export class Product extends Component {
@@ -11,24 +12,39 @@ export class Product extends Component {
     pageOffset: 0,
     gridType: 1,
     pageSize: 20,
+    count: 0,
+    current: [],
     pageData: [],
     productData: [],
     categoryData: [],
   };
 
-  initialProductData = () => {
-    fetch("http://7667db542507.ngrok.io/product?menu=1&category=1")
+  initialCategroyData = () => {
+    fetch("http://f26178ab78f6.ngrok.io/product/main-category")
       .then(res => res.json())
+      .then(res => {
+        this.setState({
+          categoryData: res.menuList,
+        });
+      });
+  };
+
+  initialProductData = () => {
+    fetch(`http://f26178ab78f6.ngrok.io/product${this.props.location.search}`)
+      .then(res => {
+        return res.json();
+      })
       .then(res => {
         const { pageOffset, pageSize } = this.state;
         this.setState({
           productData: res.productList,
-          categoryData: res.categoryData,
+          count: res.count,
           page: Math.ceil(res.productList.length / pageSize),
           pageData: res.productList.slice(pageOffset, pageSize),
         });
       });
   };
+
   initialSort = () => {
     const { productData } = this.state;
 
@@ -111,10 +127,17 @@ export class Product extends Component {
   };
 
   // 카테고리 변경 시 fetch 추가될 부분
-  handleCategory = (e, id) => {};
+  handleCategory = (e, idList) => {
+    const query =
+      idList.length === 1
+        ? `?menu=${idList[0]}`
+        : `?menu=${idList[0]}&category=${idList[1]}`;
+    this.props.history.push(`product${query}`);
+  };
 
   componentDidMount() {
     this.initialProductData();
+    this.initialCategroyData();
   }
 
   render() {
@@ -126,6 +149,7 @@ export class Product extends Component {
       page,
       pageOffset,
       pageSize,
+      count,
     } = this.state;
 
     const showData = freeClick
@@ -135,6 +159,28 @@ export class Product extends Component {
           pageOffset * pageSize + pageSize
         );
 
+    const query = this.props.location.search.split("&");
+    const menuData = [];
+    let current = {};
+    let nowCategory = [];
+
+    for (let i in query) {
+      const list = query[i];
+      menuData.push(list[list.length - 1]);
+    }
+
+    if (categoryData.length !== 0) {
+      if (menuData.length === 1) {
+        current = { data: categoryData[menuData[0] - 1], title: "메인" };
+      } else {
+        current = {
+          data: categoryData[menuData[0] - 1].categoryList[menuData[1] - 1],
+          title: "서브",
+        };
+      }
+      nowCategory = categoryData[menuData[0] - 1];
+    }
+
     return (
       <main className="product">
         {productData.length === 0 || categoryData.length === 0 ? (
@@ -142,6 +188,9 @@ export class Product extends Component {
         ) : (
           <div className="productContainer">
             <Content
+              count={count}
+              current={current}
+              nowCategory={nowCategory}
               categoryData={categoryData}
               pageSize={pageSize}
               handleSort={this.handleSort}
@@ -163,4 +212,4 @@ export class Product extends Component {
     );
   }
 }
-export default Product;
+export default withRouter(Product);

@@ -37,20 +37,26 @@ class Content extends Component {
       handleGrid,
       handlePageSize,
       handleCategory,
-      categoryData,
       pageSize,
+      current,
+      count,
+      nowCategory,
+      categoryData,
     } = this.props;
     const { checkSort, checkSetting, checkView } = this.state;
-    const { current, menuList, categoryList } = categoryData;
+    const { data, title } = current;
+    const contentTitle = title === "서브" ? data.categoryName : data.menuName;
 
     return (
       <section className="contentWrap">
         <div className="contentTop">
-          <strong className="topTitle">{current[0].title}</strong>
+          <strong className="topTitle">{contentTitle}</strong>
           <TopCategory
+            contentTitle={contentTitle}
             current={current}
-            menuList={menuList}
-            categoryList={categoryList}
+            count={count}
+            nowCategory={nowCategory}
+            categoryData={categoryData}
             handleCategory={handleCategory}
           />
         </div>

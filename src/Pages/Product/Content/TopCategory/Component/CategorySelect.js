@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { v4 as uuid } from "uuid";
 import "./CategorySelect.scss";
 
 class CategorySelect extends Component {
@@ -14,9 +13,12 @@ class CategorySelect extends Component {
       count,
       handleTab,
       handleCategory,
+      menuId,
     } = this.props;
+
     const isActive =
       (tabIndex === 1 && firstTab) || (tabIndex !== 1 && secondTab);
+
     return (
       <>
         <span className="categorySelected">{title}</span>
@@ -30,17 +32,18 @@ class CategorySelect extends Component {
         <ul className={`categoryChoice ${isActive ? "active" : ""}`}>
           {dataList.map(list => (
             <li
-              key={uuid()}
+              key={tabIndex === 1 ? list.id : list.categoryId}
               className="choiceList"
               onClick={e => {
+                console.log(tabIndex, menuId, list.categoryId);
                 handleTab(e, tabIndex);
                 handleCategory(
                   e,
-                  tabIndex === 1 ? list.menuId : list.categoryId
+                  tabIndex === 1 ? [list.id] : [menuId, list.categoryId]
                 );
               }}
             >
-              {tabIndex === 1 ? list.menuName : list.categoryName}
+              {tabIndex === 1 ? list.name : list.categoryName}
             </li>
           ))}
         </ul>
