@@ -17,6 +17,7 @@
     }
   }
   .userBox {
+    display: grid;
     .userAvail {
       color: #ff4540;
       font-size: 13px;
@@ -27,7 +28,7 @@
       font-size: 13px;
       transform: translate(0, 9px);
     }
-    display: grid;
+
     justify-content: center;
     .IdBox {
       margin-top: 30px;

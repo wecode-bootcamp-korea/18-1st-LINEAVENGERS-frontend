@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./Login.scss";
-import { SIGNIN_API } from "../../config.js";
 import { AiFillCheckCircle } from "react-icons/ai";
 class Login extends Component {
   constructor() {
@@ -69,7 +68,6 @@ class Login extends Component {
           console.log(result);
           if (result.message === "SUCCESS") {
             alert("로그인 성공");
-            localStorage.setItem("tocken", token);
             return;
           } else if (result.message === "INVALID_USER") {
             alert("가입하지 않은 아이디이거나, 잘못된 비밀번호입니다.");
