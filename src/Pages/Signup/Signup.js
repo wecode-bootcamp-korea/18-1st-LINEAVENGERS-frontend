@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import "./Signup.scss";
 import { RiLock2Fill } from "react-icons/ri";
 import { IoBagCheckSharp } from "react-icons/io5";
-import { SIGNUP_API } from "../../config.js";
-import { USERID_API } from "../../config.js";
+import "./Signup.scss";
 class Signup extends Component {
   constructor() {
     super();
@@ -158,9 +156,9 @@ class Signup extends Component {
       multiCheckId,
     } = this.state;
     return (
-      <div className="signup">
+      <div className="signUp">
         <div className="container">
-          <div className="navar_logo">
+          <div className="navarLogo">
             <h1>
               <a href="https://www.naver.com/">NAVAR</a>
             </h1>

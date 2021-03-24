@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import "./Payment.scss";
 import DaumPostCode from "react-daum-postcode";
 import { RiArrowRightSLine } from "react-icons/ri";
 import { FiScissors } from "react-icons/fi";
 import { RiErrorWarningLine } from "react-icons/ri";
+import "./Payment.scss";
 export class Payment extends Component {
   constructor(props) {
     super(props);
@@ -30,7 +30,7 @@ export class Payment extends Component {
 
   //postcode
   handleAddress = data => {
-    let AllAddress = data.address;
+    let allAddress = data.address;
     let extraAddress = "";
     let zoneCodes = data.zonecode;
 
@@ -42,10 +42,10 @@ export class Payment extends Component {
         extraAddress +=
           extraAddress !== "" ? `, ${data.buildingName}` : data.buildingName;
       }
-      AllAddress += extraAddress !== "" ? `(${extraAddress})` : "";
+      allAddress += extraAddress !== "" ? `(${extraAddress})` : "";
     }
     this.setState({
-      fullAddress: AllAddress,
+      fullAddress: allAddress,
       zoneCode: zoneCodes,
     });
   };
@@ -65,11 +65,11 @@ export class Payment extends Component {
       overflow: "hidden",
     };
     return (
-      <div className="payment">
+      <div className="payMent">
         <header className="header">header</header>
         <section className="container">
-          <div className="order_header">
-            <h3 className="order_payment">
+          <div className="orderHeader">
+            <h3 className="orderPayment">
               <span className="blind">주문/결제</span>
             </h3>
             <div className="rightProcess">
@@ -88,18 +88,22 @@ export class Payment extends Component {
           </div>
         </section>
 
-        <div className="order_content">
+        <div className="orderContent">
           <div className="product">
             <div className="productHeader">
               <div className="InfoMenu">
                 <div className="shopMenu">
                   <ul>
-                    <li className="info">상품정보</li>
-                    <li className="seller">판매자</li>
-                    <li className="shipping">배송비</li>
-                    <li className="quantity">수량</li>
-                    <li className="sale">할인</li>
-                    <li className="goods">상품금액(할인포함)</li>
+                    <div>
+                      <li className="info">상품정보</li>
+                    </div>
+                    <div className="shopInfo">
+                      <li className="seller">판매자</li>
+                      <li className="shipping">배송비</li>
+                      <li className="quantity">수량</li>
+                      <li className="sale">할인</li>
+                      <li className="goods">상품금액(할인포함)</li>
+                    </div>
                   </ul>
                 </div>
               </div>
@@ -107,10 +111,8 @@ export class Payment extends Component {
             <section className="LineInfo">
               <img></img>
               <div className="namesInfo">
+                <span class="predictStatus">3/26(금) 도착 확률 83%</span>
                 <ul>
-                  <span class="ico_npmember type_npay small">
-                    <span class="blind">네이버플러스 멤버십</span>
-                  </span>
                   <li className="nameInfo">[스마트스토어] 라인프렌즈</li>
                   <li className="centerInfo">
                     라인프렌즈 브롤스타즈 홀파이크 가방&문구 에디션
@@ -139,7 +141,7 @@ export class Payment extends Component {
           <section>
             <div className="ShoppingBox">
               <div className="ShoppingInner">
-                <span>배송지 정보</span>
+                <span className="infoInner">배송지 정보</span>
                 <div className="destiNation">
                   <div className="shoppBtnbox">
                     <button>배송지 목록</button>
@@ -148,42 +150,40 @@ export class Payment extends Component {
                   <sapn className="newSelect">신규 배송지</sapn>
                   <span className="shoppRecipient">
                     수령인
-                    <input
-                      type="text"
-                      placeholder="10자 이내로 입력하세요"
-                    ></input>
+                    <input type="text" placeholder="10자 이내로 입력하세요" />
                   </span>
                   <span className="shoppPlacename">
                     배송지명
                     <input
                       type="text"
                       placeholder="직접 입력하거나 선택하세요"
-                    ></input>
+                      className="selectInput"
+                    />
                   </span>
                   <span className="shoppContact">
-                    연락처1
-                    <input type="text"></input>
-                    <input type="text"></input>
-                    <input type="text"></input>
-                  </span>
-                  <span className="shoppContacts">
-                    연락처2
-                    <input type="tel"></input>
-                    <input type="tel"></input>
-                    <input type="tel"></input>
+                    연락처
+                    <div className="numInputBox">
+                      <input type="text" className="numBox" /> -
+                      <input type="text" className="numBox" /> -
+                      <input type="text" className="numBox" />
+                    </div>
                   </span>
 
                   <div className="modalRow">
                     <div className="modalCell cellTit">
                       <div>
-                        <span>
+                        <span className="bsAdress">
                           <b>배송지 주소</b>
                         </span>
                       </div>
                     </div>
                     <div className="modalCell">
                       <div className="cellFirst">
-                        <div className="zipCode">{zoneCode}</div>
+                        <div className="zipCode">
+                          <div>
+                            <input value={zoneCode} type="text" />
+                          </div>
+                        </div>
                         <button type="button" onClick={this.handleOpenPost}>
                           <span>우편번호 찾기</span>
                         </button>
@@ -198,19 +198,21 @@ export class Payment extends Component {
                           isDaumPost={isDaumPost}
                         />
                       ) : null}
-                      <div className="address">{fullAddress}</div>
+                      <div className="address"></div>
                       <div className="addressBox">
                         <input
+                          className="isDetail"
                           type="text"
                           onChange={this.handleChange}
                           name="address"
+                          value={fullAddress}
                           onChange={this.handleInput}
                         />
                       </div>
                     </div>
                   </div>
 
-                  <p class="extra_info">
+                  <p class="extraInfo">
                     <span className="warningIcon">
                       <RiErrorWarningLine />
                     </span>
@@ -245,17 +247,17 @@ export class Payment extends Component {
                 <div className="npointBox">
                   <div className="rightDetail">
                     <span className="payDetail">결제상세</span>
-                    <p>주문금액</p>
-                    <p>상품금액</p>
-                    <p>배송비</p>
+                    <p className="isPay">주문금액</p>
+                    <p className="isGoods">상품금액</p>
+                    <p className="isShipping">배송비</p>
 
                     <div className="rightLine"></div>
-                    <p>결제금액</p>
+                    <p className="lastPayment">결제금액</p>
                     <div className="payPay">
-                      <div>60,300원</div>
-                      <div>63,600원</div>
-                      <div>3,000원</div>
-                      <div>60,600원</div>
+                      <div className="payOrder">60,300원</div>
+                      <div className="payGoods">63,600원</div>
+                      <div className="payShipping">0원</div>
+                      <div className="payLast">60,600원</div>
                     </div>
                   </div>
                   <span class="userPoint"> 포인트</span>
@@ -269,7 +271,7 @@ export class Payment extends Component {
 
                   <sapn class="nPoint">
                     사용
-                    <button className="full_Use">전액사용</button>
+                    <button className="fullUse">전액사용</button>
                   </sapn>
                   <div className="borderLine"></div>
 
@@ -279,8 +281,6 @@ export class Payment extends Component {
                       <button className="userTrans">전환하기</button>
                     </sapn>
                     <div className="borderLine"></div>
-
-                    {/* <input type="checkbox">전체동의</input> */}
                   </div>
                 </div>
               </div>
