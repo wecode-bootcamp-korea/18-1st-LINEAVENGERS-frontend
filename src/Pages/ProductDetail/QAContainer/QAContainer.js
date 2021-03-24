@@ -2,13 +2,18 @@ import React, { Component } from "react";
 import "./QAContainer.scss";
 
 class QAContainer extends Component {
+  openQAModal = () => {
+    const option = "width = 650, height= 500";
+    window.open("/QAModal", "QA", option);
+  };
+
   render() {
     return (
       <section className="QAContainer" ref={this.props.QAContainer}>
         <h1>Q&A</h1>
         <p>구매하시려는 상품에 대해 궁금한 점이 있으신 경우 문의해주세요.</p>
         <div className="QABtnWrap">
-          <button>상품 Q&A 작성하기</button>
+          <button onClick={this.openQAModal}>상품 Q&A 작성하기</button>
         </div>
         <div className="QAListContainer">
           <ul className="QATitle">

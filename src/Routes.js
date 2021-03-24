@@ -5,6 +5,7 @@ import MyPage from "../src/Pages/MyPage/MyPage";
 import Main from "../src/Pages/Main/Main";
 import Product from "../src/Pages/Product/Product";
 import ProductDetail from "./Pages/ProductDetail/ProductDetail";
+import QAModal from "./Pages/ProductDetail/QAContainer/QAModal/QAModal";
 
 class Routes extends React.Component {
   render() {
@@ -16,6 +17,7 @@ class Routes extends React.Component {
           <Route exact path="/mypage" component={MyPage} />
           <Route exact path="/product" component={Product} />
           <Route exact path="/product/detail" component={ProductDetail} />
+          <Route exact path="/QAModal" component={QAModal} />
         </Switch>
       </Router>
     );
