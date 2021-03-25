@@ -2,6 +2,23 @@
   height: 100vh;
   background-color: #f5f6f7;
 
+  .aceepted {
+    font-size: 25px;
+    color: #28cf6c;
+    right: 0px;
+    transform: translate(-15px, 10px);
+  }
+  .direction {
+    color: #767676;
+  }
+  .openLock {
+    position: absolute;
+    right: 0px;
+    transform: translate(-15px, 10px);
+    font-size: 25px;
+    color: #767676;
+  }
+
   img {
     width: 300px;
   }
@@ -24,6 +41,19 @@
 
   .join_form {
     .userInputBox {
+      .isCheckpw {
+        color: #28cf6c;
+        display: grid;
+        transform: translate(0px, 10px);
+        font-size: 13px;
+      }
+      .isCheckfall {
+        color: #ff4540;
+        display: grid;
+        transform: translate(0px, 10px);
+        font-size: 13px;
+      }
+
       .pwConfirm {
         color: #ff4540;
         transform: translate(0, 9px);
@@ -79,19 +109,24 @@
       }
       .userPw {
         position: relative;
+
         .active {
           color: #ff4540;
+          font-size: 25px;
+          right: 0px;
+          transform: translate(-15px, 10px);
+        }
+        svg {
+          font-size: 25px;
+          position: absolute;
+          right: 0px;
+          transform: translate(-15px, 10px);
+        }
+        path {
           font-size: 25px;
           position: absolute;
           right: 15px;
           top: 28px;
-        }
-        .openLock {
-          position: absolute;
-          right: 15px;
-          bottom: 10px;
-          font-size: 25px;
-          color: #767676;
         }
       }
 
@@ -112,6 +147,18 @@
           font-size: 25px;
           color: #767676;
         }
+      }
+      .isUse {
+        color: #28cf6c;
+        display: grid;
+        transform: translate(0px, 10px);
+        font-size: 13px;
+      }
+      .isFaill {
+        color: red;
+        display: grid;
+        transform: translate(0px, 10px);
+        font-size: 13px;
       }
     }
     .userEmail {
