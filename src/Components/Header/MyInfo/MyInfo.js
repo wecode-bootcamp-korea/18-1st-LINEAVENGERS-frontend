@@ -7,7 +7,7 @@ import "./MyInfo.scss";
 
 export class Myinfo extends Component {
   handlelogOut = () => {
-    localStorage.removeItem("token");
+    localStorage.removeItem("access_token");
     localStorage.removeItem("name");
     localStorage.removeItem("email");
     this.props.history.push("/main");
@@ -16,7 +16,7 @@ export class Myinfo extends Component {
   render() {
     return (
       <div className="myInfo">
-        {localStorage.token ? (
+        {localStorage.access_token ? (
           <div className="iHaveToken">
             <Link className="iHaveTokenText" to="/favoriteStore">
               <span>찜한 스토어</span>
