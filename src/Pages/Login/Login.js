@@ -88,7 +88,7 @@ class Login extends Component {
         <div className="loginContainer">
           <div className="navarLogo">
             <h1>
-              <img src="../Images/Logo/green.png"></img>
+              <img src="../Images/Logo/green.png" alt="사진" />
             </h1>
           </div>
           <div className="userBox">
