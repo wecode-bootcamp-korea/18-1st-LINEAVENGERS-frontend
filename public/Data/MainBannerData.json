@@ -4,27 +4,27 @@
     "bigCopy": "상쾌한 공기,",
     "bigCopy2": "산뜻한 내방",
     "smallCopy": "BT21 AIR WALL",
-    "imgUrl": "https://shop-phinf.pstatic.net/20210201_24/1612164845849t0Vnf_JPEG/main_bn_pc_G.jpg"
+    "imgUrl": "./Images/Banner/7.png"
   },
   {
     "id": 2,
     "bigCopy": "베이비들과",
     "bigCopy2": "행운의 홀인원",
     "smallCopy": "BT21 BABY 골프 악세사리",
-    "imgUrl": "https://shop-phinf.pstatic.net/20210317_13/1615942271595pOsTT_JPEG/main_pc_bn_golf_acc2.jpg"
+    "imgUrl": "./Images/Banner/3.png"
   },
   {
     "id": 3,
     "bigCopy": "귀여움 한가득",
     "bigCopy2": "실용성 한가득",
     "smallCopy": "브라운앤프렌즈 문구 컬렉션",
-    "imgUrl": "https://shop-phinf.pstatic.net/20210317_231/1615977673371QXVB2_JPEG/PROMOTION_PC_28129.jpg"
+    "imgUrl": "./Images/Banner/4.png"
   },
   {
     "id": 4,
     "bigCopy": "함께하면",
     "bigCopy2": "찰떡궁합",
     "smallCopy": "BT21 A DREAM OF BABY 문구 컬렉션",
-    "imgUrl": "https://shop-phinf.pstatic.net/20210317_182/1615977460065NVmGR_JPEG/PROMOTION_PC.jpg"
+    "imgUrl": "./Images/Banner/2.png"
   }
 ]

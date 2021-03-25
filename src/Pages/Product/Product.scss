@@ -1,0 +1,14 @@
+.product {
+  .contentTriangle::before {
+    content: "";
+    border: solid #000;
+    border-width: 5px 5px 0 5px;
+    border-right-color: transparent;
+    border-left-color: transparent;
+  }
+
+  .productWrap {
+    width: 1280px;
+    margin: 0 auto;
+  }
+}

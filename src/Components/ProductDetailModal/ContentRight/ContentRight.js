@@ -66,7 +66,9 @@ class ContentRight extends Component {
       options,
       price: { normal, sale },
       type,
+      productId,
     } = this.props.rightData;
+    const { addCart } = this.props;
     const { selectList } = this.state;
     const finalPrice = sale !== 0 ? normal - (normal * sale) / 100 : normal;
     return (
@@ -123,7 +125,12 @@ class ContentRight extends Component {
           deleteSelect={this.deleteSelect}
         />
         <Price selectList={selectList} />
-        <Choice />
+        <Choice
+          addCart={addCart}
+          productId={productId}
+          selectList={selectList}
+          options={options}
+        />
       </div>
     );
   }

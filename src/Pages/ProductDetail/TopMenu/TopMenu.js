@@ -15,28 +15,30 @@ class TopMenu extends Component {
     });
   };
 
-  componentDidMount() {
-    window.addEventListener("scroll", e => {
-      const { topMenuActive } = this.state;
+  scrollCheck = e => {
+    const { topMenuActive } = this.state;
 
-      if (window.scrollY >= 1200) {
-        if (topMenuActive) return;
-        else
-          this.setState({
-            topMenuActive: !topMenuActive,
-          });
-      } else {
-        if (topMenuActive)
-          this.setState({
-            topMenuActive: !topMenuActive,
-          });
-        else return;
-      }
-    });
+    if (window.scrollY >= 1200) {
+      if (topMenuActive) return;
+      else
+        this.setState({
+          topMenuActive: !topMenuActive,
+        });
+    } else {
+      if (topMenuActive)
+        this.setState({
+          topMenuActive: !topMenuActive,
+        });
+      else return;
+    }
+  };
+
+  componentDidMount() {
+    window.addEventListener("scroll", this.scrollCheck);
   }
 
   componentWillUnmount() {
-    window.removeEventListener("scroll");
+    window.removeEventListener("scroll", this.scrollCheck);
   }
 
   render() {
@@ -57,7 +59,6 @@ class TopMenu extends Component {
       countChange,
       tabIndex,
       tabClick,
-      buyProduct,
       shoppingKeep,
     } = this.props;
 

@@ -6,14 +6,15 @@ import "./DetailList.scss";
 class DetailList extends Component {
   render() {
     const {
-      grade,
       comment,
       date,
-      imgUrl,
+      grade,
+      image_url,
       option,
       type,
       user,
     } = this.props.data;
+    console.log(this.props.data);
     const stars = new Array(5).fill(0);
     return (
       <li className="detailList">
@@ -29,7 +30,7 @@ class DetailList extends Component {
           </p>
           <p className="detailInfo">
             <strong>{user}</strong>
-            <strong>{date}</strong>
+            <strong>{date.split(" ")[0]}</strong>
             <span>
               {type}: {option.name}
             </span>
@@ -37,7 +38,7 @@ class DetailList extends Component {
           <p className="detailMemo">{comment}</p>
         </div>
         <div className="listRight">
-          <img src={imgUrl} alt="상품 이미지" />
+          <img src={image_url} alt="상품 이미지" />
         </div>
       </li>
     );

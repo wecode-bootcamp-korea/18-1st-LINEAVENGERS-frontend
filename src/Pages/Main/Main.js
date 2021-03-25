@@ -19,17 +19,20 @@ export class Main extends Component {
     fetch("Data/MainBannerData.json", {
       method: "GET",
     })
-      .then(res => res.json())
+      .then(res => {
+        console.log(res);
+        return res.json();
+      })
       .then(data => {
         this.setState({ banner: data });
       });
 
-    fetch("Data/ProductsData.json", {
+    fetch("http://10.58.6.21:8000/product/main-product", {
       method: "GET",
     })
       .then(res => res.json())
       .then(data => {
-        this.setState({ products: data });
+        this.setState({ products: data.productList });
       });
   }
 

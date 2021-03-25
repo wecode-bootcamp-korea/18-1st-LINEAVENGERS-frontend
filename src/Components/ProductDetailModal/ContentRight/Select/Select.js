@@ -32,22 +32,17 @@ class Select extends Component {
           <span className="optionTitle">{type}</span>
           <span className="optionArrow" onClick={this.showOptions}></span>
           <ul className="optionWrap">
-            {options.map(option => {
-              return (
-                <li
-                  key={option.sizeId}
-                  id={option.sizeId}
-                  className="optionList"
-                  name={option.name}
-                  onClick={e => {
-                    addSelect(e, option.sizeId, option.name);
-                    this.showOptions();
-                  }}
-                >
-                  {option.name}
-                </li>
-              );
-            })}
+            <li
+              id={options.sizeId}
+              className="optionList"
+              name={options.name}
+              onClick={e => {
+                addSelect(e, options.sizeId, options.name);
+                this.showOptions();
+              }}
+            >
+              {options.name}
+            </li>
           </ul>
         </div>
         {selectList.map(select => (
