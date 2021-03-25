@@ -1,0 +1,121 @@
+.reviewContainer {
+  padding-top: 30px;
+  h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+  .detailInfo {
+    font-size: 12px;
+    line-height: 15px;
+    color: #888;
+    span {
+      em {
+        display: inline-flex;
+        align-items: center;
+        color: #6b90dc;
+
+        &::after {
+          content: "";
+          display: inline-block;
+          width: 1px;
+          height: 8px;
+          background: #888;
+          margin: 0 8px;
+        }
+      }
+      &:last-child {
+        em {
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .reviewListWrap {
+    .reviewListTitle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 30px;
+      padding-top: 40px;
+      border-top: 1px solid #777777;
+
+      span {
+        font-weight: 700;
+      }
+      ul {
+        display: flex;
+        font-size: 13px;
+
+        li {
+          position: relative;
+          padding: 0 10px;
+          cursor: pointer;
+
+          svg {
+            display: none;
+            margin-right: 5px;
+          }
+
+          &:last-of-type {
+            padding-left: 10px;
+            &::after {
+              display: none;
+            }
+          }
+
+          &::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 50%;
+            display: inline-block;
+            width: 1px;
+            height: 10px;
+            background: #888;
+            transform: translateY(-50%);
+          }
+
+          &.checked {
+            font-weight: 700;
+            svg {
+              display: inline-block;
+              font-size: 11px;
+            }
+          }
+        }
+      }
+    }
+
+    .reviewList {
+      padding: 0;
+      margin-top: 20px;
+    }
+  }
+  .reviewPage {
+    margin-top: 50px;
+    .pageBox {
+      display: flex;
+      justify-content: center;
+
+      .pageList {
+        margin: 0 5px;
+        width: 30px;
+        height: 30px;
+        background: #fff;
+        color: #333;
+        font-weight: 700;
+        line-height: 30px;
+        text-align: center;
+        cursor: pointer;
+
+        &.checked {
+          background: #333;
+          color: #fff;
+        }
+      }
+    }
+  }
+}

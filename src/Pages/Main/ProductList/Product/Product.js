@@ -19,12 +19,10 @@ export class Product extends Component {
       favorite: !this.state.favorite,
     });
 
-    fetch("http://10.58.1.71:8000/mypage/favoritecreate", {
+    fetch("http://10.58.1.71:8000/mypage/favorite", {
       method: "POST",
       body: JSON.stringify({
-        user: 1,
-        product: this.props.productId,
-        favorite: this.state.favorite,
+        product: this.props.product,
       }),
     })
       .then(res => res.json())

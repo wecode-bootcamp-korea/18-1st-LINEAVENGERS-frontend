@@ -1,0 +1,70 @@
+.countItem {
+  padding: 15px 0;
+  border-bottom: 1px solid #c7c7c7;
+  p {
+    color: #333;
+  }
+  .countWrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+
+    .countBtnWrap {
+      display: flex;
+      width: 120px;
+      height: 34px;
+      border: 1px solid #dee0e1;
+
+      button {
+        width: calc(100% / 3);
+        border: none;
+        background: #f1f2f4;
+        cursor: pointer;
+
+        svg {
+          font-size: 11px;
+          color: #555555;
+          pointer-events: none;
+        }
+      }
+
+      input {
+        width: 45px;
+        padding: 0;
+        border: none;
+        text-align: center;
+      }
+    }
+    span {
+      font-size: 15px;
+      font-weight: 700;
+      em {
+        position: relative;
+        display: inline-block;
+        width: 13px;
+        height: 13px;
+        margin-left: 5px;
+        cursor: pointer;
+        &::before,
+        &::after {
+          content: "";
+          display: inline-block;
+          position: absolute;
+          left: 0;
+          top: 6px;
+          width: 13px;
+          height: 1px;
+          background: #222222;
+          pointer-events: none;
+        }
+        &::before {
+          transform: rotate(45deg);
+        }
+        &::after {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+}

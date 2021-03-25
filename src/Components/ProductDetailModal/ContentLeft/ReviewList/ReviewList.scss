@@ -1,0 +1,51 @@
+.reviewList {
+  position: relative;
+  padding: 40px 60px;
+
+  .reviewTitle {
+    span {
+      font-size: 12px;
+      strong {
+        margin-left: 2px;
+        color: #505fdc;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .reviewWrap {
+    overflow: hidden;
+    .detailBox {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      position: relative;
+      height: 188px;
+      transition: all 0.5s ease-in-out;
+    }
+  }
+
+  .slideBtn {
+    position: absolute;
+    top: 50%;
+    border: none;
+    background: none;
+    font-size: 30px;
+    color: #d3d6dc;
+    transform: translateY(-50%);
+    outline: none;
+    cursor: pointer;
+
+    &.prev {
+      left: 20px;
+    }
+
+    &.next {
+      right: 20px;
+    }
+
+    svg {
+      pointer-events: none;
+    }
+  }
+}

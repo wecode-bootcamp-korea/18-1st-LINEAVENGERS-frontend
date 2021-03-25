@@ -11,12 +11,12 @@ class Category extends Component {
   }
 
   componentDidMount() {
-    fetch("/Data/CategoryData.json", {
+    fetch("http://10.58.6.21:8000/product/main-category", {
       method: "GET",
     })
       .then(res => res.json())
       .then(data => {
-        this.setState({ categoryList: data });
+        this.setState({ categoryList: data.menuList });
       });
   }
 
