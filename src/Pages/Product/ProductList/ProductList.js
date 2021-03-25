@@ -11,6 +11,7 @@ class ProductList extends Component {
       pageOffset,
       handlePage,
       moveToProduct,
+      getProductData,
     } = this.props;
     const pageList = new Array(page).fill(0);
     const gridTypeList = [
@@ -33,6 +34,7 @@ class ProductList extends Component {
                 key={data.productId}
                 data={data}
                 moveToProduct={moveToProduct}
+                getProductData={getProductData}
               />
             ))}
           </ul>

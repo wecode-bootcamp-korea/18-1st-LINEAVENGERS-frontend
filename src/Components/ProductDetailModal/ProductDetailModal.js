@@ -5,7 +5,16 @@ import "./ProductDetailModal.scss";
 
 class ProductDetailModal extends Component {
   render() {
-    const { imageUrls, name, options, price, reviews, type } = this.props.data;
+    const { modalPopCheck, modalData, handleModal, addCart } = this.props;
+    const {
+      imageUrls,
+      name,
+      options,
+      price,
+      reviews,
+      type,
+      productId,
+    } = modalData;
     const leftData = {
       imageUrls: imageUrls,
       reviews: reviews,
@@ -15,17 +24,19 @@ class ProductDetailModal extends Component {
       options: options,
       price: price,
       type: type,
+      productId,
     };
+
     return (
-      <div className="productDetail">
+      <div className={`productDetail ${modalPopCheck && "active"}`}>
         <div className="detailContainer">
           <div className="detailTop">
             <h1 className="topTitle">간략보기</h1>
-            <span className="closeBtn"></span>
+            <span className="closeBtn" onClick={handleModal}></span>
           </div>
           <div className="detailContent">
             <ContentLeft leftData={leftData} />
-            <ContentRight rightData={rightData} />
+            <ContentRight rightData={rightData} addCart={addCart} />
           </div>
         </div>
       </div>

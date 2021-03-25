@@ -5,9 +5,10 @@ import "./Choice.scss";
 
 class Choice extends Component {
   render() {
+    const { addCart, productId, selectList, options } = this.props;
     return (
       <div className="selectChoice">
-        <div className="choiceType">
+        <div className="choiceType" onClick={addCart}>
           <span>
             <em>N</em>
           </span>
@@ -17,7 +18,14 @@ class Choice extends Component {
           <FontAwesomeIcon icon={faComment} />
           톡톡문의
         </div>
-        <div className="choiceType">장바구니</div>
+        <div
+          className="choiceType"
+          onClick={e => {
+            addCart(e, productId, selectList, options);
+          }}
+        >
+          장바구니
+        </div>
         <div className="choiceType">찜하기</div>
       </div>
     );

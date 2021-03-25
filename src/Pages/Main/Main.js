@@ -19,7 +19,10 @@ export class Main extends Component {
     fetch("Data/MainBannerData.json", {
       method: "GET",
     })
-      .then(res => res.json())
+      .then(res => {
+        console.log(res);
+        return res.json();
+      })
       .then(data => {
         this.setState({ banner: data });
       });

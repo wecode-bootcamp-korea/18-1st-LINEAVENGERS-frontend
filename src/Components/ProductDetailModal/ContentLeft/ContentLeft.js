@@ -38,6 +38,7 @@ class ContentLeft extends Component {
   render() {
     const { slideIndex } = this.state;
     const { imageUrls, reviews } = this.props.leftData;
+
     return (
       <div className="contentLeft">
         <Slider
