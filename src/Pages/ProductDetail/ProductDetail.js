@@ -152,7 +152,6 @@ class ProductDetail extends Component {
         });
       });
   }
-
   render() {
     const { productData, selectList, tabIndex } = this.state;
     const {
@@ -211,6 +210,8 @@ class ProductDetail extends Component {
               <Review ReviewData={ReviewData} />
             </section>
             <DetailContainer
+              imageUrls={imageUrls}
+              reviews={reviews}
               DetailContainer={this.DetailContainer}
               tabClick={this.tabClick}
               tabIndex={tabIndex}

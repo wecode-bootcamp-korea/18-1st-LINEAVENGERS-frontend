@@ -6,11 +6,7 @@ import Payment from "./Pages/Payment/Payment";
 import Login from "./Pages/Login/Login";
 import Product from "./Pages/Product/Product";
 import ProductDetail from "./Pages/ProductDetail/ProductDetail";
-import QAModal from "./Pages/QAModal/QAModal";
-import ShoppingBasket from "./Pages/MyPage/ShoppingBasket/ShoppingBasket";
-import MyPageHeart from "./Pages/MyPage/MyPageHeart";
-import Modal from "./Pages/MyPage/Modal";
-import MyPage from "./Pages/MyPage/MyPage";
+import QAModal from "./Pages/ProductDetail/QAContainer/QAModal/QAModal";
 
 class Routes extends React.Component {
   render() {
@@ -22,14 +18,9 @@ class Routes extends React.Component {
           <Route exact path="/login" component={Login} />
           <Route exact path="/Payment" component={Payment} />
           <Route exact path="/main" component={Main} />
-          <Route exact path="/mypage" component={MyPage} />
           <Route exact path="/product" component={Product} />
-          <Route exact path="/product/detail" component={ProductDetail} />
+          <Route exact path="/product/detail/:id" component={ProductDetail} />
           <Route exact path="/QAModal" component={QAModal} />
-          <Route exact path="/mypage" component={MyPage} />
-          <Route exact path="/shoppingbasket" component={ShoppingBasket} />
-          <Route exact path="/mypageheart" component={MyPageHeart} />
-          <Route exact path="/modal" component={Modal} />
         </Switch>
       </Router>
     );
@@ -37,4 +28,3 @@ class Routes extends React.Component {
 }
 
 export default Routes;
-

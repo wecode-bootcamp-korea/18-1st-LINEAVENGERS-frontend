@@ -6,7 +6,7 @@ import "./DetailContainer.scss";
 
 class DetailContainer extends Component {
   render() {
-    const { tabClick, tabIndex } = this.props;
+    const { tabClick, tabIndex, reviews, imageUrls } = this.props;
     return (
       <section className="detailContainer" ref={this.props.DetailContainer}>
         <ul className="detailTab">
@@ -18,13 +18,13 @@ class DetailContainer extends Component {
                 tabClick(e, list.id);
               }}
             >
-              {list.title}
+              {list.id === 1 ? `${list.title} ${reviews.length}` : list.title}
             </li>
           ))}
         </ul>
         <DeliverBanner />
         <BenefitBanner />
-        <ProductImgList />
+        <ProductImgList imageUrls={imageUrls} />
       </section>
     );
   }

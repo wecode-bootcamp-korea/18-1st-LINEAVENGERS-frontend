@@ -17,7 +17,19 @@ class QAContainer extends Component {
 
   openQAModal = () => {
     const option = "width = 650, height= 500";
+
     window.open(`/QAModal?${this.props.productId}`, "QA", option);
+  };
+
+  editQAModal = (e, question, qId) => {
+    const option = "width = 650, height= 500";
+    const myQA = window.open(
+      `/QAModal?id=${this.props.productId}&qId=${qId}&comment=${question}`,
+      "QA",
+      option
+    );
+    myQA.window.id = qId;
+    myQA.window.comment = question;
   };
 
   deleteQA = (e, id) => {
@@ -33,16 +45,16 @@ class QAContainer extends Component {
           Authorization: token,
         },
       })
+        .then(res => res.json())
         .then(res => {
-          console.log(res);
-          return res.json();
-        })
-        .then(res => console.log(res));
+          if (res.message === "SUCCESS") alert("삭제했습니다.");
+        });
       this.setState({
         qaData: qaData.filter(data => data.q_id !== id),
       });
     }
   };
+
   componentDidMount() {
     fetch(`${URL}/product/${this.props.productId}/qna`)
       .then(res => {
@@ -91,6 +103,7 @@ class QAContainer extends Component {
                     question={qa.q_content}
                     answer={qa.a_content}
                     deleteQA={this.deleteQA}
+                    editQAModal={this.editQAModal}
                   />
                 </>
               );

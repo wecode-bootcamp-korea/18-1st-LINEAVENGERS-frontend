@@ -1,13 +1,21 @@
-import Reat, { Component } from "react";
+import React, { Component } from "react";
 
 class QAAnswer extends Component {
   render() {
-    const { answer, question, deleteQA, qId } = this.props;
+    const { qId, answer, question, deleteQA, editQAModal } = this.props;
+
     return (
       <ul className="QAAnswer">
         <li>{question}</li>
         <li>{answer}</li>
-        <button className="editBtn">수정</button>
+        <button
+          className="editBtn"
+          onClick={e => {
+            editQAModal(e, question, qId);
+          }}
+        >
+          수정
+        </button>
         <button
           className="removeBtn"
           onClick={e => {

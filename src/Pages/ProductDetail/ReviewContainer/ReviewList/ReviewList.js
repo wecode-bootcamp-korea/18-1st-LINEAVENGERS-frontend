@@ -31,7 +31,7 @@ class ReviewList extends Component {
           <span className="userInfo">
             {user}
             <em></em>
-            {date}
+            {date.split(" ")[0]}
           </span>
           <span className="optionInfo">{type + ": " + option.name}</span>
           <p>{comment}</p>

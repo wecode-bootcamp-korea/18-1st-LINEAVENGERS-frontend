@@ -37,7 +37,6 @@ class Signup extends Component {
     })
       .then(res => res.json())
       .then(result => {
-        console.log(result);
         if (result.message === "SUCCESS") {
           alert("회원가입 성공");
           this.props.history.push("/Login");
@@ -85,7 +84,6 @@ class Signup extends Component {
       }),
     })
       .then(res => {
-        console.log("aaaaaaa", res);
         return res.json();
       })
       .then(result => {
