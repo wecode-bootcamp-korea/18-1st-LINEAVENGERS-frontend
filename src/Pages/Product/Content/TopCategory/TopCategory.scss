@@ -1,0 +1,20 @@
+.categoryList {
+  position: relative;
+  cursor: pointer;
+
+  &:first-of-type::before {
+    display: none;
+  }
+
+  &::before {
+    content: ">";
+    display: inline-block;
+    margin: 0 6px;
+    color: #ddd;
+  }
+
+  a {
+    color: #8f8f8f;
+    text-decoration: none;
+  }
+}
