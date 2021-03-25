@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import "./Product.scss";
+import { withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
+import "./Product.scss";
 
 export class Product extends Component {
   constructor() {
@@ -17,12 +19,10 @@ export class Product extends Component {
       favorite: !this.state.favorite,
     });
 
-    fetch("http://10.58.1.71:8000/mypage/favoritecreate", {
+    fetch("http://10.58.1.71:8000/mypage/favorite", {
       method: "POST",
       body: JSON.stringify({
-        user: 1,
-        product: this.props.productId,
-        favorite: this.state.favorite,
+        product: this.props.product,
       }),
     })
       .then(res => res.json())
@@ -33,16 +33,24 @@ export class Product extends Component {
       });
   };
 
-  render() {
-    console.log("this.state.favorite >>>", this.state.favorite);
-    console.log("this.props.favorite >>>", this.props.favorite);
+  goBasket = e => {
+    this.props.history.push("/shoppingbasket");
+  };
 
+  render() {
     const { favorite } = this.state;
-    const { img, price, productName } = this.props;
+    const { img, price, productName, type } = this.props;
     return (
       <div className="productContainer">
         <div className="productImgContainer">
-          <img className="productImg" src={img} alt="Product Img" />
+          <Link to="/product/detail">
+            <img className="productImg" src={img} alt="Product Img" />
+          </Link>
+          <div className="typeBox">
+            {type === "NEW" ? <div className="itsNew">NEW</div> : null}
+            {type === "BEST" ? <div className="itsBest">BEST</div> : null}
+          </div>
+
           <div className="iconsContainer">
             <div className="heartAndShoppingBag">
               <button
@@ -51,7 +59,7 @@ export class Product extends Component {
               >
                 <FontAwesomeIcon icon={faHeart} size="2x" />
               </button>
-              <button className="whiteShoppingBag">
+              <button onClick={this.goBasket} className="whiteShoppingBag">
                 <FontAwesomeIcon icon={faShoppingBag} size="2x" />
               </button>
             </div>
@@ -65,4 +73,4 @@ export class Product extends Component {
   }
 }
 
-export default Product;
+export default withRouter(Product);

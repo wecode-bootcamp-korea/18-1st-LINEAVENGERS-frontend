@@ -17,6 +17,30 @@
       border-radius: 5%;
     }
 
+    .typeBox {
+      position: absolute;
+      top: 15px;
+      left: 0;
+      right: 0;
+      .itsNew,
+      .itsBest {
+        width: 50px;
+        height: 25px;
+        padding: 3px;
+        color: white;
+        font-size: 14px;
+        font-weight: 700;
+        text-align: center;
+      }
+
+      .itsNew {
+        background-color: #6acc87;
+      }
+      .itsBest {
+        background-color: #6db8e4;
+      }
+    }
+
     .iconsContainer {
       position: absolute;
       bottom: 30px;
