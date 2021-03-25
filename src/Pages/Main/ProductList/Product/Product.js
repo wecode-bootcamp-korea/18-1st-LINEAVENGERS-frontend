@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
+import { URL } from "../../../../config";
 import "./Product.scss";
 
 export class Product extends Component {
@@ -19,7 +20,7 @@ export class Product extends Component {
       favorite: !this.state.favorite,
     });
 
-    fetch("http://10.58.1.71:8000/mypage/favorite", {
+    fetch(`${URL}/mypage/favorite`, {
       method: "POST",
       body: JSON.stringify({
         product: this.props.product,

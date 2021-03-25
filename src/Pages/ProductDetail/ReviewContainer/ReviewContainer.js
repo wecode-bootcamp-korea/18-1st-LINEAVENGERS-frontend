@@ -41,7 +41,6 @@ class ReviewContainer extends Component {
       reviewOffset * 10,
       reviewOffset * 10 + 10
     );
-
     return (
       <section className="reviewContainer" ref={this.props.ReviewContainer}>
         <h1>상품리뷰</h1>

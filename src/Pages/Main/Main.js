@@ -4,6 +4,7 @@ import Footer from "../../Components/Footer/Footer";
 import SlickBanner from "./SlickBanner/SlickBanner";
 import Coupon from "./Coupon/Coupon";
 import ProductList from "./ProductList/ProductList";
+import { URL } from "../../config";
 import "./Main.scss";
 
 export class Main extends Component {
@@ -27,7 +28,7 @@ export class Main extends Component {
         this.setState({ banner: data });
       });
 
-    fetch("http://10.58.6.21:8000/product/main-product", {
+    fetch(`${URL}/product/main-product`, {
       method: "GET",
     })
       .then(res => res.json())

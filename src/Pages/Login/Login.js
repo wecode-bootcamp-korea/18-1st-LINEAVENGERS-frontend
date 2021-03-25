@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import "./Login.scss";
 import { AiFillCheckCircle } from "react-icons/ai";
+import { URL } from "../../config";
+import "./Login.scss";
 class Login extends Component {
   constructor() {
     super();
@@ -54,7 +55,7 @@ class Login extends Component {
       !pwCheck;
     console.log(e.charCode);
     if (istAllInputValid) {
-      fetch("http://10.58.1.71:8000/account/signin", {
+      fetch(`${URL}/account/signin`, {
         method: "POST",
         body: JSON.stringify({
           login_id: this.state.loginId,

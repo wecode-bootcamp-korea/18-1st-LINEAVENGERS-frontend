@@ -3,6 +3,7 @@ import MyPageNav from "./MyPageNav";
 import MyPageAside from "./MyPageAside";
 import MyPageNone from "./MyPageNone";
 import MyPageProduct from "./MyPageProduct";
+import { URL } from "../../config";
 import "./MyPage.scss";
 
 class MyPage extends Component {
@@ -14,7 +15,7 @@ class MyPage extends Component {
   }
 
   componentDidMount() {
-    fetch("http://10.58.6.21:8000/mypage/review", {
+    fetch(`${URL}/order/review`, {
       headers: {
         Authorization:
           "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.TGXxK_c43ROKMfF_QPUWar7uWlzhYZaCCVyudlpHMKg",

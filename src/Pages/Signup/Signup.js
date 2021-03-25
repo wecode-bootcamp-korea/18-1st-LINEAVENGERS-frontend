@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { RiLock2Fill } from "react-icons/ri";
 import { IoBagCheckSharp } from "react-icons/io5";
+import { URL } from "../../config";
 import "./Signup.scss";
+
 class Signup extends Component {
   constructor() {
     super();
@@ -29,7 +31,7 @@ class Signup extends Component {
 
   btnVailid = e => {
     e.preventDefault();
-    fetch("http://10.58.1.71:8000/account/signup", {
+    fetch(`${URL}/account/signup`, {
       method: "POST",
       body: JSON.stringify({
         login_id: this.state.loginId,
@@ -41,7 +43,6 @@ class Signup extends Component {
     })
       .then(res => res.json())
       .then(result => {
-        console.log(result);
         if (result.message === "SUCCESS") {
           alert("회원가입 성공");
           this.props.history.push("/Login");
@@ -82,14 +83,13 @@ class Signup extends Component {
       return;
     }
 
-    fetch("http://10.58.1.71:8000/account/loginexist", {
+    fetch(`${URL}/account/loginexist`, {
       method: "POST",
       body: JSON.stringify({
         login_id: loginId,
       }),
     })
       .then(res => {
-        console.log("aaaaaaa", res);
         return res.json();
       })
       .then(result => {

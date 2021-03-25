@@ -2,6 +2,7 @@ import React from "react";
 import ShoppingProductList from "./ShoppingProductList";
 import ShoppingNone from "./ShoppingNone";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
+import { URL } from "../../../config";
 
 class ShoppingProduct extends React.Component {
   constructor() {
@@ -18,7 +19,7 @@ class ShoppingProduct extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://10.58.1.71:8000/order", {
+    fetch(`${URL}}/order`, {
       headers: {
         Authorization:
           "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.uRvhx0YRxMc6bT8xlDbEw3lNaEpuPH0B1OShVoJGahw",
@@ -62,7 +63,7 @@ class ShoppingProduct extends React.Component {
   };
 
   goToMyPage = () => {
-    fetch("http://10.58.1.71:8000/order", {
+    fetch(`${URL}/order`, {
       headers: {
         Authorization:
           "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.uRvhx0YRxMc6bT8xlDbEw3lNaEpuPH0B1OShVoJGahw",
@@ -80,7 +81,7 @@ class ShoppingProduct extends React.Component {
     console.log(index);
     console.log(this.state.productList[index].product_id);
 
-    await fetch("http://10.58.1.71:8000/order", {
+    await fetch(`${URL}/order`, {
       headers: {
         Authorization:
           "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.uRvhx0YRxMc6bT8xlDbEw3lNaEpuPH0B1OShVoJGahw",

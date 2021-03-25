@@ -7,9 +7,9 @@ import ReviewContainer from "./ReviewContainer/ReviewContainer";
 import QAContainer from "./QAContainer/QAContainer";
 import TopMenu from "./TopMenu/TopMenu";
 import RefundContainer from "./RefundContainer/RefundContainer";
+import PageLoad from "../../Components/PageLoad/PageLoad";
 import { URL } from "../../config";
 import "./ProductDetail.scss";
-import PageLoad from "../../Components/PageLoad/PageLoad";
 
 class ProductDetail extends Component {
   constructor(props) {
@@ -153,7 +153,6 @@ class ProductDetail extends Component {
         });
       });
   }
-
   render() {
     const { productData, selectList, tabIndex } = this.state;
     const {
@@ -211,6 +210,8 @@ class ProductDetail extends Component {
               <Review ReviewData={ReviewData} />
             </section>
             <DetailContainer
+              imageUrls={imageUrls}
+              reviews={reviews}
               DetailContainer={this.DetailContainer}
               tabClick={this.tabClick}
               tabIndex={tabIndex}
