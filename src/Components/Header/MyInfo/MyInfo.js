@@ -6,31 +6,14 @@ import { faTh } from "@fortawesome/free-solid-svg-icons";
 import "./MyInfo.scss";
 
 export class Myinfo extends Component {
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     userList: [],
-  //   };
-  // }
-
-  // componentDidMount() {
-  //   fetch("Data/UserInfo.json", {
-  //     method: "GET",
-  //   })
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       this.setState({ userList: data.userList });
-  //     });
-  // }
-
   handlelogOut = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("userName");
+    localStorage.removeItem("userEmail");
     this.props.history.push("/main");
   };
 
   render() {
-    // const { userList } = this.state;
-    // console.log("this.state.userList >>>", this.state.userList);
     return (
       <div className="myInfo">
         {localStorage.token ? (
