@@ -52,9 +52,15 @@ export class SlickBanner extends Component {
                   style={{ backgroundImage: `url(` + el.imgUrl + `)` }}
                 ></div>
                 <div className="copyContainer">
-                  <p className="bigCopy">{el.bigCopy}</p>
-                  <p className="bigCopy">{el.bigCopy2}</p>
-                  <p className="smallCopy">{el.smallCopy}</p>
+                  <p className={el.id === 4 ? "bigCopyWhite" : "bigCopy"}>
+                    {el.bigCopy}
+                  </p>
+                  <p className={el.id === 4 ? "bigCopyWhite" : "bigCopy"}>
+                    {el.bigCopy2}
+                  </p>
+                  <p className={el.id === 4 ? "smallCopyWhite" : "smallCopy"}>
+                    {el.smallCopy}
+                  </p>
                 </div>
               </div>
             );
