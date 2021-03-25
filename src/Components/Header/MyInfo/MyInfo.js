@@ -8,6 +8,8 @@ import "./MyInfo.scss";
 export class Myinfo extends Component {
   handlelogOut = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("userName");
+    localStorage.removeItem("userEmail");
     this.props.history.push("/main");
   };
 
@@ -28,8 +30,10 @@ export class Myinfo extends Component {
             <div className="iHaveTokenText currentUser">
               <span>PIKA</span>
               <div className="logOutBox">
-                <p className="logOutBoxCurrentUser">박경현님</p>
-                <p className="logOutBoxEmail">pikatropika@gmail.com</p>
+                <p className="logOutBoxCurrentUser">
+                  {localStorage.userName}님
+                </p>
+                <p className="logOutBoxEmail">{localStorage.userEmail}</p>
                 <button className="logOutBtn" onClick={this.handlelogOut}>
                   로그아웃
                 </button>
