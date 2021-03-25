@@ -16,7 +16,7 @@ class Signup extends Component {
       name: "",
       email: "",
       phoneNum: "",
-      pwColorcheck: "", //아이콘 색상 문자열 1
+      pwColorcheck: "", //아이콘 색상 문자열
       isPwcolorCheck: "",
       idCheck: false, //아이디 정규식 유효성 검사
       pwcheck: false, //비밀번호 조건 유효성 검사 (8자 이상)
