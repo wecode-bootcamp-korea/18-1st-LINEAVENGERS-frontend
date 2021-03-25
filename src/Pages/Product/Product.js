@@ -6,6 +6,8 @@ import ProductList from "./ProductList/ProductList";
 import PageLoad from "../../Components/PageLoad/PageLoad";
 import ProductDetailModal from "../../Components/ProductDetailModal/ProductDetailModal";
 import "./Product.scss";
+import Footer from "../../Components/Footer/Footer";
+import Header from "../../Components/Header/Header";
 
 export class Product extends Component {
   state = {
@@ -49,9 +51,11 @@ export class Product extends Component {
   initialProductData = () => {
     fetch(`${URL}/product${this.props.location.search}`)
       .then(res => {
+        console.log(res);
         return res.json();
       })
       .then(res => {
+        console.log(res);
         const { pageOffset, pageSize } = this.state;
         this.setState({
           productData: res.productList,
@@ -177,6 +181,7 @@ export class Product extends Component {
     this.initialProductData();
     this.initialCategroyData();
   }
+  componentDidUpdate(prevProps, prevState) {}
 
   render() {
     const {
@@ -223,6 +228,7 @@ export class Product extends Component {
 
     return (
       <main className="product">
+        <Header />
         {productData.length === 0 || categoryData.length === 0 ? (
           <PageLoad />
         ) : (
@@ -258,6 +264,7 @@ export class Product extends Component {
             )}
           </div>
         )}
+        <Footer />
       </main>
     );
   }

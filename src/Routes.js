@@ -7,9 +7,9 @@ import ShoppingBasket from "./Pages/MyPage/ShoppingBasket/ShoppingBasket";
 import MyPageHeart from "./Pages/MyPage/MyPageHeart";
 import Modal from "./Pages/MyPage/Modal";
 import MyPage from "./Pages/MyPage/MyPage";
-import Product from "./Pages/ProductDetail/ProductDetail";
+import Product from "./Pages/Product/Product";
 import ProductDetail from "./Pages/ProductDetail/ProductDetail";
-import QAModal from "./Pages/ProductDetail/QAContainer/QAContainer";
+import QAModal from "./Pages/ProductDetail/QAContainer/QAModal/QAModal";
 
 class Routes extends React.Component {
   render() {
