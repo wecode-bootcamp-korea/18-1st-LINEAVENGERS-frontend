@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
+import { URL } from "../../config";
 import Content from "./Content/Content";
 import ProductList from "./ProductList/ProductList";
 import PageLoad from "../../Components/PageLoad/PageLoad";
-import { withRouter } from "react-router-dom";
-import { URL } from "../../config";
+import ProductDetailModal from "../../Components/ProductDetailModal/ProductDetailModal";
 import "./Product.scss";
 
 export class Product extends Component {
@@ -14,6 +15,8 @@ export class Product extends Component {
     gridType: 1,
     pageSize: 20,
     count: 0,
+    modalPopCheck: false,
+    modalData: {},
     current: [],
     pageData: [],
     productData: [],
@@ -123,7 +126,7 @@ export class Product extends Component {
       pageOffset: 0,
       pageSize: pageSize[index].size,
       page: Math.ceil(productData.length / pageSize[index].size),
-      pageData: productData(0, pageSize[index].size),
+      pageData: productData.slice(0, pageSize[index].size),
     });
   };
 
@@ -133,6 +136,41 @@ export class Product extends Component {
         ? `?menu=${idList[0]}`
         : `?menu=${idList[0]}&category=${idList[1]}`;
     this.props.history.push(`product${query}`);
+  };
+
+  getProductData = (e, productId) => {
+    fetch(`${URL}/product/detail/${productId}`)
+      .then(res => res.json())
+      .then(res =>
+        this.setState({
+          modalData: res.productDetail,
+          modalPopCheck: true,
+        })
+      );
+  };
+
+  handleModal = () => {
+    const { modalPopCheck } = this.state;
+    this.setState({
+      modalData: [],
+      modalPopCheck: !modalPopCheck,
+    });
+  };
+
+  addCart = (e, productId, selectList, options) => {
+    fetch(`${URL}/order/cart/${productId}`, {
+      method: "POST",
+      headers: {
+        Authorization:
+          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.TGXxK_c43ROKMfF_QPUWar7uWlzhYZaCCVyudlpHMKg",
+      },
+      body: JSON.stringify({
+        size_id: 1,
+        quantity: 1,
+      }),
+    })
+      .then(res => res.json())
+      .then(res => console.log(res));
   };
 
   componentDidMount() {
@@ -150,6 +188,8 @@ export class Product extends Component {
       pageOffset,
       pageSize,
       count,
+      modalData,
+      modalPopCheck,
     } = this.state;
 
     const showData = freeClick
@@ -186,7 +226,7 @@ export class Product extends Component {
         {productData.length === 0 || categoryData.length === 0 ? (
           <PageLoad />
         ) : (
-          <div className="productContainer">
+          <div className="productWrap">
             <Content
               count={count}
               current={current}
@@ -206,7 +246,16 @@ export class Product extends Component {
               pageOffset={pageOffset}
               handlePage={this.handlePage}
               moveToProduct={this.moveToProduct}
+              getProductData={this.getProductData}
             />
+            {Object.keys(modalData).length !== 0 && (
+              <ProductDetailModal
+                modalData={modalData}
+                modalPopCheck={modalPopCheck}
+                handleModal={this.handleModal}
+                addCart={this.addCart}
+              />
+            )}
           </div>
         )}
       </main>

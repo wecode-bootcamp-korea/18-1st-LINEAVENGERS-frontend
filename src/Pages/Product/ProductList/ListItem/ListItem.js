@@ -10,6 +10,7 @@ class ListItem extends Component {
   };
 
   handleFavorite = async (e, id) => {
+    let message = "";
     await fetch("http://10.58.1.71:8000/mypage/favorite", {
       method: "POST",
       body: JSON.stringify({
@@ -22,7 +23,6 @@ class ListItem extends Component {
           message = "no authorization";
         }
       });
-    let message = "";
     if (message === "no authorization") {
       alert("로그인이 필요합니다.");
       return;
@@ -45,6 +45,7 @@ class ListItem extends Component {
         type,
       },
       moveToProduct,
+      getProductData,
     } = this.props;
     const { favoriteCheck } = this.state;
     const itemTag = {
@@ -71,7 +72,12 @@ class ListItem extends Component {
             >
               <FontAwesomeIcon icon={faHeart} />
             </button>
-            <button className="choiceDetail">
+            <button
+              className="choiceDetail"
+              onClick={e => {
+                getProductData(e, productId);
+              }}
+            >
               <FontAwesomeIcon icon={faShoppingBasket} />
             </button>
           </div>

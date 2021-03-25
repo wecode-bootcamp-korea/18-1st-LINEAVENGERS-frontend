@@ -9,6 +9,7 @@ import TopMenu from "./TopMenu/TopMenu";
 import RefundContainer from "./RefundContainer/RefundContainer";
 import { URL } from "../../config";
 import "./ProductDetail.scss";
+import PageLoad from "../../Components/PageLoad/PageLoad";
 
 class ProductDetail extends Component {
   constructor(props) {
@@ -177,11 +178,10 @@ class ProductDetail extends Component {
     const PreviewData = { imageUrls, reviews };
     const PayData = { name, options, price, type, productId };
     const ReviewData = { reviews };
-
     return (
       <div className="productDetailWrap">
         {Object.keys(productData).length === 0 ? (
-          <div>Loading</div>
+          <PageLoad />
         ) : (
           <>
             <TopMenu

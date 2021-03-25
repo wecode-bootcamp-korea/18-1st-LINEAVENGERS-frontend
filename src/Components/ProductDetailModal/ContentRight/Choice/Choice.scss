@@ -22,13 +22,14 @@
         position: relative;
         width: 24px;
         height: 24px;
+        margin-top: 5px;
         margin-right: 5px;
         background: #fff;
 
         em {
           position: absolute;
-          top: 6px;
-          left: 50%;
+          top: 4px;
+          left: 12px;
           color: #3fc80d;
           font-weight: 700;
           transform: translateX(-50%);

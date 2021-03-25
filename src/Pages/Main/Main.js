@@ -1,10 +1,4 @@
 import React, { Component } from "react";
-<<<<<<< HEAD
-
-export class Main extends Component {
-  render() {
-    return <div></div>;
-=======
 import Header from "../../Components/Header/Header";
 import Footer from "../../Components/Footer/Footer";
 import SlickBanner from "./SlickBanner/SlickBanner";
@@ -25,7 +19,10 @@ export class Main extends Component {
     fetch("Data/MainBannerData.json", {
       method: "GET",
     })
-      .then(res => res.json())
+      .then(res => {
+        console.log(res);
+        return res.json();
+      })
       .then(data => {
         this.setState({ banner: data });
       });
@@ -60,7 +57,6 @@ export class Main extends Component {
         <Footer />
       </div>
     );
->>>>>>> c4793716f6417af3e0319328e0c6423256d2d9f2
   }
 }
 
