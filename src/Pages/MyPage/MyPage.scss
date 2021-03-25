@@ -1,0 +1,248 @@
+.myPage {
+  width: 1450px;
+
+  .myPageNav {
+    height: 120px;
+    background-color: rgb(76, 194, 76);
+    color: white;
+
+    .myPageNavTop {
+      display: flex;
+      justify-content: space-between;
+      height: 30px;
+      padding: 10px 150x 20px 150px;
+      border-bottom: 1px solid rgb(156, 152, 152);
+
+      .myPageNavTopLeftLine {
+        margin-right: 15px;
+      }
+
+      .myPageNavTopRight {
+        display: flex;
+      }
+
+      .myPageNavTopRightMy,
+      .myPageNavTopRightHeart {
+        margin-right: 10px;
+      }
+
+      .myPageNavTopRightBasket {
+        margin-left: 10px;
+        color: white;
+      }
+    }
+
+    .myPageNavBottom {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 30px;
+      padding-left: 150px;
+      padding-right: 150px;
+
+      .myPageNavBottomLeft {
+        font-size: 30px;
+      }
+
+      .myPageNavBottomRight {
+        display: flex;
+        font-size: 20px;
+
+        .myPageNavBottomRightTotal {
+          margin-left: 40px;
+        }
+      }
+    }
+  }
+
+  .myPageMain {
+    display: flex;
+    width: 1150px;
+    margin-left: 150px;
+    margin-top: 30px;
+
+    .myPageSide {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 250px;
+
+      .myPageUser {
+        width: 250px;
+        height: 300px;
+        background-color: #525f78;
+
+        .myPageUserProfile {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100px;
+          height: 100px;
+          margin-top: 80px;
+          margin-left: 75px;
+          border: 1px solid lightgray;
+          border-radius: 50px;
+          background-color: white;
+        }
+
+        .myPageUserName {
+          text-align: center;
+          margin-top: 20px;
+          font-size: 20px;
+          color: rgb(173, 172, 172);
+        }
+      }
+      .myPageSetting {
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+        padding-left: 30px;
+        background-color: rgb(228, 224, 224);
+      }
+
+      .myPageSettingTotal {
+        padding: 10px;
+        font-size: 15px;
+      }
+
+      .myPageCardCompany {
+        width: 250px;
+        height: 50px;
+        border: 1px solid lightgray;
+        border-radius: 5px;
+        padding-top: 15px;
+        padding-left: 30px;
+        margin: 10px 0;
+        background-color: rgb(236, 235, 235);
+        font-size: 16px;
+      }
+
+      .myPageCardImage {
+        max-width: 250px;
+      }
+    }
+    .myPageArticle {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 1000px;
+      margin-left: 50px;
+      padding-top: 200px;
+      border-top: 1px solid gray;
+
+      .myPageArticleNo {
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      .myPageArticleContent {
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+.myPageProduct {
+  width: 1000px;
+  margin-left: 50px;
+  padding: 30px 30px;
+
+  .myPageProductList {
+    display: flex;
+    padding: 50px 20px;
+    border-bottom: 1px solid lightgray;
+
+    .myPageProductListImg {
+      width: 80px;
+      height: 80px;
+      padding-top: 20px;
+    }
+
+    .myPageProductListAll {
+      width: 550px;
+      padding: 0 20px;
+
+      .myPageProductListName {
+        font-size: 17px;
+      }
+
+      .myPageProductListPrice {
+        margin-top: 15px;
+        font-size: 15px;
+      }
+
+      .myPageProductListSure {
+        padding: 20px 0;
+        border-bottom: 1px solid lightgray;
+        font-size: 14px;
+        color: rgb(196, 193, 193);
+      }
+
+      .myPageProductListDetail {
+        margin-top: 20px;
+        font-size: 15px;
+
+        .myPageProductListDetailTop {
+          margin-bottom: 5px;
+          color: gray;
+          font-size: 14px;
+        }
+
+        .myPageProductListDetailBottom {
+          font-size: 14px;
+          color: gray;
+        }
+      }
+    }
+
+    .myPageProductListReview {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 20px;
+
+      .myPageProductListReviewWrite {
+        width: 100px;
+        height: 30px;
+        background-color: white;
+        border: 1px solid lightgray;
+      }
+    }
+  }
+
+  .myPageHeartNav {
+    display: flex;
+    justify-content: space-between;
+
+    .myPageHeartNavLeft {
+      display: flex;
+
+      .myPageHeartNavLeftL {
+        padding-right: 10px;
+        font-size: 20px;
+      }
+
+      .myPageHeartNavLeftR {
+        padding-top: 5px;
+        font-size: 15px;
+        color: gray;
+      }
+    }
+
+    .myPageHeartNavRight {
+      display: flex;
+      padding-top: 5px;
+      color: gray;
+      font-size: 15px;
+
+      .myPageHeartNavRightL {
+        padding-right: 10px;
+      }
+
+      .myPageHeartNavRightR {
+        padding-left: 10px;
+        color: rgb(99, 97, 97);
+        font-weight: bold;
+      }
+    }
+  }
+}
