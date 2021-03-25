@@ -8,7 +8,7 @@ class TopMenu extends Component {
     payMenuActive: false,
   };
 
-  handlePayMenu = () => {
+  handlePayMenu = e => {
     const { payMenuActive } = this.state;
     this.setState({
       payMenuActive: !payMenuActive,
@@ -35,9 +35,21 @@ class TopMenu extends Component {
     });
   }
 
+  componentWillUnmount() {
+    window.removeEventListener("scroll");
+  }
+
   render() {
     const {
-      TopMenuData: { imgUrls, name, options, price, reviews, type },
+      TopMenuData: {
+        imageUrls,
+        name,
+        options,
+        price,
+        reviews,
+        type,
+        productId,
+      },
       selectList,
       addSelect,
       deleteSelect,
@@ -45,17 +57,21 @@ class TopMenu extends Component {
       countChange,
       tabIndex,
       tabClick,
+      buyProduct,
+      shoppingKeep,
     } = this.props;
+
     const { topMenuActive, payMenuActive } = this.state;
     const finalPrice =
       price.sale !== 0
         ? price.normal - (price.normal * price.sale) / 100
         : price.normal;
+
     return (
       <div className={`topMenuContainer ${topMenuActive && "active"}`}>
         <div className="topMenuInnerWrap">
           <div className="productMenu">
-            <img src={imgUrls[0]} alt="상품 이미지" />
+            <img src={imageUrls[0]} alt="상품 이미지" />
             <div className="productInfo">
               <span>{name}</span>
               <p className="productPrice">
@@ -66,7 +82,11 @@ class TopMenu extends Component {
               </p>
             </div>
             {!payMenuActive ? (
-              <button onClick={this.handlePayMenu}>
+              <button
+                onClick={e => {
+                  this.handlePayMenu();
+                }}
+              >
                 <em>N</em>구매하기
               </button>
             ) : (
@@ -78,11 +98,13 @@ class TopMenu extends Component {
               price={price}
               type={type}
               options={options}
+              productId={productId}
               selectList={selectList}
               addSelect={addSelect}
               deleteSelect={deleteSelect}
               clickCount={clickCount}
               countChange={countChange}
+              shoppingKeep={shoppingKeep}
             />
           )}
           <ul className="tabMenu">

@@ -34,24 +34,22 @@ class SelectOption extends Component {
       totalPrice += list.price * list.countValue;
       totalCounts += list.countValue;
     });
+
     return (
       <div className="selectWrap">
         <div className="selectBox" onClick={this.toggleSelect}>
           {type}
         </div>
         <ul className={`selectOption ${optionToggle && "active"}`}>
-          {options.map((option, index) => (
-            <li
-              key={index}
-              className="optionList"
-              onClick={e => {
-                this.toggleSelect();
-                addSelect(e, option, price);
-              }}
-            >
-              {option}
-            </li>
-          ))}
+          <li
+            className="optionList"
+            onClick={e => {
+              this.toggleSelect();
+              addSelect(e, options.name, price);
+            }}
+          >
+            {options.name}
+          </li>
         </ul>
         <ul className="selectCount">
           {selectList.length !== 0 &&

@@ -21,11 +21,13 @@ class PayMenu extends Component {
       options,
       type,
       price,
+      productId,
       selectList,
       addSelect,
       deleteSelect,
       clickCount,
       countChange,
+      shoppingKeep,
     } = this.props;
     const { optionsOpen } = this.state;
 
@@ -41,6 +43,8 @@ class PayMenu extends Component {
       totalPrice += list.price * list.countValue;
       totalCounts += list.countValue;
     });
+
+    console.log(options, price, finalPrice);
     return (
       <ul className="payMenu">
         <li className="deliverWrap">
@@ -58,17 +62,14 @@ class PayMenu extends Component {
         <li className={`selectWrap ${optionsOpen && "checked"}`}>
           <div onClick={this.optionToggle}>{type}</div>
           <ul>
-            {options.map((option, index) => (
-              <li
-                key={index}
-                onClick={e => {
-                  this.optionToggle();
-                  addSelect(e, option, finalPrice);
-                }}
-              >
-                {option}
-              </li>
-            ))}
+            <li
+              onClick={e => {
+                this.optionToggle();
+                addSelect(e, options.name, finalPrice);
+              }}
+            >
+              {options.name}
+            </li>
           </ul>
         </li>
         <li className="countWrap">
@@ -100,7 +101,13 @@ class PayMenu extends Component {
               <FontAwesomeIcon icon={faComment} />
               톡톡문의
             </li>
-            <li>장바구니</li>
+            <li
+              onClick={e => {
+                shoppingKeep(e, options.sizeId, productId, selectList);
+              }}
+            >
+              장바구니
+            </li>
             <li>찜하기</li>
           </ul>
           <span className="tipInfo">

@@ -7,7 +7,7 @@ import "./ReviewList.scss";
 class ReviewList extends Component {
   render() {
     const {
-      review: { user, grade, comment, imgUrl, date, type, option, thumbs },
+      review: { comment, date, grade, image_url, option, type, user },
     } = this.props;
     const starFill = new Array(5).fill(0);
     return (
@@ -33,16 +33,16 @@ class ReviewList extends Component {
             <em></em>
             {date}
           </span>
-          <span className="optionInfo">{type + " " + option}</span>
+          <span className="optionInfo">{type + ": " + option.name}</span>
           <p>{comment}</p>
         </div>
         <div className="listBox">
-          <img src={imgUrl} alt="리뷰이미지" />
+          <img src={image_url} alt="리뷰이미지" />
         </div>
         <div className="listBox">
           <span>
             <FontAwesomeIcon icon={faThumbsUp} />
-            <em>{thumbs}</em>
+            <em>{5}</em>
           </span>
         </div>
       </li>

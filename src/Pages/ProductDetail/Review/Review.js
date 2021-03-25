@@ -37,6 +37,7 @@ class Review extends Component {
     const { reviewOffset } = this.state;
     const presentReview = reviews.slice(4 * reviewOffset, 4 * reviewOffset + 4);
     const starGrade = new Array(5).fill(0);
+    console.log(reviews);
     return (
       <div className="reviewWrap">
         <p className="reviewTitle">
@@ -58,13 +59,13 @@ class Review extends Component {
                 </span>
                 <span className="reviewDetail">
                   <em>{review.user}</em>
-                  <em>{review.date}</em>
-                  <em>{`${review.type}: ${review.option}`}</em>
+                  <em>{review.date.split(" ")[0]}</em>
+                  <em>{`${review.type}: ${review.option.name}`}</em>
                 </span>
                 <p>{review.comment}</p>
               </div>
               <div className="reviewImg">
-                <img src={review.imgUrl} alt="상품 이미지" />
+                <img src={review.image_url} alt="상품 이미지" />
               </div>
             </li>
           ))}

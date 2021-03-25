@@ -15,7 +15,7 @@ class Preview extends Component {
     const { className } = e.target;
     const { imageIndex } = this.state;
     const {
-      PreviewData: { imgUrls },
+      PreviewData: { imageUrls },
     } = this.props;
     const btnType = className.split(" ")[1];
 
@@ -23,9 +23,9 @@ class Preview extends Component {
       imageIndex:
         btnType === "prev"
           ? imageIndex === 0
-            ? imgUrls.length - 1
+            ? imageUrls.length - 1
             : imageIndex - 1
-          : imageIndex === imgUrls.length - 1
+          : imageIndex === imageUrls.length - 1
           ? 0
           : imageIndex + 1,
     });
@@ -39,7 +39,7 @@ class Preview extends Component {
 
   render() {
     const {
-      PreviewData: { imgUrls, reviews },
+      PreviewData: { imageUrls, reviews },
     } = this.props;
     const { imageIndex } = this.state;
 
@@ -49,7 +49,7 @@ class Preview extends Component {
     return (
       <div className="preview">
         <div className="previewImgBox">
-          <img src={imgUrls[imageIndex]} alt="상품 미리보기"></img>
+          <img src={imageUrls[imageIndex]} alt="상품 미리보기"></img>
           <button
             className="slideBtn prev"
             onClick={e => {
@@ -68,7 +68,7 @@ class Preview extends Component {
           </button>
         </div>
         <ul className="previewImgList">
-          {imgUrls.map((imgUrl, index) => {
+          {imageUrls.map((imgUrl, index) => {
             return (
               <li
                 key={index}

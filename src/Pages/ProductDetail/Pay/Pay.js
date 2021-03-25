@@ -10,12 +10,13 @@ import "./Pay.scss";
 class Pay extends Component {
   render() {
     const {
-      PayData: { name, options, price, type },
+      PayData: { name, options, price, type, productId },
       selectList,
       clickCount,
       countChange,
       addSelect,
       deleteSelect,
+      shoppingKeep,
     } = this.props;
 
     const finalPrice =
@@ -71,7 +72,13 @@ class Pay extends Component {
             <FontAwesomeIcon icon={faComment} />
             톡톡문의
           </li>
-          <li>장바구니</li>
+          <li
+            onClick={e => {
+              shoppingKeep(e, options.sizeId, productId, selectList);
+            }}
+          >
+            장바구니
+          </li>
           <li>찜하기</li>
         </ul>
         <p className="safeTip">

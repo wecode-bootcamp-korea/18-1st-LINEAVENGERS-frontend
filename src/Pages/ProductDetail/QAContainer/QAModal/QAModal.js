@@ -2,6 +2,8 @@ import { faCheckCircle } from "@fortawesome/free-regular-svg-icons";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
+import { URL } from "../../../../config";
 import "./QAModal.scss";
 
 class QAModal extends Component {
@@ -15,7 +17,6 @@ class QAModal extends Component {
     const { className } = e.target;
     const BtnType = className.split(" ")[0];
     const { secretCheck, alarmCheck } = this.state;
-    console.log(BtnType);
     if (BtnType === "secretBtn") {
       this.setState({
         secretCheck: !secretCheck,
@@ -32,6 +33,19 @@ class QAModal extends Component {
     this.setState({
       [name]: value,
     });
+  };
+
+  addQa = () => {
+    const { comment } = this.state;
+    const query = this.props.location.search.split("?")[1];
+    fetch(`${URL}/product/${query}/qna`, {
+      method: "POST",
+      body: JSON.stringify({
+        content: comment,
+      }),
+    })
+      .then(res => res.json())
+      .then(res => window.close());
   };
   render() {
     const { comment, alarmCheck, secretCheck } = this.state;
@@ -76,11 +90,13 @@ class QAModal extends Component {
         </p>
         <div className="btnWrap">
           <button className="cancel">취소</button>
-          <button className="submit">등록</button>
+          <button className="submit" onClick={this.addQa}>
+            등록
+          </button>
         </div>
       </div>
     );
   }
 }
 
-export default QAModal;
+export default withRouter(QAModal);

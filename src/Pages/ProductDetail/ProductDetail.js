@@ -5,9 +5,10 @@ import Review from "./Review/Review";
 import DetailContainer from "./DetailContainer/DetailContainer";
 import ReviewContainer from "./ReviewContainer/ReviewContainer";
 import QAContainer from "./QAContainer/QAContainer";
-import "./ProductDetail.scss";
 import TopMenu from "./TopMenu/TopMenu";
 import RefundContainer from "./RefundContainer/RefundContainer";
+import { URL } from "../../config";
+import "./ProductDetail.scss";
 
 class ProductDetail extends Component {
   constructor(props) {
@@ -117,21 +118,64 @@ class ProductDetail extends Component {
     });
   };
 
-  componentDidMount() {
-    fetch("http://localhost:3000/data/ProductDetail.json", { method: "GET" })
+  shoppingKeep = (e, sizeId, productId, selectList) => {
+    if (selectList.length === 0) {
+      alert("선택된 품목이 없습니다.");
+      return;
+    }
+    let totalCount = 0;
+    selectList.forEach(list => (totalCount += list.countValue));
+
+    fetch(`${URL}/order/cart/${productId}`, {
+      method: "POST",
+      body: JSON.stringify({
+        user_id: 1,
+        size_id: sizeId,
+        quantity: totalCount,
+      }),
+    })
       .then(res => res.json())
-      .then(res =>
+      .then(() => {
+        alert("장바구니에 추가 됐습니다!");
         this.setState({
-          productData: res,
-        })
-      );
+          selectList: [],
+        });
+      });
+  };
+
+  componentDidMount() {
+    fetch(`${URL}/product/detail/${this.props.match.params.id}`)
+      .then(res => res.json())
+      .then(res => {
+        this.setState({
+          productData: res.productDetail,
+        });
+      });
   }
+
   render() {
     const { productData, selectList, tabIndex } = this.state;
-    const { imgUrls, name, options, price, reviews, type } = productData;
-    const TopMenuData = { imgUrls, name, options, price, reviews, type };
-    const PreviewData = { imgUrls, reviews };
-    const PayData = { name, options, price, type };
+    const {
+      productId,
+      imageUrls,
+      name,
+      options,
+      price,
+      reviews,
+      type,
+    } = productData;
+
+    const TopMenuData = {
+      imageUrls,
+      name,
+      options,
+      price,
+      reviews,
+      type,
+      productId,
+    };
+    const PreviewData = { imageUrls, reviews };
+    const PayData = { name, options, price, type, productId };
     const ReviewData = { reviews };
 
     return (
@@ -149,6 +193,7 @@ class ProductDetail extends Component {
               countChange={this.countChange}
               addSelect={this.addSelect}
               deleteSelect={this.deleteSelect}
+              shoppingKeep={this.shoppingKeep}
             />
             <section className="contentTop">
               <div className="previewPay">
@@ -160,6 +205,7 @@ class ProductDetail extends Component {
                   countChange={this.countChange}
                   addSelect={this.addSelect}
                   deleteSelect={this.deleteSelect}
+                  shoppingKeep={this.shoppingKeep}
                 />
               </div>
               <Review ReviewData={ReviewData} />
@@ -173,7 +219,7 @@ class ProductDetail extends Component {
               ReviewData={ReviewData}
               ReviewContainer={this.ReviewContainer}
             />
-            <QAContainer QAContainer={this.QAContainer} />
+            <QAContainer QAContainer={this.QAContainer} productId={productId} />
             <RefundContainer RefundContainer={this.RefundContainer} />
           </>
         )}
