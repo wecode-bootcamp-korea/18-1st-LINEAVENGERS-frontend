@@ -47,12 +47,13 @@ class Login extends Component {
       }
     }
 
-    if (
+    const istAllInputValid =
       (e.charCode === 13 || e.type === "click") &&
       !idCheck &&
       !valueCheck &&
-      !pwCheck
-    ) {
+      !pwCheck;
+    console.log(e.charCode);
+    if (istAllInputValid) {
       fetch("http://10.58.1.71:8000/account/signin", {
         method: "POST",
         body: JSON.stringify({
@@ -65,7 +66,11 @@ class Login extends Component {
         })
         .then(result => {
           if (result.message === "SUCCESS") {
+            localStorage.setItem("access_token", result.access_token);
+            localStorage.setItem("email", result.email);
+            localStorage.setItem("name", result.name);
             alert("로그인 성공");
+            this.props.history.push("/main");
             return;
           } else if (result.message === "INVALID_USER") {
             alert("가입하지 않은 아이디이거나, 잘못된 비밀번호입니다.");

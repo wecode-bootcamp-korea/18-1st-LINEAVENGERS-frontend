@@ -7,14 +7,17 @@ class Signup extends Component {
     super();
     this.state = {
       loginId: "",
-      multiCheckId: "", //중복된 아이디
-      succsessID: "",
       loginPw: "",
       rePassword: "",
+      multiCheckId: "", //중복된 아이디
+      succsessID: "", //비밀번호 가능한 아이디 일 경우의 빈 문자열값
+      successCheck: "", //비밀번호가 동일할때 빈 문자열 값 //class로 각 각각 set으로 지정 해줄 것
       pMessage: "",
       name: "",
       email: "",
       phoneNum: "",
+      pwColorcheck: "", //아이콘 색상 문자열
+      isPwcolorCheck: "",
       idCheck: false, //아이디 정규식 유효성 검사
       pwcheck: false, //비밀번호 조건 유효성 검사 (8자 이상)
       focusCheck: false, //비밀번호 체크 유효성 검사 (비밀번호 일치)
@@ -24,7 +27,8 @@ class Signup extends Component {
     };
   }
 
-  btnVailid = () => {
+  btnVailid = e => {
+    e.preventDefault();
     fetch("http://10.58.1.71:8000/account/signup", {
       method: "POST",
       body: JSON.stringify({
@@ -89,9 +93,7 @@ class Signup extends Component {
         return res.json();
       })
       .then(result => {
-        console.log(result);
         if (result.message === "INVALID_LOGINID") {
-          console.log(result);
           this.setState({ multiCheckId: "duplicate" });
         } else if (result.message === "SUCCESS") {
           this.setState({ multiCheckId: "correct" });
@@ -103,10 +105,15 @@ class Signup extends Component {
   handlePw = () => {
     const { loginPw } = this.state;
     if (loginPw !== "" && loginPw.length >= 8) {
-      this.setState({ pwcheck: false });
+      this.setState({
+        pwcheck: false,
+        pwColorcheck: "aceepted",
+        succsessID: "isUse",
+        isPwcolorCheck: " isPwcolorCheck",
+      });
       return;
     } else {
-      this.setState({ pwcheck: true });
+      this.setState({ pwcheck: true, succsessID: "isFaill" });
     }
   };
 
@@ -114,9 +121,9 @@ class Signup extends Component {
   handleFocus = () => {
     const { rePassword, loginPw } = this.state;
     if (rePassword === loginPw) {
-      this.setState({ focusCheck: false });
+      this.setState({ focusCheck: false, successCheck: "isUsecheck" });
     } else {
-      this.setState({ focusCheck: true });
+      this.setState({ focusCheck: true, successCheck: "isFaillcheck" });
     }
   };
 
@@ -133,7 +140,7 @@ class Signup extends Component {
     }
   };
 
-  //폰 번호 유효성 검사ss
+  //폰 번호 유효성 검사
   handlePhone = () => {
     const { phoneNum } = this.state;
     const IS_PHONE_NUM = /^\d{3}-\d{3,4}-\d{4}$/;
@@ -144,7 +151,6 @@ class Signup extends Component {
       this.setState({ phoneCheck: true });
     }
   };
-
   render() {
     const {
       emailCheck,
@@ -154,13 +160,16 @@ class Signup extends Component {
       focusCheck,
       phoneCheck,
       multiCheckId,
+      pwColorcheck,
+      succsessID,
+      successCheck,
     } = this.state;
     return (
       <div className="signUp">
         <div className="container">
           <div className="navarLogo">
             <h1>
-              <a href="https://www.naver.com/">NAVAR</a>
+              <img src="../images/Logo/green.png"></img>
             </h1>
           </div>
           <form class="join_form">
@@ -189,18 +198,23 @@ class Signup extends Component {
               <div className="userPw">
                 <p>비밀번호</p>
                 <input
-                  class="users_id"
+                  className="users_id"
                   name="loginPw"
                   type="password"
                   onBlur={this.handlePw}
                   onChange={this.handleChange}
                 />
-                <RiLock2Fill className={pwcheck ? "active" : "openLock"} />
+                <RiLock2Fill
+                  className={pwColorcheck || (pwcheck ? "active" : "openLock")}
+                />
               </div>
 
-              <span className="pwCheck">
-                {pwcheck &&
-                  "8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요."}
+              <span className={`pwcheck ${succsessID}`}>
+                {pwcheck
+                  ? "비밀번호는 8자 이상 입니다."
+                  : succsessID.length < 8 && succsessID === "isUse"
+                  ? "사용가능한 비밀번호 입니다."
+                  : ""}
               </span>
 
               <div className="checkPw">
@@ -216,9 +230,13 @@ class Signup extends Component {
                   className={focusCheck ? "action" : "checkLock"}
                 />
               </div>
-
-              <span className="pwCheck">
-                {focusCheck && "비밀번호가 일치하지 않습니다."}
+              <span className="isCheckpw">
+                {successCheck === "isUsecheck" ? "비밀번호가 일치 합니다." : ""}
+              </span>
+              <span className="isCheckfall">
+                {successCheck === "isFaillcheck"
+                  ? "비밀번호가 모두 일치해야 합니다."
+                  : ""}
               </span>
 
               <div className="userName">

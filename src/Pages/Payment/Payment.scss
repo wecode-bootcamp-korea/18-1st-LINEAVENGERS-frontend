@@ -1,0 +1,476 @@
+.payMent {
+  background-color: #f3f4f5;
+  width: 100%;
+  height: 1500px;
+  .header {
+    background-color: #02c73c;
+    color: white;
+    width: 100%;
+    height: 105px;
+    border: 1px solid white;
+    text-align: center;
+  }
+
+  .container {
+    width: 1100px;
+    margin: 0 auto;
+
+    .orderHeader {
+      position: relative;
+      padding-right: 20px;
+      padding: 20px 0;
+
+      height: 60px;
+      .orderPayment {
+        .blind {
+          font-size: 20px;
+          font-weight: bold;
+        }
+      }
+      .rightProcess {
+        position: absolute;
+        right: -20px;
+        top: 15px;
+        .process {
+          display: flex;
+          margin: 10px 20px 0px 0px;
+          .pro {
+            color: #7d7d7d;
+          }
+          .pro2 {
+            font-weight: bold;
+          }
+          .rowIcon {
+            color: #797a7a;
+          }
+        }
+      }
+    }
+  }
+  .orderContent {
+    border: 1px solid #e2e2e2;
+    width: 1100px;
+    margin: 0 auto;
+    height: 1250px;
+
+    .product {
+      background-color: white;
+      border-bottom: 1px dashed #7d7d7d7d;
+      height: 230px;
+      .productHeader {
+        position: relative;
+        height: 60px;
+
+        background-color: #f8f8f8;
+        .InfoMenu {
+          p {
+            list-style: none;
+            margin-left: 250px;
+          }
+          .shopMenu {
+            ul {
+              display: flex;
+
+              .info {
+                display: flex;
+                justify-content: center;
+                width: 200px;
+                margin-left: 150px;
+                margin-top: 20px;
+              }
+              .shopInfo {
+                display: flex;
+                justify-content: space-around;
+                width: 700px;
+                margin-left: 150px;
+                margin-top: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .fiScissors {
+      position: absolute;
+      transform: translate(13px, -8px);
+      color: #8d8d8d;
+    }
+    .LineInfo {
+      .namesInfo {
+        position: absolute;
+        transform: translate(180px, 30px);
+        .predictStatus {
+          font-size: 14px;
+          color: #00c73c;
+        }
+        .nameInfo {
+          font-size: 12px;
+          color: #909090;
+        }
+        .centerInfo {
+          line-height: 2;
+          font-size: 14px;
+          font-weight: bold;
+        }
+        .userInfoName {
+          display: flex;
+          position: absolute;
+          transform: translate(300px, -30px);
+
+          .infoBox {
+            color: #7d7d7d7d;
+            font-size: 14px;
+            width: 600px;
+            margin-top: 0px;
+            display: flex;
+            justify-content: space-around;
+          }
+
+          .userSale {
+            transform: translateX(25px);
+          }
+          .userQuan {
+            position: absolute;
+            transform: translateX(-15px);
+          }
+          .userFree {
+            transform: translateX(-35px);
+          }
+        }
+      }
+    }
+    .ShoppingBox {
+      color: #4b4b4b;
+      font-size: 14px;
+      background-color: #f8f8f8;
+      display: flex;
+      width: 800px;
+      border-right: 1px solid #e2e2e2;
+      height: 480px;
+      .ShoppingInner {
+        width: 780px;
+        height: 50px;
+        transform: translate(50px, 30px);
+        display: flex;
+
+        .infoInner {
+          font-size: 16px;
+          font-weight: bold;
+        }
+        .destiNation {
+          width: 600px;
+          display: flex;
+          flex-direction: column;
+          transform: translate(-75px, 35px);
+          .meomoBox {
+            margin-top: 20px;
+          }
+          .extraInfo {
+            transform: translate(0px, 35px);
+            padding: 7px 0 0 21px;
+            margin-top: -30px;
+            font-size: 11px;
+            line-height: 17px;
+            color: #2db400;
+            .warningIcon {
+              font-size: 15px;
+              position: absolute;
+              transform: translate(-20px);
+            }
+          }
+
+          .shoppRecipient {
+            padding-top: 25px;
+
+            input {
+              // border-color: 1px solid #e2e2e2;
+            }
+          }
+          .shoppPlacename {
+            padding-top: 25px;
+          }
+          .shoppContact {
+            padding-top: 25px;
+            .numInputBox {
+              display: inline;
+              margin-left: 53px;
+              transform: translateY(20px);
+              .numBox {
+                width: 70px;
+                height: 25px;
+                margin-left: 8px;
+                border: 1px solid #e2e2e2;
+              }
+            }
+          }
+
+          .shoppAddres {
+            padding-top: 25px;
+            button {
+              margin-left: 20px;
+              background-color: #ffffff;
+              border: 1px solid #d0d0d0;
+            }
+          }
+
+          .newSelect {
+            font-size: 12px;
+            font-weight: bold;
+            position: absolute;
+            transform: translate(100px, 3px);
+          }
+          .shoppSelect {
+            position: absolute;
+          }
+          .shoppBtnbox {
+            font-size: 13px;
+            margin-left: 180px;
+            button {
+              background-color: #ffffff;
+              border: 1px solid #d0d0d0;
+            }
+          }
+
+          .shoppRecipient {
+            input {
+              margin-left: 60px;
+              border: 1px solid #e2e2e2;
+            }
+          }
+          .shoppPlacename {
+            .selectInput {
+              margin-left: 50px;
+              width: 160px;
+              font-size: 12px;
+              border: 1px solid #e2e2e2;
+            }
+          }
+          .modalRow {
+            .bsAdress {
+              line-height: 5;
+            }
+            .modalCell {
+              .cellFirst {
+                height: 30px;
+
+                .address {
+                  .addressBox {
+                    margin-top: 20px;
+                  }
+                }
+                button {
+                  background-color: #ffffff;
+                  border: 1px solid #d0d0d0;
+                  height: 25px;
+                  position: absolute;
+                  transform: translate(185px, -50px);
+                }
+              }
+              .zipCode {
+                input {
+                  position: absolute;
+                  transform: translate(100px, -50px);
+                  width: 80px;
+                  height: 30px;
+                  border: 1px solid #e2e2e2;
+                }
+              }
+              .isDetail {
+                position: absolute;
+                transform: translate(100px, -47px);
+                height: 30px;
+                border: 1px solid #e2e2e2;
+                width: 240px;
+              }
+            }
+          }
+        }
+
+        .rightUserInfo {
+          width: 300px;
+          position: absolute;
+          right: -20px;
+          transform: translateX(300px);
+
+          .myName {
+            font-size: 12px;
+            span {
+              display: inline-block;
+              margin-top: 20px;
+            }
+          }
+
+          .myEmail {
+            position: absolute;
+            transform: translate(0px, 5px);
+            font-size: 12px;
+            button {
+              margin-left: 70px;
+              background-color: #ffffff;
+              border: 1px solid #d0d0d0;
+            }
+          }
+          .myNumber {
+            position: absolute;
+            font-size: 12px;
+            transform: translate(0px, 30px);
+            button {
+              margin-left: 101px;
+              background-color: #f3f4f5;
+              border: 1px solid #d0d0d0;
+            }
+          }
+        }
+      }
+    }
+
+    .pointBox {
+      display: flex;
+      .pointInner {
+        height: 380px;
+        background-color: #f8f8f8;
+        border: 1px solid #e2e2e2;
+        width: 800px;
+        .isPay {
+          font-size: 15px;
+          font-weight: bold;
+          transform: translateX(-5px);
+        }
+        .isGoods {
+          font-size: 12px;
+          color: #888888;
+        }
+        .isShipping {
+          font-size: 12px;
+          color: #888888;
+        }
+        margin-top: -50px;
+
+        .userPoint {
+          font-size: 17px;
+          font-weight: bold;
+          color: #4b4b4b;
+          position: absolute;
+          transform: translateY(30px);
+        }
+        .npointBox {
+          padding-left: 70px;
+        }
+        .nPoint {
+          line-height: 3;
+        }
+        .xPoint {
+          line-height: 3;
+        }
+        .nPaypoint {
+          line-height: 5;
+        }
+        .centerMent {
+          font-size: 13px;
+          color: #4b4b4b;
+          width: 300px;
+          padding-left: 70px;
+          margin-top: 100px;
+
+          .nPoint {
+            button {
+              transform: translate(385px, 0px);
+              background-color: white;
+              border: 1px solid #d0d0d0;
+              color: #777777;
+            }
+          }
+
+          .borderLine {
+            border-bottom: 1px solid #d0d0d0;
+            width: 280px;
+            margin-left: 100px;
+            transform: translate(15px, -12px);
+          }
+          .userTrans {
+            transform: translate(347px, 0);
+            background-color: #fff;
+            border: 1px solid #d0d0d0;
+            color: #b2b2b2;
+          }
+        }
+        .userPayment {
+          font-size: 13px;
+          color: #4b4;
+          padding-left: 40px;
+          position: absolute;
+          transform: translateY(50px);
+        }
+        .rightDetail {
+          position: absolute;
+          transform: translateX(780px);
+          line-height: 2;
+          width: 200px;
+          height: 200px;
+          .lastPayment {
+            font-weight: bold;
+          }
+          .rightLine {
+            border: 1px solid #d0d0d0;
+          }
+          .payPay {
+            width: 100px;
+            position: absolute;
+            transform: translate(130px, -130px);
+
+            .payOrder {
+              transform: translate(2px, 20px);
+              font-weight: bold;
+            }
+            .payGoods {
+              transform: translate(20px, 15px);
+              font-size: 12px;
+              color: #888888;
+            }
+            .payShipping {
+              transform: translate(50px, 15px);
+              font-size: 12px;
+              color: #888888;
+            }
+            .payLast {
+              font-size: 15px;
+              font-weight: bold;
+              transform: translate(10px, 20px);
+            }
+          }
+          .payDetail {
+            font-weight: bold;
+            font-size: 25px;
+            line-height: 3;
+          }
+        }
+      }
+    }
+
+    .pointAccumulateBox {
+      width: 1100px;
+      height: 137px;
+      padding-left: 50px;
+      border-top: 1px dashed #e2e2e2;
+      border-right: 1px solid #e2e2e2;
+      border-top-left-radius: 25px 15px;
+      border-top-right-radius: 25px 15px;
+      border-left: 1px solid #e2e2e2;
+      border-bottom: 1px solid #e2e2e2;
+      .pointAccumulate {
+        border: 1px solid #07ba5b;
+        background-color: #1ec800;
+        color: white;
+        width: 220px;
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        margin-left: 350px;
+        margin-top: 30px;
+        font-size: 25px;
+        line-height: 3;
+        outline-style: none;
+      }
+    }
+  }
+}
