@@ -30,12 +30,12 @@ export class Main extends Component {
         this.setState({ banner: data });
       });
 
-    fetch("Data/ProductsData.json", {
+    fetch("http://10.58.6.21:8000/product/main-product", {
       method: "GET",
     })
       .then(res => res.json())
       .then(data => {
-        this.setState({ products: data });
+        this.setState({ products: data.productList });
       });
   }
 

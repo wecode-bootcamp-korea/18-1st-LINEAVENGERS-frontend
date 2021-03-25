@@ -1,0 +1,52 @@
+.selectItem {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #c7c7c7;
+  margin-top: 15px;
+  padding-bottom: 15px;
+
+  .selectTitle {
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
+
+  .selectInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .countControl {
+      display: flex;
+      width: 120px;
+      height: 34px;
+      border: 1px solid #dee0e1;
+
+      button {
+        width: calc(100% / 3);
+        height: 100%;
+        padding: 0;
+        border: none;
+        background: #f1f2f4;
+        cursor: pointer;
+        svg {
+          font-size: 11px;
+          color: #555555;
+        }
+      }
+      input {
+        width: 45px;
+        padding: 0;
+        border: none;
+        text-align: center;
+      }
+    }
+
+    .priceInfo {
+      svg {
+        color: #555;
+        margin-left: 5px;
+        cursor: pointer;
+      }
+    }
+  }
+}

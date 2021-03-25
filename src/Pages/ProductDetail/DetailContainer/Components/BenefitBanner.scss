@@ -1,0 +1,79 @@
+.benefitBanner {
+  .benefitTitle {
+    margin: 50px 0 10px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .benefitList {
+    display: flex;
+    border: 1px solid #e6e9e8;
+    background: #fafafa;
+
+    li {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 25%;
+      text-align: center;
+      font-size: 12px;
+      padding: 30px 0;
+
+      p {
+        margin: 5px 0;
+        color: #555555;
+      }
+
+      span {
+        display: inline-flex;
+        align-items: center;
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 8px;
+
+        em {
+          display: inline-block;
+          width: 24px;
+          height: 24px;
+          margin-right: 5px;
+          border-radius: 50%;
+          font-size: 14px;
+          line-height: 25px;
+          color: #fff;
+        }
+      }
+      &:nth-child(1) {
+        span {
+          color: #7e34b1;
+        }
+        em {
+          background: #7e34b1;
+        }
+      }
+      &:nth-child(2) {
+        span {
+          color: #e22f32;
+        }
+        em {
+          background: #e22f32;
+        }
+      }
+      &:nth-child(3) {
+        span {
+          color: #ba923e;
+        }
+        em {
+          background: #ba923e;
+        }
+      }
+      &:nth-child(4) {
+        span {
+          color: #787a80;
+        }
+        em {
+          background: #787a80;
+        }
+      }
+    }
+  }
+}
