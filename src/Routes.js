@@ -3,11 +3,11 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Signup from "./Pages/Signup/Signup";
 import Payment from "./Pages/Payment/Payment";
 import Main from "./Pages/Main/Main";
+import Login from "./Pages/Login/Login";
 import ShoppingBasket from "./Pages/MyPage/ShoppingBasket/ShoppingBasket";
 import MyPageHeart from "./Pages/MyPage/MyPageHeart";
 import Modal from "./Pages/MyPage/Modal";
 import MyPage from "./Pages/MyPage/MyPage";
-import Login from "./Pages/Login/Login";
 
 class Routes extends React.Component {
   render() {
