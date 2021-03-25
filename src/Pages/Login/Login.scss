@@ -92,5 +92,15 @@
         color: #4abf6a;
       }
     }
+    .joinContents {
+      display: flex;
+      justify-content: flex-end;
+      transform: translate(-8px, -22px);
+      a {
+        text-decoration: none;
+        font-size: 16px;
+        color: #333333;
+      }
+    }
   }
 }
