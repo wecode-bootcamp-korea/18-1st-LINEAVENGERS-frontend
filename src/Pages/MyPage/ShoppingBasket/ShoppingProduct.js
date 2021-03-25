@@ -18,30 +18,38 @@ class ShoppingProduct extends React.Component {
   }
 
   componentDidMount() {
-    fetch("/Data/ShoppingBasket.json")
+    fetch("http://10.58.1.71:8000/order", {
+      headers: {
+        Authorization:
+          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.uRvhx0YRxMc6bT8xlDbEw3lNaEpuPH0B1OShVoJGahw",
+      },
+    })
       .then(res => res.json())
       .then(res => {
         let totalSum = 0;
         let delivery = 0;
         let discount = 0;
         let userId = "";
-        res.forEach(
+        res.result.forEach(
           data =>
             (totalSum +=
               (data.discount === 0
                 ? data.price
-                : data.price - (data.discount / 100) * data.price) * data.size)
+                : data.price - (data.discount / 100) * data.price) *
+              data.quantity)
         );
-        const result = res.map(el => {
-          if (el.deliveryPrice === "무료") {
-            el.deliveryPrice = 0;
+        const result = res.result.map(el => {
+          if (el.deliveryprice === "무료") {
+            el.deliveryprice = 0;
           }
-          return el.deliveryPrice;
+          return el.deliveryprice;
         });
         delivery = result.reduce((acc, cur) => acc + cur);
-        res.forEach(data => (discount += (data.discount / 100) * data.price));
+        res.result.forEach(
+          data => (discount += (data.discount / 100) * data.price)
+        );
         this.setState({
-          productList: res,
+          productList: res.result,
           totalPrice: totalSum,
           deliveryPrice: delivery,
           discountPrice: discount,
@@ -74,6 +82,7 @@ class ShoppingProduct extends React.Component {
   };
 
   render() {
+    console.log(this.state.productList);
     const deliveryStat = this.state.deliveryPrice >= 3000 ? 0 : 3000;
     return this.state.productList.length === 0 ? (
       <ShoppingNone />
@@ -89,13 +98,13 @@ class ShoppingProduct extends React.Component {
           return (
             <ShoppingProductList
               id={product.id}
-              img={product.img}
+              img={product.image}
               name={product.name}
               price={product.price}
               discount={product.discount}
-              size={product.size}
+              quantity={product.quantity}
               totalPrice={product.totalPrice}
-              deliveryPrice={product.deliveryPrice}
+              deliveryPrice={product.deliveryprice}
               handleClick={this.removeProduct}
             />
           );

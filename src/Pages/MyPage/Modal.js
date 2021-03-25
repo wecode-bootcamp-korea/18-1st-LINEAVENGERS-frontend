@@ -60,6 +60,7 @@ class Popup extends React.Component {
         content: this.state.comment,
       }),
     });
+    window.close();
   };
 
   render() {

@@ -3,10 +3,10 @@ import "./ShoppingBasket.scss";
 
 class ShoppingProductList extends React.Component {
   render() {
-    const { id, img, name, size, price, discount } = this.props;
+    const { id, img, name, quantity, price, discount } = this.props;
     let { deliveryPrice } = this.props;
-    if (deliveryPrice === 0) {
-      deliveryPrice = "무료";
+    if (deliveryPrice === "무료") {
+      deliveryPrice = 0;
     }
 
     return (
@@ -40,11 +40,16 @@ class ShoppingProductList extends React.Component {
           </button>
         </div>
         <div className="shoppingProductListOption">
-          <div className="shoppingProductListOptionSize">사이즈 : {size}개</div>
+          <div className="shoppingProductListOptionSize">
+            사이즈 : {quantity}개
+          </div>
         </div>
         <div className="shoppingProductListPrice">
           <div className="shoppingProductListPriceIndividual">
-            {size * discount === 0 ? price : price - (discount / 100) * price}원
+            {quantity * discount === 0
+              ? price
+              : (price - (discount / 100) * price) * quantity}
+            원
           </div>
           <button
             className="shoppingProductListPriceOrder"

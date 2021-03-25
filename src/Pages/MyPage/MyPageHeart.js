@@ -14,14 +14,14 @@ class MyPageHeart extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://10.58.1.71:8000/mypage/favorite", {
+    fetch("http://10.58.6.21:8000/mypage/favorite", {
       headers: {
         Authorization:
-          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.uRvhx0YRxMc6bT8xlDbEw3lNaEpuPH0B1OShVoJGahw",
+          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.TGXxK_c43ROKMfF_QPUWar7uWlzhYZaCCVyudlpHMKg",
       },
     })
       .then(res => res.json())
-      .then(res => this.setState({ productList: res }));
+      .then(res => this.setState({ productList: res.result }));
   }
 
   render() {
