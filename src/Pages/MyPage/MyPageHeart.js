@@ -3,6 +3,7 @@ import MyPageNav from "./MyPageNav";
 import MyPageAside from "./MyPageAside";
 import MyPageNone from "./MyPageNone";
 import MyPageHeartProduct from "./MyPageHeartProduct";
+import { URL } from "../../config";
 import "./MyPage.scss";
 
 class MyPageHeart extends React.Component {
@@ -14,7 +15,7 @@ class MyPageHeart extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://10.58.6.21:8000/mypage/favorite", {
+    fetch(`${URL}/mypage/favorite`, {
       headers: {
         Authorization:
           "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.TGXxK_c43ROKMfF_QPUWar7uWlzhYZaCCVyudlpHMKg",

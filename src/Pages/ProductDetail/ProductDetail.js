@@ -7,9 +7,9 @@ import ReviewContainer from "./ReviewContainer/ReviewContainer";
 import QAContainer from "./QAContainer/QAContainer";
 import TopMenu from "./TopMenu/TopMenu";
 import RefundContainer from "./RefundContainer/RefundContainer";
+import PageLoad from "../../Components/PageLoad/PageLoad";
 import { URL } from "../../config";
 import "./ProductDetail.scss";
-import PageLoad from "../../Components/PageLoad/PageLoad";
 
 class ProductDetail extends Component {
   constructor(props) {
