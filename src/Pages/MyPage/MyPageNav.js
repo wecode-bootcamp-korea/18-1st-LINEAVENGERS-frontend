@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 class MyPageNav extends React.Component {
-  myPageNav = () => {
-    const name = [
+  render() {
+    const names = [
       "결제내역",
       "포인트",
       "송금",
@@ -12,14 +12,19 @@ class MyPageNav extends React.Component {
       "문의 * 리뷰",
     ];
 
-    const nameList = name.map(name => (
-      <li className="myPageNavBottomRightTotal">{name}</li>
-    ));
-
-    return <ul className="myPageNavBottomRight">{nameList}</ul>;
-  };
-
-  render() {
+    const links = [
+      { page: "/MyPage", class: "myPageNavTopRightMy", text: "마이 페이지" },
+      {
+        page: "/MyPageHeart",
+        class: "myPageNavTopRightHeart",
+        text: "찜 상품",
+      },
+      {
+        page: "/ShoppingBasket",
+        class: "myPageNavTopRightBasket",
+        text: "장바구니",
+      },
+    ];
     return (
       <nav className="myPageNav">
         <div className="myPageNavTop">
@@ -28,37 +33,29 @@ class MyPageNav extends React.Component {
             <span>Avengers Shopping</span>
           </div>
           <div className="myPageNavTopRight">
-            <div class="myPageNavTopRightMy">
-              <Link
-                to="/MyPage"
-                style={{ textDecoration: "none", color: "white" }}
-              >
-                마이 페이지
-              </Link>
-            </div>
-            <div class="myPageNavTopRightHeart">
-              <Link
-                to="/MyPageHeart"
-                style={{ textDecoration: "none", color: "white" }}
-              >
-                찜 상품
-              </Link>
-            </div>
-            <div className="myPageNavTopRightBasket">
-              <Link
-                to="/ShoppingBasket"
-                style={{ textDecoration: "none", color: "white" }}
-              >
-                장바구니
-              </Link>
-            </div>
+            {links.map(e => {
+              return (
+                <div class={e.class}>
+                  <Link
+                    to={e.page}
+                    style={{ textDecoration: "none", color: "white" }}
+                  >
+                    {e.text}
+                  </Link>
+                </div>
+              );
+            })}
           </div>
         </div>
         <div className="myPageNavBottom">
           <div className="myPageNavBottomLeft">
             <div>Line Pay</div>
           </div>
-          {this.myPageNav()}
+          <ul className="myPageNavBottomRight">
+            {names.map(name => (
+              <li className="myPageNavBottomRightTotal">{name}</li>
+            ))}
+          </ul>
         </div>
       </nav>
     );

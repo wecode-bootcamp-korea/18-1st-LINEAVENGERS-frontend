@@ -25,7 +25,6 @@ class MyPageHeart extends React.Component {
   }
 
   render() {
-    console.log(this.state.productList);
     return (
       <div className="myPage">
         <MyPageNav />

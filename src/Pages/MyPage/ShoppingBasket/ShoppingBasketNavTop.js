@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./ShoppingBasket.scss";
 
 class ShoppingBasketNavTop extends React.Component {
-  navBar = () => {
+  render() {
     const names = [
       "결제내역",
       "포인트",
@@ -12,14 +12,6 @@ class ShoppingBasketNavTop extends React.Component {
       "혜택 * 쿠폰",
       "문의 * 리뷰",
     ];
-    const nameList = names.map(name => (
-      <li className="myPageNavBottomRightList">{name}</li>
-    ));
-
-    return <ul className="myPageNavBottomRight">{nameList}</ul>;
-  };
-
-  render() {
     return (
       <nav className="myPageNav">
         <div className="myPageNavTop">
@@ -43,7 +35,11 @@ class ShoppingBasketNavTop extends React.Component {
           <div className="myPageNavBottomLeft">
             <div>장바구니</div>
           </div>
-          {this.navBar()}
+          <ul className="myPageNavBottomRight">
+            {names.map(name => (
+              <li className="myPageNavBottomRightList">{name}</li>
+            ))}
+          </ul>
         </div>
       </nav>
     );

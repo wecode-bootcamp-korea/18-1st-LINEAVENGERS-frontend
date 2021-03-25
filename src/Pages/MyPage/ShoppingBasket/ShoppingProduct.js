@@ -82,7 +82,6 @@ class ShoppingProduct extends React.Component {
   };
 
   render() {
-    console.log(this.state.productList);
     const deliveryStat = this.state.deliveryPrice >= 3000 ? 0 : 3000;
     return this.state.productList.length === 0 ? (
       <ShoppingNone />
