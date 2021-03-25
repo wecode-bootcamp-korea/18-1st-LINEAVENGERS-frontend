@@ -1,10 +1,4 @@
 import React, { Component } from "react";
-<<<<<<< HEAD
-
-class Main extends Component {
-  render() {
-    return <div></div>;
-=======
 import Header from "../../Components/Header/Header";
 import Footer from "../../Components/Footer/Footer";
 import SlickBanner from "./SlickBanner/SlickBanner";
@@ -60,7 +54,6 @@ export class Main extends Component {
         <Footer />
       </div>
     );
->>>>>>> 1e4249f1f092db91322c119857a874f12450e8a6
   }
 }
 
