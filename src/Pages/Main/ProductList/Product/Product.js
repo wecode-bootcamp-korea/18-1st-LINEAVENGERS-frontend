@@ -17,12 +17,10 @@ export class Product extends Component {
       favorite: !this.state.favorite,
     });
 
-    fetch("http://10.58.1.71:8000/mypage/favoritecreate", {
+    fetch("http://10.58.1.71:8000/mypage/favorite", {
       method: "POST",
       body: JSON.stringify({
-        user: 1,
-        product: this.props.productId,
-        favorite: this.state.favorite,
+        product: this.props.product,
       }),
     })
       .then(res => res.json())
@@ -35,7 +33,7 @@ export class Product extends Component {
 
   render() {
     console.log("this.state.favorite >>>", this.state.favorite);
-    console.log("this.props.favorite >>>", this.props.favorite);
+    console.log("this.props >>>", this.props);
 
     const { favorite } = this.state;
     const { img, price, productName } = this.props;
