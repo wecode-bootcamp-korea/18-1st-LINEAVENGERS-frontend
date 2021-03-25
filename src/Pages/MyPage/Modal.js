@@ -1,6 +1,7 @@
 import React from "react";
-import "./Modal.scss";
 import { FaStar } from "react-icons/fa";
+import { URL } from "../../config";
+import "./Modal.scss";
 
 class Popup extends React.Component {
   constructor() {
@@ -52,7 +53,7 @@ class Popup extends React.Component {
   };
 
   registerReview = () => {
-    fetch("http://10.58.1.71:8000/mypage/review", {
+    fetch(`${URL}/order/review`, {
       method: "post",
       body: JSON.stringify({
         product: window.myId,

@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
-import { faPlus, faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
+import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
+import { URL } from "../../../../config";
 import "./ListItem.scss";
 
 class ListItem extends Component {
@@ -11,7 +12,7 @@ class ListItem extends Component {
 
   handleFavorite = async (e, id) => {
     let message = "";
-    await fetch("http://10.58.1.71:8000/mypage/favorite", {
+    await fetch(`${URL}/mypage/favorite`, {
       method: "POST",
       body: JSON.stringify({
         product: id,
