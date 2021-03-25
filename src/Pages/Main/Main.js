@@ -1,4 +1,10 @@
 import React, { Component } from "react";
+<<<<<<< HEAD
+
+export class Main extends Component {
+  render() {
+    return <div></div>;
+=======
 import Header from "../../Components/Header/Header";
 import Footer from "../../Components/Footer/Footer";
 import SlickBanner from "./SlickBanner/SlickBanner";
@@ -24,12 +30,12 @@ export class Main extends Component {
         this.setState({ banner: data });
       });
 
-    fetch("Data/ProductsData.json", {
+    fetch("http://10.58.6.21:8000/product/main-product", {
       method: "GET",
     })
       .then(res => res.json())
       .then(data => {
-        this.setState({ products: data });
+        this.setState({ products: data.productList });
       });
   }
 
@@ -54,6 +60,7 @@ export class Main extends Component {
         <Footer />
       </div>
     );
+>>>>>>> c4793716f6417af3e0319328e0c6423256d2d9f2
   }
 }
 

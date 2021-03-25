@@ -11,10 +11,11 @@ export class ProductList extends Component {
             <Product
               key={productObj.productId}
               id={productObj.productId}
-              price={productObj.price}
+              price={productObj.price.normal}
               productName={productObj.productName}
               img={productObj.thumbnailUrl}
               favorite={productObj.favorite}
+              type={productObj.type}
             />
           );
         })}

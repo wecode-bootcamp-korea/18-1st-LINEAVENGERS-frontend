@@ -26,58 +26,77 @@ class ShoppingProduct extends React.Component {
     })
       .then(res => res.json())
       .then(res => {
-        let totalSum = 0;
-        let delivery = 0;
-        let discount = 0;
-        let userId = "";
-        res.result.forEach(
-          data =>
-            (totalSum +=
-              (data.discount === 0
-                ? data.price
-                : data.price - (data.discount / 100) * data.price) *
-              data.quantity)
-        );
-        const result = res.result.map(el => {
-          if (el.deliveryprice === "무료") {
-            el.deliveryprice = 0;
-          }
-          return el.deliveryprice;
-        });
-        delivery = result.reduce((acc, cur) => acc + cur);
-        res.result.forEach(
-          data => (discount += (data.discount / 100) * data.price)
-        );
-        this.setState({
-          productList: res.result,
-          totalPrice: totalSum,
-          deliveryPrice: delivery,
-          discountPrice: discount,
-          userId: userId,
-        });
+        res.result.length !== 0 && this.getTotalPrice(res);
       });
   }
 
+  getTotalPrice = res => {
+    let totalSum = 0;
+    let delivery = 0;
+    let discount = 0;
+    let userId = "";
+    res.result.forEach(
+      data =>
+        (totalSum +=
+          (data.discount === 0
+            ? data.price
+            : data.price - (data.discount / 100) * data.price) * data.quantity)
+    );
+    const result = res.result.map(el => {
+      if (el.deliveryprice === "무료") {
+        el.deliveryprice = 0;
+      }
+      return el.deliveryprice;
+    });
+    delivery = result.reduce((acc, cur) => acc + cur);
+    res.result.forEach(
+      data => (discount += (data.discount / 100) * data.price)
+    );
+    this.setState({
+      productList: res.result,
+      totalPrice: totalSum,
+      deliveryPrice: delivery,
+      discountPrice: discount,
+      userId: userId,
+    });
+  };
+
   goToMyPage = () => {
-    fetch("api주소", {
+    fetch("http://10.58.1.71:8000/order", {
+      headers: {
+        Authorization:
+          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.uRvhx0YRxMc6bT8xlDbEw3lNaEpuPH0B1OShVoJGahw",
+      },
       method: "post",
       body: JSON.stringify({
-        userId: this.state.productList.id,
+        userId: this.state.productList.product_id,
         quantity: this.state.productList,
       }),
     });
   };
 
-  removeProduct = e => {
-    this.setState({
-      productList: this.state.productList.filter(el => el.id != e.target.value),
-    });
+  removeProduct = async (e, index) => {
+    const target = this.state.productList[index].prodcut_id;
+    console.log(index);
+    console.log(this.state.productList[index].product_id);
 
-    fetch("api주소", {
+    await fetch("http://10.58.1.71:8000/order", {
+      headers: {
+        Authorization:
+          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.uRvhx0YRxMc6bT8xlDbEw3lNaEpuPH0B1OShVoJGahw",
+      },
       method: "POST",
       body: JSON.stringify({
-        userId: this.state.productList.id,
+        product_id: target.product_id,
       }),
+    })
+      .then(res => res.json())
+      .then(res => console.log(res));
+
+    this.setState({
+      productList: this.state.productList.filter(
+        el => el.product_id != e.target.value
+      ),
     });
   };
 
@@ -93,10 +112,10 @@ class ShoppingProduct extends React.Component {
           <div className="price">상품금액</div>
           <div className="delivery">배송비</div>
         </div>
-        {this.state.productList.map(product => {
+        {this.state.productList.map((product, index) => {
           return (
             <ShoppingProductList
-              id={product.id}
+              id={product.product_id}
               img={product.image}
               name={product.name}
               price={product.price}
@@ -104,7 +123,9 @@ class ShoppingProduct extends React.Component {
               quantity={product.quantity}
               totalPrice={product.totalPrice}
               deliveryPrice={product.deliveryprice}
-              handleClick={this.removeProduct}
+              handleClick={e => {
+                this.removeProduct(e, index);
+              }}
             />
           );
         })}

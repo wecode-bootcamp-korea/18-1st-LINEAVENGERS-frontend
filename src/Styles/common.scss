@@ -2,6 +2,9 @@ $theme-color: #4abf6a;
 
 * {
   box-sizing: border-box;
+<<<<<<< HEAD
+  font-family: 'Nanum Gothic', sans-serif;
+=======
   font-family: "Nanum Gothic", sans-serif;
 
   %flex-center {
@@ -9,4 +12,5 @@ $theme-color: #4abf6a;
     justify-content: center;
     align-items: center;
   }
+>>>>>>> c4793716f6417af3e0319328e0c6423256d2d9f2
 }

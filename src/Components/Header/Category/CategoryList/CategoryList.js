@@ -11,12 +11,26 @@ export class CategoryList extends Component {
         {itsCategoryList.map(menuObj => {
           return (
             <div className="categoryMenu">
-              <span className="categoryText">{menuObj.menuName}</span>
+              <Link
+                className="categoryMenuLink"
+                to={{
+                  pathname: `/product?menu=${menuObj.menuId}`,
+                  state: { categoryData: this.props.itsCategoryList },
+                }}
+              >
+                <span className="categoryText">{menuObj.menuName}</span>
+              </Link>
 
               {menuObj.categoryList.length > 0 && (
                 <div className="subMenuList">
                   {menuObj.categoryList.map(subMenuObj => (
-                    <Link to="/productDetail" className="subMenu">
+                    <Link
+                      to={{
+                        pathname: `/product?menu=${menuObj.menuId}&category=${subMenuObj.categoryId}`,
+                        state: { categoryData: this.props.itsCategoryList },
+                      }}
+                      className="subMenuLink"
+                    >
                       {subMenuObj.categoryName}
                     </Link>
                   ))}
