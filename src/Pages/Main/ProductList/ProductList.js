@@ -15,6 +15,7 @@ export class ProductList extends Component {
               productName={productObj.productName}
               img={productObj.thumbnailUrl}
               favorite={productObj.favorite}
+              type={productObj.type}
             />
           );
         })}

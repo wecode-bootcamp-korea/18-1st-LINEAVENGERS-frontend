@@ -40,17 +40,19 @@ export class Product extends Component {
   };
 
   render() {
-    // console.log("this.state.favorite >>>", this.state.favorite);
-    // console.log("this.props.favorite >>>", this.props.favorite);
-
     const { favorite } = this.state;
-    const { img, price, productName } = this.props;
+    const { img, price, productName, type } = this.props;
     return (
       <div className="productContainer">
         <div className="productImgContainer">
           <Link to="/product/detail">
             <img className="productImg" src={img} alt="Product Img" />
           </Link>
+          <div className="typeBox">
+            {type === "NEW" ? <div className="itsNew">NEW</div> : null}
+            {type === "BEST" ? <div className="itsBest">BEST</div> : null}
+          </div>
+
           <div className="iconsContainer">
             <div className="heartAndShoppingBag">
               <button
