@@ -1,8 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "../src/Pages/Login/Login";
-import MyPage from "../src/Pages/MyPage/MyPage";
+import Signup from "./Pages/Signup/Signup";
+import Payment from "./Pages/Payment/Payment";
 import Main from "../src/Pages/Main/Main";
+import MyPage from "../src/Pages/MyPage/MyPage";
 import Product from "../src/Pages/Product/Product";
 import ProductDetail from "./Pages/ProductDetail/ProductDetail";
 import QAModal from "./Pages/ProductDetail/QAContainer/QAModal/QAModal";
@@ -13,6 +15,8 @@ class Routes extends React.Component {
       <Router>
         <Switch>
           <Route exact path="/login" component={Login} />
+          <Route exact path="/Signup" component={Signup} />
+          <Route exact path="/Payment" component={Payment} />
           <Route exact path="/main" component={Main} />
           <Route exact path="/mypage" component={MyPage} />
           <Route exact path="/product" component={Product} />
