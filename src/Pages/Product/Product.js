@@ -3,6 +3,7 @@ import Content from "./Content/Content";
 import ProductList from "./ProductList/ProductList";
 import PageLoad from "../../Components/PageLoad/PageLoad";
 import { withRouter } from "react-router-dom";
+import { URL } from "../../config";
 import "./Product.scss";
 
 export class Product extends Component {
@@ -19,8 +20,21 @@ export class Product extends Component {
     categoryData: [],
   };
 
+  moveToProduct = (e, id) => {
+    const { className } = e.target;
+    if (
+      className === "choiceLike" ||
+      className === "choiceDetail" ||
+      className.includes("titleHeart")
+    )
+      return;
+    else {
+      this.props.history.push(`/product/detail/${id}`);
+    }
+  };
+
   initialCategroyData = () => {
-    fetch("http://f26178ab78f6.ngrok.io/product/main-category")
+    fetch(`${URL}/product/main-category`)
       .then(res => res.json())
       .then(res => {
         this.setState({
@@ -30,7 +44,7 @@ export class Product extends Component {
   };
 
   initialProductData = () => {
-    fetch(`http://f26178ab78f6.ngrok.io/product${this.props.location.search}`)
+    fetch(`${URL}/product${this.props.location.search}`)
       .then(res => {
         return res.json();
       })
@@ -47,52 +61,39 @@ export class Product extends Component {
 
   initialSort = () => {
     const { productData } = this.state;
-
-    return productData.sort((a, b) => {
-      if (a.price.sale && b.price.sale) {
-        return (
-          a.price.normal -
-          (a.price.normal * a.price.sale) / 100 -
-          (b.price.normal - (b.price.normal * b.price.sale) / 100)
-        );
-      } else if (a.price.sale) {
-        return (
-          a.price.normal -
-          (a.price.normal * a.price.sale) / 100 -
-          b.price.normal
-        );
-      } else if (b.price.sale) {
-        return (
-          a.price.normal -
-          (b.price.normal - (b.price.normal * b.price.sale) / 100)
-        );
-      } else {
-        return a.price.normal - b.price.normal;
-      }
-    });
+    return productData.sort(
+      (a, b) =>
+        a.price.normal -
+        (a.price.normal * a.price.sale) / 100 -
+        (b.price.normal - (b.price.normal * b.price.sale) / 100)
+    );
   };
 
   handleSort = (e, id) => {
     const { productData } = this.state;
-    const sortDataType = [
-      {
-        type: productData
-          .filter(data => data.type === "TOP")
-          .concat(productData.filter(data => data.type === "BEST"))
-          .concat(productData.filter(data => data.type === "NEW"))
-          .concat(productData.filter(data => data.type === "NORMAL")),
-      },
-      { type: this.initialSort() },
-      {
-        type: productData.sort(
-          (a, b) => new Date(a.createDate) - new Date(b.createDate)
-        ),
-      },
-      { type: productData.sort((a, b) => b.review - a.review) },
-      { type: productData.sort((a, b) => b.grade - a.grade) },
-    ];
     this.setState({
-      productData: sortDataType[id].type,
+      productData:
+        id === 0
+          ? productData
+              .filter(data => data.type === "TOP")
+              .concat(productData.filter(data => data.type === "BEST"))
+              .concat(productData.filter(data => data.type === "NEW"))
+              .concat(productData.filter(data => data.type === "NORMAL"))
+          : id === 1
+          ? productData.sort(
+              (a, b) =>
+                a.price.normal -
+                (a.price.normal * a.price.sale) / 100 -
+                b.price.normal -
+                (b.price.normal * b.price.sale) / 100
+            )
+          : id === 2
+          ? productData.sort(
+              (a, b) => new Date(a.createDate) - new Date(b.createDate)
+            )
+          : id === 3
+          ? productData.sort((a, b) => b.review - a.review)
+          : productData.sort((a, b) => b.grade - a.grade),
     });
   };
 
@@ -126,7 +127,6 @@ export class Product extends Component {
     });
   };
 
-  // 카테고리 변경 시 fetch 추가될 부분
   handleCategory = (e, idList) => {
     const query =
       idList.length === 1
@@ -205,6 +205,7 @@ export class Product extends Component {
               page={page}
               pageOffset={pageOffset}
               handlePage={this.handlePage}
+              moveToProduct={this.moveToProduct}
             />
           </div>
         )}

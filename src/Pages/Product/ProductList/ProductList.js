@@ -4,7 +4,14 @@ import "./ProductList.scss";
 
 class ProductList extends Component {
   render() {
-    const { data, gridType, page, pageOffset, handlePage } = this.props;
+    const {
+      data,
+      gridType,
+      page,
+      pageOffset,
+      handlePage,
+      moveToProduct,
+    } = this.props;
     const pageList = new Array(page).fill(0);
     const gridTypeList = [
       { type: "typeOne" },
@@ -22,7 +29,11 @@ class ProductList extends Component {
         <div className="list-wrap">
           <ul className={`list-box ${gridTypeList[gridType].type}`}>
             {data.map(data => (
-              <ListItem key={data.productId} data={data} />
+              <ListItem
+                key={data.productId}
+                data={data}
+                moveToProduct={moveToProduct}
+              />
             ))}
           </ul>
           <ul className="page-box">

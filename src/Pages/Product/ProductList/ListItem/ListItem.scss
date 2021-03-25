@@ -79,22 +79,24 @@
       opacity: 0;
       transform: translate(-50%, -50%);
       transition: ease-in-out 0.3s;
-
-      svg {
+      button {
         width: 50px;
         height: 50px;
         padding: 15px;
         margin: 0 5px;
         background: #fff;
         border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        svg {
+          pointer-events: none;
+        }
       }
 
       &.checked {
-        svg {
-          &:first-of-type {
-            background: #f54c4a;
-            color: #fff;
-          }
+        .choiceLike {
+          background: #f54c4a;
+          color: #fff;
         }
       }
     }
@@ -128,6 +130,9 @@
 
       &.checked {
         color: #f54c4a;
+      }
+      svg {
+        pointer-events: none;
       }
     }
   }

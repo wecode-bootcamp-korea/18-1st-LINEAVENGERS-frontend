@@ -35,7 +35,6 @@ class CategorySelect extends Component {
               key={tabIndex === 1 ? list.id : list.categoryId}
               className="choiceList"
               onClick={e => {
-                console.log(tabIndex, menuId, list.categoryId);
                 handleTab(e, tabIndex);
                 handleCategory(
                   e,
