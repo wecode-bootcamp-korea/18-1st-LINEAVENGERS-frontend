@@ -1,0 +1,428 @@
+.myPageNav {
+  height: 120px;
+  background-color: rgb(76, 194, 76);
+  color: white;
+
+  .myPageNavTop {
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    padding-top: 10px;
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgb(156, 152, 152);
+
+    .leftLine {
+      margin-right: 15px;
+    }
+
+    .topRight {
+      display: flex;
+
+      .topRightMyPage {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .myPageNavBottom {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+    padding-left: 150px;
+    padding-right: 150px;
+
+    .myPageNavBottomLeft {
+      font-size: 30px;
+    }
+
+    .myPageNavBottomRight {
+      display: flex;
+      font-size: 20px;
+
+      .myPageNavBottomRightList {
+        margin-left: 40px;
+      }
+    }
+  }
+}
+
+.shoppingBasketMain {
+  width: 1130px;
+  margin-left: 145px;
+
+  .shoppingBasketNav {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    padding-top: 40px;
+
+    .topLeft {
+      display: flex;
+
+      .normalBasket {
+        font-size: 24px;
+      }
+
+      .onlyUsingshopping {
+        padding: 5px 0 0 10px;
+        color: rgb(165, 162, 162);
+        font-size: 20px;
+      }
+    }
+
+    .topRight {
+      display: flex;
+
+      .basket {
+        font-weight: bold;
+      }
+
+      .orderAndAccount,
+      .success {
+        padding-left: 10px;
+        color: rgb(165, 162, 162);
+      }
+    }
+  }
+  .navBottom {
+    padding: 10px;
+    border: 1px solid lightgray;
+    background-color: rgb(238, 235, 235);
+
+    .bottomFirst,
+    .bottomSecond,
+    .bottomThird {
+      padding: 10px;
+      font-size: 14px;
+      opacity: 0.7;
+    }
+
+    .bottomFirst {
+      color: rgb(7, 192, 7);
+    }
+  }
+
+  .shoppingBasketArticle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+
+    .shoppingBasketArticleBasket {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80px;
+      height: 80px;
+      margin-bottom: 30px;
+      border: 1px solid lightgray;
+      border-radius: 50px;
+      background-color: lightgray;
+    }
+
+    .shoppingBasketArticleNone,
+    .shoppingBasketArticlePut {
+      margin-bottom: 25px;
+    }
+
+    .shoppingBasketArticleNone {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .shoppingBasketArticlePut {
+      color: rgb(161, 159, 159);
+      font-size: 15px;
+    }
+
+    .shoppingBasketArticleContinue {
+      width: 200px;
+      height: 50px;
+      border: 1px solid lightgray;
+      background-color: white;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+
+  .shoppingProduct {
+    margin-top: 50px;
+    width: 100%;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 25px;
+    padding-bottom: 30px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid lightgray;
+    font-size: 16px;
+    font-weight: bold;
+
+    .information {
+      width: 40%;
+      text-align: center;
+    }
+
+    .option {
+      width: 20%;
+    }
+
+    .price {
+      width: 10%;
+    }
+
+    .delivery {
+      width: 10%;
+    }
+
+    .information,
+    .option,
+    .price,
+    .delivery {
+      text-align: center;
+    }
+  }
+
+  .shoppingProductList {
+    display: flex;
+    height: 130px;
+    border-bottom: 1px solid lightgray;
+
+    .shoppingProductListName {
+      display: flex;
+      width: 45%;
+      padding-top: 20px;
+      padding-left: 30px;
+      border-right: 1px solid lightgray;
+
+      .shoppingProductListBox {
+        padding-top: 40px;
+        margin-right: 20px;
+      }
+
+      .shoppingProductListNameImg {
+        width: 100px;
+        height: 100px;
+      }
+
+      .shoppingProductListNameItem {
+        margin-bottom: 10px;
+        margin-right: 40px;
+      }
+
+      .shoppingProductListNameItemsTotalPrice {
+        display: flex;
+
+        .shoppingProductListNamePrice {
+          font-size: 14px;
+        }
+
+        .shoppingProductListNameDiscount {
+          padding-left: 10px;
+          color: gray;
+          font-size: 15px;
+        }
+      }
+
+      .shoppingProductListNameItemCheck {
+        position: absolute;
+        right: 775px;
+        width: 25px;
+        border: none;
+        background-color: white;
+        color: rgb(167, 164, 164);
+        cursor: pointer;
+      }
+
+      .shoppingProductListNameItem,
+      .shoppingProductListNamePrice {
+        padding-left: 10px;
+        font-weight: bold;
+      }
+    }
+
+    .shoppingProductListOption {
+      width: 25%;
+      padding-top: 20px;
+      padding-left: 20px;
+      border-right: 1px solid lightgray;
+
+      .shoppingProductListOptionSize {
+        width: 240px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid lightgray;
+        font-size: 13px;
+      }
+    }
+
+    .shoppingProductListPrice {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 15%;
+      padding-top: 20px, 0;
+      border-right: 1px solid lightgray;
+
+      .shoppingProductListPriceIndividual {
+        font-weight: bolder;
+        font-size: 15px;
+      }
+
+      .shoppingProductListPriceOrder {
+        width: 60px;
+        height: 30px;
+        margin-top: 10px;
+        border: 0;
+        border-radius: 5px;
+        color: white;
+        background-color: #00c63a;
+        font-size: 12px;
+        font-weight: bold;
+      }
+    }
+
+    .shoppingProductListDelivery {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 15%;
+      padding-top: 20px 0;
+
+      .shoppingProductListDeliveryMoney {
+        text-align: center;
+        font-size: 15px;
+      }
+    }
+  }
+  .shoppingProductListTotal {
+    display: flex;
+    height: 120px;
+    margin: 50px 0;
+    border-top: 1px solid #9ca0aa;
+    border-bottom: 1px solid #9ca0aa;
+
+    .totalLeft {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      margin: 20px 0;
+      border-right: 1px solid lightgray;
+
+      .totalLeftL {
+        display: flex;
+        padding-right: 20px;
+        font-size: 13px;
+
+        .totalLeftPrice {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .totalAmountPrice {
+            padding-top: 2px;
+            margin-bottom: 10px;
+          }
+
+          .totalPrice {
+            padding-left: 2px;
+            font-size: 23px;
+          }
+        }
+
+        .totalLeftPlus {
+          padding: 15px 0 15px 17px;
+        }
+      }
+
+      .totalLeftR {
+        display: flex;
+        flex-direction: column;
+
+        .totalLeftRDelivery {
+          text-align: center;
+          font-size: 13px;
+        }
+
+        .totalLeftRPrice {
+          padding-top: 10px;
+          font-size: 23px;
+        }
+      }
+
+      .totalLeftMinus {
+        padding: 15px 15px 15px 17px;
+      }
+
+      .totalLeftDiscount {
+        text-align: center;
+        font-size: 13px;
+      }
+
+      .totalLeftDiscountPrice {
+        padding-top: 10px;
+        color: red;
+        font-size: 23px;
+      }
+    }
+
+    .totalRight {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .totalRightR {
+        display: flex;
+        align-items: center;
+        height: 50px;
+
+        .totalPrice {
+          font-size: 19px;
+          margin-right: 10px;
+          padding-top: 2px;
+        }
+
+        .totalPriceInt {
+          font-size: 24px;
+          font-weight: bold;
+          color: #00c63a;
+        }
+      }
+    }
+  }
+
+  .shoppingProductButton {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+
+    .buttonL {
+      margin-right: 10px;
+
+      .left {
+        width: 200px;
+        height: 60px;
+        font-size: 17px;
+        background-color: white;
+        border: 1px solid lightgray;
+      }
+    }
+
+    .buttonR {
+      width: 200px;
+      height: 60px;
+      border: none;
+      font-size: 17px;
+      font-weight: bold;
+      color: white;
+      background-color: #00c63a;
+    }
+  }
+}

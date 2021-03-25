@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "img": "https://image.shutterstock.com/image-illustration/happy-easter-cute-hand-drawn-600w-1699883170.jpg",
+    "name": "라인프렌즈 BT21 CHIMMY BABY 파자마 백참 인형 드림오브베이비",
+    "price": 12000,
+    "size": 1,
+    "totalPrice": 12000,
+    "deliveryPrice": 3000
+  },
+  {
+    "id": 2,
+    "img": "https://image.shutterstock.com/image-photo/banner-easter-frame-eggs-feathers-260nw-1908479776.jpg",
+    "name": "라인프렌즈 BT21 KOYA BABY 부클 버블티 백참",
+    "price": 11000,
+    "size": 1,
+    "totalPrice": 11000,
+    "deliveryPrice": "무료"
+  },
+  {
+    "id": 3,
+    "img": "https://image.shutterstock.com/image-vector/happy-easter-lettering-background-realistic-260nw-1032654421.jpg",
+    "name": "라인프렌즈 BT21 유니버스 TITI 백참 인형",
+    "price": 11000,
+    "size": 2,
+    "totalPrice": 11000,
+    "deliveryPrice": 3000
+  },
+  {
+    "id": 4,
+    "img": "https://image.shutterstock.com/image-vector/happy-easter-lettering-background-realistic-260nw-1032654421.jpg",
+    "name": "Avenger",
+    "price": 33000,
+    "size": 1,
+    "totalPrice": 33000,
+    "deliveryPrice": "무료"
+  }
+]
