@@ -1,0 +1,79 @@
+.QAModalContainer {
+  .QAModalTitle {
+    padding: 15px 25px;
+    background: #353b4c;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .QAModalInner {
+    padding: 15px 25px;
+    border-bottom: 1px solid #cfcfcf;
+    textarea {
+      width: 100%;
+      padding: 20px;
+      min-height: 200px;
+      border: 1px solid #cfcfcf;
+      resize: none;
+    }
+  }
+  .secretCheckBox,
+  .alarmCheckBox {
+    display: inline-block;
+    margin-top: 15px;
+    input {
+      display: none;
+      pointer-events: none;
+    }
+    label {
+      color: #333;
+      font-size: 15px;
+      cursor: pointer;
+
+      &.checked {
+        color: #00c73c;
+        svg {
+          color: #00c73c;
+        }
+      }
+
+      svg {
+        color: #cfcfcf;
+        margin-right: 4px;
+        pointer-events: none;
+      }
+    }
+  }
+  .secretCheckBox {
+    margin-right: 15px;
+  }
+  .moreInfo {
+    padding: 15px 25px;
+    font-size: 13px;
+    color: #b1acac;
+    line-height: 15px;
+    svg {
+      margin-right: 5px;
+      color: #cfcfcf;
+    }
+  }
+  .btnWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button {
+      width: 120px;
+      height: 40px;
+      margin: 0 3px;
+      font-size: 15px;
+      border: 1px solid #c3c3c3;
+      &.cancel {
+        background: #fff;
+      }
+      &.submit {
+        background: #00c73c;
+        color: #fff;
+      }
+    }
+  }
+}

@@ -1,0 +1,143 @@
+.topMenuContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 2px solid #3a3b4e;
+  background: #fff;
+  opacity: 1;
+  visibility: hidden;
+  z-index: 3;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+  }
+
+  .topMenuInnerWrap {
+    width: 1020px;
+    margin: 0 auto;
+
+    .productMenu {
+      display: flex;
+      align-items: center;
+      position: relative;
+      margin: 15px 0;
+
+      .productInfo {
+        flex: 1;
+        margin-left: 10px;
+        font-weight: 700;
+        font-size: 14px;
+        .productPrice {
+          margin-top: 5px;
+          span {
+            &:nth-child(1) {
+              color: #6d90db;
+              font-size: 16px;
+            }
+            &:nth-child(2) {
+              color: #909090;
+              font-size: 13px;
+              font-weight: 400;
+              margin-left: 10px;
+              text-decoration: line-through;
+            }
+          }
+        }
+      }
+
+      button {
+        width: 165px;
+        height: 44px;
+        background: #3fc910;
+        border: none;
+        color: #fff;
+        font-size: 15px;
+        font-weight: 700;
+        cursor: pointer;
+
+        em {
+          padding: 3px 7px;
+          margin-right: 5px;
+          color: #3fc910;
+          background: #fff;
+          cursor: pointer;
+        }
+      }
+
+      > em {
+        display: inline-block;
+        position: relative;
+        right: -20px;
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+
+        &::after,
+        &::before {
+          content: "";
+          display: inline-block;
+          top: 0;
+          right: 0;
+          width: 1px;
+          height: 100%;
+          background: #333;
+        }
+
+        &::after {
+          transform: rotate(-45deg);
+        }
+        &::before {
+          transform: rotate(45deg);
+        }
+      }
+    }
+
+    .tabMenu {
+      display: flex;
+      margin-top: 10px;
+      li {
+        position: relative;
+        width: 25%;
+        height: 42px;
+        background: #f3f5f7;
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 42px;
+        text-align: center;
+        cursor: pointer;
+
+        &.active {
+          color: #f3f5f7;
+          background: #333;
+          &::after {
+            background: #333;
+          }
+        }
+
+        &::after {
+          content: "";
+          display: inline-block;
+          position: absolute;
+          right: 0;
+          top: 50%;
+          width: 1px;
+          height: 20px;
+          background: #dbdddf;
+          transform: translateY(-50%);
+        }
+        &:last-of-type {
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
