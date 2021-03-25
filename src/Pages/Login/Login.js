@@ -128,12 +128,16 @@ class Login extends Component {
                 로그인
               </button>
             </div>
+
             <div className="labelBox">
               <input type="checkBox" id="checkIcon" />
               <label for="checkIcon">
                 <AiFillCheckCircle />
               </label>
               <span>로그인 유지</span>
+            </div>
+            <div className="joinContents">
+              <a href="/signup">회원가입</a>
             </div>
           </div>
         </div>
