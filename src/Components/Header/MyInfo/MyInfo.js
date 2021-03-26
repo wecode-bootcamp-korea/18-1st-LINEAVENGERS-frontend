@@ -18,7 +18,7 @@ export class Myinfo extends Component {
       <div className="myInfo">
         {localStorage.access_token ? (
           <div className="iHaveToken">
-            <Link className="iHaveTokenText" to="/favoriteStore">
+            <Link className="iHaveTokenText" to="/MyPageHeart">
               <span>찜한 스토어</span>
             </Link>
             <Link className="iHaveTokenText" to="/myPage">
@@ -28,7 +28,7 @@ export class Myinfo extends Component {
               <span>장바구니</span>
             </Link>
             <div className="iHaveTokenText currentUser">
-              <span>PIKA</span>
+              <span>{localStorage.getItem("name")}님</span>
               <div className="logOutBox">
                 <p className="logOutBoxCurrentUser">{localStorage.name}님</p>
                 <p className="logOutBoxEmail">{localStorage.email}</p>

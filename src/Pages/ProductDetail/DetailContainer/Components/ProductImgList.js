@@ -3,7 +3,6 @@ import "./ProductImgList.scss";
 
 class ProductImgList extends Component {
   render() {
-    console.log(this.props.imageUrls);
     const { imageUrls } = this.props;
 
     return (

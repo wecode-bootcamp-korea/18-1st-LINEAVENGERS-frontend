@@ -44,7 +44,6 @@ class PayMenu extends Component {
       totalCounts += list.countValue;
     });
 
-    console.log(options, price, finalPrice);
     return (
       <ul className="payMenu">
         <li className="deliverWrap">

@@ -13,10 +13,7 @@ export class CategoryList extends Component {
             <div className="categoryMenu">
               <Link
                 className="categoryMenuLink"
-                to={{
-                  pathname: `/product?menu=${menuObj.menuId}`,
-                  state: { categoryData: this.props.itsCategoryList },
-                }}
+                to={`/product?menu=${menuObj.menuId}`}
               >
                 <span className="categoryText">{menuObj.menuName}</span>
               </Link>
@@ -25,10 +22,7 @@ export class CategoryList extends Component {
                 <div className="subMenuList">
                   {menuObj.categoryList.map(subMenuObj => (
                     <Link
-                      to={{
-                        pathname: `/product?menu=${menuObj.menuId}&category=${subMenuObj.categoryId}`,
-                        state: { categoryData: this.props.itsCategoryList },
-                      }}
+                      to={`/product?menu=${menuObj.menuId}&category=${subMenuObj.categoryId}`}
                       className="subMenuLink"
                     >
                       {subMenuObj.categoryName}

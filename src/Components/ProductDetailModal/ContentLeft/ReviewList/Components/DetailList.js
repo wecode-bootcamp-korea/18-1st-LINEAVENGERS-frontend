@@ -14,7 +14,7 @@ class DetailList extends Component {
       type,
       user,
     } = this.props.data;
-    console.log(this.props.data);
+
     const stars = new Array(5).fill(0);
     return (
       <li className="detailList">

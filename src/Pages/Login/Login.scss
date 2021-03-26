@@ -21,6 +21,7 @@
     }
   }
   .userBox {
+    position: relative;
     display: grid;
     .userAvail {
       color: #ff4540;
@@ -93,9 +94,11 @@
       }
     }
     .joinContents {
+      position: absolute;
+      bottom: 7px;
+      right: 0;
       display: flex;
       justify-content: flex-end;
-      transform: translate(-8px, -21px);
       a {
         text-decoration: none;
         font-size: 16px;

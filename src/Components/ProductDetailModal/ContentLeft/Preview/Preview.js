@@ -7,11 +7,11 @@ class Preview extends Component {
     const { reviews, imageUrls, slideIndex, handlePreview } = this.props;
     let avgGrade = 0;
 
-    reviews.forEach(review => {
-      avgGrade += review.grade;
-    });
-
-    avgGrade = avgGrade / reviews.length;
+    if (reviews.length > 0) {
+      reviews.forEach(review => {
+        avgGrade += review.grade;
+      });
+    }
     return (
       <div className="preview">
         <ul className="slidePreview">

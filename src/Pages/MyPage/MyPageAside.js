@@ -44,7 +44,7 @@ class MyPageAside extends React.Component {
           <div className="myPageUserProfile">
             <BsPerson size="60" color="lightgray" />
           </div>
-          <div className="myPageUserName">nickname</div>
+          <div className="myPageUserName">{localStorage.getItem("name")}님</div>
         </section>
         <ul className="myPageSetting">
           {names.map(name => (

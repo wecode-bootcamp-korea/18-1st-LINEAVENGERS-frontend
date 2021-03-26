@@ -3,6 +3,8 @@ import DaumPostCode from "react-daum-postcode";
 import { RiArrowRightSLine } from "react-icons/ri";
 import { FiScissors } from "react-icons/fi";
 import { RiErrorWarningLine } from "react-icons/ri";
+import Footer from "../../Components/Footer/Footer";
+import ShoppingBasketNavTop from "../MyPage/ShoppingBasket/ShoppingBasketNavTop";
 import "./Payment.scss";
 export class Payment extends Component {
   constructor(props) {
@@ -52,10 +54,8 @@ export class Payment extends Component {
 
   render() {
     const { isDaumPost, fullAddress, zoneCode } = this.state;
-    // DaumPostCode style
     const width = 595;
     const height = 450;
-    //스타일 속성
     const modalStyle = {
       position: "absolute",
       top: 0,
@@ -66,7 +66,7 @@ export class Payment extends Component {
     };
     return (
       <div className="payMent">
-        {/* <header className="header">header</header> */}
+        <ShoppingBasketNavTop />
         <section className="container">
           <div className="orderHeader">
             <h3 className="orderPayment">
@@ -109,7 +109,10 @@ export class Payment extends Component {
               </div>
             </div>
             <section className="LineInfo">
-              <img></img>
+              <img
+                src="http://drive.google.com/uc?export=view&id=1039z1ExYCoeQFuh4Lnmhmh4qObG4wxrK"
+                alt="상품 이미지"
+              />
               <div className="namesInfo">
                 <span class="predictStatus">3/26(금) 도착 확률 83%</span>
                 <ul>
@@ -296,6 +299,7 @@ export class Payment extends Component {
             </div>
           </section>
         </div>
+        <Footer />
       </div>
     );
   }

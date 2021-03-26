@@ -29,7 +29,9 @@ class MyPageNav extends React.Component {
       <nav className="myPageNav">
         <div className="myPageNavTop">
           <div className="myPageNavTopLeft">
-            <span class="myPageNavTopLeftLine">Line</span>
+            <Link class="myPageNavTopLeftLine" to="/main">
+              Line
+            </Link>
             <span>Avengers Shopping</span>
           </div>
           <div className="myPageNavTopRight">

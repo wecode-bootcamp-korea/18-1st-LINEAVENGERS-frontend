@@ -28,10 +28,12 @@ class Pay extends Component {
       <div className="pay">
         <h1 className="productTitle">{name}</h1>
         <p className="priceInfo">
-          <span className="salePercent">{price.sale !== 0 && price.sale}%</span>
+          <span className="salePercent">
+            {price.sale !== 0 && `${price.sale}%`}
+          </span>
           <span className="priceResult">
             <em>
-              {Number(price.sale !== 0 && price.normal).toLocaleString()}원
+              {price.sale !== 0 && `${Number(price.normal).toLocaleString()}원`}
             </em>
             {Number(finalPrice).toLocaleString()}원
           </span>

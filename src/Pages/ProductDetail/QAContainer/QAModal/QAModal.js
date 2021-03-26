@@ -61,23 +61,17 @@ class QAModal extends Component {
 
   patchQA = () => {
     const { comment, id, qId } = this.state;
-    console.log(comment, id, qId);
     fetch(`${URL}/product/${id}/qna/${qId}`, {
       method: "PATCH",
       headers: {
-        Authorization:
-          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.TGXxK_c43ROKMfF_QPUWar7uWlzhYZaCCVyudlpHMKg",
+        Authorization: localStorage.getItem("access_token"),
       },
       body: JSON.stringify({
         content: comment,
       }),
     })
+      .then(res => res.json())
       .then(res => {
-        console.log(res);
-        return res.json();
-      })
-      .then(res => {
-        console.log(res);
         if (res.message === "SUCCESS") {
           alert("수정됐습니다.");
           window.close();

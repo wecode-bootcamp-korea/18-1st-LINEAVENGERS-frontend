@@ -3,12 +3,15 @@ import "./ShoppingBasket.scss";
 
 class ShoppingProductList extends React.Component {
   render() {
-    const { id, img, name, quantity, price, discount } = this.props;
-    let { deliveryPrice } = this.props;
-    if (deliveryPrice === "무료") {
-      deliveryPrice = 0;
-    }
-
+    const {
+      id,
+      img,
+      name,
+      quantity,
+      price,
+      discount,
+      deliveryPrice,
+    } = this.props;
     return (
       <div className="shoppingProductList">
         <div className="shoppingProductListName">
@@ -46,9 +49,9 @@ class ShoppingProductList extends React.Component {
         </div>
         <div className="shoppingProductListPrice">
           <div className="shoppingProductListPriceIndividual">
-            {quantity * discount === 0
-              ? price
-              : (price - (discount / 100) * price) * quantity}
+            {discount === 0
+              ? price * quantity
+              : (price - (price * discount) / 100) * quantity}
             원
           </div>
           <button

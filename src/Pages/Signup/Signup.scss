@@ -132,20 +132,18 @@
 
       .checkPw {
         position: relative;
-
-        .action {
-          color: #ff4540;
-          font-size: 25px;
+        svg {
           position: absolute;
+          color: gray;
+          font-size: 25px;
           right: 15px;
           top: 25px;
         }
+        .action {
+          color: #ff4540;
+        }
         .checkLock {
-          position: absolute;
-          right: 15px;
-          bottom: 10px;
-          font-size: 25px;
-          color: #767676;
+          color: #28cf6c;
         }
       }
       .isUse {
