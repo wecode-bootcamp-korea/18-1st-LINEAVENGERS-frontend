@@ -19,19 +19,15 @@ export class Product extends Component {
     this.setState({
       favorite: !this.state.favorite,
     });
-
     fetch(`${URL}/mypage/favorite`, {
       method: "POST",
+      headers: {
+        Authorization: localStorage.getItem("access_token"),
+      },
       body: JSON.stringify({
-        product: this.props.product,
+        product_id: this.props.id,
       }),
-    })
-      .then(res => res.json())
-      .then(data => {
-        this.setState({
-          favorite: this.props.favorite,
-        });
-      });
+    }).then(res => res.json());
   };
 
   goBasket = e => {
@@ -44,7 +40,7 @@ export class Product extends Component {
     return (
       <div className="productContainer">
         <div className="productImgContainer">
-          <Link to="/product/detail">
+          <Link to={`/product/detail/${this.props.id}`}>
             <img className="productImg" src={img} alt="Product Img" />
           </Link>
           <div className="typeBox">

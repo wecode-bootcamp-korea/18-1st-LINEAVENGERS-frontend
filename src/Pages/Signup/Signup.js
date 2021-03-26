@@ -164,12 +164,13 @@ class Signup extends Component {
       succsessID,
       successCheck,
     } = this.state;
+    console.log(successCheck);
     return (
       <div className="signUp">
         <div className="container">
           <div className="navarLogo">
             <h1>
-              <img src="../images/Logo/green.png"></img>
+              <img src="/images/Logo/green.png"></img>
             </h1>
           </div>
           <form class="join_form">
@@ -227,7 +228,9 @@ class Signup extends Component {
                   onBlur={this.handleFocus}
                 />
                 <IoBagCheckSharp
-                  className={focusCheck ? "action" : "checkLock"}
+                  className={
+                    successCheck !== "" && (focusCheck ? "action" : "checkLock")
+                  }
                 />
               </div>
               <span className="isCheckpw">

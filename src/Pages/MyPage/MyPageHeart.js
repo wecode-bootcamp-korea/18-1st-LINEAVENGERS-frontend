@@ -17,8 +17,7 @@ class MyPageHeart extends React.Component {
   componentDidMount() {
     fetch(`${URL}/mypage/favorite`, {
       headers: {
-        Authorization:
-          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.TGXxK_c43ROKMfF_QPUWar7uWlzhYZaCCVyudlpHMKg",
+        Authorization: localStorage.getItem("access_token"),
       },
     })
       .then(res => res.json())

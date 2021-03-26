@@ -1,21 +1,24 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { withRouter } from "react-router-dom";
 import { URL } from "../../config";
 import Content from "./Content/Content";
 import ProductList from "./ProductList/ProductList";
 import PageLoad from "../../Components/PageLoad/PageLoad";
 import ProductDetailModal from "../../Components/ProductDetailModal/ProductDetailModal";
+import Header from "../../Components/Header/Header";
+import Footer from "../../Components/Footer/Footer";
 import "./Product.scss";
 
 export class Product extends Component {
   state = {
-    freeClick: false,
     page: 0,
     pageOffset: 0,
     gridType: 1,
     pageSize: 20,
     count: 0,
+    query: "",
     modalPopCheck: false,
+    freeClick: false,
     modalData: {},
     current: [],
     pageData: [],
@@ -74,6 +77,7 @@ export class Product extends Component {
 
   handleSort = (e, id) => {
     const { productData } = this.state;
+
     this.setState({
       productData:
         id === 0
@@ -135,6 +139,9 @@ export class Product extends Component {
       idList.length === 1
         ? `?menu=${idList[0]}`
         : `?menu=${idList[0]}&category=${idList[1]}`;
+    this.setState({
+      query: query,
+    });
     this.props.history.push(`product${query}`);
   };
 
@@ -157,25 +164,33 @@ export class Product extends Component {
     });
   };
 
-  addCart = (e, productId, selectList, options) => {
+  addCart = (e, selectList, options, productId) => {
+    let totalCount = 0;
+    if (selectList.length === 0) {
+      alert("선택된 품목이 없습니다.");
+      return;
+    }
+    selectList.forEach(list => (totalCount += list.countValue));
     fetch(`${URL}/order/cart/${productId}`, {
       method: "POST",
       headers: {
-        Authorization:
-          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.TGXxK_c43ROKMfF_QPUWar7uWlzhYZaCCVyudlpHMKg",
+        Authorization: localStorage.getItem("access_token"),
       },
       body: JSON.stringify({
-        size_id: 1,
-        quantity: 1,
+        size_id: options.sizedId,
+        quantity: totalCount,
       }),
-    })
-      .then(res => res.json())
-      .then(res => console.log(res));
+    });
   };
 
   componentDidMount() {
     this.initialProductData();
     this.initialCategroyData();
+  }
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.query !== this.state.query) {
+      this.initialProductData();
+    }
   }
 
   render() {
@@ -223,6 +238,7 @@ export class Product extends Component {
 
     return (
       <main className="product">
+        <Header />
         {productData.length === 0 || categoryData.length === 0 ? (
           <PageLoad />
         ) : (
@@ -258,6 +274,7 @@ export class Product extends Component {
             )}
           </div>
         )}
+        <Footer />
       </main>
     );
   }

@@ -5,7 +5,7 @@ import "./Choice.scss";
 
 class Choice extends Component {
   render() {
-    const { addCart, productId, selectList, options } = this.props;
+    const { addCart, selectList, options, productId } = this.props;
     return (
       <div className="selectChoice">
         <div className="choiceType" onClick={addCart}>
@@ -21,7 +21,7 @@ class Choice extends Component {
         <div
           className="choiceType"
           onClick={e => {
-            addCart(e, productId, selectList, options);
+            addCart(e, selectList, options, productId);
           }}
         >
           장바구니

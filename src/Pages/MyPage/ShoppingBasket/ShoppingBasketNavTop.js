@@ -16,7 +16,9 @@ class ShoppingBasketNavTop extends React.Component {
       <nav className="myPageNav">
         <div className="myPageNavTop">
           <div>
-            <span class="leftLine">Line</span>
+            <Link class="leftLine" to="/main">
+              Line
+            </Link>
             <span>Avengers Shopping</span>
           </div>
           <div className="topRight">

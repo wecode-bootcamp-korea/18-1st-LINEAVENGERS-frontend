@@ -25,14 +25,14 @@ export class Header extends Component {
               <img
                 className="logo"
                 alt="Line Avengers Logo"
-                src="../Images/Logo/black.png"
+                src="/Images/Logo/black.png"
               />
               <div className="searchBox">
                 <input className="search" type="text" placeholder="검색" />
                 <img
                   className="searchImg"
                   alt="search"
-                  src="../Images/Icons/search.png"
+                  src="/Images/Icons/search.png"
                 />
               </div>
             </div>

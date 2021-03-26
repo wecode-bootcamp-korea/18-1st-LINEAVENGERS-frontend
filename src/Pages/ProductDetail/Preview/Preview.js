@@ -45,7 +45,6 @@ class Preview extends Component {
 
     let totalGrade = 0;
     reviews.forEach(review => (totalGrade += review.grade));
-
     return (
       <div className="preview">
         <div className="previewImgBox">
@@ -88,7 +87,12 @@ class Preview extends Component {
           </span>
           <span>
             사용자 총 평점
-            <em>{Number(totalGrade / reviews.length).toFixed(1)}</em>/<em>5</em>
+            <em>
+              {reviews.length !== 0
+                ? Number(totalGrade / reviews.length).toFixed(1)
+                : 0}
+            </em>
+            /<em>5</em>
           </span>
         </div>
       </div>

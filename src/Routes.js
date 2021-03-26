@@ -9,7 +9,8 @@ import Modal from "./Pages/MyPage/Modal";
 import MyPage from "./Pages/MyPage/MyPage";
 import Product from "./Pages/Product/Product";
 import ProductDetail from "./Pages/ProductDetail/ProductDetail";
-import QAModal from "./Pages/ProductDetail/QAContainer/QAContainer";
+import QAModal from "./Pages/ProductDetail/QAContainer/QAModal/QAModal";
+import Payment from "./Pages/Payment/Payment";
 
 class Routes extends React.Component {
   render() {
@@ -19,6 +20,7 @@ class Routes extends React.Component {
           <Route exact path="/main" component={Main} />
           <Route exact path="/Login" component={Login} />
           <Route exact path="/Signup" component={Signup} />
+          <Route exact path="/Payment" component={Payment} />
           <Route exact path="/product" component={Product} />
           <Route exact path="/product/detail/:id" component={ProductDetail} />
           <Route exact path="/QAModal" component={QAModal} />

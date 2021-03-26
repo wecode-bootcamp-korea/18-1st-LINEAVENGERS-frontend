@@ -37,7 +37,7 @@ class Review extends Component {
     const { reviewOffset } = this.state;
     const presentReview = reviews.slice(4 * reviewOffset, 4 * reviewOffset + 4);
     const starGrade = new Array(5).fill(0);
-    console.log(reviews);
+
     return (
       <div className="reviewWrap">
         <p className="reviewTitle">

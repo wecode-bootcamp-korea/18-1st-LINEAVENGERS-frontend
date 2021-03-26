@@ -53,7 +53,7 @@ class Login extends Component {
       !idCheck &&
       !valueCheck &&
       !pwCheck;
-    console.log(e.charCode);
+
     if (istAllInputValid) {
       fetch(`${URL}/account/signin`, {
         method: "POST",

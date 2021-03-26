@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import CategoryList from "./CategoryList/CategoryList";
+import { URL } from "../../../config";
 import "./Category.scss";
 
 class Category extends Component {
@@ -11,7 +12,7 @@ class Category extends Component {
   }
 
   componentDidMount() {
-    fetch("http://10.58.6.21:8000/product/main-category", {
+    fetch(`${URL}/product/main-category`, {
       method: "GET",
     })
       .then(res => res.json())

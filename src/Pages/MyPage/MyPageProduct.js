@@ -6,7 +6,6 @@ class MyPageProduct extends React.Component {
     const url = "/Modal";
     const name = "리뷰 쓰기";
     const option = "width=500,height=600";
-
     const newWindow = window.open(url, name, option);
     newWindow.window.myId = this.props.id;
     newWindow.window.myImgUrl = this.props.img;

@@ -19,10 +19,9 @@ class ShoppingProduct extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`${URL}}/order`, {
+    fetch(`${URL}/order/cart`, {
       headers: {
-        Authorization:
-          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.uRvhx0YRxMc6bT8xlDbEw3lNaEpuPH0B1OShVoJGahw",
+        Authorization: localStorage.getItem("access_token"),
       },
     })
       .then(res => res.json())
@@ -43,12 +42,8 @@ class ShoppingProduct extends React.Component {
             ? data.price
             : data.price - (data.discount / 100) * data.price) * data.quantity)
     );
-    const result = res.result.map(el => {
-      if (el.deliveryprice === "무료") {
-        el.deliveryprice = 0;
-      }
-      return el.deliveryprice;
-    });
+    const result = res.result.map(el => el.deliveryprice);
+
     delivery = result.reduce((acc, cur) => acc + cur);
     res.result.forEach(
       data => (discount += (data.discount / 100) * data.price)
@@ -61,48 +56,36 @@ class ShoppingProduct extends React.Component {
       userId: userId,
     });
   };
-
   goToMyPage = () => {
-    fetch(`${URL}/order`, {
+    const orderId = this.state.productList[0].order_id;
+    fetch(`${URL}/order/cart`, {
       headers: {
-        Authorization:
-          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.uRvhx0YRxMc6bT8xlDbEw3lNaEpuPH0B1OShVoJGahw",
+        Authorization: localStorage.getItem("access_token"),
       },
       method: "post",
       body: JSON.stringify({
-        userId: this.state.productList.product_id,
-        quantity: this.state.productList,
+        order_id: orderId,
       }),
     });
   };
 
   removeProduct = async (e, index) => {
-    const target = this.state.productList[index].prodcut_id;
-    console.log(index);
-    console.log(this.state.productList[index].product_id);
-
-    await fetch(`${URL}/order`, {
+    const target = this.state.productList[index].product_id;
+    await fetch(`${URL}/order/cart/${target}`, {
       headers: {
-        Authorization:
-          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.uRvhx0YRxMc6bT8xlDbEw3lNaEpuPH0B1OShVoJGahw",
+        Authorization: localStorage.getItem("access_token"),
       },
-      method: "POST",
-      body: JSON.stringify({
-        product_id: target.product_id,
-      }),
-    })
-      .then(res => res.json())
-      .then(res => console.log(res));
+      method: "DELETE",
+    });
 
     this.setState({
       productList: this.state.productList.filter(
-        el => el.product_id != e.target.value
+        el => el.product_id !== parseInt(e.target.value)
       ),
     });
   };
-
   render() {
-    const deliveryStat = this.state.deliveryPrice >= 3000 ? 0 : 3000;
+    const deliveryStat = this.state.totalPrice >= 3000 ? 0 : 3000;
     return this.state.productList.length === 0 ? (
       <ShoppingNone />
     ) : (
@@ -122,7 +105,6 @@ class ShoppingProduct extends React.Component {
               price={product.price}
               discount={product.discount}
               quantity={product.quantity}
-              totalPrice={product.totalPrice}
               deliveryPrice={product.deliveryprice}
               handleClick={e => {
                 this.removeProduct(e, index);

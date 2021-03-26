@@ -8,6 +8,8 @@ import QAContainer from "./QAContainer/QAContainer";
 import TopMenu from "./TopMenu/TopMenu";
 import RefundContainer from "./RefundContainer/RefundContainer";
 import PageLoad from "../../Components/PageLoad/PageLoad";
+import Header from "../../Components/Header/Header";
+import Footer from "../../Components/Footer/Footer";
 import { URL } from "../../config";
 import "./ProductDetail.scss";
 
@@ -129,8 +131,10 @@ class ProductDetail extends Component {
 
     fetch(`${URL}/order/cart/${productId}`, {
       method: "POST",
+      headers: {
+        Authorization: localStorage.getItem("access_token"),
+      },
       body: JSON.stringify({
-        user_id: 1,
         size_id: sizeId,
         quantity: totalCount,
       }),
@@ -183,6 +187,7 @@ class ProductDetail extends Component {
           <PageLoad />
         ) : (
           <>
+            <Header />
             <TopMenu
               tabIndex={tabIndex}
               TopMenuData={TopMenuData}
@@ -222,6 +227,7 @@ class ProductDetail extends Component {
             />
             <QAContainer QAContainer={this.QAContainer} productId={productId} />
             <RefundContainer RefundContainer={this.RefundContainer} />
+            <Footer />
           </>
         )}
       </div>

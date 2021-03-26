@@ -14,8 +14,11 @@ class ListItem extends Component {
     let message = "";
     await fetch(`${URL}/mypage/favorite`, {
       method: "POST",
+      headers: {
+        Authorization: localStorage.access_token,
+      },
       body: JSON.stringify({
-        product: id,
+        product_id: id,
       }),
     })
       .then(res => res.json())

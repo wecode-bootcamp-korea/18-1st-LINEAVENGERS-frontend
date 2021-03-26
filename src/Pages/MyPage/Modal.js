@@ -20,7 +20,9 @@ class Popup extends React.Component {
       if (i <= index) clickStates[i] = true;
       else clickStates[i] = false;
     }
-    this.setState({ clicked: clickStates });
+    this.setState({ clicked: clickStates }, () => {
+      this.commentReview();
+    });
   };
 
   handleEvaluateGrade = () => {
@@ -55,6 +57,9 @@ class Popup extends React.Component {
   registerReview = () => {
     fetch(`${URL}/order/review`, {
       method: "post",
+      headers: {
+        Authorization: localStorage.getItem("access_token"),
+      },
       body: JSON.stringify({
         product: window.myId,
         rating: this.state.myCount,
@@ -75,7 +80,7 @@ class Popup extends React.Component {
         <div className="modalContent">
           <div className="modalSatisfy">상품은 만족하셨나요?</div>
           <div className="modalStar">
-            <div onClick={this.commentReview}>
+            <div>
               {this.state.array.map(x => {
                 return (
                   <FaStar
