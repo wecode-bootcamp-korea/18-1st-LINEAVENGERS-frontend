@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { URL } from "../../config";
 import Content from "./Content/Content";
@@ -51,14 +51,12 @@ export class Product extends Component {
 
   initialProductData = () => {
     fetch(`${URL}/product${this.props.location.search}`)
-      .then(res => {
-        return res.json();
-      })
+      .then(res => res.json())
       .then(res => {
         const { pageOffset, pageSize } = this.state;
         this.setState({
-          productData: res.productList,
           count: res.count,
+          productData: res.productList,
           page: Math.ceil(res.productList.length / pageSize),
           pageData: res.productList.slice(pageOffset, pageSize),
         });
@@ -247,8 +245,8 @@ export class Product extends Component {
               count={count}
               current={current}
               nowCategory={nowCategory}
-              categoryData={categoryData}
               pageSize={pageSize}
+              categoryData={categoryData}
               handleSort={this.handleSort}
               handleDeliver={this.handleDeliver}
               handleGrid={this.handleGrid}

@@ -41,7 +41,10 @@ class Signup extends Component {
         email: this.state.email,
       }),
     })
-      .then(res => res.json())
+      .then(res => {
+        console.log(res);
+        return res.json();
+      })
       .then(result => {
         if (result.message === "SUCCESS") {
           alert("회원가입 성공");
@@ -164,7 +167,7 @@ class Signup extends Component {
       succsessID,
       successCheck,
     } = this.state;
-    console.log(successCheck);
+
     return (
       <div className="signUp">
         <div className="container">

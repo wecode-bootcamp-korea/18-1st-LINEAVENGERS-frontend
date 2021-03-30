@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { faComment } from "@fortawesome/free-regular-svg-icons";
+import { Link } from "react-router-dom";
 import MaxNormalPoint from "./Components/MaxNormalPoint";
 import MorePointInfo from "./Components/MorePointInfo";
 import SelectOption from "./Components/SelectOption";
@@ -68,7 +69,9 @@ class Pay extends Component {
         />
         <ul className="choiceBox">
           <li>
-            <span>N</span>구매하기
+            <Link to="/payment">
+              <span>N</span>구매하기
+            </Link>
           </li>
           <li>
             <FontAwesomeIcon icon={faComment} />

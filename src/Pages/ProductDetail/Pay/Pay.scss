@@ -131,9 +131,13 @@
 
       &:nth-child(1) {
         background: #3fc910;
+        a {
+          color: #fff;
+          text-decoration: none;
+        }
         span {
           height: 20px;
-          padding: 0 5px;
+          padding: 3px 5px 1px;
           margin: 0 5px 3px 0;
           background: #fff;
           color: #3fc910;

@@ -1,5 +1,5 @@
 .myPage {
-  width: 1450px;
+  width: 100%;
 
   .myPageNav {
     height: 120px;
@@ -59,7 +59,7 @@
   .myPageMain {
     display: flex;
     width: 1150px;
-    margin-left: 150px;
+    margin: 0 auto;
     margin-top: 30px;
 
     .myPageSide {

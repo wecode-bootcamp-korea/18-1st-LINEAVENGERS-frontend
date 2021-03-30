@@ -5,6 +5,7 @@ import MyPageNone from "./MyPageNone";
 import MyPageHeartProduct from "./MyPageHeartProduct";
 import { URL } from "../../config";
 import "./MyPage.scss";
+import Footer from "../../Components/Footer/Footer";
 
 class MyPageHeart extends React.Component {
   constructor() {
@@ -61,6 +62,7 @@ class MyPageHeart extends React.Component {
             </article>
           )}
         </main>
+        <Footer />
       </div>
     );
   }

@@ -52,9 +52,9 @@ class Content extends Component {
         <div className="contentTop">
           <strong className="topTitle">{contentTitle}</strong>
           <TopCategory
-            contentTitle={contentTitle}
-            current={current}
             count={count}
+            current={current}
+            contentTitle={contentTitle}
             nowCategory={nowCategory}
             categoryData={categoryData}
             handleCategory={handleCategory}

@@ -12,6 +12,7 @@ class Preview extends Component {
         avgGrade += review.grade;
       });
     }
+    avgGrade = avgGrade / reviews.length;
     return (
       <div className="preview">
         <ul className="slidePreview">
