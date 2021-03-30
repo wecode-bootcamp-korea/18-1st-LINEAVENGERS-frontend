@@ -44,7 +44,9 @@
 
 ### 18기 배담호
 
-![asdasdsss](https://user-images.githubusercontent.com/62652799/112935179-39f14a80-915e-11eb-8390-f2b22fcb1f64.gif)
+![화면 기록 2021-03-30 오후 1 44 59](https://user-images.githubusercontent.com/62652799/112936041-fe578000-915f-11eb-86ef-667932402a9e.gif)
+
+
 
 ### 18기 김상연
 
